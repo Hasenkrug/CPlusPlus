@@ -16,9 +16,12 @@ bool rnEqual(Rationalnumber n, Rationalnumber m){
     }
     return false;
 }
-bool rnLessThen(Rationalnumber n, Rationalnumber m){
-    if(n.denominator == m.denominator && n.numerator == m.numerator){
+bool rnLessThen(Rationalnumber rn1, Rationalnumber rn2){
+    int numeratorNormalizedRn1 = rn2.denominator*rn1.numerator;
+    int numeratorNormalizedRn2 = rn1.denominator*rn2.numerator;
+    if(numeratorNormalizedRn1 < numeratorNormalizedRn2){
         return true;
     }
     return false;
 }
+
