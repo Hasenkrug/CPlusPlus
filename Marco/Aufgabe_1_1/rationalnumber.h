@@ -2,7 +2,12 @@
 #define RATIONALNUMBER_H
 
 struct Rationalnumber{
-    int numerator, denominator;
+    signed int numerator, denominator;
 };
+
+bool rnIsValid(RationalNumber n);
+
+bool rnLessThen();
+bool rnEqual();
 
 #endif // RATIONALNUMBER_H
