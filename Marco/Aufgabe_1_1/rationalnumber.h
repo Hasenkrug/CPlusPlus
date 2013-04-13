@@ -1,10 +1,13 @@
 #ifndef RATIONALNUMBER_H
 #define RATIONALNUMBER_H
 
-class Rationalnumber
-{
-public:
-    Rationalnumber();
+struct Rationalnumber{
+    signed int numerator, denominator;
 };
+
+bool rnIsValid(RationalNumber n);
+
+bool rnLessThen();
+bool rnEqual();
 
 #endif // RATIONALNUMBER_H
