@@ -3,8 +3,9 @@ CONFIG += console
 CONFIG -= app_bundle
 CONFIG -= qt
 
-SOURCES += main.cpp \
-    rationalnumber.cpp
+SOURCES += \
+    rationalnumber.cpp \
+    testRN.cpp
 
 HEADERS += \
     rationalnumber.h
