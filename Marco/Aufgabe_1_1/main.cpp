@@ -14,36 +14,28 @@ int main()
     printf("Performing unit tests for RationalNumber...\n");
 
     /* Part 1 - RationalNumber data type */
-    RationalNumber  n1 = { -3, 4 },
+    RationalNumber  n1 = { 3, 4 },
                     n2 = { 6, 4 },
                     n3 = { 3, 2 },
                     n4 = { -9, -6 },
                     n5 = { 9, -6 },
                     n6 = { 9, 4 },
+                    n7 = { -3, 4 },
                     n0 = { 0, 4 },
                     nn = { 4, 0 };
 
     assert( rnIsValid(n0) );
     assert( !rnIsValid(nn) );
-/*
-    if (rnEqual(n2,n3)){
-        printf("rnEqual(n2,n3)\n");
-    }
-    if (rnEqual(rnAdd(n1,n1), n2)){
-        printf("rnAdd(n1,n1), n2))\n");
-    }
-    if (rnEqual(n2,n4)){
-        printf("rnEqual(n2,n4\n");
-    }
-    if (!rnEqual(n4,n5)){
-        printf("!rnEqual( n4,n5)");
-    }*/
+
     assert( rnEqual( n2, n3) );
     assert( rnEqual( rnAdd(n1,n1), n2) );
     assert( rnEqual( n2,n4) );
     assert( !rnEqual( n4,n5) );
     assert( rnLessThan( n5,n3) );
-    assert( rnLessThan( n1,n5) );
+
+    assert( !rnLessThan( n1,n7) );
+    assert( rnLessThan( n7,n1) );
+    assert( rnLessThan( n5,n1) );
     assert( rnLessThan( n5,n3) );
 
     RationalNumber t1 = rnAdd(n1,n2);

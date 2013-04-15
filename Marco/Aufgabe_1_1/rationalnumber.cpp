@@ -11,61 +11,20 @@ bool rnEqual(RationalNumber rn1, RationalNumber rn2){
 
     rn1 = rnNormalize(rn1);
     rn2 = rnNormalize(rn2);
-    if(rn1.denominator < 0 && rn1.numerator < 0){
-        rn1.denominator = rn1.denominator * -1;
-        rn1.numerator = rn1.numerator * -1;
-    }
-    if(rn2.denominator < 0 && rn2.numerator < 0){
-        rn2.denominator = rn2.denominator * -1;
-        rn2.numerator = rn2.numerator * -1;
-    }
-    if(rn1.denominator < 0 && rn1.denominator >=0){
-        rn1.denominator = rn1.denominator * -1;
-    }
-    if(rn2.denominator < 0 && rn2.denominator >=0){
-        rn2.denominator = rn2.denominator * -1;
-    }
-
-    bool equalNum = rn1.numerator == rn2.numerator;
-    bool equalDen = rn1.denominator == rn2.denominator;
-
-    if(equalDen && equalNum){
-        return true;
-    }
-    return false;
+    return (rn1.numerator*rn1.denominator)==(rn2.numerator*rn2.denominator);
 }
 bool rnLessThan(RationalNumber rn1, RationalNumber rn2){
     rn2 = rnNormalize(rn2);
     rn1 = rnNormalize(rn1);
-
-    if(rn1.denominator < 0 && rn1.numerator < 0){
-        rn1.denominator = rn1.denominator * -1;
-        rn1.numerator = rn1.numerator * -1;
-    }
-    if(rn2.denominator < 0 && rn2.numerator < 0){
-        rn2.denominator = rn2.denominator * -1;
-        rn2.numerator = rn2.numerator * -1;
-    }
-    if(rn1.denominator < 0 && rn1.denominator >=0){
-        rn1.denominator = rn1.denominator * -1;
-    }
-    if(rn2.denominator < 0 && rn2.denominator >=0){
-        rn2.denominator = rn2.denominator * -1;
-    }
-
-    int numeratorNormalizedRn1 = rn2.denominator*rn1.numerator;
-    int numeratorNormalizedRn2 = rn1.denominator*rn2.numerator;
-    if(numeratorNormalizedRn1 > numeratorNormalizedRn2){
-        return true;
-    }
-    return false;
+    return (rn1.numerator*rn1.denominator)<(rn2.numerator*rn2.denominator);
 }
 
 RationalNumber rnAdd(RationalNumber rnSummand1, RationalNumber rnSummand2){
     int summand1 = rnSummand2.denominator*rnSummand1.numerator;
     int summand2 = rnSummand1.denominator*rnSummand2.numerator;
+    int dem = rnSummand1.denominator*rnSummand2.denominator;
     RationalNumber rnSumme;
-    rnSumme.denominator = summand1;
+    rnSumme.denominator = dem;
     rnSumme.numerator = summand1 + summand2;
     rnSumme = rnNormalize(rnSumme);
     return rnSumme;
