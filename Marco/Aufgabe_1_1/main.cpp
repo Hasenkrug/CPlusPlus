@@ -1,10 +1,62 @@
-#include <iostream>
+/*
+   Simple Unit Test for type RationalNumber
+*/
 
-using namespace std;
+#include <stdio.h>
+#include <assert.h>
+
+#include "rationalnumber.h"
+
 
 int main()
 {
-    cout << "Hello World!" << endl;
+
+    printf("Performing unit tests for RationalNumber...\n");
+
+    /* Part 1 - RationalNumber data type */
+    RationalNumber  n1 = { -3, 4 },
+                    n2 = { 6, 4 },
+                    n3 = { 3, 2 },
+                    n4 = { -9, -6 },
+                    n5 = { 9, -6 },
+                    n6 = { 9, 4 },
+                    n0 = { 0, 4 },
+                    nn = { 4, 0 };
+
+    assert( rnIsValid(n0) );
+    assert( !rnIsValid(nn) );
+/*
+    if (rnEqual(n2,n3)){
+        printf("rnEqual(n2,n3)\n");
+    }
+    if (rnEqual(rnAdd(n1,n1), n2)){
+        printf("rnAdd(n1,n1), n2))\n");
+    }
+    if (rnEqual(n2,n4)){
+        printf("rnEqual(n2,n4\n");
+    }
+    if (!rnEqual(n4,n5)){
+        printf("!rnEqual( n4,n5)");
+    }*/
+    assert( rnEqual( n2, n3) );
+    assert( rnEqual( rnAdd(n1,n1), n2) );
+    assert( rnEqual( n2,n4) );
+    assert( !rnEqual( n4,n5) );
+    assert( rnLessThan( n5,n3) );
+    assert( rnLessThan( n1,n5) );
+    assert( rnLessThan( n5,n3) );
+
+    RationalNumber t1 = rnAdd(n1,n2);
+    RationalNumber t2 = rnDivide(n3,n3);
+    RationalNumber t3 = rnDivide(n2,n2);
+    RationalNumber t4 = rnDivide(n6,n0);
+
+    assert( rnEqual(t1, n6) );
+    assert( rnEqual(t2, t3) );
+    assert( !rnIsValid(t4) );
+
+    printf(" successful!\n");
+
     return 0;
 }
 
