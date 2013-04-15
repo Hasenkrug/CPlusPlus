@@ -10,7 +10,6 @@ signed eukl(RationalNumber n){
     }
 }
 
-
 RationalNumber normalize(RationalNumber n){
     signed valueNum = n.numerator/eukl(n);
     signed valueDem = n.denominator/eukl(n);
@@ -59,6 +58,7 @@ RationalNumber rnSubtract(RationalNumber x, RationalNumber y){
     RationalNumber rn = normalize(r);
     return rn;
 }
+
 RationalNumber rnMultiply(RationalNumber x, RationalNumber y){
     signed valueNum = x.numerator*y.numerator;
     signed valueDem = x.denominator*y.denominator;
@@ -66,6 +66,7 @@ RationalNumber rnMultiply(RationalNumber x, RationalNumber y){
     RationalNumber rn = normalize(r);
     return rn;
 }
+
 RationalNumber rnDivide(RationalNumber x, RationalNumber y){
     signed valueNum = x.numerator*y.denominator;
     signed valueDem = x.denominator*y.numerator;
