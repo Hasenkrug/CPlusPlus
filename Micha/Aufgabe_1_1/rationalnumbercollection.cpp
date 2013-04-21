@@ -5,10 +5,10 @@ bool rncInit(RationalNumberCollection* c) {
 
     RationalNumber rn = { 0, 1 };
 
-    c->size = 3;
+    c->size = 1000;
     c->nfi = 0;
 
-    for(int i = 0; i < 3; i++) {
+    for(int i = 0; i < 1000; i++) {
         c->collection[i].rn = rn;
         c->collection[i].count = 0;
     }

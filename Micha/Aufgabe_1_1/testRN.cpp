@@ -14,14 +14,17 @@ int main() {
     printf("Performing unit tests for RationalNumberCollection...\n");
 
     RationalNumberCollection c;
+    RationalNumber n1 = { 1, 2 };    
 
-    RationalNumber n1 = { 1, 2 };
+    assert( rncInit( &c ) );    
 
-    assert( rncInit( &c ) );
-//    assert( rncAdd(&c, n1) );
+    std::cout << "naechster freier Index: " << c.nfi << std::endl;
+
+    assert( rncAdd(&c, n1) );
+
+    std::cout << "naechster freier Index: " << c.nfi << std::endl;
 
     printf(" successful!\n");
-
 
 
 // ====================================================================

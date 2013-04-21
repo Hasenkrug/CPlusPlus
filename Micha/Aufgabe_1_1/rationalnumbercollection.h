@@ -8,7 +8,7 @@ struct RationalNumberCollectionElement {
 };
 
 struct RationalNumberCollection {
-    RationalNumberCollectionElement* collection;
+    RationalNumberCollectionElement collection[1000];
     int size;
     int nfi;
 };
