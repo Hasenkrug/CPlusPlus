@@ -6,7 +6,7 @@
 #include <assert.h>
 
 #include "rationalnumber.h"
-
+#include "rationalnumbercollection.h"
 
 int main()
 {
@@ -23,6 +23,11 @@ int main()
                     n7 = { -3, 4 },
                     n0 = { 0, 4 },
                     nn = { 4, 0 };
+
+    RationalNumberCollection c;
+    rncInit(&c);
+    RationalNumber n = {1,2};
+    rncAdd(&c, n);
 
     assert( rnIsValid(n0) );
     assert( !rnIsValid(nn) );
