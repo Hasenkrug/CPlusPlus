@@ -1,0 +1,14 @@
+#include "ratiionalnumbercollection.h"
+
+void rncInit(rationalNumberCollection* rnc){
+    rnc = new rationalNumberCollection;
+}
+void rncAdd(rationalNumberCollection* rnc, RationalNumber rn){
+    rnc->rationalnumber = rn;
+    rnc->counter = rnc->counter+1;
+}
+
+struct rationalNumberCollection{
+    RationNumber rationalnumber;
+    int counter;
+}
