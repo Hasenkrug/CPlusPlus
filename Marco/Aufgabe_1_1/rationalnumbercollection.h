@@ -1,10 +1,14 @@
-#ifndef RATIONALNUMBERCOLLECTION_H
-#define RATIONALNUMBERCOLLECTION_H
+#ifndef RATIIONALNUMBERCOLLECTION_H
+#define RATIIONALNUMBERCOLLECTION_H
+#include "rationalnumber.h"
 
-class rationalnumbercollection
-{
-public:
-    rationalnumbercollection();
+struct RationalNumberCollection{
+    RationalNumber rationalnumber;
+    int counter;
 };
 
-#endif // RATIONALNUMBERCOLLECTION_H
+void rncInit(RationalNumberCollection* rnc);
+
+void rncAdd(RationalNumberCollection* rnc, RationalNumber n );
+
+#endif // RATIIONALNUMBERCOLLECTION_H
