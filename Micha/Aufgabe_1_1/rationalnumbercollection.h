@@ -2,13 +2,13 @@
 #define RATIONALNUMBERCOLLECTION_H
 #include "rationalnumber.h"
 
-struct RationalNumberCollectionElement {
+struct CollectionElement {
     RationalNumber rn;
     int count;
 };
 
 struct RationalNumberCollection {
-    RationalNumberCollectionElement collection[1000];
+    CollectionElement collection[1000];
     int size;
     int nfi;
 };

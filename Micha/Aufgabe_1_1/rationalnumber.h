@@ -3,10 +3,10 @@
 
 
 struct RationalNumber {
-    signed numerator, denominator;
+    int numerator, denominator;
 };
 
-signed eukl(RationalNumber n);
+int eukl(RationalNumber n);
 
 RationalNumber normalize(RationalNumber n);
 

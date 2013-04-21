@@ -14,14 +14,33 @@ int main() {
     printf("Performing unit tests for RationalNumberCollection...\n");
 
     RationalNumberCollection c;
-    RationalNumber n1 = { 1, 2 };    
+    RationalNumber n1 = { 1, 2 };
+    RationalNumber n2 = { 1, 2 };
+    RationalNumber n3 = { 1, 4 };
 
-    assert( rncInit( &c ) );    
+//    assert( rncInit( &c ) );
+//    assert( rncAdd(&c, n1) );
+//    assert( rncAdd(&c, n2) );
 
+    std::cout << "Inizierung der Collection erfolgreich: " << rncInit( &c ) << std::endl;
     std::cout << "naechster freier Index: " << c.nfi << std::endl;
 
-    assert( rncAdd(&c, n1) );
+    std::cout << "Eintrag zufuegen: " << rncAdd(&c, n1) << std::endl;
+    std::cout << "Zaehler Stelle 0: " << c.collection[0].count << std::endl;
+    std::cout << "Zaehler Stelle 1: " << c.collection[1].count << std::endl;
+    std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
+    std::cout << "naechster freier Index: " << c.nfi << std::endl;
 
+    std::cout << "Eintrag zufuegen: " << rncAdd(&c, n2) << std::endl;
+    std::cout << "Zaehler Stelle 0: " << c.collection[0].count << std::endl;
+    std::cout << "Zaehler Stelle 1: " << c.collection[1].count << std::endl;
+    std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
+    std::cout << "naechster freier Index: " << c.nfi << std::endl;
+
+    std::cout << "Eintrag zufuegen: " << rncAdd(&c, n3) << std::endl;
+    std::cout << "Zaehler Stelle 0: " << c.collection[0].count << std::endl;
+    std::cout << "Zaehler Stelle 1: " << c.collection[1].count << std::endl;
+    std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
     std::cout << "naechster freier Index: " << c.nfi << std::endl;
 
     printf(" successful!\n");

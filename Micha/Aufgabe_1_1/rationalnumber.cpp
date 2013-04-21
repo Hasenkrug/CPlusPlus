@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 
-signed eukl(RationalNumber n){
+int eukl(RationalNumber n){
     if(n.denominator == 0) return n.numerator;
 
      else {
@@ -12,8 +12,8 @@ signed eukl(RationalNumber n){
 }
 
 RationalNumber normalize(RationalNumber n){
-    signed valueNum = n.numerator/eukl(n);
-    signed valueDem = n.denominator/eukl(n);
+    int valueNum = n.numerator/eukl(n);
+    int valueDem = n.denominator/eukl(n);
     RationalNumber rn = {valueNum, valueDem};
     return rn;
 }
@@ -41,36 +41,36 @@ bool rnLessThan(RationalNumber x, RationalNumber y){
 }
 
 RationalNumber rnAdd(RationalNumber x, RationalNumber y){
-    signed valueDem = x.denominator*y.denominator;
-    signed value1 = x.numerator*y.denominator;
-    signed value2 = y.numerator*x.denominator;
-    signed valueNum = value1+value2;
+    int valueDem = x.denominator*y.denominator;
+    int value1 = x.numerator*y.denominator;
+    int value2 = y.numerator*x.denominator;
+    int valueNum = value1+value2;
     RationalNumber r = {valueNum, valueDem};
     RationalNumber rn = normalize(r);
     return rn;
 }
 
 RationalNumber rnSubtract(RationalNumber x, RationalNumber y){
-    signed valueDem = x.denominator*y.denominator;
-    signed value1 = x.numerator*y.denominator;
-    signed value2 = y.numerator*x.denominator;
-    signed valueNum = value1-value2;
+    int valueDem = x.denominator*y.denominator;
+    int value1 = x.numerator*y.denominator;
+    int value2 = y.numerator*x.denominator;
+    int valueNum = value1-value2;
     RationalNumber r = {valueNum, valueDem};
     RationalNumber rn = normalize(r);
     return rn;
 }
 
 RationalNumber rnMultiply(RationalNumber x, RationalNumber y){
-    signed valueNum = x.numerator*y.numerator;
-    signed valueDem = x.denominator*y.denominator;
+    int valueNum = x.numerator*y.numerator;
+    int valueDem = x.denominator*y.denominator;
     RationalNumber r = {valueNum, valueDem};
     RationalNumber rn = normalize(r);
     return rn;
 }
 
 RationalNumber rnDivide(RationalNumber x, RationalNumber y){
-    signed valueNum = x.numerator*y.denominator;
-    signed valueDem = x.denominator*y.numerator;
+    int valueNum = x.numerator*y.denominator;
+    int valueDem = x.denominator*y.numerator;
     RationalNumber r = {valueNum, valueDem};
     RationalNumber rn = normalize(r);
     return rn;
