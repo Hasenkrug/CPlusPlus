@@ -1,24 +1,27 @@
 #ifndef RATIONALNUMBER_H
 #define RATIONALNUMBER_H
 
+
 struct RationalNumber {
-    unsigned zaehler,nenner;
+    signed numerator, denominator;
 };
 
-RationalNumber normalize(RationalNumber a);
+signed eukl(RationalNumber n);
+
+RationalNumber normalize(RationalNumber n);
 
 bool rnIsValid(RationalNumber n);
 
-bool rnEqual(RationalNumber a, RationalNumber b);
+bool rnEqual(RationalNumber x, RationalNumber y);
 
-bool rnLessThan(RationalNumber a, RationalNumber b);
+bool rnLessThan(RationalNumber x, RationalNumber y);
 
-RationalNumber rnAdd(RationalNumber a, RationalNumber b);
+RationalNumber rnAdd(RationalNumber x, RationalNumber y);
 
-RationalNumber rnSubtract(RationalNumber a, RationalNumber b);
+RationalNumber rnSubtract(RationalNumber x, RationalNumber y);
 
-RationalNumber rnMultiply(RationalNumber a, RationalNumber b);
+RationalNumber rnMultiply(RationalNumber x, RationalNumber y);
 
-RationalNumber rnDivide(RationalNumber a, RationalNumber b);
+RationalNumber rnDivide(RationalNumber x, RationalNumber y);
 
 #endif // RATIONALNUMBER_H
