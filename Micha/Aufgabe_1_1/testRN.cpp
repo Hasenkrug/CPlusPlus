@@ -50,6 +50,28 @@ int main() {
 
     std::cout << " "<< std::endl;
 
+    std::cout << "Eintrag loeschen - Ergebnis: " << rncRemove(&c, n2) << std::endl;
+    std::cout << "RationalNumber: " << n2.numerator << "/" << n2.denominator << std::endl;
+    std::cout << "Zaehler Stelle 0: " << c.collection[0].count << std::endl;
+    std::cout << "Zaehler Stelle 1: " << c.collection[1].count << std::endl;
+    std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
+    std::cout << "naechster freier Index: " << c.nfi << std::endl;
+
+    std::cout << " "<< std::endl;
+
+    std::cout << "Eintrag loeschen - Ergebnis: " << rncRemove(&c, n2) << std::endl;
+    std::cout << "RationalNumber: " << n2.numerator << "/" << n2.denominator << std::endl;
+    std::cout << "Zaehler Stelle 0: " << c.collection[0].count << std::endl;
+    std::cout << "Zaehler Stelle 1: " << c.collection[1].count << std::endl;
+    std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
+    std::cout << "naechster freier Index: " << c.nfi << std::endl;
+
+    std::cout << " "<< std::endl;
+
+    std::cout << "RationalNumber an Stelle 0: " << c.collection[0].rn.numerator << "/" << c.collection[0].rn.denominator << std::endl;
+
+    std::cout << " "<< std::endl;
+
     printf("successful!\n");
 
 
