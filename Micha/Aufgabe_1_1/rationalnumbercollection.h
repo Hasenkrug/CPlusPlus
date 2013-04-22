@@ -20,6 +20,8 @@ bool rncAdd(RationalNumberCollection* c, RationalNumber n);
 
 bool rncRemove(RationalNumberCollection* c, RationalNumber n);
 
+int rncFindIndex(RationalNumberCollection* c, RationalNumber n);
+
 int rncCount(RationalNumberCollection* c, RationalNumber n);
 
 int rncTotalUniqueCount(RationalNumberCollection* c);

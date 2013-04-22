@@ -30,6 +30,24 @@ int rncFindPosition(RationalNumberCollection* c, RationalNumber n) {
     return -1;
 }
 
+int rncFindIndex(RationalNumberCollection* c, RationalNumber n) {
+    int von = 0;
+    int bis = c->nfi-1;
+
+    while(von <= bis) {
+        int mitte = von + (bis-von) / 2;
+
+        if(rnLessThan(c->collection[mitte].rn,n)) {
+            von = mitte + 1;
+        } else if(rnLessThan(n,c->collection[mitte].rn)) {
+            bis = mitte - 1;
+        } else {
+            return mitte;
+        }
+    }
+    return von;
+}
+
 bool rncAdd(RationalNumberCollection* c, RationalNumber n) {
     int pos = rncFindPosition(c,n);
 
