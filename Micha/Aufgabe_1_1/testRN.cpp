@@ -50,6 +50,14 @@ int main() {
 
     std::cout << " "<< std::endl;
 
+    std::cout << "rncCount von 1/2: "<< rncCount(&c,n2) << std::endl;
+
+    std::cout << " "<< std::endl;
+
+    std::cout << "rncTotalCount: "<< rncTotalCount(&c) << std::endl;
+
+    std::cout << " "<< std::endl;
+
     std::cout << "Eintrag loeschen - Ergebnis: " << rncRemove(&c, n2) << std::endl;
     std::cout << "RationalNumber: " << n2.numerator << "/" << n2.denominator << std::endl;
     std::cout << "Zaehler Stelle 0: " << c.collection[0].count << std::endl;
