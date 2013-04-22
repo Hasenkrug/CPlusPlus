@@ -59,3 +59,17 @@ bool rncRemove(RationalNumberCollection *c, RationalNumber n) {
     }
     return false;
 }
+
+int rncCount(RationalNumberCollection *c, RationalNumber n) {
+    int pos = rncFindPosition(c,n);
+
+    return c->collection[pos].count;
+}
+
+int rncTotalCount(RationalNumberCollection *c) {
+    int counter = 0;
+    for(int i = 0; i < c->nfi; i++) {
+        counter += c->collection[i].count;
+    }
+    return counter;
+}
