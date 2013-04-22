@@ -56,12 +56,26 @@ bool rncAdd(RationalNumberCollection* c, RationalNumber n) {
         c->totalCount++;
         return true;
     } else if(c->nfi < c->size) {
-        c->collection[c->nfi].rn.numerator = n.numerator;
-        c->collection[c->nfi].rn.denominator = n.denominator;
-        c->collection[c->nfi].count++;
-        c->nfi++;
-        c->totalCount++;
-        return true;
+        if(rncFindIndex(c,n) == c->nfi) {
+            c->collection[c->nfi].rn.numerator = n.numerator;
+            c->collection[c->nfi].rn.denominator = n.denominator;
+            c->collection[c->nfi].count++;
+            c->nfi++;
+            c->totalCount++;
+        } else {
+            int tempIndex = c->nfi;
+            while(rncFindIndex(c,n) < tempIndex) {
+                CollectionElement tempInhalt = c->collection[tempIndex - 1];
+                c->collection[tempIndex] = tempInhalt;
+                tempIndex--;
+            }
+
+            int stelle = rncFindIndex(c,n);
+            c->collection[stelle].rn = n;
+            c->collection[stelle].count = 1;
+            c->nfi += 1;
+            return true;
+        }
     }
     return false;
 }
