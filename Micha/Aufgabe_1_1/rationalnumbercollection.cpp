@@ -62,6 +62,7 @@ bool rncAdd(RationalNumberCollection* c, RationalNumber n) {
             c->collection[c->nfi].count++;
             c->nfi++;
             c->totalCount++;
+            return true;
         } else {
             int tempIndex = c->nfi;
             while(rncFindIndex(c,n) < tempIndex) {
