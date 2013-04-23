@@ -30,9 +30,9 @@ int main() {
     std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
     std::cout << "naechster freier Index: " << c.nfi << std::endl;
 
-    std::cout << "Durchschnitt berechnen: " << rncAverage(&c).numerator << "/" << rncAverage(&c).numerator << std::endl;
     std::cout << "Gesamtwert aller Brüche: " << rncSum(&c).numerator << "/" << rncSum(&c).denominator << std::endl;
     std::cout << "rncTotalCount: "<< rncTotalCount(&c) << std::endl;
+    std::cout << "Durchschnitt berechnen: " << rncAverage(&c).numerator << "/" << rncAverage(&c).denominator << std::endl;
 
     std::cout << " "<< std::endl;
 
@@ -43,9 +43,9 @@ int main() {
     std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
     std::cout << "naechster freier Index: " << c.nfi << std::endl;
 
-    std::cout << "Durchschnitt berechnen: " << rncAverage(&c).numerator << "/" << rncAverage(&c).numerator << std::endl;
     std::cout << "Gesamtwert aller Brüche: " << rncSum(&c).numerator << "/" << rncSum(&c).denominator << std::endl;
     std::cout << "rncTotalCount: "<< rncTotalCount(&c) << std::endl;
+    std::cout << "Durchschnitt berechnen: " << rncAverage(&c).numerator << "/" << rncAverage(&c).denominator << std::endl;
 
     std::cout << " "<< std::endl;
 
@@ -56,9 +56,9 @@ int main() {
     std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
     std::cout << "naechster freier Index: " << c.nfi << std::endl;
 
-    std::cout << "Durchschnitt berechnen: " << rncAverage(&c).numerator << "/" << rncAverage(&c).numerator << std::endl;
     std::cout << "Gesamtwert aller Brüche: " << rncSum(&c).numerator << "/" << rncSum(&c).denominator << std::endl;
     std::cout << "rncTotalCount: "<< rncTotalCount(&c) << std::endl;
+    std::cout << "Durchschnitt berechnen: " << rncAverage(&c).numerator << "/" << rncAverage(&c).denominator << std::endl;
 
     std::cout << " "<< std::endl;
 
@@ -77,8 +77,9 @@ int main() {
     std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
     std::cout << "naechster freier Index: " << c.nfi << std::endl;
 
-    std::cout << "Durchschnitt berechnen: " << rncAverage(&c).numerator << "/" << rncAverage(&c).numerator << std::endl;
     std::cout << "Gesamtwert aller Brüche: " << rncSum(&c).numerator << "/" << rncSum(&c).denominator << std::endl;
+    std::cout << "rncTotalCount: "<< rncTotalCount(&c) << std::endl;
+    std::cout << "Durchschnitt berechnen: " << rncAverage(&c).numerator << "/" << rncAverage(&c).denominator << std::endl;
 
     std::cout << " "<< std::endl;
 
@@ -89,8 +90,9 @@ int main() {
     std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
     std::cout << "naechster freier Index: " << c.nfi << std::endl;
 
-    std::cout << "Durchschnitt berechnen: " << rncAverage(&c).numerator << "/" << rncAverage(&c).numerator << std::endl;
     std::cout << "Gesamtwert aller Brüche: " << rncSum(&c).numerator << "/" << rncSum(&c).denominator << std::endl;
+    std::cout << "rncTotalCount: "<< rncTotalCount(&c) << std::endl;
+    std::cout << "Durchschnitt berechnen: " << rncAverage(&c).numerator << "/" << rncAverage(&c).denominator << std::endl;
 
     std::cout << " "<< std::endl;
 

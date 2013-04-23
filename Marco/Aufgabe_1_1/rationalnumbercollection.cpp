@@ -40,7 +40,7 @@ bool rncAdd(RationalNumberCollection* c, RationalNumber n) {
     if(pos != -1) {
         c->collection[pos].count++;
         RationalNumber summand = c->collection[pos].rn;
-        printf("jdsnfdj: i% i%", summand.numerator,summand.denominator);
+        printf("jdsnfdj: %i %i", summand.numerator,summand.denominator);
         c->rnSum = rnAdd(c->rnSum,summand);
         c->totalCount++;
         return true;
@@ -69,7 +69,7 @@ bool rncRemove(RationalNumberCollection *c, RationalNumber n) {
     } else if(pos != -1 && c->collection[pos].count == 1) {
         c->collection[pos] = c->collection[c->nfi-1];
         c->collection[c->nfi-1].count = 0;
-        RationalNumber subtrahend = c->collection[c->nfi].rn;
+        RationalNumber subtrahend = c->collection[c->nfi-1].rn;
         c->rnSum = rnSubtract(c->rnSum,subtrahend);
         c->nfi--;
         c->totalCount--;
@@ -102,7 +102,7 @@ RationalNumber rncSum(RationalNumberCollection* c){
 
 RationalNumber rncAverage(RationalNumberCollection* c){
     RationalNumber divisor = {rncTotalCount(c),1};
-    return rnDivide(c->rnSum,divisor);
+    return rnDivide(c->rnSum, divisor);
 }
 
 
