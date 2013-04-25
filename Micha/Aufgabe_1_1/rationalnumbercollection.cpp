@@ -138,6 +138,11 @@ RationalNumber rncSum(RationalNumberCollection* c){
 }
 
 RationalNumber rncAverage(RationalNumberCollection* c){
-    RationalNumber divisor = {rncTotalCount(c),1};
-    return rnDivide(c->rnSum, divisor);
+    if(c->totalCount != 0) {
+        RationalNumber divisor = {c->totalCount,1};
+        return rnDivide(c->rnSum, divisor);
+    } else {
+        RationalNumber rn = {0, 1};
+        return rn;
+    }
 }

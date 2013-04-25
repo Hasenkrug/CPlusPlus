@@ -36,6 +36,8 @@ int main() {
     std::cout << "Counter         : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
     std::cout << "TotalCount      : " << c2.totalCount << std::endl;
     std::cout << "TotalUniqueCount: " << c2.totalUniqueCount << std::endl;
+    std::cout << "rncSum          : " << rncSum(&c2).numerator << "/" << rncSum(&c2).denominator << std::endl;
+    std::cout << "rncAverage      : " << rncAverage(&c2).numerator << "/" << rncAverage(&c2).denominator << std::endl;
 
     std::cout << " " << std::endl;
 
@@ -104,80 +106,7 @@ int main() {
     //    assert( rncAdd(&c, n2) );
 
 
-// ====================================================================
-
-    //    printf("Performing unit tests for RationalNumberCollection...\n");
-    //    std::cout << " "<< std::endl;
-    //    RationalNumberCollection c;
-    //    RationalNumber n1 = { 1, 2 };
-    //    RationalNumber n2 = { 1, 2 };
-    //    RationalNumber n3 = { 1, 4 };
-
-    //    std::cout << "Inizierung der Collection erfolgreich: " << rncInit( &c ) << std::endl;
-    //    std::cout << "naechster freier Index: " << c.nfi << std::endl;
-
-    //    std::cout << " "<< std::endl;
-
-    //    std::cout << "Eintrag zufuegen - Ergebnis: " << rncAdd(&c, n1) << std::endl;
-    //    std::cout << "RationalNumber: " << n1.numerator << "/" << n1.denominator << std::endl;
-    //    std::cout << "Zaehler Stelle 0: " << c.collection[0].count << std::endl;
-    //    std::cout << "Zaehler Stelle 1: " << c.collection[1].count << std::endl;
-    //    std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
-    //    std::cout << "naechster freier Index: " << c.nfi << std::endl;
-
-    //    std::cout << " "<< std::endl;
-
-    //    std::cout << "Eintrag zufuegen - Ergebnis: " << rncAdd(&c, n2) << std::endl;
-    //    std::cout << "RationalNumber: " << n2.numerator << "/" << n2.denominator << std::endl;
-    //    std::cout << "Zaehler Stelle 0: " << c.collection[0].count << std::endl;
-    //    std::cout << "Zaehler Stelle 1: " << c.collection[1].count << std::endl;
-    //    std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
-    //    std::cout << "naechster freier Index: " << c.nfi << std::endl;
-
-    //    std::cout << " "<< std::endl;
-
-    //    std::cout << "Eintrag zufuegen - Ergebnis: " << rncAdd(&c, n3) << std::endl;
-    //    std::cout << "RationalNumber: " << n3.numerator << "/" << n3.denominator << std::endl;
-    //    std::cout << "Zaehler Stelle 0: " << c.collection[0].count << std::endl;
-    //    std::cout << "Zaehler Stelle 1: " << c.collection[1].count << std::endl;
-    //    std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
-    //    std::cout << "naechster freier Index: " << c.nfi << std::endl;
-
-    //    std::cout << " "<< std::endl;
-
-    //    std::cout << "rncCount von 1/2: "<< rncCount(&c,n2) << std::endl;
-
-    //    std::cout << " "<< std::endl;
-
-    //    std::cout << "rncTotalCount: "<< rncTotalCount(&c) << std::endl;
-
-    //    std::cout << " "<< std::endl;
-
-    //    std::cout << "Eintrag loeschen - Ergebnis: " << rncRemove(&c, n2) << std::endl;
-    //    std::cout << "RationalNumber: " << n2.numerator << "/" << n2.denominator << std::endl;
-    //    std::cout << "Zaehler Stelle 0: " << c.collection[0].count << std::endl;
-    //    std::cout << "Zaehler Stelle 1: " << c.collection[1].count << std::endl;
-    //    std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
-    //    std::cout << "naechster freier Index: " << c.nfi << std::endl;
-
-    //    std::cout << " "<< std::endl;
-
-    //    std::cout << "Eintrag loeschen - Ergebnis: " << rncRemove(&c, n2) << std::endl;
-    //    std::cout << "RationalNumber: " << n2.numerator << "/" << n2.denominator << std::endl;
-    //    std::cout << "Zaehler Stelle 0: " << c.collection[0].count << std::endl;
-    //    std::cout << "Zaehler Stelle 1: " << c.collection[1].count << std::endl;
-    //    std::cout << "Zaehler Stelle 2: " << c.collection[2].count << std::endl;
-    //    std::cout << "naechster freier Index: " << c.nfi << std::endl;
-
-    //    std::cout << " "<< std::endl;
-
-    //    std::cout << "RationalNumber an Stelle 0: " << c.collection[0].rn.numerator << "/" << c.collection[0].rn.denominator << std::endl;
-
-    //    std::cout << " "<< std::endl;
-    //    std::cout << " "<< std::endl;
-
-// ====================================================================
-
+// ================================================================
 
 
 //    printf("Performing unit tests for RationalNumber...\n");
