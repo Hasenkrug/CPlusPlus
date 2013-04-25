@@ -11,6 +11,7 @@ struct RationalNumberCollection {
     CollectionElement collection[1000];
     int size;
     int nfi;
+    RationalNumber rnSum;
     int totalCount;
 };
 

@@ -7,6 +7,7 @@ bool rncInit(RationalNumberCollection* c) {
 
     c->size = 1000;
     c->nfi = 0;
+	c->rnSum = rn;
     c->totalCount = 0;
 
     for(int i = 0; i < 1000; i++) {
@@ -53,9 +54,14 @@ bool rncAdd(RationalNumberCollection* c, RationalNumber n) {
 
     if(pos != -1) {
         c->collection[pos].count++;
+		RationalNumber summand = c->collection[pos].rn;
+		c->rnSum = rnAdd(c->rnSum, summand);
         c->totalCount++;
         return true;
     } else if(c->nfi < c->size) {
+		RationalNumber summand = n;
+		c->rnSum = rnAdd(c->rnSum, summand);
+		
         if(rncFindIndex(c,n) == c->nfi) {
             c->collection[c->nfi].rn.numerator = n.numerator;
             c->collection[c->nfi].rn.denominator = n.denominator;
@@ -86,12 +92,16 @@ bool rncRemove(RationalNumberCollection *c, RationalNumber n) {
 
     if(pos != -1 && c->collection[pos].count > 1) {
         c->collection[pos].count--;
+		RationalNumber subtrahend = c->collection[pos].rn;
+        c->rnSum = rnSubtract(c->rnSum,subtrahend);
         c->totalCount--;
         return true;
     } else if(pos != -1 && c->collection[pos].count == 1) {
         for(int i = pos; i < c->nfi-1; i++) {
             c->collection[i] = c->collection[i+1];
         }
+		RationalNumber subtrahend = c->collection[c->nfi-1].rn;
+        c->rnSum = rnSubtract(c->rnSum,subtrahend);
         c->nfi--;
         c->collection[c->nfi].count = 0;
         c->collection[c->nfi].rn.numerator = 0;
@@ -117,4 +127,13 @@ int rncTotalUniqueCount(RationalNumberCollection *c) {
 
 int rncTotalCount(RationalNumberCollection *c) {
     return c->totalCount;
+}
+
+RationalNumber rncSum(RationalNumberCollection* c){
+    return c->rnSum;
+}
+
+RationalNumber rncAverage(RationalNumberCollection* c){
+    RationalNumber divisor = {rncTotalCount(c),1};
+    return rnDivide(c->rnSum, divisor);
 }
