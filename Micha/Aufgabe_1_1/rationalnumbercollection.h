@@ -13,6 +13,7 @@ struct RationalNumberCollection {
     int nfi;
     RationalNumber rnSum;
     int totalCount;
+    int totalUniqueCount;
 };
 
 bool rncInit(RationalNumberCollection* c);

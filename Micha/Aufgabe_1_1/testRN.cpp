@@ -31,31 +31,37 @@ int main() {
 
     std::cout << " "<< std::endl;
 
-    std::cout << "Collection: " << "[" << c2.collection[0].rn.numerator << "]" << "[" << c2.collection[1].rn.numerator << "]" << "[" << c2.collection[2].rn.numerator << "]" << "[" << c2.collection[3].rn.numerator << "]" << "[" << c2.collection[4].rn.numerator << "]" << std::endl;
-    std::cout << "            " << "[" << c2.collection[0].rn.denominator << "]" << "[" << c2.collection[1].rn.denominator << "]" << "[" << c2.collection[2].rn.denominator << "]" << "[" << c2.collection[3].rn.denominator << "]" << "[" << c2.collection[4].rn.denominator << "]" << std::endl;
-    std::cout << "Counter   : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
+    std::cout << "Collection      : " << "[" << c2.collection[0].rn.numerator << "]" << "[" << c2.collection[1].rn.numerator << "]" << "[" << c2.collection[2].rn.numerator << "]" << "[" << c2.collection[3].rn.numerator << "]" << "[" << c2.collection[4].rn.numerator << "]" << std::endl;
+    std::cout << "                  " << "[" << c2.collection[0].rn.denominator << "]" << "[" << c2.collection[1].rn.denominator << "]" << "[" << c2.collection[2].rn.denominator << "]" << "[" << c2.collection[3].rn.denominator << "]" << "[" << c2.collection[4].rn.denominator << "]" << std::endl;
+    std::cout << "Counter         : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
+    std::cout << "TotalCount      : " << c2.totalCount << std::endl;
+    std::cout << "TotalUniqueCount: " << c2.totalUniqueCount << std::endl;
 
-    std::cout << " "<< std::endl;
+    std::cout << " " << std::endl;
 
     std::cout << "rncAdd( 1/4 ) returns: " << rncAdd( &c2, numb04 ) << std::endl;
     std::cout << "rncAdd( 1/3 ) returns: " << rncAdd( &c2, numb03 ) << std::endl;
     std::cout << "rncAdd( 1/2 ) returns: " << rncAdd( &c2, numb02 ) << std::endl;
 
-    std::cout << " "<< std::endl;
+    std::cout << " " << std::endl;
 
-    std::cout << "Collection: " << "[" << c2.collection[0].rn.numerator << "]" << "[" << c2.collection[1].rn.numerator << "]" << "[" << c2.collection[2].rn.numerator << "]" << "[" << c2.collection[3].rn.numerator << "]" << "[" << c2.collection[4].rn.numerator << "]" << std::endl;
-    std::cout << "            " << "[" << c2.collection[0].rn.denominator << "]" << "[" << c2.collection[1].rn.denominator << "]" << "[" << c2.collection[2].rn.denominator << "]" << "[" << c2.collection[3].rn.denominator << "]" << "[" << c2.collection[4].rn.denominator << "]" << std::endl;
-    std::cout << "Counter   : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
+    std::cout << "Collection      : " << "[" << c2.collection[0].rn.numerator << "]" << "[" << c2.collection[1].rn.numerator << "]" << "[" << c2.collection[2].rn.numerator << "]" << "[" << c2.collection[3].rn.numerator << "]" << "[" << c2.collection[4].rn.numerator << "]" << std::endl;
+    std::cout << "                  " << "[" << c2.collection[0].rn.denominator << "]" << "[" << c2.collection[1].rn.denominator << "]" << "[" << c2.collection[2].rn.denominator << "]" << "[" << c2.collection[3].rn.denominator << "]" << "[" << c2.collection[4].rn.denominator << "]" << std::endl;
+    std::cout << "Counter         : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
+    std::cout << "TotalCount      : " << c2.totalCount << std::endl;
+    std::cout << "TotalUniqueCount: " << c2.totalUniqueCount << std::endl;
 
-    std::cout << " "<< std::endl;
+    std::cout << " " << std::endl;
 
     std::cout << "rncAdd( 1/5 ) returns: " << rncAdd( &c2, numb05 ) << std::endl;
 
     std::cout << " "<< std::endl;
 
-    std::cout << "Collection: " << "[" << c2.collection[0].rn.numerator << "]" << "[" << c2.collection[1].rn.numerator << "]" << "[" << c2.collection[2].rn.numerator << "]" << "[" << c2.collection[3].rn.numerator << "]" << "[" << c2.collection[4].rn.numerator << "]" << std::endl;
-    std::cout << "            " << "[" << c2.collection[0].rn.denominator << "]" << "[" << c2.collection[1].rn.denominator << "]" << "[" << c2.collection[2].rn.denominator << "]" << "[" << c2.collection[3].rn.denominator << "]" << "[" << c2.collection[4].rn.denominator << "]" << std::endl;
-    std::cout << "Counter   : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
+    std::cout << "Collection      : " << "[" << c2.collection[0].rn.numerator << "]" << "[" << c2.collection[1].rn.numerator << "]" << "[" << c2.collection[2].rn.numerator << "]" << "[" << c2.collection[3].rn.numerator << "]" << "[" << c2.collection[4].rn.numerator << "]" << std::endl;
+    std::cout << "                  " << "[" << c2.collection[0].rn.denominator << "]" << "[" << c2.collection[1].rn.denominator << "]" << "[" << c2.collection[2].rn.denominator << "]" << "[" << c2.collection[3].rn.denominator << "]" << "[" << c2.collection[4].rn.denominator << "]" << std::endl;
+    std::cout << "Counter         : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
+    std::cout << "TotalCount      : " << c2.totalCount << std::endl;
+    std::cout << "TotalUniqueCount: " << c2.totalUniqueCount << std::endl;
 
     std::cout << " "<< std::endl;
 
@@ -63,11 +69,25 @@ int main() {
 
     std::cout << " "<< std::endl;
 
-    std::cout << "Collection: " << "[" << c2.collection[0].rn.numerator << "]" << "[" << c2.collection[1].rn.numerator << "]" << "[" << c2.collection[2].rn.numerator << "]" << "[" << c2.collection[3].rn.numerator << "]" << "[" << c2.collection[4].rn.numerator << "]" << std::endl;
-    std::cout << "            " << "[" << c2.collection[0].rn.denominator << "]" << "[" << c2.collection[1].rn.denominator << "]" << "[" << c2.collection[2].rn.denominator << "]" << "[" << c2.collection[3].rn.denominator << "]" << "[" << c2.collection[4].rn.denominator << "]" << std::endl;
-    std::cout << "Counter   : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
+    std::cout << "Collection      : " << "[" << c2.collection[0].rn.numerator << "]" << "[" << c2.collection[1].rn.numerator << "]" << "[" << c2.collection[2].rn.numerator << "]" << "[" << c2.collection[3].rn.numerator << "]" << "[" << c2.collection[4].rn.numerator << "]" << std::endl;
+    std::cout << "                  " << "[" << c2.collection[0].rn.denominator << "]" << "[" << c2.collection[1].rn.denominator << "]" << "[" << c2.collection[2].rn.denominator << "]" << "[" << c2.collection[3].rn.denominator << "]" << "[" << c2.collection[4].rn.denominator << "]" << std::endl;
+    std::cout << "Counter         : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
+    std::cout << "TotalCount      : " << c2.totalCount << std::endl;
+    std::cout << "TotalUniqueCount: " << c2.totalUniqueCount << std::endl;
 
     std::cout << " "<< std::endl;
+
+    std::cout << "rncAdd( 1/3 ) returns: " << rncAdd( &c2, numb03 ) << std::endl;
+
+    std::cout << " " << std::endl;
+
+    std::cout << "Collection      : " << "[" << c2.collection[0].rn.numerator << "]" << "[" << c2.collection[1].rn.numerator << "]" << "[" << c2.collection[2].rn.numerator << "]" << "[" << c2.collection[3].rn.numerator << "]" << "[" << c2.collection[4].rn.numerator << "]" << std::endl;
+    std::cout << "                  " << "[" << c2.collection[0].rn.denominator << "]" << "[" << c2.collection[1].rn.denominator << "]" << "[" << c2.collection[2].rn.denominator << "]" << "[" << c2.collection[3].rn.denominator << "]" << "[" << c2.collection[4].rn.denominator << "]" << std::endl;
+    std::cout << "Counter         : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
+    std::cout << "TotalCount      : " << c2.totalCount << std::endl;
+    std::cout << "TotalUniqueCount: " << c2.totalUniqueCount << std::endl;
+
+    std::cout << " " << std::endl;
 
     printf("successful!\n");
 

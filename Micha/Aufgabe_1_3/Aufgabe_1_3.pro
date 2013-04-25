@@ -4,11 +4,11 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    rationalnumber.cpp \
     testRN.cpp \
-    rationalnumbercollection.cpp
+    rationalnumbercollection.cpp \
+    rationalnumber.cpp
 
 HEADERS += \
-    rationalnumber.h \
-    rationalnumbercollection.h
+    rationalnumbercollection.h \
+    rationalnumber.h
 

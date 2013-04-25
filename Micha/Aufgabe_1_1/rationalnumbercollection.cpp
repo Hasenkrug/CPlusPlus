@@ -9,6 +9,7 @@ bool rncInit(RationalNumberCollection* c) {
     c->nfi = 0;
 	c->rnSum = rn;
     c->totalCount = 0;
+    c->totalUniqueCount = 0;
 
     for(int i = 0; i < 1000; i++) {
         c->collection[i].rn = rn;
@@ -68,6 +69,7 @@ bool rncAdd(RationalNumberCollection* c, RationalNumber n) {
             c->collection[c->nfi].count++;
             c->nfi++;
             c->totalCount++;
+            c->totalUniqueCount++;
             return true;
         } else {
             int tempIndex = c->nfi;
@@ -76,10 +78,11 @@ bool rncAdd(RationalNumberCollection* c, RationalNumber n) {
                 c->collection[tempIndex] = tempInhalt;
                 tempIndex--;
             }
-
             int stelle = rncFindIndex(c,n);
             c->collection[stelle].rn = n;
             c->collection[stelle].count = 1;
+            c->totalCount++;
+            c->totalUniqueCount++;
             c->nfi += 1;
             return true;
         }
@@ -107,6 +110,7 @@ bool rncRemove(RationalNumberCollection *c, RationalNumber n) {
         c->collection[c->nfi].rn.numerator = 0;
         c->collection[c->nfi].rn.denominator = 1;
         c->totalCount--;
+        c->totalUniqueCount--;
         return true;
     }
     return false;

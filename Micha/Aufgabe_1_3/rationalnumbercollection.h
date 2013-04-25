@@ -7,14 +7,11 @@ struct CollectionElement {
     int count;
 };
 
-struct RationalNumberCollection {
-    CollectionElement collection[1000];
-    int size;
-    int nfi;
-    int totalCount;
-};
+struct RationalNumberCollection;
 
-bool rncInit(RationalNumberCollection* c);
+RationalNumberCollection* rncCreate(int size);
+
+void rncDelete(RationalNumberCollection* c);
 
 bool rncAdd(RationalNumberCollection* c, RationalNumber n);
 
