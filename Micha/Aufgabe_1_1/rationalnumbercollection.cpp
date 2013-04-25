@@ -22,10 +22,8 @@ bool rncInit(RationalNumberCollection* c) {
 int rncFindPosition(RationalNumberCollection* c, RationalNumber n) {
     for(int i = 0; i < c->size; i++) {
         if(c->collection[i].count != 0) {
-            if(c->collection[i].rn.numerator == n.numerator) {
-                if(c->collection[i].rn.denominator == n.denominator) {
-                    return i;
-                }
+            if(rnEqual(c->collection[i].rn, n)) {
+                return i;
             }
         }
     }
@@ -53,16 +51,18 @@ int rncFindIndex(RationalNumberCollection* c, RationalNumber n) {
 bool rncAdd(RationalNumberCollection* c, RationalNumber n) {
     int pos = rncFindPosition(c,n);
 
+    // wenn es die RationalNumber schon im Array gibt
     if(pos != -1) {
         c->collection[pos].count++;
 		RationalNumber summand = c->collection[pos].rn;
 		c->rnSum = rnAdd(c->rnSum, summand);
         c->totalCount++;
         return true;
+    // sonst, wenn noch Platz im Array ist
     } else if(c->nfi < c->size) {
 		RationalNumber summand = n;
 		c->rnSum = rnAdd(c->rnSum, summand);
-		
+        // und die perfekte Postition dem nfi entspricht
         if(rncFindIndex(c,n) == c->nfi) {
             c->collection[c->nfi].rn.numerator = n.numerator;
             c->collection[c->nfi].rn.denominator = n.denominator;

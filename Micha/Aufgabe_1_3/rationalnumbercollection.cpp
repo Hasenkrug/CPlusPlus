@@ -44,10 +44,8 @@ void rncDelete(RationalNumberCollection* c) {
 int rncFindPosition(RationalNumberCollection* c, RationalNumber n) {
     for(int i = 0; i < c->size; i++) {
         if(c->collection[i].count != 0) {
-            if(c->collection[i].rn.numerator == n.numerator) {
-                if(c->collection[i].rn.denominator == n.denominator) {
-                    return i;
-                }
+            if(rnEqual(c->collection[i].rn, n)) {
+                return i;
             }
         }
     }
@@ -162,6 +160,11 @@ RationalNumber rncSum(RationalNumberCollection* c){
 }
 
 RationalNumber rncAverage(RationalNumberCollection* c){
-    RationalNumber divisor = {rncTotalCount(c),1};
-    return rnDivide(c->rnSum, divisor);
+    if(c->totalCount != 0) {
+        RationalNumber divisor = {c->totalCount,1};
+        return rnDivide(c->rnSum, divisor);
+    } else {
+        RationalNumber rn = {0, 1};
+        return rn;
+    }
 }
