@@ -30,7 +30,7 @@ bool rncInit(RationalNumberCollection* c, int size) {
 }
 
 RationalNumberCollection* rncCreate(int size) {
-    RationalNumberCollection* rnc = (RationalNumberCollection*) malloc(sizeof(RationalNumberCollection));
+    RationalNumberCollection* rnc = (RationalNumberCollection*) malloc(sizeof(RationalNumberCollection));    
     rnc->collection = (CollectionElement*) malloc(size*sizeof(CollectionElement));
     rncInit(rnc, size);
     return rnc;
@@ -75,16 +75,18 @@ int rncFindIndex(RationalNumberCollection* c, RationalNumber n) {
 bool rncAdd(RationalNumberCollection* c, RationalNumber n) {
     int pos = rncFindPosition(c,n);
 
+    // wenn es die RationalNumber schon im Array gibt
     if(pos != -1) {
         c->collection[pos].count++;
         RationalNumber summand = c->collection[pos].rn;
         c->rnSum = rnAdd(c->rnSum, summand);
         c->totalCount++;
         return true;
+    // sonst, wenn noch Platz im Array ist
     } else if(c->nfi < c->size) {
         RationalNumber summand = n;
         c->rnSum = rnAdd(c->rnSum, summand);
-
+        // und die perfekte Postition dem nfi entspricht
         if(rncFindIndex(c,n) == c->nfi) {
             c->collection[c->nfi].rn.numerator = n.numerator;
             c->collection[c->nfi].rn.denominator = n.denominator;
@@ -92,7 +94,7 @@ bool rncAdd(RationalNumberCollection* c, RationalNumber n) {
             c->nfi++;
             c->totalCount++;
             c->totalUniqueCount++;
-            return true;
+            return true;            
         } else {
             int tempIndex = c->nfi;
             while(rncFindIndex(c,n) < tempIndex) {

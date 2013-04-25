@@ -50,6 +50,8 @@ int main() {
     std::cout << "Counter         : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
     std::cout << "TotalCount      : " << c2.totalCount << std::endl;
     std::cout << "TotalUniqueCount: " << c2.totalUniqueCount << std::endl;
+    std::cout << "rncSum          : " << rncSum(&c2).numerator << "/" << rncSum(&c2).denominator << std::endl;
+    std::cout << "rncAverage      : " << rncAverage(&c2).numerator << "/" << rncAverage(&c2).denominator << std::endl;
 
     std::cout << " " << std::endl;
 
@@ -62,6 +64,8 @@ int main() {
     std::cout << "Counter         : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
     std::cout << "TotalCount      : " << c2.totalCount << std::endl;
     std::cout << "TotalUniqueCount: " << c2.totalUniqueCount << std::endl;
+    std::cout << "rncSum          : " << rncSum(&c2).numerator << "/" << rncSum(&c2).denominator << std::endl;
+    std::cout << "rncAverage      : " << rncAverage(&c2).numerator << "/" << rncAverage(&c2).denominator << std::endl;
 
     std::cout << " "<< std::endl;
 
@@ -74,6 +78,8 @@ int main() {
     std::cout << "Counter         : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
     std::cout << "TotalCount      : " << c2.totalCount << std::endl;
     std::cout << "TotalUniqueCount: " << c2.totalUniqueCount << std::endl;
+    std::cout << "rncSum          : " << rncSum(&c2).numerator << "/" << rncSum(&c2).denominator << std::endl;
+    std::cout << "rncAverage      : " << rncAverage(&c2).numerator << "/" << rncAverage(&c2).denominator << std::endl;
 
     std::cout << " "<< std::endl;
 
@@ -86,6 +92,8 @@ int main() {
     std::cout << "Counter         : " << "|" << c2.collection[0].count << "|" << "|" << c2.collection[1].count << "|" << "|" << c2.collection[2].count << "|" << "|" << c2.collection[3].count << "|" << "|" << c2.collection[4].count << "|" << std::endl;
     std::cout << "TotalCount      : " << c2.totalCount << std::endl;
     std::cout << "TotalUniqueCount: " << c2.totalUniqueCount << std::endl;
+    std::cout << "rncSum          : " << rncSum(&c2).numerator << "/" << rncSum(&c2).denominator << std::endl;
+    std::cout << "rncAverage      : " << rncAverage(&c2).numerator << "/" << rncAverage(&c2).denominator << std::endl;
 
     std::cout << " " << std::endl;
 
