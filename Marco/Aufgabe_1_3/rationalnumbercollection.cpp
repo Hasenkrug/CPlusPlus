@@ -179,6 +179,8 @@ RationalNumberCollection* rncRemove(RationalNumberCollection *c, RationalNumber 
             c->collection[c->nfi].rn.denominator = 1;
             c->totalCount--;
             c->totalUniqueCount--;
+        }else{
+            printf("\n %i/%i could not be removed from the storage.\n",n.numerator,n.denominator);
         }
     }
     print(c);
