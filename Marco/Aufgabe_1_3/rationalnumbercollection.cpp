@@ -115,39 +115,40 @@ RationalNumberCollection *rncAdd(RationalNumberCollection* c, RationalNumber n) 
         RationalNumber summand = c->collection[pos].rn;
         c->rnSum = rnAdd(c->rnSum, summand);
         c->totalCount++;
-    } else
-        // schaffe Platz wenn der nfi belegt sein sollte.
-        if(!(c->nfi < c->size)) {
-            RationalNumberCollection *cNew = rncUpdateSize(c, true);
-            c = rncDelete(c);
-            c = cNew;
-        }
-        RationalNumber summand = n;
-        c->rnSum = rnAdd(c->rnSum, summand);
-
-        // und die perfekte Postition dem nfi entspricht
-        if(rncFindIndex(c,n) == c->nfi) {
-            c->collection[c->nfi].rn.numerator = n.numerator;
-            c->collection[c->nfi].rn.denominator = n.denominator;
-            c->collection[c->nfi].count++;
-            c->nfi++;
-            c->totalCount++;
-            c->totalUniqueCount++;
-        } else {
-            int tempIndex = c->nfi;
-            while(rncFindIndex(c,n) < tempIndex) {
-                CollectionElement tempInhalt = c->collection[tempIndex - 1];
-                c->collection[tempIndex] = tempInhalt;
-                tempIndex--;
+    } else{
+            // schaffe Platz wenn der nfi belegt sein sollte.
+            if(!(c->nfi < c->size)) {
+                RationalNumberCollection *cNew = rncUpdateSize(c, true);
+                c = rncDelete(c);
+                c = cNew;
             }
-            int stelle = rncFindIndex(c,n);
-            c->collection[stelle].rn = n;
-            c->collection[stelle].count = 1;
-            c->nfi++;
-            c->totalCount++;
-            c->totalUniqueCount++;
-        }
-        print(c);
+            RationalNumber summand = n;
+            c->rnSum = rnAdd(c->rnSum, summand);
+
+            // und die perfekte Postition dem nfi entspricht
+            if(rncFindIndex(c,n) == c->nfi) {
+                c->collection[c->nfi].rn.numerator = n.numerator;
+                c->collection[c->nfi].rn.denominator = n.denominator;
+                c->collection[c->nfi].count++;
+                c->nfi++;
+                c->totalCount++;
+                c->totalUniqueCount++;
+            } else {
+                int tempIndex = c->nfi;
+                while(rncFindIndex(c,n) < tempIndex) {
+                    CollectionElement tempInhalt = c->collection[tempIndex - 1];
+                    c->collection[tempIndex] = tempInhalt;
+                    tempIndex--;
+                }
+                int stelle = rncFindIndex(c,n);
+                c->collection[stelle].rn = n;
+                c->collection[stelle].count = 1;
+                c->nfi++;
+                c->totalCount++;
+                c->totalUniqueCount++;
+            }
+    }
+    print(c);
     return c;
 }
 
@@ -160,7 +161,7 @@ RationalNumberCollection* rncRemove(RationalNumberCollection *c, RationalNumber 
         RationalNumber subtrahend = c->collection[pos].rn;
         c->rnSum = rnSubtract(c->rnSum,n);
         c->totalCount--;
-    } else
+    } else{
         if((c->nfi <= c->size/2)) {
             RationalNumberCollection *cNew = rncUpdateSize(c, false);
             c = rncDelete(c);
@@ -179,6 +180,7 @@ RationalNumberCollection* rncRemove(RationalNumberCollection *c, RationalNumber 
             c->totalCount--;
             c->totalUniqueCount--;
         }
+    }
     print(c);
     return c;
 }
