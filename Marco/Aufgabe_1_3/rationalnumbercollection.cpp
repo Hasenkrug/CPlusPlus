@@ -48,9 +48,8 @@ RationalNumberCollection *rncDelete(RationalNumberCollection* c) {
 }
 
 RationalNumberCollection* rncUpdateSize(RationalNumberCollection *rncOld){
-
     int newSize = rncOld->size*2;
-    RationalNumber rn = { 0, 1 };
+    printf("\nthe capacity will be incresed to the double size.\n");
     RationalNumberCollection* rncNew = rncCreate(newSize);
     rncInit(rncNew, newSize, rncOld->nfi, rncOld->totalCount, rncOld->totalUniqueCount, rncOld->rnSum);
     for( int i = 0; i<rncOld->size; i++){
@@ -91,6 +90,7 @@ int rncFindIndex(RationalNumberCollection* c, RationalNumber n) {
 }
 
 RationalNumberCollection *rncAdd(RationalNumberCollection* c, RationalNumber n) {
+    printf("\n %i/%i will be added to storage.\n",n.numerator,n.denominator);
     int pos = rncFindPosition(c,n);
 
     // wenn es die RationalNumber schon im Array gibt
@@ -99,19 +99,12 @@ RationalNumberCollection *rncAdd(RationalNumberCollection* c, RationalNumber n) 
         RationalNumber summand = c->collection[pos].rn;
         c->rnSum = rnAdd(c->rnSum, summand);
         c->totalCount++;
-        //return true;
     // sonst, wenn noch Platz im Array ist
     } else
         if(!(c->nfi < c->size)) {
-
-            printf("b: %i\n",c->size);
-            printf("c: %i\n",c);
             RationalNumberCollection *cNew = rncUpdateSize(c);
             c = rncDelete(c);
-            printf("c: %i\n",c);
             c = cNew;
-            printf("f: %i\n",c->size);
-            printf("c: %i\n",c);
         }
         RationalNumber summand = n;
         c->rnSum = rnAdd(c->rnSum, summand);
@@ -124,8 +117,6 @@ RationalNumberCollection *rncAdd(RationalNumberCollection* c, RationalNumber n) 
             c->nfi++;
             c->totalCount++;
             c->totalUniqueCount++;
-
-            //return true;
         } else {
             int tempIndex = c->nfi;
             while(rncFindIndex(c,n) < tempIndex) {
@@ -136,11 +127,11 @@ RationalNumberCollection *rncAdd(RationalNumberCollection* c, RationalNumber n) 
             int stelle = rncFindIndex(c,n);
             c->collection[stelle].rn = n;
             c->collection[stelle].count = 1;
-            c->nfi += 1;
+            c->nfi++;
             c->totalCount++;
             c->totalUniqueCount++;
-            //return true;
         }
+        print(c);
     return c;
 }
 
@@ -200,35 +191,24 @@ RationalNumber rncAverage(RationalNumberCollection* c){
         return rn;
     }
 }
-
-
-
-//printf("\n\n");
-//printf("size: %i; \n",c->size);
-//printf("nfi: %i; \n",c->nfi);
-//printf("rnSum: %i; \n",c->rnSum);
-//printf("totalCount: %i; \n",c->totalCount);
-//printf("totalUniqueCount: %i; \n",c->totalUniqueCount);
-//printf("\n");
-//for(int i=0; i<c->size;i++){
-//    printf("collectionElement: \n");
-//    printf("Zaehler: %i; an Stelle: %i;  \n",c->collection[i].rn.numerator, i);
-//    printf("Nenner: %i; an Stelle: %i;  \n",c->collection[i].rn.denominator, i);
-//    printf("collectionCounter: %i; an Stelle: %i;  \n",c->collection[i].count, i);
-//}
-//printf("\n\n");
-//c = rncUpdateSize(c);
-//printf("\n\n");
-//printf("size: %i; \n",c->size);
-//printf("nfi: %i; \n",c->nfi);
-//printf("rnSum: %i; \n",c->rnSum);
-//printf("totalCount: %i; \n",c->totalCount);
-//printf("totalUniqueCount: %i; \n",c->totalUniqueCount);
-//printf("\n");
-//for(int i=0; i<c->size;i++){
-//    printf("collectionElement:\n");
-//    printf("Zaehler: %i; an Stelle: %i;  \n",c->collection[i].rn.numerator, i);
-//    printf("Nenner: %i; an Stelle: %i;  \n",c->collection[i].rn.denominator, i);
-//    printf("collectionCounter: %i; an Stelle: %i;  \n",c->collection[i].count, i);
-//}
-//printf("\n\n");
+void print(RationalNumberCollection *c2){
+    if(true){
+    printf("Collection      : ");
+    for(int i=0; i<c2->size; i++){
+        printf("[%i]", c2->collection[i].rn.numerator);
+    }
+    printf("\n                  ");
+    for(int i=0; i<c2->size; i++){
+        printf("[%i]", c2->collection[i].rn.denominator);
+    }
+    printf("\nCounter         : ");
+    for(int i=0; i<c2->size; i++){
+        printf("|%i|",  c2->collection[i].count);
+    }
+    printf("\nTotalCount      : %i",  c2->totalCount);
+    printf("\nTotalUniqueCount: %i",  c2->totalUniqueCount);
+    printf("\nrncSum          : %i/%i",  c2->rnSum.numerator, c2->rnSum.denominator);
+    printf("\nrncAverage      : %i/%i",  rncAverage(c2).numerator, rncAverage(c2).denominator);
+    printf("\n\n");
+    }
+}

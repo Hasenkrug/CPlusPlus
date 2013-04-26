@@ -13,7 +13,7 @@ RationalNumberCollection* rncCreate(int size);
 
 RationalNumberCollection *rncDelete(RationalNumberCollection* c);
 
-RationalNumberCollection rncUpdate(RationalNumberCollection *c);
+RationalNumberCollection *rncUpdateSize(RationalNumberCollection *rncOld);
 
 RationalNumberCollection* rncAdd(RationalNumberCollection* c, RationalNumber n);
 
@@ -28,5 +28,7 @@ int rncTotalCount(RationalNumberCollection* c);
 RationalNumber rncSum(RationalNumberCollection* c);
 
 RationalNumber rncAverage(RationalNumberCollection* c);
+
+void print(RationalNumberCollection *c2);
 
 #endif // RATIONALNUMBERCOLLECTION_H
