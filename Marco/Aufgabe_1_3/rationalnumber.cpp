@@ -57,6 +57,7 @@ RationalNumber rnSubtract(RationalNumber x, RationalNumber y){
     int valueNum = value1-value2;
     RationalNumber r = {valueNum, valueDem};
     RationalNumber rn = normalize(r);
+    printf("\nD:%i; v1:%i; v2:%i; N:%i; rn.d:%i; rn.n:%i;\n\n",valueDem,value1,value2,valueNum,rn.denominator,rn.numerator);
     return rn;
 }
 

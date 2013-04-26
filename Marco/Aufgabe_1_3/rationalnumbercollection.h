@@ -13,11 +13,11 @@ RationalNumberCollection* rncCreate(int size);
 
 RationalNumberCollection *rncDelete(RationalNumberCollection* c);
 
-RationalNumberCollection *rncUpdateSize(RationalNumberCollection *rncOld);
+RationalNumberCollection *rncUpdateSize(RationalNumberCollection *rncOld, bool increase);
 
 RationalNumberCollection* rncAdd(RationalNumberCollection* c, RationalNumber n);
 
-bool rncRemove(RationalNumberCollection* c, RationalNumber n);
+RationalNumberCollection* rncRemove(RationalNumberCollection* c, RationalNumber n);
 
 int rncCount(RationalNumberCollection* c, RationalNumber n);
 

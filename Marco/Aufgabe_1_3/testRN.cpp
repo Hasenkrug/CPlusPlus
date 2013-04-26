@@ -41,6 +41,15 @@ int main() {
     c = rncAdd(c,n11);
     c = rncAdd(c,n12);
 
+
+    c = rncRemove(c,n6);
+    c = rncRemove(c,n7);
+    c = rncRemove(c,n8);
+    c = rncRemove(c,n9);
+    c = rncRemove(c,n10);
+    c = rncRemove(c,n11);
+    c = rncRemove(c,n12);
+
     std::cout <<" "<< c <<" "<< std::endl;
     c = rncDelete(c);
 

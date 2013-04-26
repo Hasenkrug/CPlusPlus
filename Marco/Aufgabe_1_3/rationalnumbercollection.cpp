@@ -47,17 +47,33 @@ RationalNumberCollection *rncDelete(RationalNumberCollection* c) {
     return c;
 }
 
-RationalNumberCollection* rncUpdateSize(RationalNumberCollection *rncOld){
-    int newSize = rncOld->size*2;
-    printf("\nthe capacity will be incresed to the double size.\n");
-    RationalNumberCollection* rncNew = rncCreate(newSize);
-    rncInit(rncNew, newSize, rncOld->nfi, rncOld->totalCount, rncOld->totalUniqueCount, rncOld->rnSum);
-    for( int i = 0; i<rncOld->size; i++){
-        rncNew->collection[i].rn.denominator = rncOld->collection[i].rn.denominator;
-        rncNew->collection[i].rn.numerator = rncOld->collection[i].rn.numerator;
-        rncNew->collection[i].count = rncOld->collection[i].count;
+RationalNumberCollection* rncUpdateSize(RationalNumberCollection *rncOld, bool increase){
+    int newSize;
+    if(increase){
+        newSize = rncOld->size*2;
+        printf("\nthe capacity will be incresed to the double size.\n");
+        RationalNumberCollection* rncNew = rncCreate(newSize);
+        rncInit(rncNew, newSize, rncOld->nfi, rncOld->totalCount, rncOld->totalUniqueCount, rncOld->rnSum);
+        for( int i = 0; i<rncOld->size; i++){
+            rncNew->collection[i].rn.denominator = rncOld->collection[i].rn.denominator;
+            rncNew->collection[i].rn.numerator = rncOld->collection[i].rn.numerator;
+            rncNew->collection[i].count = rncOld->collection[i].count;
+        }
+        return rncNew;
+    }else{
+        newSize = rncOld->size/2;
+        printf("\nthe capacity will be decresed to the half size.:%i\n", newSize);
+        RationalNumberCollection* rncNew = rncCreate(newSize);
+        rncInit(rncNew, newSize, rncOld->nfi, rncOld->totalCount, rncOld->totalUniqueCount, rncOld->rnSum);
+        for( int i = 0; i<newSize; i++){
+            rncNew->collection[i].rn.denominator = rncOld->collection[i].rn.denominator;
+            rncNew->collection[i].rn.numerator = rncOld->collection[i].rn.numerator;
+            rncNew->collection[i].count = rncOld->collection[i].count;
+        }
+        return rncNew;
     }
-    return rncNew;
+
+
 }
 
 int rncFindPosition(RationalNumberCollection* c, RationalNumber n) {
@@ -99,10 +115,10 @@ RationalNumberCollection *rncAdd(RationalNumberCollection* c, RationalNumber n) 
         RationalNumber summand = c->collection[pos].rn;
         c->rnSum = rnAdd(c->rnSum, summand);
         c->totalCount++;
-    // sonst, wenn noch Platz im Array ist
     } else
+        // schaffe Platz wenn der nfi belegt sein sollte.
         if(!(c->nfi < c->size)) {
-            RationalNumberCollection *cNew = rncUpdateSize(c);
+            RationalNumberCollection *cNew = rncUpdateSize(c, true);
             c = rncDelete(c);
             c = cNew;
         }
@@ -135,30 +151,36 @@ RationalNumberCollection *rncAdd(RationalNumberCollection* c, RationalNumber n) 
     return c;
 }
 
-bool rncRemove(RationalNumberCollection *c, RationalNumber n) {
+RationalNumberCollection* rncRemove(RationalNumberCollection *c, RationalNumber n) {
+    printf("\n %i/%i will be removed from the storage.\n",n.numerator,n.denominator);
     int pos = rncFindPosition(c,n);
 
     if(pos != -1 && c->collection[pos].count > 1) {
         c->collection[pos].count--;
         RationalNumber subtrahend = c->collection[pos].rn;
-        c->rnSum = rnSubtract(c->rnSum,subtrahend);
+        c->rnSum = rnSubtract(c->rnSum,n);
         c->totalCount--;
-        return true;
-    } else if(pos != -1 && c->collection[pos].count == 1) {
-        for(int i = pos; i < c->nfi-1; i++) {
-            c->collection[i] = c->collection[i+1];
+    } else
+        if((c->nfi <= c->size/2)) {
+            RationalNumberCollection *cNew = rncUpdateSize(c, false);
+            c = rncDelete(c);
+            c = cNew;
         }
-        RationalNumber subtrahend = c->collection[c->nfi-1].rn;
-        c->rnSum = rnSubtract(c->rnSum,subtrahend);
-        c->nfi--;
-        c->collection[c->nfi].count = 0;
-        c->collection[c->nfi].rn.numerator = 0;
-        c->collection[c->nfi].rn.denominator = 1;
-        c->totalCount--;
-        c->totalUniqueCount--;
-        return true;
-    }
-    return false;
+        if(pos != -1 && c->collection[pos].count == 1) {
+            for(int i = pos; i < c->nfi-1; i++) {
+                c->collection[i] = c->collection[i+1];
+            }
+            RationalNumber subtrahend = c->collection[c->nfi-1].rn;
+            c->rnSum = rnSubtract(c->rnSum,n);
+            c->nfi--;
+            c->collection[c->nfi].count = 0;
+            c->collection[c->nfi].rn.numerator = 0;
+            c->collection[c->nfi].rn.denominator = 1;
+            c->totalCount--;
+            c->totalUniqueCount--;
+        }
+    print(c);
+    return c;
 }
 
 int rncCount(RationalNumberCollection *c, RationalNumber n) {
