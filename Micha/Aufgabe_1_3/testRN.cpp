@@ -53,11 +53,9 @@ int main() {
     c = rncRemove(c,n11);
     c = rncRemove(c,n12);
 
-    std::cout <<" "<< c <<" "<< std::endl;
-
-    c = rncDelete(c);
-
-    std::cout <<" "<< c <<" "<< std::endl;
+    // std::cout <<" "<< c <<" "<< std::endl;
+    // c = rncDelete(c);
+    // std::cout <<" "<< c <<" "<< std::endl;
 
     std::cout << " "<< std::endl;
 

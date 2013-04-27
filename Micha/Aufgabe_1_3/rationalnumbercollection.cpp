@@ -207,7 +207,7 @@ RationalNumber rncAverage(RationalNumberCollection* c){
     }
 }
 
-void print(RationalNumberCollection *c){
+void print(RationalNumberCollection* c){
     printf("Collection      : ");
     for( int i=0; i < c->size; i++ ){
         printf("[%i]", c->collection[i].rn.numerator);
