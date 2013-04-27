@@ -11,11 +11,11 @@ struct RationalNumberCollection;
 
 RationalNumberCollection* rncCreate(int size);
 
-void rncDelete(RationalNumberCollection* c);
+RationalNumberCollection* rncDelete(RationalNumberCollection* c);
 
-bool rncAdd(RationalNumberCollection* c, RationalNumber n);
+RationalNumberCollection* rncAdd(RationalNumberCollection* c, RationalNumber n);
 
-bool rncRemove(RationalNumberCollection* c, RationalNumber n);
+RationalNumberCollection* rncRemove(RationalNumberCollection* c, RationalNumber n);
 
 int rncCount(RationalNumberCollection* c, RationalNumber n);
 
@@ -26,5 +26,7 @@ int rncTotalCount(RationalNumberCollection* c);
 RationalNumber rncSum(RationalNumberCollection* c);
 
 RationalNumber rncAverage(RationalNumberCollection* c);
+
+void print(RationalNumberCollection* c);
 
 #endif // RATIONALNUMBERCOLLECTION_H
