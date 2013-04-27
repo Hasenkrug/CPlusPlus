@@ -15,6 +15,7 @@ int main() {
     std::cout << " "<< std::endl;
 
     RationalNumberCollection* c = rncCreate(8);
+
     RationalNumber n1 = {1, 1};
     RationalNumber n2 = {1, 2};
     RationalNumber n3 = {1, 3};

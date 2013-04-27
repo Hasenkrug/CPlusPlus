@@ -25,7 +25,6 @@ bool rncInit(RationalNumberCollection* c, int size) {
         c->collection[i].rn = rn;
         c->collection[i].count = 0;
     }
-
     return true;
 }
 
