@@ -1,5 +1,5 @@
 #include "rationalnumber.h"
-#include <stdio.h>
+#include "stdio.h"
 
 
 int eukl(RationalNumber n){

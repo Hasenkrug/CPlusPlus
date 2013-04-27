@@ -1,9 +1,8 @@
 /*
-   Simple Testa for type RationalNumberCollection
+   Simple Tests for type RationalNumberCollection
 */
 
 #include "rationalnumbercollection.h"
-
 #include "stdio.h"
 #include "assert.h"
 #include "iostream"
@@ -53,13 +52,13 @@ int main() {
     c = rncRemove(c,n11);
     c = rncRemove(c,n12);
 
-    // std::cout <<" "<< c <<" "<< std::endl;
-    // c = rncDelete(c);
-    // std::cout <<" "<< c <<" "<< std::endl;
+    rncDelete(c);
 
-    std::cout << " "<< std::endl;
-
+    std::cout <<""<< std::endl;
     printf("successful!\n");
+    std::cout <<""<< std::endl;
+    std::cout <<"(._.) (|:) (.-.) (:|) (._.)"<< std::endl;
+    std::cout <<""<< std::endl;
 
     return 0;
 }

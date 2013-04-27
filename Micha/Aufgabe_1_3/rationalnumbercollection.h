@@ -2,6 +2,7 @@
 #define RATIONALNUMBERCOLLECTION_H
 #include "rationalnumber.h"
 
+
 struct CollectionElement {
     RationalNumber rn;
     int count;

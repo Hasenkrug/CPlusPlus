@@ -3,6 +3,7 @@
 #include "stdio.h"
 #include "iostream"
 
+
 struct RationalNumberCollection {
     CollectionElement* collection;
     int size;
@@ -46,7 +47,7 @@ RationalNumberCollection* rncUpdateSize(RationalNumberCollection* rncOld, bool i
     int newSize;
     if( increase ){
         newSize = rncOld->size*2;
-        printf("\nthe capacity will be incresed to the double size.\n");
+        printf("the capacity will be incresed to the double siz -> new size: %i \n\n", newSize);
         RationalNumberCollection* rncNew = rncCreate(newSize);
         rncInit(rncNew, newSize, rncOld->nfi, rncOld->totalCount, rncOld->totalUniqueCount, rncOld->rnSum);
         for( int i = 0; i<rncOld->size; i++ ) {
@@ -56,7 +57,7 @@ RationalNumberCollection* rncUpdateSize(RationalNumberCollection* rncOld, bool i
         return rncNew;
     } else {
         newSize = rncOld->size/2;
-        printf("\nthe capacity will be decresed to the half size.:%i\n", newSize);
+        printf("the capacity will be decresed to the half size -> new size: %i \n\n", newSize);
         RationalNumberCollection* rncNew = rncCreate(newSize);
         rncInit(rncNew, newSize, rncOld->nfi, rncOld->totalCount, rncOld->totalUniqueCount, rncOld->rnSum);
         for( int i = 0; i<newSize; i++ ) {
@@ -97,7 +98,7 @@ int rncFindIndex(RationalNumberCollection* c, RationalNumber n) {
 }
 
 RationalNumberCollection* rncAdd(RationalNumberCollection* c, RationalNumber n) {
-    printf("\n %i/%i will be added to storage.\n",n.numerator,n.denominator);
+    printf("\n %i/%i will be added to storage \n\n",n.numerator,n.denominator);
     int pos = rncFindPosition(c,n);
 
     // wenn es die RationalNumber schon im Array gibt
@@ -144,7 +145,7 @@ RationalNumberCollection* rncAdd(RationalNumberCollection* c, RationalNumber n) 
 }
 
 RationalNumberCollection* rncRemove(RationalNumberCollection* c, RationalNumber n) {
-    printf("\n %i/%i will be removed from the storage.\n",n.numerator,n.denominator);
+    printf("\n %i/%i will be removed from the storage \n\n",n.numerator,n.denominator);
     int pos = rncFindPosition(c,n);
 
     if( pos != -1 && c->collection[pos].count > 1 ) {
@@ -169,7 +170,7 @@ RationalNumberCollection* rncRemove(RationalNumberCollection* c, RationalNumber 
             c->totalCount--;
             c->totalUniqueCount--;
         } else {
-            printf("\n %i/%i could not be removed from the storage.\n",n.numerator,n.denominator);
+            printf(">>> %i/%i could not be removed from the storage <<< \n\n",n.numerator,n.denominator);
         }
     }
     print(c);
@@ -207,18 +208,26 @@ RationalNumber rncAverage(RationalNumberCollection* c){
     }
 }
 
-void print(RationalNumberCollection* c){
+void print(RationalNumberCollection* c) {
     printf("Collection      : ");
-    for( int i=0; i < c->size; i++ ){
-        printf("[%i]", c->collection[i].rn.numerator);
+    for( int i=0; i < c->size; i++ ) {
+        if( c->collection[i].rn.numerator >= 0 ) {
+            printf("[ %i]", c->collection[i].rn.numerator);
+        } else {
+            printf("[%i]", c->collection[i].rn.numerator);
+        }
     }
     printf("\n                  ");
-    for( int i=0; i < c->size; i++ ){
-        printf("[%i]", c->collection[i].rn.denominator);
+    for( int i=0; i < c->size; i++ ) {
+        if( c->collection[i].rn.denominator >= 0 ) {
+            printf("[ %i]", c->collection[i].rn.denominator);
+        } else {
+            printf("[%i]", c->collection[i].rn.denominator);
+        }
     }
     printf("\nCounter         : ");
     for( int i=0; i < c->size; i++ ){
-        printf("|%i|",  c->collection[i].count);
+        printf("| %i|",  c->collection[i].count);
     }
     printf("\nTotalCount      : %i",  c->totalCount);
     printf("\nTotalUniqueCount: %i",  c->totalUniqueCount);
