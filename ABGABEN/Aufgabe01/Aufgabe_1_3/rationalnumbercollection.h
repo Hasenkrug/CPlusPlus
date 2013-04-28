@@ -39,6 +39,7 @@ RationalNumber rncSum(RationalNumberCollection* c);
 // returns the average of rationalnumbers in the collection
 RationalNumber rncAverage(RationalNumberCollection* c);
 
+// this method creates fancy output
 void print(RationalNumberCollection* c);
 
 #endif // RATIONALNUMBERCOLLECTION_H
