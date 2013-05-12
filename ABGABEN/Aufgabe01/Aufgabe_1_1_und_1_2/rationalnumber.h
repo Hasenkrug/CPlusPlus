@@ -6,11 +6,6 @@ struct RationalNumber {
     int numerator, denominator;
 };
 
-// gets a rationalnumber and returns its greatest common divisor
-int eukl(RationalNumber n);
-
-// gets a rationalnumber and returns the reduced rationalnumber
-RationalNumber normalize(RationalNumber n);
 
 // returns true, if the rationalnumber is a valid number
 bool rnIsValid(RationalNumber n);
