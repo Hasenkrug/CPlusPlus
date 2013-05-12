@@ -1,8 +1,6 @@
 #ifndef MYDATE_H
 #define MYDATE_H
 
-#endif // MYDATE_H
-
 namespace MyDate {
 
     class Days {
@@ -17,8 +15,8 @@ namespace MyDate {
                 : days(0)
             {}
 
-            unsigned int value() const { return days; }
-            operator unsigned int() const { return days; }
+        unsigned int value() const;
+        operator unsigned int() const;
     };
 
     class Months {
@@ -33,8 +31,8 @@ namespace MyDate {
                 : months(0)
             {}
 
-            unsigned int value() const { return months; }
-            operator unsigned int() const { return months; }
+            unsigned int value() const;
+            operator unsigned int() const;
     };
 
     class Years {
@@ -49,11 +47,29 @@ namespace MyDate {
                 : years(0)
             {}
 
-            unsigned int value() const { return years; }
-            operator unsigned int() const { return years; }
+            unsigned int value() const;
+            operator unsigned int() const;
     };
 
     class Date {
+        Days days;
+        Months months;
+        Years years;
 
+        public:
+            Date(unsigned int d, unsigned int m, unsigned int y) {
+                days = Days(d);
+                months = Months(m);
+                years = Years(y);
+            }
+
+            unsigned int day() const;
+            unsigned int month() const;
+            unsigned int year() const;
+            bool operator==(const Date& rhs) const;
+            bool operator!=(const Date& rhs) const;
+            bool operator<(const Date& rhs) const;
     };
 }
+
+#endif // MYDATE_H

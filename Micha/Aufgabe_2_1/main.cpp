@@ -6,8 +6,8 @@
  *
 */
 
-#include <iostream>
-#include <assert.h>
+#include "iostream"
+#include "assert.h"
 #include "mydate.h"
 
 using namespace std;
@@ -33,9 +33,29 @@ int main()
         assert(0 == myday);
         assert(12 == mymonth);
         assert(2012 == CONST_YEAR);
+
+        Date v(11,1,2013);
+        Date w(12,1,2013);
+        Date x(1,1,2013);
+        Date y(1,1,2013);
+        Date z(1,1,2012);
+
+        // stdout << "Datum x: " << x << endl;
+
+        assert(x == y);
+        assert(y != z);
+
+        assert(x < w);
+        assert(z < w);
+
+        assert(!(x < y));
+        assert(v < w);
+        assert(!(w < v));
     }
 
+
 #if 0
+
     {
         // static member function Date::daysInMonth()
         int days_feb = Date::daysInMonth(2);
