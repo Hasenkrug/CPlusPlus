@@ -5,51 +5,56 @@
 namespace MyDate{
     class Days
     {
-        unsigned int days;
+        unsigned int m_days;
         public:
         Days(unsigned int d){
-            days = d;
+            m_days = d;
         }
         Days()
-            :days(0)
+            :m_days(0)
         {
         }
 
-        unsigned int value()const{return days;}
+        unsigned int value();
 
         operator unsigned int()const{
-            return days;
+            return m_days;
         }
 
 
     };
     class Months
     {
-        unsigned int months;
+        unsigned int m_months;
         public:
             Months(unsigned int m){
-                months = m;
+                m_months = m;
             }
             Months()
-                :months(0)
+                :m_months(0)
             {
             }
-            unsigned int value()const{return months;}
+            unsigned int value()const{return m_months;}
+            operator unsigned int()const{
+                return m_months;
+            }
     };
     class Years
     {
 
-        unsigned int years;
+        unsigned int m_years;
         public:
             Years(unsigned int y){
-                years = y;
+                m_years = y;
             }
             Years()
-                :years(0)
+                :m_years(0)
             {
             }
-            unsigned int value()const{return years;}
-
+            unsigned int value()const{return m_years;}
+            operator unsigned int()const{
+                return m_years;
+            }
     };
 }
 
