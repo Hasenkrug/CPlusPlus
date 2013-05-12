@@ -1,4 +1,5 @@
 #include "mydate.h"
+#include <iostream>
 
 namespace MyDate{
 
@@ -11,9 +12,9 @@ namespace MyDate{
     unsigned int Years::value() const { return Years::m_years; }
     Years::operator unsigned int() const { return Years::m_years; }
 
-    unsigned int Date::day() const { return days; }
-    unsigned int Date::month() const { return months; }
-    unsigned int Date::year() const { return years; }
+    unsigned int Date::day() const { return m_days; }
+    unsigned int Date::month() const { return m_months; }
+    unsigned int Date::year() const { return m_years; }
 
     bool Date::operator==(const Date& rhs) const {
         return day() == rhs.day() && month() == rhs.month() && year() == rhs.year();
@@ -32,7 +33,9 @@ namespace MyDate{
         else if(day() > rhs.day()) return false;
         else return false;
     }
-    static bool isLeapYear(Years y){
+
+
+    bool Date::isLeapYear(Years y){
         if(y%4==0){
             if(y%100){
                 if(y%400){
@@ -49,7 +52,7 @@ namespace MyDate{
 
         //return (((jahr%4==0) && (jahr%100!=0))?1:(jahr%400==0)?1:0);
     }
-    static Days daysInMonth(Months m, Years y){
+    Days Date::daysInMonth(Months m, Years y){
         if(m==1||m==3||m==5||m==7||m==8||m==10||m==12){
             return 31;
         }else{
@@ -63,4 +66,12 @@ namespace MyDate{
             }
         }
     }
+/*    Date Date::operator+=(Days d){
+        for(int i = 1; i<d; i++){
+            if(Date::day()==Date::daysInMonth(Date::month(),Date::year())){
+
+            }
+        }
+        return Date;
+    }*/
 }

@@ -1,6 +1,7 @@
 #ifndef MYDATE_H
 #define MYDATE_H
 
+#include <iostream>
 
 namespace MyDate{
     class Days
@@ -15,11 +16,8 @@ namespace MyDate{
         {
         }
 
-        unsigned int value();
-
-        operator unsigned int()const{
-            return m_days;
-        }
+        unsigned int value() const;
+        operator unsigned int() const;
 
 
     };
@@ -34,10 +32,9 @@ namespace MyDate{
                 :m_months(0)
             {
             }
-            unsigned int value()const{return m_months;}
-            operator unsigned int()const{
-                return m_months;
-            }
+            unsigned int value() const;
+            operator unsigned int() const;
+
     };
     class Years
     {
@@ -51,12 +48,45 @@ namespace MyDate{
                 :m_years(0)
             {
             }
-            unsigned int value()const{return m_years;}
-            operator unsigned int()const{
-                return m_years;
+            unsigned int value() const;
+            operator unsigned int() const;
+
+    };
+
+    class Date {
+        Days m_days;
+        Months m_months;
+        Years m_years;
+
+        public:
+            Date()
+                :m_days(0),m_months(0),m_years(0)
+            {
             }
+
+            Date(unsigned int d, unsigned int m, unsigned int y) {
+                m_days = Days(d);
+                m_months = Months(m);
+                m_years = Years(y);
+            }
+
+            unsigned int day() const;
+            unsigned int month() const;
+            unsigned int year() const;
+            bool operator==(const Date& rhs) const;
+            bool operator!=(const Date& rhs) const;
+            bool operator<(const Date& rhs) const;
+            friend std::ostream& operator<<(std::ostream &lhs, const Date &rhs)
+            {
+                lhs << "(" << rhs.month() << "," << rhs.day() << "," << rhs.year() <<")";
+                return lhs;
+            }
+            static bool isLeapYear(Years y);
+            static Days daysInMonth(Months m, Years y);
+            Date operator+=(Days d);
     };
 }
+
 
 
 
