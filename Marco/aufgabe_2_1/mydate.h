@@ -90,6 +90,13 @@ namespace MyDate{
             static bool isLeapYear(Years y);
             static Days daysInMonth(Months m, Years y);
             Date& operator+=(Days d);
+            Date& operator+=(Months m);
+            Date& operator+=(Years y);
+            Date& operator+=(int i);
+            Date& operator+(Days d) const;
+            Date& operator+(Months m) const;
+            Date& operator+(Years y)const;
+            //Date& operator+(int i);
     };
 }
 
