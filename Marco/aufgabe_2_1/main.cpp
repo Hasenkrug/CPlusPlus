@@ -50,12 +50,12 @@ int main()
     {
         // Date constructor, getters, and stream output
         Date d1;
-///        cout << "Date1: " << d1 << endl;
+        cout << "Date1: " << d1 << endl;
         assert(d1.day() == 0);
         assert(d1.month() == 0);
         assert(d1.year() == 0);
     }
-#if 0
+
     {
         // comparison of two dates
         Date d2(1, 1, 2013);
@@ -98,18 +98,18 @@ int main()
 
         // add more days (so year is changed)
         int evenmoredays = 480;
+
         d3 += Days(evenmoredays);
         cout << "Date3 +" << evenmoredays << "d: " << d3 << endl;
         assert(d3.year() == 2015);
 
         // does += return the correct return type and value?
         Date x(1,1,2012);
-        Date y = x+=Days(4); // should work!!!
+        Date y = x+=Days(4); // should work!!!// Fehler!!!
         cout << x << " + 4d = " << y <<endl;
         assert(x == Date(5,1,2012));
 
     }
-
 
     {
         Date d3(1,1,2015);
@@ -128,8 +128,9 @@ int main()
 
         // verifizieren Sie, dass die folgende Zeile NICHT compiliert,
         // und kommentieren Sie sie dann aus
-        // d3 += 1;
+        d3 += 1;
     }
+
 
     {
         // non-mutating addition operators
@@ -137,7 +138,8 @@ int main()
         Date dd2 = dd + Days(1);
         cout << dd << " + 1 day = " << dd2 << endl;
         assert(dd2 == Date(1,1,2013));
-
+    }
+#if 0
         Date dd3 = dd + Months(4);
         cout << dd << " + 4 months = " << dd3 << endl;
         assert(dd3 == Date(30,4,2013));
@@ -152,6 +154,7 @@ int main()
         assert(dd5 == Date(2,4,2018));
 
     }
+
 #endif
 
     cout << "all tests completed." << endl;
