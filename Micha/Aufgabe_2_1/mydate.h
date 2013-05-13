@@ -63,12 +63,19 @@ namespace MyDate {
                 years = Years(y);
             }
 
+            Date()
+                : days(0), months(0), years(0)
+            {}
+
             unsigned int day() const;
             unsigned int month() const;
             unsigned int year() const;
             bool operator==(const Date& rhs) const;
             bool operator!=(const Date& rhs) const;
             bool operator<(const Date& rhs) const;
+            static bool isLeapYear(Years y);
+            static Days daysInMonth(Months m);
+            static Days daysInMonth(Months m, Years y);
     };
 }
 
