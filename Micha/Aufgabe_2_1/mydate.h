@@ -82,9 +82,9 @@ namespace MyDate {
             Date& operator+=(Months m);
             Date& operator+=(Years y);
             Date& operator+=(int i);
-            Date& operator+(Days d) const;
-            Date& operator+(Months m) const;
-            Date& operator+(Years y)const;
+            Date operator+(Days d) const;
+            Date operator+(Months m) const;
+            Date operator+(Years y)const;
     };
 }
 

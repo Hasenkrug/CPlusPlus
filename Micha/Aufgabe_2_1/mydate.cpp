@@ -117,17 +117,17 @@ namespace MyDate {
     }
     */
 
-    Date& Date::operator+(Days d) const {
+    Date Date::operator+(Days d) const {
         Date date(*this);
         return date += d;
     }
 
-    Date& Date::operator+(Months m) const {
+    Date Date::operator+(Months m) const {
         Date date(*this);
         return date += m;
     }
 
-    Date& Date::operator+(Years y) const {
+    Date Date::operator+(Years y) const {
         Date date(*this);
         return date +=y;
     }
