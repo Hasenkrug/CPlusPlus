@@ -40,7 +40,7 @@ int main()
         Date y(1,1,2013);
         Date z(1,1,2012);
 
-        // stdout << "Datum x: " << x << endl;
+//      stdout << "Datum x: " << x << endl;
 
         assert(x == y);
         assert(y != z);
@@ -52,9 +52,6 @@ int main()
         assert(v < w);
         assert(!(w < v));
     }
-
-
-#if 0
 
     {
         // static member function Date::daysInMonth()
@@ -70,11 +67,13 @@ int main()
     {
         // Date constructor, getters, and stream output
         Date d1;
-        cout << "Date1: " << d1 << endl;
+//        cout << "Date1: " << d1 << endl;
         assert(d1.day() == 0);
         assert(d1.month() == 0);
         assert(d1.year() == 0);
     }
+
+#if 0
 
     {
         // comparison of two dates
