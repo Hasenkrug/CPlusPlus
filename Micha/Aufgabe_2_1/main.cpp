@@ -6,8 +6,8 @@
  *
 */
 
-#include "iostream"
-#include "assert.h"
+#include <iostream>
+#include <assert.h>
 #include "mydate.h"
 
 using namespace std;
@@ -33,31 +33,14 @@ int main()
         assert(0 == myday);
         assert(12 == mymonth);
         assert(2012 == CONST_YEAR);
-
-        Date v(11,1,2013);
-        Date w(12,1,2013);
-        Date x(1,1,2013);
-        Date y(1,1,2013);
-        Date z(1,1,2012);
-
-//      stdout << "Datum x: " << x << endl;
-
-        assert(x == y);
-        assert(y != z);
-
-        assert(x < w);
-        assert(z < w);
-
-        assert(!(x < y));
-        assert(v < w);
-        assert(!(w < v));
     }
+
 
     {
         // static member function Date::daysInMonth()
-        int days_feb = Date::daysInMonth(2);
+        /*int days_feb = Date::daysInMonth(2);
         cout << "February normally has " << days_feb << " days." << endl;
-        assert(days_feb == 28);
+        assert(days_feb == 28);*/
 
         int days_feb_2400 = Date::daysInMonth(Months(2),Years(2400));
         cout << "In year 2400, February will have " << days_feb_2400 << " days." << endl;
@@ -67,13 +50,11 @@ int main()
     {
         // Date constructor, getters, and stream output
         Date d1;
-//        cout << "Date1: " << d1 << endl;
+        cout << "Date1: " << d1 << endl;
         assert(d1.day() == 0);
         assert(d1.month() == 0);
         assert(d1.year() == 0);
     }
-
-#if 0
 
     {
         // comparison of two dates
@@ -117,18 +98,18 @@ int main()
 
         // add more days (so year is changed)
         int evenmoredays = 480;
+
         d3 += Days(evenmoredays);
         cout << "Date3 +" << evenmoredays << "d: " << d3 << endl;
-        assert(d3.year() == 2015);
+        assert(d3.year() == 2014);
 
         // does += return the correct return type and value?
         Date x(1,1,2012);
-        Date y = x+=Days(4); // should work!!!
+        Date y = x+=Days(4); // should work!!!// Fehler!!!
         cout << x << " + 4d = " << y <<endl;
         assert(x == Date(5,1,2012));
 
     }
-
 
     {
         Date d3(1,1,2015);
@@ -150,6 +131,7 @@ int main()
         // d3 += 1;
     }
 
+
     {
         // non-mutating addition operators
         const Date dd(31,12,2012);
@@ -169,8 +151,9 @@ int main()
         Date dd5 = dd + Days(2) + Months(3) + Years(5);
         cout << dd << " + 2d + 3m + 5y = " << dd5 << endl;
         assert(dd5 == Date(2,4,2018));
-
     }
+
+#if 0
 #endif
 
     cout << "all tests completed." << endl;

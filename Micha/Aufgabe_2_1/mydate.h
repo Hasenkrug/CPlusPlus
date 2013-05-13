@@ -1,6 +1,8 @@
 #ifndef MYDATE_H
 #define MYDATE_H
 
+#include "iostream"
+
 namespace MyDate {
 
     class Days {
@@ -76,7 +78,17 @@ namespace MyDate {
             static bool isLeapYear(Years y);
             static Days daysInMonth(Months m);
             static Days daysInMonth(Months m, Years y);
+            Date& operator+=(Days d);
+            Date& operator+=(Months m);
+            Date& operator+=(Years y);
+            Date& operator+=(int i);
+            Date& operator+(Days d) const;
+            Date& operator+(Months m) const;
+            Date& operator+(Years y)const;
     };
 }
 
+std::ostream& operator<<(std::ostream &lhs, const MyDate::Date &rhs);
+
 #endif // MYDATE_H
+
