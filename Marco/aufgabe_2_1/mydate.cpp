@@ -16,6 +16,10 @@ namespace MyDate{
     unsigned int Date::month() const { return m_months; }
     unsigned int Date::year() const { return m_years; }
 
+    //unsigned int& Date::day() {return m_days;}
+    //unsigned int& Date::month() {return m_months;}
+    //unsigned int& Date::year() {return m_years;}
+
     bool Date::operator==(const Date& rhs) const {
         return day() == rhs.day() && month() == rhs.month() && year() == rhs.year();
     }
@@ -37,8 +41,8 @@ namespace MyDate{
 
     bool Date::isLeapYear(Years y){
         if(y%4==0){
-            if(y%100){
-                if(y%400){
+            if(y%100==0){
+                if(y%400==0){
                     return true;
                 }else{
                     return false;
@@ -66,12 +70,16 @@ namespace MyDate{
             }
         }
     }
-/*    Date Date::operator+=(Days d){
-        for(int i = 1; i<d; i++){
-            if(Date::day()==Date::daysInMonth(Date::month(),Date::year())){
+    Date& Date::operator+=(Days d){
 
+        for(int i = 1; i<=d; i++){
+            if(Date::day()==daysInMonth(Date::month(),Date::year())){
+                *this = Date(1,Date::month()+1,Date::year());
+            }else{
+                *this = Date(Date::day()+1,Date::month(),Date::year());
             }
         }
-        return Date;
-    }*/
+
+        return *this;
+    }
 }

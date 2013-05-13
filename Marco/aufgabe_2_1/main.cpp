@@ -50,12 +50,12 @@ int main()
     {
         // Date constructor, getters, and stream output
         Date d1;
-///        cout << "Date1: " << d1 << endl;
+        cout << "Date1: " << d1 << endl;
         assert(d1.day() == 0);
         assert(d1.month() == 0);
         assert(d1.year() == 0);
     }
-#if 0
+
     {
         // comparison of two dates
         Date d2(1, 1, 2013);
@@ -83,13 +83,14 @@ int main()
     }
 
     {
-        Date d3(28, 2, 2013);
+        Date d3(27, 2, 2013);
 
         // add one day
-        d3 += Days(1);
+        d3 += Days(5);
         cout << "Date3 +1d: " << d3 << endl;
-        assert(d3 == Date(1,3,2013));
-
+        //assert(d3 == Date(1,3,2013));
+    }
+#if 0
         // add many days (multiple months)
         int manydays = 31+30+31+30+31+31; // March ... August
         d3 += Days(manydays);
