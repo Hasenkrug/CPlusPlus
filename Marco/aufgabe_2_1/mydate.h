@@ -74,29 +74,29 @@ namespace MyDate{
             unsigned int month() const;
             unsigned int year() const;
 
-            //unsigned int& day();
-            //unsigned int& month();
-            //unsigned int& year();
-
 
             bool operator==(const Date& rhs) const;
             bool operator!=(const Date& rhs) const;
             bool operator<(const Date& rhs) const;
+
             friend std::ostream& operator<<(std::ostream &lhs, const Date &rhs)
             {
                 lhs << "(" << rhs.day() << "," << rhs.month() << "," << rhs.year() <<")";
                 return lhs;
             }
+
             static bool isLeapYear(Years y);
             static Days daysInMonth(Months m, Years y);
+
             Date& operator+=(Days d);
             Date& operator+=(Months m);
             Date& operator+=(Years y);
             Date& operator+=(int i);
+
             Date& operator+(Days d) const;
             Date& operator+(Months m) const;
             Date& operator+(Years y)const;
-            //Date& operator+(int i);
+            Date& operator+(int i);
     };
 }
 

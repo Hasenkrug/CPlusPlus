@@ -74,9 +74,10 @@ namespace MyDate{
         for(int i = 1; i<=d; i++){
             if(Date::day()==daysInMonth(Date::month(),Date::year())){
                 if(Date::month()==12){
-                    *this = Date(Date::day(),1, Date::year()+1);
+                    *this = Date(1,1, Date::year()+1);
+                }else{
+                    *this = Date(1,Date::month()+1,Date::year());
                 }
-                *this = Date(1,Date::month()+1,Date::year());
             }else{
                 *this = Date(Date::day()+1,Date::month(),Date::year());
             }
@@ -86,15 +87,16 @@ namespace MyDate{
     }
     Date& Date::operator+=(Months m){
 
-        printf("month: %i", Date::month());
         for(int i = 1; i<=m; i++){
-
             if(Date::month()==Months(12)){
                 *this = Date(Date::day(),1,Date::year()+1);
-                printf("s");
             }else{
                 *this = Date(Date::day(),Date::month()+1,Date::year());
             }
+        }
+
+        if(daysInMonth(Date::month(),Date::year()) < Date::day()){
+            *this = Date(daysInMonth(Date::month(),Date::year()),Date::month(),Date::year());
         }
         return *this;
     }
@@ -117,6 +119,9 @@ namespace MyDate{
     Date& Date::operator+(Years y)const{
         Date date(*this);
         return date +=y;
+    }
+    Date& Date::operator+(int i){
+        return *this;
     }
 
 }

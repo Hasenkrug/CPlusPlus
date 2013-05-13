@@ -101,7 +101,7 @@ int main()
 
         d3 += Days(evenmoredays);
         cout << "Date3 +" << evenmoredays << "d: " << d3 << endl;
-        assert(d3.year() == 2015);
+        assert(d3.year() == 2014);
 
         // does += return the correct return type and value?
         Date x(1,1,2012);
@@ -138,8 +138,7 @@ int main()
         Date dd2 = dd + Days(1);
         cout << dd << " + 1 day = " << dd2 << endl;
         assert(dd2 == Date(1,1,2013));
-    }
-#if 0
+
         Date dd3 = dd + Months(4);
         cout << dd << " + 4 months = " << dd3 << endl;
         assert(dd3 == Date(30,4,2013));
@@ -153,8 +152,9 @@ int main()
         cout << dd << " + 2d + 3m + 5y = " << dd5 << endl;
         assert(dd5 == Date(2,4,2018));
 
-    }
 
+    }
+#if 0
 #endif
 
     cout << "all tests completed." << endl;
