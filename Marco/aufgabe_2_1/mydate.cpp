@@ -1,6 +1,14 @@
 #include "mydate.h"
 #include <iostream>
 
+
+std::ostream& operator<<(std::ostream &lhs, const MyDate::Date &rhs)
+{
+    lhs << "(" << rhs.day() << "," << rhs.month() << "," << rhs.year() <<")";
+    return lhs;
+}
+
+
 namespace MyDate{
 
     unsigned int Days::value()const{return Days::m_days; }
@@ -108,19 +116,19 @@ namespace MyDate{
     Date& Date::operator+=(int i){
         return *this;
     }
-    Date& Date::operator+(Days d)const{
+    Date Date::operator+(Days d)const{
         Date date(*this);
         return date += d;
     }
-    Date& Date::operator+(Months m)const{
+    Date Date::operator+(Months m)const{
         Date date(*this);
         return date += m;
     }
-    Date& Date::operator+(Years y)const{
+    Date Date::operator+(Years y)const{
         Date date(*this);
         return date +=y;
     }
-    Date& Date::operator+(int i){
+    Date Date::operator+(int i){
         return *this;
     }
 

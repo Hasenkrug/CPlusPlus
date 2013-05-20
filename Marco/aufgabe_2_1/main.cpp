@@ -128,7 +128,7 @@ int main()
 
         // verifizieren Sie, dass die folgende Zeile NICHT compiliert,
         // und kommentieren Sie sie dann aus
-        d3 += 1;
+        // d3 += 1;
     }
 
 
@@ -152,7 +152,8 @@ int main()
         cout << dd << " + 2d + 3m + 5y = " << dd5 << endl;
         assert(dd5 == Date(2,4,2018));
 
-
+        Date x = Date(1,1,2013) + Days(4) + Months(3);
+        cout << x << " :5.4.2013: " << x << endl;
     }
 #if 0
 #endif
