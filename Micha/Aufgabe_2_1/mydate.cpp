@@ -36,8 +36,8 @@ namespace MyDate {
 
     bool Date::isLeapYear(Years y) {
         if(y % 4 == 0) {
-            if(y % 100) {
-                if(y % 400) {
+            if(y % 100 == 0) {
+                if(y % 400 == 0) {
                     return true;
                 } else {
                     return false;
@@ -73,10 +73,73 @@ namespace MyDate {
             return daysInMonth(m);
         }
     }
+
+    Date& Date::operator+=(Days d) {
+        for(int i = 1; i <= d; i++) {
+            if(Date::day() == daysInMonth(Date::month(), Date::year())) {
+                if(Date::month() == 12){
+                    *this = Date(1, 1, Date::year() + 1);
+                } else {
+                    *this = Date(1, Date::month() + 1, Date::year());
+                }
+            } else {
+                *this = Date(Date::day() + 1, Date::month(), Date::year());
+            }
+        }
+        return *this;
+    }
+
+    Date& Date::operator+=(Months m) {
+        for(int i = 1; i <= m; i++) {
+
+            if(Date::month() == Months(12)) {
+                *this = Date(Date::day(), 1, Date::year() + 1);
+            } else {
+                *this = Date(Date::day(), Date::month() + 1, Date::year());
+            }
+        }
+
+        if(daysInMonth(Date::month(), Date::year()) < Date::day()) {
+            *this = Date(daysInMonth(Date::month(), Date::year()), Date::month(), Date::year());
+        }
+
+        return *this;
+    }
+
+    Date& Date::operator+=(Years y) {
+        *this = Date(Date::day(), Date::month(), Date::year() + y);
+        return *this;
+    }
+
+    /*
+    Date& Date::operator+=(int i) {
+        return *this;
+    }
+    */
+
+    Date Date::operator+(Days d) const {
+        Date date(*this);
+        return date += d;
+    }
+
+    Date Date::operator+(Months m) const {
+        Date date(*this);
+        return date += m;
+    }
+
+    Date Date::operator+(Years y) const {
+        Date date(*this);
+        return date +=y;
+    }
+
+    /*
+    Date& Date::operator+(int i) {
+        return *this;
+    }
+    */
 }
 
-
 std::ostream& operator<<(std::ostream &lhs, const MyDate::Date &rhs) {
-    lhs << "Day: " << rhs.day() << " Month: " << rhs.month() << " Year: " << rhs.year();
+    lhs << " Day= " << rhs.day() << " Month= " << rhs.month() << " Year= " << rhs.year();
     return lhs;
 }
