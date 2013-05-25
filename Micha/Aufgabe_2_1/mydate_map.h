@@ -21,7 +21,7 @@ namespace MyDate {
                     Node *m_up, *m_left, *m_right; // pointers to other nodes
 
                     Node(const key_t& key, const mapped_t& value, Node* parent):
-                        m_pair(key, mapped), m_up(parent) {}
+                        m_pair(key, value), m_up(parent) {}
 
                     Node* find(const key_t& key);
                     Node* insert(const key_t& key, const mapped_t& value);
