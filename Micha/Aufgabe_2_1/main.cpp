@@ -9,6 +9,7 @@
 #include <iostream>
 #include <assert.h>
 #include "mydate.h"
+#include "mydate_map.h"
 
 using namespace std;
 using namespace MyDate;
@@ -151,6 +152,12 @@ int main()
         Date dd5 = dd + Days(2) + Months(3) + Years(5);
         cout << dd << " + 2d + 3m + 5y = " << dd5 << endl;
         assert(dd5 == Date(2,4,2018));
+
+
+
+        Map map;
+
+
     }
 
 #if 0
