@@ -12,9 +12,7 @@ namespace MyDate {
             // aliases for key type and mapped type
             typedef MyDate::Date key_t;
             typedef std::string mapped_t;
-            mapped_t& operator[](const key_t& key);
 
-        protected:
             // internal node type for binary search tree
             class Node {
 
@@ -26,15 +24,16 @@ namespace MyDate {
                         m_pair(key, mapped), m_up(parent) {}
             };
 
-        Node* m_root; // root node of search tree
-        size_t m_size; // number of elements in tree
-        const mapped_t M_NOT_IN_MAP; // return value if not in map
+            Node* m_root; // root node of search tree
+            size_t m_size; // number of elements in tree
+            const mapped_t M_NOT_IN_MAP; // return value if not in map
 
-        Map():
-            m_root(0), m_size(0){}
+            Map():
+                m_root(0), m_size(0){}
 
-        Node* getRootNode();
-        mapped_t& operator[](const Map::key_t& key);
+            size_t size() const;
+            Node* getRootNode();
+            mapped_t& operator[](const Map::key_t& key);
     };
 }
 

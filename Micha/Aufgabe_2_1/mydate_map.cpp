@@ -4,13 +4,15 @@
 
 namespace MyDate {
 
+    size_t Map::size() const {
+        return m_size;
+    }
+
     Map::Node* Map::getRootNode() {
-        return Map::m_root;
+        return m_root;
     }
 
     Map::mapped_t& Map::operator[](const Map::key_t& key) {
 
     }
 }
-
-

@@ -152,17 +152,26 @@ int main()
         Date dd5 = dd + Days(2) + Months(3) + Years(5);
         cout << dd << " + 2d + 3m + 5y = " << dd5 << endl;
         assert(dd5 == Date(2,4,2018));
+    }
 
+    {
+        cout << "" << endl;
+        cout << "" << endl;
+        cout << "Map-Test-Area" << endl;
+        cout << "" << endl;
 
+        Map map1;
 
-        Map map;
+        cout << "RootNode of an empty Map: " << map1.getRootNode() << endl;
+        cout << "" << endl;
+        cout << "Size of the Map: " << map1.size() << endl;
 
 
     }
 
 #if 0
 #endif
-
+    cout << "" << endl;
     cout << "all tests completed." << endl;
 
     return 0;
