@@ -20,8 +20,11 @@ namespace MyDate {
                     std::pair<key_t, mapped_t> m_pair; // key/value pair
                     Node *m_up, *m_left, *m_right; // pointers to other nodes
 
-                    explicit Node(const key_t key, const mapped_t mapped, Node* parent):
+                    Node(const key_t& key, const mapped_t& value, Node* parent):
                         m_pair(key, mapped), m_up(parent) {}
+
+                    Node* find(const key_t& key);
+                    Node* insert(const key_t& key, const mapped_t& value);
             };
 
             Node* m_root; // root node of search tree

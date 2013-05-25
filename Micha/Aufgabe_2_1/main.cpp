@@ -162,10 +162,10 @@ int main()
 
         Map map1;
 
-        cout << "RootNode of an empty Map: " << map1.getRootNode() << endl;
+        cout << "Create map1" << endl;
+        cout << "RootNode of map1: " << map1.getRootNode() << endl;
+        cout << "Size of map1: " << map1.size() << endl;
         cout << "" << endl;
-        cout << "Size of the Map: " << map1.size() << endl;
-
 
     }
 
