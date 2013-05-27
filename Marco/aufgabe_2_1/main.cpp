@@ -9,6 +9,7 @@
 #include <iostream>
 #include <assert.h>
 #include "mydate.h"
+#include "mydate_map.h"
 
 using namespace std;
 using namespace MyDate;
@@ -16,7 +17,19 @@ using namespace MyDate;
 int main()
 {
     cout << "Starting Unit Tests for Day, Month, Year, Date..." << endl;
+    {
 
+
+        MyDate::Date date1(1,5,2013);
+        MyDate::Date date2(6,12,2013);
+        MyDate::Map map1;
+        map1[date1] = "Wenig Arbeit, viele Demos";
+        map1[date2] = "Nikolaus kommt!";
+        assert(map1.size()==2);
+        map1[date2] = "Niko kommt doch nicht"
+        assert(map1.size()==2);
+    }
+#if 0
     {
         // Day, Month, Year are just type-safe wrappers for unsigned int
         Days myday;
@@ -155,7 +168,6 @@ int main()
         Date x = Date(1,1,2013) + Days(4) + Months(3);
         cout << x << " :5.4.2013: " << x << endl;
     }
-#if 0
 #endif
 
     cout << "all tests completed." << endl;
