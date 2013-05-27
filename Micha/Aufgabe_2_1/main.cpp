@@ -9,6 +9,7 @@
 #include <iostream>
 #include <assert.h>
 #include "mydate.h"
+#include "mydate_map.h"
 
 using namespace std;
 using namespace MyDate;
@@ -153,9 +154,24 @@ int main()
         assert(dd5 == Date(2,4,2018));
     }
 
+    {
+        cout << "" << endl;
+        cout << "" << endl;
+        cout << "Map-Test-Area" << endl;
+        cout << "" << endl;
+
+        Map map1;
+
+        cout << "Create map1" << endl;
+        cout << "RootNode of map1: " << map1.getRootNode() << endl;
+        cout << "Size of map1: " << map1.size() << endl;
+        cout << "" << endl;
+
+    }
+
 #if 0
 #endif
-
+    cout << "" << endl;
     cout << "all tests completed." << endl;
 
     return 0;
