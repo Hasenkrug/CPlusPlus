@@ -45,6 +45,15 @@ namespace MyDate{
         else if(day() > rhs.day()) return false;
         else return false;
     }
+    bool Date::operator>(const Date& rhs) const {
+        if(year() > rhs.year()) return true;
+        else if(year() < rhs.year()) return false;
+        else if(month() > rhs.month()) return true;
+        else if(month() < rhs.month()) return false;
+        else if(day() > rhs.day()) return true;
+        else if(day() < rhs.day()) return false;
+        else return false;
+    }
 
 
     bool Date::isLeapYear(Years y){

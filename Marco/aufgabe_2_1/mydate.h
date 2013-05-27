@@ -79,7 +79,7 @@ namespace MyDate{
             bool operator==(const Date& rhs) const;
             bool operator!=(const Date& rhs) const;
             bool operator<(const Date& rhs) const;
-
+            bool operator>(const Date& rhs) const;
 
             static bool isLeapYear(Years y);
             static Days daysInMonth(Months m, Years y);
