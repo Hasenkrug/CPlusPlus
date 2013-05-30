@@ -10,7 +10,7 @@ namespace MyDate {
 
         public:
             // aliases for key type and mapped type
-            typedef int key_t;
+            typedef MyDate::Date key_t;
             typedef std::string mapped_t;
 
             Map():
