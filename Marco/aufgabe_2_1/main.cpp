@@ -20,6 +20,25 @@ int main()
     {
 
 
+        MyDate::Date date1(1,5,2013);
+        MyDate::Date date2(6,12,2013);
+        MyDate::Map map1;
+        printf("map Konstruktor\n");
+
+        map1[date1] = "Wenig Arbeit, viele Demos";
+        printf("erstes Date dazu gefügt\n");
+        map1[date2] = "Nikolaus kommt!";
+        printf("zweites Date dazu gefügt\n");
+
+        assert(map1.size()==2);
+        //map1[date2] = "Niko kommt doch nicht"
+        //assert(map1.size()==2);
+    }
+
+#if 0
+    {
+
+
         int int1 = 1;
         int int2 = 2;
         MyDate::Map map1;
@@ -34,24 +53,7 @@ int main()
         //map1[date2] = "Niko kommt doch nicht"
         //assert(map1.size()==2);
     }
-#if 0
-    {
 
-
-        MyDate::Date date1(1,5,2013);
-        MyDate::Date date2(6,12,2013);
-        MyDate::Map map1;
-        printf("map Konstruktor");
-
-        map1[date1] = "Wenig Arbeit, viele Demos";
-        printf("erstes Date dazu gefügt");
-        map1[date2] = "Nikolaus kommt!";
-        printf("zweites Date dazu gefügt");
-
-        assert(map1.size()==2);
-        //map1[date2] = "Niko kommt doch nicht"
-        //assert(map1.size()==2);
-    }
     {
         // Day, Month, Year are just type-safe wrappers for unsigned int
         Days myday;

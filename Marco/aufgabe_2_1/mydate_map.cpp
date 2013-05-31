@@ -17,23 +17,23 @@ namespace MyDate {
     Map::Node* Map::Node::find(const Map::key_t &key) {
         printf("1");
         Map::key_t ke= key;
-        Map::key_t &k = this->m_pair.first;
+        Date k = Date(1,5,2013);//this->m_pair.first;
         /*if (key == 0){
             return;
         }*/
         int i = 1;
-        printf("1a int1: %i",&k);
-        if(&k == &ke){
+        printf("1a int1: %i\n",k);
+        if(&this->m_pair.first == &key){
             printf("1b");
             return this;
         }
         printf("2");
-        if(this->m_pair.first < key){
-            find(this->m_right->m_pair.first);
+        if(&this->m_pair.first < &key && this->m_right != 0){
+            return find(this->m_right->m_pair.first);
         }
         printf("3");
-        if(this->m_pair.first > key){
-            find(this->m_left->m_pair.first);
+        if(&this->m_pair.first > &key){
+            return find(this->m_left->m_pair.first);
         }
         printf("4");
         return 0;
