@@ -3,6 +3,9 @@
 
 #include "mydate.h"
 #include "iostream"
+#include "stdio.h"
+
+
 
 namespace MyDate {
 
@@ -13,14 +16,14 @@ namespace MyDate {
             typedef MyDate::Date key_t;
             typedef std::string mapped_t;
 
-            Map():
-                m_root(0), m_size(0){}
-
+            Map();
+            //~Map();
+            /*    m_root(0), m_size(0){}
+            */
             size_t size() const;
             //Node* getRootNode();
-            bool contains(const key_t& key);
             mapped_t& operator[](const key_t& key);
-            //const mapped_t& operator[](const key_t& key);
+            const mapped_t& operator[](const key_t& key) const;
 
         protected:
             // internal node type for binary search tree
@@ -30,14 +33,14 @@ namespace MyDate {
                     std::pair<key_t, mapped_t> m_pair; // key/value pair
                     Node *m_up, *m_left, *m_right; // pointers to other nodes
 
-                    /*Node():
-                        m_pair(Date(1,5,2013),""), m_up(this){}*/
-
                     Node(const key_t& key, const mapped_t& value, Node* parent):
-                        m_pair(key, value), m_up(parent) {}
+                        m_pair(key, value), m_up(parent),m_left(NULL), m_right(NULL)
+                    {}
 
                     Node* find(const key_t& key);
                     Node* insert(const key_t& key, const mapped_t& value);
+                    bool contains(const key_t& key) const;
+
             };
 
             Node* m_root; // root node of search tree

@@ -2,6 +2,7 @@
 #define MYDATE_H
 
 #include <iostream>
+#include "stdio.h"
 
 namespace MyDate{
     class Days
