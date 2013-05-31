@@ -34,6 +34,16 @@ namespace MyDate {
         else return false;
     }
 
+    bool Date::operator>(const Date& rhs) const {
+        if(year() > rhs.year()) return true;
+        else if(year() < rhs.year()) return false;
+        else if(month() > rhs.month()) return true;
+        else if(month() < rhs.month()) return false;
+        else if(day() > rhs.day()) return true;
+        else if(day() < rhs.day()) return false;
+        else return false;
+    }
+
     bool Date::isLeapYear(Years y) {
         if(y % 4 == 0) {
             if(y % 100 == 0) {
@@ -90,6 +100,7 @@ namespace MyDate {
     }
 
     Date& Date::operator+=(Months m) {
+
         for(int i = 1; i <= m; i++) {
 
             if(Date::month() == Months(12)) {
@@ -111,11 +122,11 @@ namespace MyDate {
         return *this;
     }
 
-    /*
+/*
     Date& Date::operator+=(int i) {
         return *this;
     }
-    */
+*/
 
     Date Date::operator+(Days d) const {
         Date date(*this);
@@ -132,11 +143,11 @@ namespace MyDate {
         return date +=y;
     }
 
-    /*
-    Date& Date::operator+(int i) {
+/*
+    Date Date::operator+(int i){
         return *this;
     }
-    */
+*/
 }
 
 std::ostream& operator<<(std::ostream &lhs, const MyDate::Date &rhs) {

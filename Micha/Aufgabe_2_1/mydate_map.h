@@ -9,7 +9,7 @@ using namespace MyDate;
 class Map {
 public:
 
-    typedef int key_t;
+    typedef MyDate::Date key_t;
     typedef std::string mapped_t;
 
     class Node {
@@ -23,6 +23,7 @@ public:
 
             Node* find(const key_t& key);
             Node* insert(const key_t& key, const mapped_t& value);
+            bool contains(const Map::key_t &key) const;
     };
 
     const mapped_t M_NOT_IN_MAP; // return value if not in map
@@ -30,8 +31,8 @@ public:
     Node* getRootNode();
     size_t m_size;
     size_t size() const;
-    mapped_t& operator[](const Map::key_t& key);
-    bool contains(const Map::key_t& key) const;
+    mapped_t& operator[](const Map::key_t& key);        
+    const mapped_t& operator[](const Map::key_t& key) const;
 
     Map():
         m_root(0), m_size(0){}
