@@ -31,6 +31,7 @@ public:
     size_t m_size;
     size_t size() const;
     mapped_t& operator[](const Map::key_t& key);
+    bool contains(const Map::key_t& key) const;
 
     Map():
         m_root(0), m_size(0){}

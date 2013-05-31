@@ -16,7 +16,7 @@ Map::Node* Map::getRootNode() {
 
 Map::Node* Map::Node::find(const Map::key_t &key) {    
 
-    if(m_pair.first < key) {
+    if(m_pair.first > key) {
 
         if(m_left) {
             return m_left->find(key);
@@ -24,7 +24,7 @@ Map::Node* Map::Node::find(const Map::key_t &key) {
 
         return 0;
 
-    } else if(m_pair.first  > key) {
+    } else if(m_pair.first < key) {
 
         if(m_right) {
             return m_right->find(key);
@@ -32,48 +32,54 @@ Map::Node* Map::Node::find(const Map::key_t &key) {
 
         return 0;
     }
-
     return this;
 }
 
-Map::Node* Map::Node::insert(const Map::key_t &key, const Map::mapped_t &value) {    
-    //cout << "inside insert() key: " << key << endl;
-    //cout << "inside insert() value: " << value << endl;
+Map::Node* Map::Node::insert(const Map::key_t &key, const Map::mapped_t &value) {
 
     if(m_pair.first < key) {
-
-        if(m_left != 0){
-            return m_left->insert(key, value);
-        }
-
-        return m_left = new Node(key, value, this);
-
-    } else if(m_pair.first > key) {
 
         if(m_right != 0) {
             return m_right->insert(key, value);
         }
 
         return m_right = new Node(key, value, this);
+
+    } else if(m_pair.first > key) {
+
+        if(m_left != 0) {
+            return m_left->insert(key, value);
+        }
+
+        return m_left = new Node(key, value, this);
     }
 
-return 0;
-
-    //Map::Node *node = new Map::Node(key, value, this);
-    //cout << "inside insert() node->m_pair.first: " << node->m_pair.first << endl;
-    //cout << "inside insert() node->m_pair.second: " << node->m_pair.second << endl;
-    //return node;
+    return 0;
 }
 
 Map::mapped_t& Map::operator[](const Map::key_t& key) {
 
-    if(this->getRootNode()==0) {
+    if(this->getRootNode() == 0) { // wenn noch kein root node vorhanden ist
+
         m_root = new Map::Node(key, "default", 0);
         m_size++;
         return m_root->m_pair.second;
+
     } else {
-        m_size++;
-        return m_root->insert(key, "blub")->m_pair.second;
+
+        if(this->m_root->find(key)) { // wenn der übergebene key vorhanden ist, gib eine Referenz auf den Value zurück
+
+            return this->m_root->find(key)->m_pair.second;
+
+        } else { // der übergebene key ist noch nicht vorhanden, also erstelle eine neue node
+
+            m_size++;
+            return m_root->insert(key, "default")->m_pair.second;
+        }
     }
+}
+
+bool Map::contains(const Map::key_t& key) const {
+    return false;
 }
 
