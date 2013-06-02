@@ -21,6 +21,16 @@ public:
             Node(const key_t& key, const mapped_t& value, Node* parent):
                 m_pair(key, value), m_up(parent), m_left(0), m_right(0) {}
 
+            ~Node() {
+                if(!m_left) {
+                    delete(m_left);
+                }
+
+                if(!m_right) {
+                    delete(m_right);
+                }
+            }
+
             Node* find(const key_t& key);
             Node* insert(const key_t& key, const mapped_t& value);
             bool contains(const Map::key_t &key) const;
@@ -35,7 +45,11 @@ public:
     const mapped_t& operator[](const Map::key_t& key) const;
 
     Map():
-        m_root(0), m_size(0){}
+        m_root(0), m_size(0) {}
+
+    ~Map() {
+        delete(m_root);
+    }
 };
 
 #endif
