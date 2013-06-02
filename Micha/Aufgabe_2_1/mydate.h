@@ -72,19 +72,25 @@ namespace MyDate {
             unsigned int day() const;
             unsigned int month() const;
             unsigned int year() const;
+
             bool operator==(const Date& rhs) const;
             bool operator!=(const Date& rhs) const;
             bool operator<(const Date& rhs) const;
+            bool operator>(const Date& rhs) const;
+
             static bool isLeapYear(Years y);
             static Days daysInMonth(Months m);
             static Days daysInMonth(Months m, Years y);
+
             Date& operator+=(Days d);
             Date& operator+=(Months m);
             Date& operator+=(Years y);
-            Date& operator+=(int i);
+            // Date& operator+=(int i); // Marco fragen!
+
             Date operator+(Days d) const;
             Date operator+(Months m) const;
             Date operator+(Years y)const;
+            // Date operator+(int i); // Marco fragen!
     };
 }
 
