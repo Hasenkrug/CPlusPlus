@@ -69,7 +69,7 @@ int main() {
     cout << "        [5,4,2013]    [7,4,2013]                         " << endl;
     cout << "                                                         " << endl;
 
-    // Abfrage der Position der Daten in der map
+    // Abfrage der Position der Daten in der map1
     assert(map1.m_root->m_pair.first == date1);
     assert(map1.m_root->m_left->m_pair.first == date3);
     assert(map1.m_root->m_right->m_pair.first == date2);
@@ -78,6 +78,24 @@ int main() {
     assert(map1.m_root->m_left->m_right->m_left->m_pair.first == date6);    
     assert(map1.m_root->m_left->m_right->m_right->m_pair.first == date7);
 
+    Map map2;
+    map2=map1;
+
+    assert(map2.size() == 7);
+
+    // Abfrage der Position der Daten in der map2
+    assert(map2.m_root->m_pair.first == date1);
+    assert(map2.m_root->m_left->m_pair.first == date3);
+    assert(map2.m_root->m_right->m_pair.first == date2);
+    assert(map2.m_root->m_left->m_right->m_pair.first == date4);
+    assert(map2.m_root->m_right->m_left->m_pair.first == date5);
+    assert(map2.m_root->m_left->m_right->m_left->m_pair.first == date6);
+    assert(map2.m_root->m_left->m_right->m_right->m_pair.first == date7);
+
+    map2.m_root->m_right->m_pair.second = "Darf nicht in map1 stehen!";
+
+    assert(map2.m_root->m_right->m_pair.second == "Darf nicht in map1 stehen!");
+    assert(map1.m_root->m_right->m_pair.second != "Darf nicht in map1 stehen!");
 
 #if 0
 #endif

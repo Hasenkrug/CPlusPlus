@@ -4,6 +4,7 @@
 namespace MyDate {
 
     unsigned int Days::value() const { return Days::days; }
+
     Days::operator unsigned int() const { return Days::days; }
 
     unsigned int Months::value() const { return Months::months; }

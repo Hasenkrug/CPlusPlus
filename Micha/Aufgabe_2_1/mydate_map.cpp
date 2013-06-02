@@ -118,3 +118,16 @@ const Map::mapped_t& Map::operator[](const Map::key_t& key) const {
     }
 }
 
+Map::Node* Map::Node::clone(Map::Node* parent) {
+    Map::Node* node = new Map::Node(m_pair.first, m_pair.second, parent);
+    m_left ? node->m_left = m_left->clone(node) : node->m_left = 0;
+    m_right ? node->m_right = m_right->clone(node) : node->m_right = 0;
+
+    return node;
+}
+
+void Map::operator =(Map& map) {
+    this->m_size = map.m_size;
+    this->m_root = map.m_root->clone(map.m_root);
+}
+
