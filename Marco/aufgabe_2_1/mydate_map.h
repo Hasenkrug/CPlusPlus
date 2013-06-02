@@ -18,10 +18,7 @@ namespace MyDate {
 
             Map();
             //~Map();
-            /*    m_root(0), m_size(0){}
-            */
             size_t size() const;
-            //Node* getRootNode();
             mapped_t& operator[](const key_t& key);
             const mapped_t& operator[](const key_t& key) const;
 
