@@ -85,12 +85,10 @@ namespace MyDate {
             Date& operator+=(Days d);
             Date& operator+=(Months m);
             Date& operator+=(Years y);
-            // Date& operator+=(int i); // Marco fragen!
 
             Date operator+(Days d) const;
             Date operator+(Months m) const;
             Date operator+(Years y)const;
-            // Date operator+(int i); // Marco fragen!
     };
 }
 

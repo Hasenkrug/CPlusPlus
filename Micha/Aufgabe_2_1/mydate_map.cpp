@@ -79,9 +79,9 @@ Map::mapped_t& Map::operator[](const Map::key_t& key) {
     }
 }
 
-bool Map::Node::contains(const Map::key_t &key) const {
+bool Map::Node::contains(const Map::key_t &key) const {    
 
-    if(m_pair.first < key) {
+    if(m_pair.first > key) {
 
         if(m_left) {
             return m_left->contains(key);
@@ -89,7 +89,7 @@ bool Map::Node::contains(const Map::key_t &key) const {
             return false;
         }
 
-    } else if(m_pair.first > key) {
+    } else if(m_pair.first < key) {
 
         if(m_right) {
             return m_right->contains(key);
@@ -120,8 +120,8 @@ const Map::mapped_t& Map::operator[](const Map::key_t& key) const {
 
 Map::Node* Map::Node::clone(Map::Node* parent) {
     Map::Node* node = new Map::Node(m_pair.first, m_pair.second, parent);
-    m_left ? node->m_left = m_left->clone(node) : node->m_left = 0;
-    m_right ? node->m_right = m_right->clone(node) : node->m_right = 0;
+    this->m_left ? node->m_left = this->m_left->clone(node) : node->m_left = 0;
+    this->m_right ? node->m_right = this->m_right->clone(node) : node->m_right = 0;
 
     return node;
 }

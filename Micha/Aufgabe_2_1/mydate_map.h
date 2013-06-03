@@ -21,9 +21,6 @@ public:
             Node(const key_t& key, const mapped_t& value, Node* parent):
                 m_pair(key, value), m_up(parent), m_left(0), m_right(0) {}
 
-//            Node(const Node& n) :
-//                m_pair(n.m_pair.first, n.m_pair.second), m_up(n.m_up), m_left(n.m_left), m_right(n.m_right) {}
-
             ~Node() {
                 if(!m_left) {
                     delete(m_left);
@@ -52,8 +49,8 @@ public:
     Map():
         m_root(0), m_size(0) {}
 
-//    Map(const Map& map) :
-//        m_root(map.m_root), m_size(map.m_size) {}
+    Map(const Map& map)
+        : m_root(map.m_root->clone(map.m_root)), m_size(map.m_size) {}
 
     ~Map() {
         delete(m_root);
