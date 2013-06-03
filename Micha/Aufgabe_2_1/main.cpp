@@ -57,7 +57,7 @@ int main() {
     // tier 3 links
     assert(map1.m_root->contains(date7));
     // nicht in der map
-    asser(!map1.m_root->contains(date8));
+    assert(!map1.m_root->contains(date8));
 
     // Abfrage der Position der Daten in der map1
     assert(map1.m_root->m_pair.first == date1);
