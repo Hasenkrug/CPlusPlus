@@ -123,12 +123,6 @@ namespace MyDate {
         return *this;
     }
 
-/*
-    Date& Date::operator+=(int i) {
-        return *this;
-    }
-*/
-
     Date Date::operator+(Days d) const {
         Date date(*this);
         return date += d;
@@ -143,12 +137,6 @@ namespace MyDate {
         Date date(*this);
         return date +=y;
     }
-
-/*
-    Date Date::operator+(int i){
-        return *this;
-    }
-*/
 }
 
 std::ostream& operator<<(std::ostream &lhs, const MyDate::Date &rhs) {
