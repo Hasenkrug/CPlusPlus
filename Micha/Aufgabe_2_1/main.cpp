@@ -10,11 +10,22 @@
 #include <assert.h>
 #include "mydate.h"
 #include "mydate_map.h"
+#include "map_template.h"
 
 using namespace std;
-using namespace MyDate;
+using namespace map_template;
+// using namespace MyDate;
 
 int main() {
+
+    Map<MyDate::Date,std::string> map1;
+
+    Date date1(1,5,2013);
+
+    map1[date1] = "Wenig Arbeit, viele Demos";
+
+
+/* Testfälle für mydate_map
 
     cout << "                                                         " << endl;
     cout << "                                                         " << endl;
@@ -122,7 +133,7 @@ int main() {
     assert(&map1.m_root->m_right->m_pair != &map3.m_root->m_right->m_pair);
     assert(map3.m_root->m_right->m_pair.second == "Darf nicht in map1 stehen!");
     assert(map1.m_root->m_right->m_pair.second != "Darf nicht in map1 stehen!");
-
+*/
 
 #if 0
 #endif
