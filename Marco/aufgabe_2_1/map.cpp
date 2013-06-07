@@ -1,20 +1,22 @@
-#include "mydate_map.h"
+#include "map.h"
 #include "mydate.h"
 #include "iostream"
 
 using namespace std;
-using namespace MyDate;
+using namespace MyTemplate;
 
-
-size_t Map::size() const {
+template<class KeyT, class T>
+size_t Map<KeyT,T>::size() const {
     return m_size;
 }
 
-Map::Node* Map::getRootNode() {
+template<class KeyT, class T>
+typename Map<KeyT,T>::Node* Map<KeyT,T>::getRootNode() {
     return m_root;
 }
 
-Map::Node* Map::Node::find(const Map::key_t &key) {    
+template<class KeyT, class T>
+typename Map<KeyT,T>::Node* Map<KeyT,T>::Node::find(const typename Map<KeyT,T>::key_t &key) {
 
     if(m_pair.first > key) {
 
@@ -28,7 +30,8 @@ Map::Node* Map::Node::find(const Map::key_t &key) {
     return this;
 }
 
-Map::Node* Map::Node::insert(const Map::key_t &key, const Map::mapped_t &value) {
+template<class KeyT, class T>
+typename Map<KeyT,T>::Node* Map<KeyT,T>::Node::insert(const typename Map<KeyT,T>::key_t &key, const typename Map<KeyT,T>::mapped_t &value) {
 
     if(m_pair.first < key) {
 
@@ -42,11 +45,12 @@ Map::Node* Map::Node::insert(const Map::key_t &key, const Map::mapped_t &value) 
     return 0;
 }
 
-Map::mapped_t& Map::operator[](const Map::key_t& key) {
+template<class KeyT, class T>
+typename Map<KeyT,T>::mapped_t& Map<KeyT,T>::operator[](const typename Map<KeyT,T>::key_t& key) {
 
     if(m_root == 0) {
 
-        m_root = new Map::Node(key, "default", 0);
+        m_root = new typename Map<KeyT,T>::Node(key, "default", 0);
         m_size++;
         return m_root->m_pair.second;
 
@@ -61,7 +65,8 @@ Map::mapped_t& Map::operator[](const Map::key_t& key) {
     }
 }
 
-bool Map::Node::contains(const Map::key_t &key) const {        
+template<class KeyT, class T>
+bool Map<KeyT,T>::Node::contains(const typename Map<KeyT,T>::key_t &key) const {
 
     if(m_pair.first > key) {
 
@@ -74,7 +79,8 @@ bool Map::Node::contains(const Map::key_t &key) const {
     } return true;
 }
 
-const Map::mapped_t& Map::operator[](const Map::key_t& key) const {
+template<class KeyT, class T>
+const typename Map<KeyT,T>::mapped_t& Map<KeyT,T>::operator[](const typename Map<KeyT,T>::key_t& key) const {
 
     if(m_root == 0) {
         return M_NOT_IN_MAP;
@@ -92,8 +98,9 @@ const Map::mapped_t& Map::operator[](const Map::key_t& key) const {
     }
 }
 
-Map::Node* Map::Node::clone(Map::Node* parent) {
-    Map::Node* node = new Map::Node(m_pair.first, m_pair.second, parent);
+template<class KeyT, class T>
+typename Map<KeyT,T>::Node* Map<KeyT,T>::Node::clone(typename Map<KeyT,T>::Node* parent) {
+    typename Map<KeyT,T>::Node* node = new typename Map<KeyT,T>::Node(m_pair.first, m_pair.second, parent);
 
     this->m_left ? node->m_left = this->m_left->clone(node) : node->m_left = 0;
     this->m_right ? node->m_right = this->m_right->clone(node) : node->m_right = 0;
@@ -101,7 +108,8 @@ Map::Node* Map::Node::clone(Map::Node* parent) {
     return node;
 }
 
-void Map::operator =(Map& map) {
+template<class KeyT, class T>
+void Map<KeyT,T>::operator =(Map& map) {
     this->m_size = map.m_size;
     this->m_root = map.m_root->clone(map.m_root);
 }

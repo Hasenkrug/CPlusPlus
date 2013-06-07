@@ -5,9 +5,11 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     mydate.cpp \
-    mydate_map.cpp
+    mydate_map.cpp \
+    map.cpp
 
 HEADERS += \
     mydate.h \
-    mydate_map.h
+    mydate_map.h \
+    map.h
 
