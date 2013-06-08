@@ -6,7 +6,7 @@ CONFIG -= qt
 SOURCES += main.cpp \
     mydate.cpp \
     mydate_map.cpp \
-    map.cpp
+    _map.h
 
 HEADERS += \
     mydate.h \

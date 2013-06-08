@@ -8,9 +8,11 @@
 
 #include <iostream>
 #include <assert.h>
+#include "map.h"
 #include "mydate.h"
 #include "mydate_map.h"
 
+using namespace MyTemplate;
 using namespace std;
 using namespace MyDate;
 
@@ -32,8 +34,9 @@ int main() {
     Date date7(7,4,2013);
     Date date8(8,4,2013);
 
-    Map map1;
 
+    //MyDate::Map map1;
+    MyTemplate::Map<Date,string> map1;
     map1[date1] = "Wenig Arbeit, viele Demos";
     map1[date2] = "Nikolaus kommt";
     assert(map1.size() == 2);
@@ -88,7 +91,7 @@ int main() {
     cout << "        [5,4,2013]    [7,4,2013]                         " << endl;
     cout << "                                                         " << endl;    
 
-    Map map2;
+    MyTemplate::Map<Date,string> map2;
     map2=map1;
 
     assert(map2.size() == 7);
@@ -108,7 +111,8 @@ int main() {
     assert(map1.m_root->m_right->m_pair.second != "Darf nicht in map1 stehen!");
 
     // Copy-Konstruktor-Test
-    Map map3(map1);
+    //Map map3(map1);
+    MyTemplate::Map<Date,string> map3(map1);
 
     assert(map3.m_root->m_pair.first == date1);
     assert(map3.m_root->m_left->m_pair.first == date3);

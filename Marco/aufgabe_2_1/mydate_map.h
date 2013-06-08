@@ -37,11 +37,15 @@ namespace MyDate{
                 Node* clone(Node* parent);
         };
 
+        const mapped_t M_NOT_IN_MAP; // return value if not in map
+        Node* m_root;
+        size_t m_size;
+
         Node* getRootNode();
         size_t size() const;
         mapped_t& operator[](const Map::key_t& key);
-        void operator=(Map& map);
         const mapped_t& operator[](const Map::key_t& key) const;
+        void operator=(Map& map);
 
         Map():
             m_root(0), m_size(0) {}
@@ -54,9 +58,7 @@ namespace MyDate{
         }
 
 
-        const mapped_t M_NOT_IN_MAP; // return value if not in map
-        size_t m_size;
-        Node* m_root;
+
     };
 }
 #endif

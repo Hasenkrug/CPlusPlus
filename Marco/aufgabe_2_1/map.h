@@ -60,4 +60,5 @@ public:
     Node* getRootNode();
 };
 }
+#include "_map.h"
 #endif
