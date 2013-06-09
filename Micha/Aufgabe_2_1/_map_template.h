@@ -5,19 +5,22 @@ using namespace std;
 using namespace map_template;
 
 
-// TODO
+///// TEMPLATES /////
+
+
+// Definition
 template<class KeyT, class T>
 size_t Map<KeyT,T>::size() const {
     return m_size;
 }
 
-// TODO
+// Definition
 template<class KeyT, class T>
 typename Map<KeyT,T>::Node* Map<KeyT,T>::getRootNode() {
     return m_root;
 }
 
-// TODO
+// Definition
 template<class KeyT, class T>
 typename Map<KeyT,T>::Node* Map<KeyT,T>::Node::find(const typename Map<KeyT,T>::key_t &key) {
 
@@ -33,7 +36,7 @@ typename Map<KeyT,T>::Node* Map<KeyT,T>::Node::find(const typename Map<KeyT,T>::
     return this;
 }
 
-// TODO
+// Definition
 template<class KeyT, class T>
 typename Map<KeyT,T>::Node* Map<KeyT,T>::Node::insert(const typename Map<KeyT,T>::key_t &key, const typename Map<KeyT,T>::mapped_t &value) {
 
@@ -49,7 +52,7 @@ typename Map<KeyT,T>::Node* Map<KeyT,T>::Node::insert(const typename Map<KeyT,T>
     return 0;
 }
 
-// TODO
+// Definition
 template<class KeyT, class T>
 typename Map<KeyT,T>::mapped_t& Map<KeyT,T>::operator[](const typename Map<KeyT,T>::key_t& key) {
 
@@ -70,7 +73,7 @@ typename Map<KeyT,T>::mapped_t& Map<KeyT,T>::operator[](const typename Map<KeyT,
     }
 }
 
-// TODO
+// Definition
 template<class KeyT, class T>
 bool Map<KeyT,T>::Node::contains(const typename Map<KeyT,T>::key_t &key) const {
 
@@ -85,7 +88,7 @@ bool Map<KeyT,T>::Node::contains(const typename Map<KeyT,T>::key_t &key) const {
     } return true;
 }
 
-// TODO
+// Definition
 template<class KeyT, class T>
 const typename Map<KeyT,T>::mapped_t& Map<KeyT,T>::operator[](const typename Map<KeyT,T>::key_t& key) const {
 
@@ -105,7 +108,7 @@ const typename Map<KeyT,T>::mapped_t& Map<KeyT,T>::operator[](const typename Map
     }
 }
 
-// TODO
+// Definition
 template<class KeyT, class T>
 typename Map<KeyT,T>::Node* Map<KeyT,T>::Node::clone(typename Map<KeyT,T>::Node* parent) {
     typename Map<KeyT,T>::Node* node = new typename Map<KeyT,T>::Node(m_pair.first, m_pair.second, parent);
@@ -116,10 +119,21 @@ typename Map<KeyT,T>::Node* Map<KeyT,T>::Node::clone(typename Map<KeyT,T>::Node*
     return node;
 }
 
-// TODO
+// Definition
 template<class KeyT, class T>
-void Map<KeyT,T>::operator =(Map& map) {
+void Map<KeyT,T>::operator =(Map<KeyT,T>::Map& map) {
     this->m_size = map.m_size;
     this->m_root = map.m_root->clone(map.m_root);
 }
 
+// Definiton
+//template<class KeyT, class T>
+//Map<KeyT,T>::Iterator& Map<KeyT,T>::Iterator::operator =(Map<KeyT,T>::Iterator& it) {
+
+//}
+
+// Definition
+template<class KeyT, class T>
+void Map<KeyT,T>::Iterator::operator =(const typename Map<KeyT,T>::Iterator& it) {
+
+}
