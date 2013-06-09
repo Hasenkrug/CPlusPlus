@@ -11,6 +11,7 @@
 #include "mydate.h"
 #include "mydate_map.h"
 #include "map_template.h"
+#include "_map_template.h"
 
 using namespace std;
 using namespace map_template;
@@ -24,6 +25,17 @@ int main() {
 
     map1[date1] = "Wenig Arbeit, viele Demos";
 
+    Map<std::string,std::string> map2;
+
+    map2["Micha"] = "stinkt";
+    cout << "Micha " << map2.m_root->find("Micha")->m_pair.second << endl;
+
+    Map<int,std::string> map3;
+    map3[42] = "Nadine auch";
+    cout << map3.m_root->find(42)->m_pair.second << endl;
+
+    Map<MyDate::Date,std::string> map4;
+    map4=map1;
 
 /* Testfälle für mydate_map
 

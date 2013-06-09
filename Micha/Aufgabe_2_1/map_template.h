@@ -17,7 +17,7 @@ public:
             std::pair<key_t, mapped_t> m_pair;
             Node *m_up, *m_left, *m_right;
 
-            Node(const key_t& key, const mapped_t& value, Node* parent):
+            Node(const key_t& key, const mapped_t& value, Node* parent) :
                 m_pair(key, value), m_up(parent), m_left(0), m_right(0) {}
 
             ~Node() {
@@ -36,6 +36,21 @@ public:
             Node* clone(Node* parent);
     };
 
+    class Iterator {
+
+    public:
+        Node* root;
+
+        void operator=(const Iterator& it);
+
+        Iterator(Node* node = 0) :
+            root(node) {}
+
+        Iterator(const Iterator& it) :
+            root(it.root->clone(it.root)) {}
+
+    };
+
     const mapped_t M_NOT_IN_MAP; // return value if not in map
     Node* m_root;
     Node* getRootNode();
@@ -45,11 +60,11 @@ public:
     void operator=(Map& map);
     const mapped_t& operator[](const Map::key_t& key) const;
 
-    Map():
+    Map() :
         m_root(0), m_size(0) {}
 
-    Map(const Map& map)
-        : m_root(map.m_root->clone(map.m_root)), m_size(map.m_size) {}
+    Map(const Map& map) :
+        m_root(map.m_root->clone(map.m_root)), m_size(map.m_size) {}
 
     ~Map() {
         delete(m_root);
