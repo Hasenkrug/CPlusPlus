@@ -139,12 +139,30 @@ int main() {
     it = it++;
     it++;
     map1.end();
-    MyTemplate::Map<Date,string>::Iterator i = map1.begin();
-    i = i++;
-    i = i++;
-    i = i++;
-    i = i++;
-    i = i++;
+    MyTemplate::Map<Date,string>::Iterator j = map1.begin();
+    j = j++;
+    j = j++;
+    j = j++;
+    j = j++;
+    j = j++;
+
+
+
+    MyTemplate::Map<int,string> m;
+    m[4] = "vier";
+    m[7] = "sieben";
+    m[2] = "zwei";
+    MyTemplate::Map<int,string>::Iterator i = m.begin();
+    cout << "kleinstes Element: " << i->first << "/"
+    << i->second << endl;
+    cout << "weitere Elemente, sortiert: " << endl;
+    while(i!=m.end()) {
+        i = i++;
+        pair<int,string> p = *i;
+        cout << " " << p.first << "/"
+        << p.second << endl;
+    }
+    m.begin()->second = "neuer Wert";
 
 
 

@@ -50,19 +50,19 @@ namespace MyTemplate{
 
     template<class KeyT, class T>
     typename Map<KeyT,T>::Node* Map<KeyT, T>::Node::findNext(){
-        Node* now = this;
-        if(this->m_right != 0){
-            this = this->m_right;
-            while(this->m_left!= 0){
-                this = this->m_left;
+        Node* node = this;
+        if(node->m_right != 0){
+            node = node->m_right;
+            while(node->m_left!= 0){
+                node = node->m_left;
             }
-            return this;
+            return node;
         }else{
-            while(this){
-                if(isLeftChild(this)){
-                    return this->m_up;
+            while(node){
+                if(isLeftChild(node)){
+                    return node->m_up;
                 }else{
-                    this = this->m_up;
+                    node = node->m_up;
                 }
             }
             return 0; // Wir sind am Ende angekommen
@@ -204,7 +204,7 @@ namespace MyTemplate{
         return I_m_root != hs.I_m_root;
     }
 
-
+/*
     template<class KeyT, class T>
     typename Map<KeyT,T>::value_t& Map<KeyT,T>::Iterator::operator*(){
         return getRootNode()->m_pair;
@@ -212,7 +212,7 @@ namespace MyTemplate{
     template<class KeyT, class T>
     typename Map<KeyT,T>::value_t* Map<KeyT,T>::Iterator::operator->(){
         return &getRootNode()->m_pair;
-    }
+    }*/
 
     template<class KeyT, class T>
     typename Map<KeyT,T>::Iterator Map<KeyT,T>::Iterator::operator++(int){
