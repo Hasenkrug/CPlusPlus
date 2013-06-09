@@ -83,7 +83,7 @@ namespace MyTemplate{
 
         typedef Iterator iterator;
 
-        const mapped_t M_NOT_IN_MAP; // return value if not in map
+        const mapped_t M_NOT_IN_MAP;// return value if not in map
         Node* m_root;
         size_t m_size;
         Node* getRootNode();

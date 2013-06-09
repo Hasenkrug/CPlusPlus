@@ -34,6 +34,7 @@ int main() {
     Date date7(7,4,2013);
     Date date8(8,4,2013);
 
+
     //MyDate::Map map1;
     MyTemplate::Map<Date,string> map1;
     map1[date1] = "Wenig Arbeit, viele Demos";
@@ -88,9 +89,11 @@ int main() {
     cout << "            |             |                              " << endl;
     cout << "            |             |                              " << endl;
     cout << "        [5,4,2013]    [7,4,2013]                         " << endl;
-    cout << "                                                         " << endl;    
+    cout << "                                                         " << endl;
 
     MyTemplate::Map<Date,string> map2;
+
+    // Zuweisungsoperator Test
     map2=map1;
 
     assert(map2.size() == 7);
@@ -110,7 +113,6 @@ int main() {
     assert(map1.m_root->m_right->m_pair.second != "Darf nicht in map1 stehen!");
 
     // Copy-Konstruktor-Test
-    //Map map3(map1);
     MyTemplate::Map<Date,string> map3(map1);
 
     assert(map3.m_root->m_pair.first == date1);
@@ -126,45 +128,62 @@ int main() {
     assert(map3.m_root->m_right->m_pair.second == "Darf nicht in map1 stehen!");
     assert(map1.m_root->m_right->m_pair.second != "Darf nicht in map1 stehen!");
 
-    //iterator initialiesiert
+    // Templateparameter int/string Test
+    MyTemplate::Map<int, string> map4;
+    map4[23]= "was";
+    assert(map4.m_root->m_pair.second=="was");
+
+    // Templateparameter string/string Test
+    MyTemplate::Map<string, string> map5;
+    map5["key"]= "wieso";
+    assert(map5.m_root->m_pair.second=="wieso");
+
+    // Iterator Copyconstructor Test
     MyTemplate::Map<Date,string>::Iterator it(map1.m_root);
     MyTemplate::Map<Date,string>::Iterator it1;
+
+    // Iterator Zuweisungsoperator Test
     it1 = it;
-    //cout << it.I_m_root->m_pair->first << endl;
-    // test auf Gleichung
+
+    // Test auf Gleichheit
     assert(it1 == it);
-    // test auf nicht Gleichung
+
+    // Test auf Ungleichheit
     assert(!(it1 != it));
+
+    // Dereferenzierung mittels * Test
+    pair<Date,string> a = *it;
+    assert(a.second == "Wenig Arbeit, viele Demos");
+
+    // Dereferenzierung mittels -> Test
+    assert(it1->second == "Wenig Arbeit, viele Demos");
+
+    // Inkrement Test
     it = it++;
-    it++;
-    map1.end();
-    MyTemplate::Map<Date,string>::Iterator j = map1.begin();
-    j++;
-    j++;
-    j++;
-    j++;
-    j++;
+    assert(it->second == "der 05.05.2013");
 
+    // Map::begin() Test
+    it = map1.begin();
+    assert(it->second == "der 02.04.2013");
 
-    MyTemplate::Map<int,int> mm;
-    mm[1]= 4;
+    // Aufgabenblatt Test Beispiel
     MyTemplate::Map<int,string> m;
     m[4] = "vier";
     m[7] = "sieben";
     m[2] = "zwei";
     MyTemplate::Map<int,string>::Iterator i = m.begin();
     cout << "kleinstes Element: " << i->first << "/" << i->second << endl;
-    i->second = "ksmxkasmcs";
     cout << "weitere Elemente, sortiert: " << endl;
-//    cout <<  m.end() << endl;
     while(i!=m.end()) {
         pair<int,string> p = *i;
         cout << " " << p.first << "/" << p.second << endl;
-        i++;
-
+        i++; // nach hinten verlagert, wahrscheinlich hier korrekt.
     }
     m.begin()->second = "neuer Wert";
-    //m.begin()->first = 2;// hier darf kein wert nachgetragen werden.
+
+    // hier darf kein wert nachgetragen werden.
+    //m.begin()->first = 2;
+
 
 
 #if 0
@@ -176,4 +195,5 @@ int main() {
 
     return 0;
 }
+
 

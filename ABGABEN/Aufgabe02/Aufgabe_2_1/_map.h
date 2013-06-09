@@ -67,39 +67,6 @@ namespace MyTemplate{
             }
             return 0; // Wir sind am Ende angekommen
         }
-
-
-/*        if(m_pair.first > key){
-
-        }*/
-/*        if(m_left != 0){
-            if(m_left->m_pair.first )
-        }*/
-
-        /*cout << "Zwischschritt:" << m_pair.first << endl;
-
-        if(m_right != 0 ){
-            if(m_right->m_left != 0){
-                return m_right->m_left->findNext(true);
-            }
-            return m_right;
-        }
-        if(m_up != 0 ){
-            if(m_up->m_pair.first < m_pair.first){
-                return this;
-            }
-            if(!left){
-                return m_up->findNext(false);
-            }
-        }
-        if(m_left!= 0){
-            if (m_left->m_pair.first > m_pair.first){
-                return m_left->findNext(false);
-            }
-        }
-
-        return this;
-        */
     }
 
 
@@ -123,7 +90,7 @@ namespace MyTemplate{
 
         if(m_root == 0) {
 
-            m_root = new typename Map<KeyT,T>::Node(key, "default", 0);
+            m_root = new typename Map<KeyT,T>::Node(key, M_NOT_IN_MAP, 0);
             m_size++;
             return m_root->m_pair.second;
 
@@ -133,7 +100,7 @@ namespace MyTemplate{
                 return m_root->find(key)->m_pair.second; // gib eine Referenz auf den Value zurück
             } else { // wenn der übergebene key noch nicht vorhanden ist...
                 m_size++;
-                return m_root->insert(key, "default")->m_pair.second; // erstelle eine neue node und gib den default Value zurück
+                return m_root->insert(key, M_NOT_IN_MAP)->m_pair.second; // erstelle eine neue node und gib den default Value zurück
             }
         }
     }
@@ -206,11 +173,11 @@ namespace MyTemplate{
 
 
     template<class KeyT, class T>
-    typename Map<KeyT,T>::value_t& Map<KeyT,T>::Iterator::operator*(){
+    typename Map<const KeyT,T>::value_t& Map<KeyT,T>::Iterator::operator*(){
         return this->I_m_root->m_pair;
     }
     template<class KeyT, class T>
-    typename Map<KeyT,T>::value_t* Map<KeyT,T>::Iterator::operator->(){
+    typename Map<const KeyT,T>::value_t* Map<KeyT,T>::Iterator::operator->(){
         return &this->I_m_root->m_pair;
     }
 
@@ -226,7 +193,7 @@ namespace MyTemplate{
 
     template<class KeyT, class T>
     typename Map<KeyT,T>::Iterator Map<KeyT,T>::end() {
-            return Map<KeyT,T>::Iterator(0);
+            return Map<KeyT,T>::Iterator();
     }
 
 
