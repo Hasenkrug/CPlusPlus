@@ -131,13 +131,16 @@ int main() {
     MyTemplate::Map<Date,string>::Iterator it(map1.m_root);
     MyTemplate::Map<Date,string>::Iterator it1;
     it1 = it;
+    //cout << it.I_m_root->m_pair->first << endl;
     // test auf Gleichung
     assert(it1 == it);
     // test auf nicht Gleichung
     assert(!(it1 != it));
-    //it++;
+    it = it++;
+    it++;
     map1.end();
-    map1.begin();
+    MyTemplate::Map<Date,string>::Iterator i = map1.begin();
+    i++;
 
 
 

@@ -50,7 +50,7 @@ namespace MyTemplate{
 
                 Node* find(const key_t& key);
                 Node* find1st();
-                //Node* findNext();
+                Node* findNext(bool left);
                 Node* insert(const key_t& key, const mapped_t& value);
                 bool contains(const Map::key_t &key) const;
                 Node* clone(Node* parent);
@@ -71,7 +71,7 @@ namespace MyTemplate{
             value_t& operator*();
             value_t* operator->();
 
-            //Iterator operator++(int);
+            Iterator operator++(int);
 
 
         };

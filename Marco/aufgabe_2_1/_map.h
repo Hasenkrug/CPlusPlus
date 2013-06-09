@@ -39,30 +39,41 @@ namespace MyTemplate{
         return this;
     }
 
-/*    template<class KeyT, class T>
-    typename Map<KeyT,T>::Node* Map<KeyT, T>::Node::findNext(){
+    template<class KeyT, class T>
+    typename Map<KeyT,T>::Node* Map<KeyT, T>::Node::findNext(bool left){
 
-        if(m_pair.first > key){
+/*        if(m_pair.first > key){
 
-        }
+        }*/
+/*        if(m_left != 0){
+            if(m_left->m_pair.first )
+        }*/
+
+        cout << "wala" << m_pair.first << endl;
 
         if(m_right != 0 ){
+            if(m_right->m_left != 0){
+                return m_right->m_left->findNext(true);
+            }
             return m_right;
         }
         if(m_up != 0 ){
-            if(m_up.m_pair->first < m_pair->first){
+            if(m_up->m_pair.first < m_pair.first){
                 return this;
             }
-            return m_up.findNext();
+            if(!left){
+                return m_up->findNext(false);
+            }
+
+        }
+        if(m_left!= 0){
+            if (m_left->m_pair.first > m_pair.first){
+                return m_left->findNext(false);
+            }
         }
 
-
-
-        if(m_left){
-            return m_left->find1st();
-        }
         return this;
-    }*/
+    }
 
 
     template<class KeyT, class T>
@@ -176,12 +187,15 @@ namespace MyTemplate{
         return &getRootNode()->m_pair;
     }
 
-/*    template<class KeyT, class T>
+    template<class KeyT, class T>
     typename Map<KeyT,T>::Iterator Map<KeyT,T>::Iterator::operator++(int){
         Iterator old(*this);
         Node* n = old.I_m_root;
-        return n->findNext();
-    }*/
+        cout << "wer" << n->m_pair.first<< endl;
+        Node* nn = n->findNext(false);
+        cout << "wer" << nn->m_pair.first<< endl;
+        return nn;
+    }
 
     ////////////////////////////////////////////////////////////////////////////////
     //adds in Map
