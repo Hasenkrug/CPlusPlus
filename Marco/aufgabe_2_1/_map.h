@@ -211,22 +211,14 @@ namespace MyTemplate{
     }
     template<class KeyT, class T>
     typename Map<KeyT,T>::value_t* Map<KeyT,T>::Iterator::operator->(){
-
         return &this->I_m_root->m_pair;
     }
 
     template<class KeyT, class T>
     typename Map<KeyT,T>::Iterator Map<KeyT,T>::Iterator::operator++(int){
-        Iterator old(*this);
-        Node* n = old.I_m_root;
-        cout << "Einagbe:" << n->m_pair.first<< endl;
-        Node* nn = n->findNext();
-        if(nn){
-            cout << "Ausgabe:" << nn->m_pair.first<< endl;
-            return nn;
-        }else{
-            return 0;
-        }
+        this->I_m_root = this->I_m_root->findNext();
+        return *this;
+
     }
 
     ////////////////////////////////////////////////////////////////////////////////

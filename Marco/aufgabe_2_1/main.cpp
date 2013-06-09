@@ -78,7 +78,7 @@ int main() {
     cout << "        _______________________|__________________       " << endl;
     cout << "       |                                          |      " << endl;
     cout << "       |                                          |      " << endl;
-    cout << "   [2,4,2013]                                [6,12,2013dfsdfsd] " << endl;
+    cout << "   [2,4,2013]                                [6,12,2013] " << endl;
     cout << "       |                                          |      " << endl;
     cout << "       |___________                    ___________|      " << endl;
     cout << "                   |                  |                  " << endl;
@@ -140,11 +140,11 @@ int main() {
     it++;
     map1.end();
     MyTemplate::Map<Date,string>::Iterator j = map1.begin();
-    j = j++;
-    j = j++;
-    j = j++;
-    j = j++;
-    j = j++;
+    j++;
+    j++;
+    j++;
+    j++;
+    j++;
 
 
 
@@ -154,13 +154,16 @@ int main() {
     m[2] = "zwei";
     MyTemplate::Map<int,string>::Iterator i = m.begin();
     cout << "kleinstes Element: " << i->first << "/" << i->second << endl;
+    i->second = "ksmxkasmcs";
     cout << "weitere Elemente, sortiert: " << endl;
     while(i!=m.end()) {
-        i = i++;
+
         pair<int,string> p = *i;
         cout << " " << p.first << "/" << p.second << endl;
+        i++;
     }
     m.begin()->second = "neuer Wert";
+    m.begin()->first = 2;// hier darf kein wert nachgetragen werden.
 
 
 
