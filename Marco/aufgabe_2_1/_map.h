@@ -40,7 +40,34 @@ namespace MyTemplate{
     }
 
     template<class KeyT, class T>
-    typename Map<KeyT,T>::Node* Map<KeyT, T>::Node::findNext(bool left){
+    bool Map<KeyT, T>::Node::isLeftChild(const  Map<KeyT,T>::Node*node){
+        if(node->m_up == 0)
+            return false; // Die Wurzel ist kein Kind
+        else
+            return node->m_up->m_left == node;
+    }
+
+
+    template<class KeyT, class T>
+    typename Map<KeyT,T>::Node* Map<KeyT, T>::Node::findNext(){
+        Node* now = this;
+        if(now->m_right != 0){
+            now = now->m_right;
+            while(now->m_left!= 0){
+                now = now->m_left;
+            }
+            return now;
+        }else{
+            while(now){
+                if(isLeftChild(now)){
+                    return now->m_up;
+                }else{
+                    now = now->m_up;
+                }
+            }
+            return 0; // Wir sind am Ende angekommen
+        }
+
 
 /*        if(m_pair.first > key){
 
@@ -49,7 +76,7 @@ namespace MyTemplate{
             if(m_left->m_pair.first )
         }*/
 
-        cout << "wala" << m_pair.first << endl;
+        /*cout << "Zwischschritt:" << m_pair.first << endl;
 
         if(m_right != 0 ){
             if(m_right->m_left != 0){
@@ -64,7 +91,6 @@ namespace MyTemplate{
             if(!left){
                 return m_up->findNext(false);
             }
-
         }
         if(m_left!= 0){
             if (m_left->m_pair.first > m_pair.first){
@@ -73,6 +99,7 @@ namespace MyTemplate{
         }
 
         return this;
+        */
     }
 
 
@@ -191,10 +218,14 @@ namespace MyTemplate{
     typename Map<KeyT,T>::Iterator Map<KeyT,T>::Iterator::operator++(int){
         Iterator old(*this);
         Node* n = old.I_m_root;
-        cout << "wer" << n->m_pair.first<< endl;
-        Node* nn = n->findNext(false);
-        cout << "wer" << nn->m_pair.first<< endl;
-        return nn;
+        cout << "Einagbe:" << n->m_pair.first<< endl;
+        Node* nn = n->findNext();
+        if(nn){
+            cout << "Ausgabe:" << nn->m_pair.first<< endl;
+            return nn;
+        }else{
+            return 0;
+        }
     }
 
     ////////////////////////////////////////////////////////////////////////////////

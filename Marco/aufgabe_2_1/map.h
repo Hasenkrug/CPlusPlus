@@ -50,11 +50,13 @@ namespace MyTemplate{
 
                 Node* find(const key_t& key);
                 Node* find1st();
-                Node* findNext(bool left);
+                Node* findNext();
+                bool isLeftChild(const Node*node);
                 Node* insert(const key_t& key, const mapped_t& value);
                 bool contains(const Map::key_t &key) const;
                 Node* clone(Node* parent);
         };
+
         class Iterator{
         public:
             Node* I_m_root;

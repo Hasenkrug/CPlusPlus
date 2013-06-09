@@ -140,7 +140,11 @@ int main() {
     it++;
     map1.end();
     MyTemplate::Map<Date,string>::Iterator i = map1.begin();
-    i++;
+    i = i++;
+    i = i++;
+    i = i++;
+    i = i++;
+    i = i++;
 
 
 
