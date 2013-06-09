@@ -51,18 +51,18 @@ namespace MyTemplate{
     template<class KeyT, class T>
     typename Map<KeyT,T>::Node* Map<KeyT, T>::Node::findNext(){
         Node* now = this;
-        if(now->m_right != 0){
-            now = now->m_right;
-            while(now->m_left!= 0){
-                now = now->m_left;
+        if(this->m_right != 0){
+            this = this->m_right;
+            while(this->m_left!= 0){
+                this = this->m_left;
             }
-            return now;
+            return this;
         }else{
-            while(now){
-                if(isLeftChild(now)){
-                    return now->m_up;
+            while(this){
+                if(isLeftChild(this)){
+                    return this->m_up;
                 }else{
-                    now = now->m_up;
+                    this = this->m_up;
                 }
             }
             return 0; // Wir sind am Ende angekommen
