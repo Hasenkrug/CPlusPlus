@@ -52,6 +52,19 @@ public:
             bool contains(const Map::key_t &key) const;
             Node* clone(Node* parent);
     };
+    class Iterator{
+    public:
+        Node* m_root;
+        Iterator(Node* node=0)
+            :m_root(node){}
+
+        Iterator(const Iterator& rhs): m_root(rhs.m_root){}
+        Iterator& operator=(const Iterator rhs);
+
+        bool operator==(const Iterator &rhs);
+        bool operator!=(const Iterator &rhs);
+
+    };
 
 
     const mapped_t M_NOT_IN_MAP; // return value if not in map
