@@ -127,6 +127,16 @@ int main() {
     assert(map3.m_root->m_right->m_pair.second == "Darf nicht in map1 stehen!");
     assert(map1.m_root->m_right->m_pair.second != "Darf nicht in map1 stehen!");
 
+    //iterator initialiesiert
+    MyTemplate::Map<Date,string>::Iterator it(map1.m_root);
+    MyTemplate::Map<Date,string>::Iterator it1;
+    it1 = it;
+    // test auf Gleichung
+    assert(it1 == it);
+    // test auf nicht Gleichung
+    assert(!(it1 != it));
+
+
 
 #if 0
 #endif

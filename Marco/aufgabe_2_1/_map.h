@@ -110,7 +110,7 @@ namespace MyTemplate{
     }
 
     template<class KeyT, class T>
-    void Map<KeyT,T>::operator =(Map& map) {
+    void Map<KeyT,T>::operator=(Map& map) {
         this->m_size = map.m_size;
         this->m_root = map.m_root->clone(map.m_root);
     }
@@ -118,17 +118,19 @@ namespace MyTemplate{
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     template<class KeyT, class T>
-    typename Map<KeyT,T>::Iterator& Map<KeyT,T>::Iterator::operator=(const Map<KeyT,T>::Iterator rhs){
-
+    typename Map<KeyT,T>::Iterator& Map<KeyT,T>::Iterator::operator=(const typename Map<KeyT,T>::Iterator &rhs){
+        m_root = rhs.m_root;
+        return *this;
     }
+
     template<class KeyT, class T>
-    bool Map<Keyt,T>::Iterator::operator==(const typename Map<KeyT,T>::Iterator &hs){
-
-        return this.m_root == hs.m_root;
+    bool Map<KeyT,T>::Iterator::operator==(const typename Map<KeyT,T>::Iterator &hs){
+        return m_root == hs.m_root;
     }
-    template<class keyT, class T>
-    bool operator!=(const Iterator &rhs){
 
+    template<class KeyT, class T>
+    bool Map<KeyT,T>::Iterator::operator!=(const typename Map<KeyT,T>::Iterator &hs){
+        return m_root != hs.m_root;
     }
 
 }
