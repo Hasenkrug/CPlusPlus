@@ -116,21 +116,22 @@ namespace MyTemplate{
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //iterator
     template<class KeyT, class T>
     typename Map<KeyT,T>::Iterator& Map<KeyT,T>::Iterator::operator=(const typename Map<KeyT,T>::Iterator &rhs){
-        m_root = rhs.m_root;
+        I_m_root = rhs.I_m_root;
         return *this;
     }
 
     template<class KeyT, class T>
     bool Map<KeyT,T>::Iterator::operator==(const typename Map<KeyT,T>::Iterator &hs){
-        return m_root == hs.m_root;
+        return I_m_root == hs.I_m_root;
     }
 
     template<class KeyT, class T>
     bool Map<KeyT,T>::Iterator::operator!=(const typename Map<KeyT,T>::Iterator &hs){
-        return m_root != hs.m_root;
+        return I_m_root != hs.I_m_root;
     }
+
 
 }

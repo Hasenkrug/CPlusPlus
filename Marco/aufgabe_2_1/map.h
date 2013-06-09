@@ -12,6 +12,7 @@ namespace MyTemplate{
 
         typedef KeyT key_t;
         typedef T mapped_t;
+        typedef std::pair<key_t, mapped_t> value_t;
 
 
         size_t size() const;
@@ -54,24 +55,29 @@ namespace MyTemplate{
         };
         class Iterator{
         public:
-            Node* m_root;
+            Node* I_m_root;
             Iterator(Node* node=0)
-                :m_root(node){}
+                :I_m_root(node){}
 
-            Iterator(const Iterator& rhs): m_root(rhs.m_root){}
+            Iterator(const Iterator& rhs): I_m_root(rhs.m_root){}
 
             Iterator& operator=(const Iterator& rhs);
 
             bool operator==(const Iterator &rhs);
             bool operator!=(const Iterator &rhs);
 
+            value_t& operator*();
+            value_t* operator->();
+
         };
 
+        typedef Iterator iterator;
 
         const mapped_t M_NOT_IN_MAP; // return value if not in map
         Node* m_root;
         size_t m_size;
         Node* getRootNode();
+        //mapped_t& value_t();
     };
 }
 #include "_map.h"
