@@ -1,5 +1,5 @@
-#ifndef MYDATE_MAP_H
-#define MYDATE_MAP_H
+#ifndef MAP_H
+#define MAP_H
 
 #include "mydate.h"
 #include "iostream"
@@ -7,13 +7,13 @@
 
 namespace MyTemplate{
 
-    template<class KeyT, class T> class Map {
+    template<class KeyT, class T>
+    class Map {
     public:
 
         typedef KeyT key_t;
         typedef T mapped_t;
         typedef std::pair<key_t, mapped_t> value_t;
-
 
         size_t size() const;
         mapped_t& operator[](const Map::key_t& key);
@@ -29,6 +29,7 @@ namespace MyTemplate{
         ~Map() {
             delete(m_root);
         }
+
         class Node {
 
             public:
@@ -57,13 +58,15 @@ namespace MyTemplate{
                 Node* clone(Node* parent);
         };
 
-        class Iterator{
+        class Iterator {
+
         public:
             Node* I_m_root;
-            Iterator(Node* n=0)
-                :I_m_root(n){}
+            Iterator(Node* n=0) :
+                I_m_root(n) {}
 
-            Iterator(const Iterator& rhs): I_m_root(rhs.I_m_root){}
+            Iterator(const Iterator& rhs) :
+                I_m_root(rhs.I_m_root){ }
 
             void operator=(const Iterator& rhs);
 
@@ -74,8 +77,6 @@ namespace MyTemplate{
             value_t* operator->();
 
             Iterator operator++(int);
-
-
         };
 
         typedef Iterator iterator;
@@ -88,7 +89,6 @@ namespace MyTemplate{
         //mapped_t& value_t();
         Iterator begin();
         Iterator end();
-
     };
 }
 #include "_map.h"
