@@ -89,7 +89,7 @@ int main() {
     cout << "            |             |                              " << endl;
     cout << "            |             |                              " << endl;
     cout << "        [5,4,2013]    [7,4,2013]                         " << endl;
-    cout << "                                                         " << endl;    
+    cout << "                                                         " << endl;
 
     MyTemplate::Map<Date,string> map2;
 
@@ -175,12 +175,14 @@ int main() {
     cout << "kleinstes Element: " << i->first << "/" << i->second << endl;
     cout << "weitere Elemente, sortiert: " << endl;
     while(i!=m.end()) {
-        i++;
         pair<int,string> p = *i;
-        cout << " " << p.first << "/" << p.second << endl;        
+        cout << " " << p.first << "/" << p.second << endl;
+        i++; // nach hinten verlagert, wahrscheinlich hier korrekt.
     }
     m.begin()->second = "neuer Wert";
-    m.begin()->first = 2;// hier darf kein wert nachgetragen werden.
+
+    // hier darf kein wert nachgetragen werden.
+    //m.begin()->first = 2;
 
 
 
@@ -193,4 +195,5 @@ int main() {
 
     return 0;
 }
+
 

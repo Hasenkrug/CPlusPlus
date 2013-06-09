@@ -1,5 +1,5 @@
-#ifndef MAP_H
-#define MAP_H
+#ifndef MYDATE_MAP_H
+#define MYDATE_MAP_H
 
 #include "mydate.h"
 #include "iostream"
@@ -7,13 +7,13 @@
 
 namespace MyTemplate{
 
-    template<class KeyT, class T>
-    class Map {
+    template<class KeyT, class T> class Map {
     public:
 
         typedef KeyT key_t;
         typedef T mapped_t;
-        typedef std::pair<key_t, mapped_t> value_t;
+        typedef std::pair<const key_t, mapped_t> value_t;
+
 
         size_t size() const;
         mapped_t& operator[](const Map::key_t& key);
@@ -29,13 +29,15 @@ namespace MyTemplate{
         ~Map() {
             delete(m_root);
         }
-
         class Node {
 
             public:
-                std::pair<key_t, mapped_t> m_pair;
+                std::pair<const key_t, mapped_t> m_pair;
                 Node *m_up, *m_left, *m_right;
 
+                /*Node():
+                    m_pair(0),m_up(0), m_left(0), m_right(0){}
+*/
                 Node(const key_t& key, const mapped_t& value, Node* parent):
                     m_pair(key, value), m_up(parent), m_left(0), m_right(0) {}
 
@@ -58,30 +60,30 @@ namespace MyTemplate{
                 Node* clone(Node* parent);
         };
 
-        class Iterator {
-
+        class Iterator{
         public:
             Node* I_m_root;
-            Iterator(Node* n=0) :
-                I_m_root(n) {}
+            Iterator(Node* n=0)
+                :I_m_root(n){}
 
-            Iterator(const Iterator& rhs) :
-                I_m_root(rhs.I_m_root){ }
+            Iterator(const Iterator& rhs): I_m_root(rhs.I_m_root){}
 
             void operator=(const Iterator& rhs);
 
             bool operator==(const Iterator &rhs);
             bool operator!=(const Iterator &rhs);
 
-            value_t& operator*();
-            value_t* operator->();
+            typename Map<const KeyT,T>::value_t& operator*();
+            typename Map<const KeyT,T>::value_t* operator->();
 
             Iterator operator++(int);
+
+
         };
 
         typedef Iterator iterator;
 
-        const mapped_t M_NOT_IN_MAP; // return value if not in map
+        const mapped_t M_NOT_IN_MAP;// return value if not in map
         Node* m_root;
         size_t m_size;
         Node* getRootNode();
@@ -89,6 +91,7 @@ namespace MyTemplate{
         //mapped_t& value_t();
         Iterator begin();
         Iterator end();
+
     };
 }
 #include "_map.h"
