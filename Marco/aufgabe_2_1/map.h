@@ -12,7 +12,7 @@ namespace MyTemplate{
 
         typedef KeyT key_t;
         typedef T mapped_t;
-        typedef std::pair<key_t, mapped_t> value_t;
+        typedef std::pair<const key_t, mapped_t> value_t;
 
 
         size_t size() const;
@@ -32,9 +32,12 @@ namespace MyTemplate{
         class Node {
 
             public:
-                std::pair<key_t, mapped_t> m_pair;
+                std::pair<const key_t, mapped_t> m_pair;
                 Node *m_up, *m_left, *m_right;
 
+                /*Node():
+                    m_pair(0),m_up(0), m_left(0), m_right(0){}
+*/
                 Node(const key_t& key, const mapped_t& value, Node* parent):
                     m_pair(key, value), m_up(parent), m_left(0), m_right(0) {}
 
@@ -70,8 +73,8 @@ namespace MyTemplate{
             bool operator==(const Iterator &rhs);
             bool operator!=(const Iterator &rhs);
 
-            value_t& operator*();
-            value_t* operator->();
+            typename Map<const KeyT,T>::value_t& operator*();
+            typename Map<const KeyT,T>::value_t* operator->();
 
             Iterator operator++(int);
 

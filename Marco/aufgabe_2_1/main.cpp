@@ -34,7 +34,6 @@ int main() {
     Date date7(7,4,2013);
     Date date8(8,4,2013);
 
-
     //MyDate::Map map1;
     MyTemplate::Map<Date,string> map1;
     map1[date1] = "Wenig Arbeit, viele Demos";
@@ -147,7 +146,8 @@ int main() {
     j++;
 
 
-
+    MyTemplate::Map<int,int> mm;
+    mm[1]= 4;
     MyTemplate::Map<int,string> m;
     m[4] = "vier";
     m[7] = "sieben";
@@ -156,15 +156,15 @@ int main() {
     cout << "kleinstes Element: " << i->first << "/" << i->second << endl;
     i->second = "ksmxkasmcs";
     cout << "weitere Elemente, sortiert: " << endl;
+//    cout <<  m.end() << endl;
     while(i!=m.end()) {
-
         pair<int,string> p = *i;
         cout << " " << p.first << "/" << p.second << endl;
         i++;
+
     }
     m.begin()->second = "neuer Wert";
-    m.begin()->first = 2;// hier darf kein wert nachgetragen werden.
-
+    //m.begin()->first = 2;// hier darf kein wert nachgetragen werden.
 
 
 #if 0
