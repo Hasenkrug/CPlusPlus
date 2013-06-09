@@ -153,14 +153,12 @@ int main() {
     m[7] = "sieben";
     m[2] = "zwei";
     MyTemplate::Map<int,string>::Iterator i = m.begin();
-    cout << "kleinstes Element: " << i->first << "/"
-    << i->second << endl;
+    cout << "kleinstes Element: " << i->first << "/" << i->second << endl;
     cout << "weitere Elemente, sortiert: " << endl;
     while(i!=m.end()) {
         i = i++;
         pair<int,string> p = *i;
-        cout << " " << p.first << "/"
-        << p.second << endl;
+        cout << " " << p.first << "/" << p.second << endl;
     }
     m.begin()->second = "neuer Wert";
 

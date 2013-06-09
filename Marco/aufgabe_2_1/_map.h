@@ -204,15 +204,16 @@ namespace MyTemplate{
         return I_m_root != hs.I_m_root;
     }
 
-/*
+
     template<class KeyT, class T>
     typename Map<KeyT,T>::value_t& Map<KeyT,T>::Iterator::operator*(){
-        return getRootNode()->m_pair;
+        return this->I_m_root->m_pair;
     }
     template<class KeyT, class T>
     typename Map<KeyT,T>::value_t* Map<KeyT,T>::Iterator::operator->(){
-        return &getRootNode()->m_pair;
-    }*/
+
+        return &this->I_m_root->m_pair;
+    }
 
     template<class KeyT, class T>
     typename Map<KeyT,T>::Iterator Map<KeyT,T>::Iterator::operator++(int){
