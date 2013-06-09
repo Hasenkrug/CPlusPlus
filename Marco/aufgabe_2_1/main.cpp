@@ -135,6 +135,9 @@ int main() {
     assert(it1 == it);
     // test auf nicht Gleichung
     assert(!(it1 != it));
+    //it++;
+    map1.end();
+    map1.begin();
 
 
 

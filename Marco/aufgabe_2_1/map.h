@@ -49,6 +49,8 @@ namespace MyTemplate{
                 }
 
                 Node* find(const key_t& key);
+                Node* find1st();
+                //Node* findNext();
                 Node* insert(const key_t& key, const mapped_t& value);
                 bool contains(const Map::key_t &key) const;
                 Node* clone(Node* parent);
@@ -56,18 +58,21 @@ namespace MyTemplate{
         class Iterator{
         public:
             Node* I_m_root;
-            Iterator(Node* node=0)
-                :I_m_root(node){}
+            Iterator(Node* n=0)
+                :I_m_root(n){}
 
-            Iterator(const Iterator& rhs): I_m_root(rhs.m_root){}
+            Iterator(const Iterator& rhs): I_m_root(rhs.I_m_root){}
 
-            Iterator& operator=(const Iterator& rhs);
+            void operator=(const Iterator& rhs);
 
             bool operator==(const Iterator &rhs);
             bool operator!=(const Iterator &rhs);
 
             value_t& operator*();
             value_t* operator->();
+
+            //Iterator operator++(int);
+
 
         };
 
@@ -77,7 +82,11 @@ namespace MyTemplate{
         Node* m_root;
         size_t m_size;
         Node* getRootNode();
+
         //mapped_t& value_t();
+        Iterator begin();
+        Iterator end();
+
     };
 }
 #include "_map.h"

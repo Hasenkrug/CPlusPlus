@@ -32,6 +32,40 @@ namespace MyTemplate{
     }
 
     template<class KeyT, class T>
+    typename Map<KeyT,T>::Node* Map<KeyT, T>::Node::find1st(){
+        if(m_left){
+            return m_left->find1st();
+        }
+        return this;
+    }
+
+/*    template<class KeyT, class T>
+    typename Map<KeyT,T>::Node* Map<KeyT, T>::Node::findNext(){
+
+        if(m_pair.first > key){
+
+        }
+
+        if(m_right != 0 ){
+            return m_right;
+        }
+        if(m_up != 0 ){
+            if(m_up.m_pair->first < m_pair->first){
+                return this;
+            }
+            return m_up.findNext();
+        }
+
+
+
+        if(m_left){
+            return m_left->find1st();
+        }
+        return this;
+    }*/
+
+
+    template<class KeyT, class T>
     typename Map<KeyT,T>::Node* Map<KeyT,T>::Node::insert(const typename Map<KeyT,T>::key_t &key, const typename Map<KeyT,T>::mapped_t &value) {
 
         if(m_pair.first < key) {
@@ -118,20 +152,51 @@ namespace MyTemplate{
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //iterator
     template<class KeyT, class T>
-    typename Map<KeyT,T>::Iterator& Map<KeyT,T>::Iterator::operator=(const typename Map<KeyT,T>::Iterator &rhs){
-        I_m_root = rhs.I_m_root;
-        return *this;
+    void Map<KeyT,T>::Iterator::operator=(const typename Map<KeyT,T>::Iterator &rhs){
+        this->I_m_root = rhs.I_m_root;
     }
+
 
     template<class KeyT, class T>
     bool Map<KeyT,T>::Iterator::operator==(const typename Map<KeyT,T>::Iterator &hs){
         return I_m_root == hs.I_m_root;
     }
-
     template<class KeyT, class T>
     bool Map<KeyT,T>::Iterator::operator!=(const typename Map<KeyT,T>::Iterator &hs){
         return I_m_root != hs.I_m_root;
     }
 
 
+    template<class KeyT, class T>
+    typename Map<KeyT,T>::value_t& Map<KeyT,T>::Iterator::operator*(){
+        return getRootNode()->m_pair;
+    }
+    template<class KeyT, class T>
+    typename Map<KeyT,T>::value_t* Map<KeyT,T>::Iterator::operator->(){
+        return &getRootNode()->m_pair;
+    }
+
+/*    template<class KeyT, class T>
+    typename Map<KeyT,T>::Iterator Map<KeyT,T>::Iterator::operator++(int){
+        Iterator old(*this);
+        Node* n = old.I_m_root;
+        return n->findNext();
+    }*/
+
+    ////////////////////////////////////////////////////////////////////////////////
+    //adds in Map
+
+    template<class KeyT, class T>
+    typename Map<KeyT,T>::Iterator Map<KeyT,T>::end() {
+            return Map<KeyT,T>::Iterator(0);
+    }
+
+
+    template<class KeyT, class T>
+    typename Map<KeyT,T>::Iterator Map<KeyT,T>::begin() {
+        if (m_root == 0) {
+            return Map<KeyT,T>::end();
+        }
+        return Map<KeyT,T>::Iterator(m_root->find1st());
+    }
 }
