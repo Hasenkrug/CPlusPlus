@@ -296,6 +296,14 @@ int main() {
 
     // hier darf kein wert nachgetragen werden.
     //m.begin()->first = 2;
+    cout <<  ""<< endl;
+    cout << "Mapped_t ist nun anderer Paramenter als string: " << ii->first << "/" << ii->second << endl;
+
+    MyTemplate::Map<int,bool> mm;
+    mm[4] = false;
+    mm[5] = true;
+    MyTemplate::Map<int,bool>::Iterator ii = mm.begin();
+    cout << "kleinstes Element: " << ii->first << "/" << ii->second << endl;
 
 
 
