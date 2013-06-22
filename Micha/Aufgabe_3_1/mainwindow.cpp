@@ -10,39 +10,59 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow) {
         ui->setupUi(this);
 
-        connect(ui->inputField, SIGNAL(textChanged(QString)), this, SLOT(getSearchText(QString)));
+        connect(ui->inputField, SIGNAL(textChanged(QString)), this, SLOT(setSearchText(QString)));
     }
 
 MainWindow::~MainWindow() {
     delete ui;
 }
 
-void MainWindow::getSearchText(QString value) {
+void MainWindow::setSearchText(QString value) {
 
     m_searchText = value;
 
     cout << m_searchText.toStdString() << endl;
 }
 
+QString MainWindow::getSearchText() {
+    return ui->inputField->text();
+}
+
 void MainWindow::on_btnQuit_clicked() {
 
-    QWidget *dialog = new QWidget();
-    dialog->setWindowTitle("Quit and Save");
+    // wir haben eine Eingabe
+    if(MainWindow::getSearchText() != "") {
 
-    QPushButton *cancel = new QPushButton("Abbruch");
-    QPushButton *save = new QPushButton("Speichern");
-    QPushButton *quit = new QPushButton("Applikation beenden");
+        QWidget *dialog = new QWidget();
+        dialog->setWindowTitle("Quit and Save");
 
-    QObject::connect(cancel, SIGNAL(clicked()), dialog, SLOT(close()));
+        QPushButton *cancel = new QPushButton("Abbruch");
+        QPushButton *save = new QPushButton("Speichern");
+        QPushButton *quit = new QPushButton("Applikation beenden");
 
-    QObject::connect(quit, SIGNAL(clicked()), this, SLOT(close()));
-    QObject::connect(quit, SIGNAL(clicked()), dialog, SLOT(close()));
+        QObject::connect(cancel, SIGNAL(clicked()), dialog, SLOT(close()));
 
-    QHBoxLayout *layout = new QHBoxLayout;
-    layout->addWidget(cancel);
-    layout->addWidget(save);
-    layout->addWidget(quit);
+        QObject::connect(save, SIGNAL(clicked()), this, SLOT(saveInput()));
+        QObject::connect(save, SIGNAL(clicked()), dialog, SLOT(close()));
 
-    dialog->setLayout(layout);
-    dialog->show();
+        QObject::connect(quit, SIGNAL(clicked()), this, SLOT(close()));
+        QObject::connect(quit, SIGNAL(clicked()), dialog, SLOT(close()));
+
+        QHBoxLayout *layout = new QHBoxLayout;
+        layout->addWidget(cancel);
+        layout->addWidget(save);
+        layout->addWidget(quit);
+
+        dialog->setLayout(layout);
+        dialog->show();
+
+    // das Eingabefeld ist leer
+    } else {
+        this->close();
+    }
+}
+
+void MainWindow::saveInput() {
+    cout << "Speichern: " << MainWindow::getSearchText().toStdString() << endl;
+    this->close();
 }

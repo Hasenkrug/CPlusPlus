@@ -15,8 +15,10 @@ public:
     ~MainWindow();
     
 public slots:
-    void getSearchText(QString value);
+    void setSearchText(QString value);
+    QString getSearchText();
     void on_btnQuit_clicked();
+    void saveInput();
 
 private:
     Ui::MainWindow *ui;
