@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2013-06-22T13:35:38
+# Project created by QtCreator 2013-06-22T17:43:16
 #
 #-------------------------------------------------
 
@@ -8,14 +8,15 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Uebung1
+TARGET = Uebung2
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        dialog.cpp
+        mainwindow.cpp
 
-HEADERS  += dialog.h
+HEADERS  += mainwindow.h
 
-FORMS    += dialog.ui \
-    modal.ui
+FORMS    += \
+    lesson.ui \
+    mainwindow.ui

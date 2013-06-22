@@ -15,6 +15,12 @@ public:
     explicit Dialog(QWidget *parent = 0);
     ~Dialog();
     
+public slots:
+    void getSearchText(QString s);
+
+private slots:
+    void clickedCloseButton();
+
 private:
     Ui::Dialog *ui;
 };
