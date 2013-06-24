@@ -298,17 +298,16 @@ int main() {
     m.begin()->second = "neuer Wert";
 
     // hier darf kein wert nachgetragen werden.
-    //m.begin()->first = 2;
 
+    // m.begin()->first = 2;
     cout <<  ""<< endl;
-    cout << "Mapped_t ist nun anderer Paramenter als string: "<< endl;
+    cout << "Mapped_t ist nun ein anderer Paramenter als string: "<< endl;
 
     MyTemplate::Map<int,float> mm;
-    mm[4] = 23.39457674638392f;
-    mm[5] = 56.47859939f;
+    mm[4] = 4.5f;
+    mm[5] = 2.8923f;
     MyTemplate::Map<int,float>::Iterator ii = mm.begin();
     cout << "kleinstes Element: " << ii->first << "/" << ii->second << endl;
-
 
 
 #if 0
