@@ -6,9 +6,16 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+     connect(ui->startLessonButton, SIGNAL(clicked()), this, SLOT(startLessonClicked()));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::startLessonClicked()
+{
+    //TODO Fensterwechsel zu lesson.ui
 }
