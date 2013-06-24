@@ -21,10 +21,10 @@ namespace MyTemplate{
         const mapped_t& operator[](const Map::key_t& key) const;
 
         Map():
-            M_NOT_IN_MAP(), m_root(0), m_size(0) {}
+            m_root(0), m_size(0) {}
 
         Map(const Map& map)
-            :M_NOT_IN_MAP(map.M_NOT_IN_MAP), m_root(map.m_root->clone(map.m_root)), m_size(map.m_size) {}
+            : m_root(map.m_root->clone(map.m_root)), m_size(map.m_size) {}
 
         ~Map() {
             delete(m_root);
