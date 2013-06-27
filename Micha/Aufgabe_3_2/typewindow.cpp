@@ -17,11 +17,11 @@ bool Typewindow::eventFilter(QObject *object, QEvent *event) {
     if(event->type() == 51 && object == this) {
         const QKeyEvent *ke = static_cast<QKeyEvent *>(event);
         if(ke->key() == Qt::Key_Space) {
-            std::cout << "das hier wird 'noch' 2x ausgeführt >.<" << std::endl;
+            std::cout << "typewindow.cpp, line 20: das hier wird 'noch' 2x ausgeführt >.<" << std::endl;
             ui->btnSpace->animateClick(100);
             return true;
         } else if(ke->key() == Qt::Key_Return) {
-            std::cout << "das hier wird 'noch' 2x ausgeführt >.<" << std::endl;
+            std::cout << "typewindow.cpp, line 24: das hier wird 'noch' 2x ausgeführt >.<" << std::endl;
             ui->btnEnter->animateClick(100);
             return true;
         }
