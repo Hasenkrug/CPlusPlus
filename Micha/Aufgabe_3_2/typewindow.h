@@ -15,6 +15,7 @@ public:
     ~Typewindow();
 
     void keyPressEvent(QKeyEvent *e);
+    void showInput();
     
 public:
     Ui::Typewindow *ui;

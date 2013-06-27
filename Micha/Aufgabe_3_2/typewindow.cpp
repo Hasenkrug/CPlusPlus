@@ -13,62 +13,66 @@ Typewindow::~Typewindow() {
 
 void Typewindow::keyPressEvent(QKeyEvent *e) {
     if(e->key() == Qt::Key_A) {
-        std::cout << "A" << std::endl;
+        ui->btnA->animateClick(100);
     } else if (e->key() == Qt::Key_B) {
-        std::cout << "B" << std::endl;
+        ui->btnB->animateClick(100);
     } else if (e->key() == Qt::Key_C) {
-        std::cout << "C" << std::endl;
+        ui->btnC->animateClick(100);
     } else if (e->key() == Qt::Key_D) {
-        std::cout << "D" << std::endl;
+        ui->btnD->animateClick(100);
     } else if (e->key() == Qt::Key_E) {
-        std::cout << "E" << std::endl;
+        ui->btnE->animateClick(100);
     } else if (e->key() == Qt::Key_F) {
-        std::cout << "F" << std::endl;
+        ui->btnF->animateClick(100);
     } else if (e->key() == Qt::Key_G) {
-        std::cout << "G" << std::endl;
+        ui->btnG->animateClick(100);
     } else if (e->key() == Qt::Key_H) {
-        std::cout << "H" << std::endl;
+        ui->btnH->animateClick(100);
     } else if (e->key() == Qt::Key_I) {
-        std::cout << "I" << std::endl;
+        ui->btnI->animateClick(100);
     } else if (e->key() == Qt::Key_J) {
-        std::cout << "J" << std::endl;
+        ui->btnJ->animateClick(100);
     } else if (e->key() == Qt::Key_K) {
-        std::cout << "K" << std::endl;
+        ui->btnK->animateClick(100);
     } else if (e->key() == Qt::Key_L) {
-        std::cout << "L" << std::endl;
+        ui->btnL->animateClick(100);
     } else if (e->key() == Qt::Key_M) {
-        std::cout << "M" << std::endl;
+        ui->btnM->animateClick(100);
     } else if (e->key() == Qt::Key_N) {
-        std::cout << "N" << std::endl;
+        ui->btnN->animateClick(100);
     } else if (e->key() == Qt::Key_O) {
-        std::cout << "O" << std::endl;
+        ui->btnO->animateClick(100);
     } else if (e->key() == Qt::Key_P) {
-        std::cout << "P" << std::endl;
+        ui->btnP->animateClick(100);
     } else if (e->key() == Qt::Key_Q) {
-        std::cout << "Q" << std::endl;
+        ui->btnQ->animateClick(100);
     } else if (e->key() == Qt::Key_R) {
-        std::cout << "R" << std::endl;
+        ui->btnR->animateClick(100);
     } else if (e->key() == Qt::Key_S) {
-        std::cout << "S" << std::endl;
+        ui->btnS->animateClick(100);
     } else if (e->key() == Qt::Key_T) {
-        std::cout << "T" << std::endl;
+        ui->btnT->animateClick(100);
     } else if (e->key() == Qt::Key_U) {
-        std::cout << "U" << std::endl;
+        ui->btnU->animateClick(100);
     } else if (e->key() == Qt::Key_V) {
-        std::cout << "V" << std::endl;
+        ui->btnV->animateClick(100);
     } else if (e->key() == Qt::Key_W) {
-        std::cout << "W" << std::endl;
+        ui->btnW->animateClick(100);
     } else if (e->key() == Qt::Key_X) {
-        std::cout << "X" << std::endl;
+        ui->btnX->animateClick(100);
     } else if (e->key() == Qt::Key_Y) {
-        std::cout << "Y" << std::endl;
+        ui->btnY->animateClick(100);
     } else if (e->key() == Qt::Key_Z) {
-        std::cout << "Z" << std::endl;
+        ui->btnZ->animateClick(100);
     } else if (e->key() == 196) {
-        std::cout << "Ä" << std::endl;
+        ui->btnAe->animateClick(100);
     } else if (e->key() == 214) {
-        std::cout << "Ö" << std::endl;
+        ui->btnOe->animateClick(100);
     } else if (e->key() == 220) {
-        std::cout << "Ü" << std::endl;
+        ui->btnUe->animateClick(100);
     }
+}
+
+void Typewindow::showInput() {
+
 }

@@ -60,7 +60,8 @@ void MainWindow::startLessonClicked() {
 
     if (ui->easy->isChecked()) {
         t->ui->lessonText->setText(getEasyString());
-        t->show();        
+        t->show();
+        t->showInput();
     } else if (ui->medium->isChecked()) {
         t->ui->lessonText->setText(getMediumString());
         t->show();
