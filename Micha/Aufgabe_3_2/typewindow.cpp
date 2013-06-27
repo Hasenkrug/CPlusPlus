@@ -5,14 +5,33 @@
 
 Typewindow::Typewindow(QWidget *parent) : QDialog(parent), ui(new Ui::Typewindow) {
     ui->setupUi(this);    
+    //setFocusPolicy(Qt::StrongFocus);
 }
 
 Typewindow::~Typewindow() {
     delete ui;
 }
 
+// wichtig zum abfangen von space & enter
+bool Typewindow::eventFilter(QObject *object, QEvent *event) {
+    if(event->type() == 51 && object == this) {
+        const QKeyEvent *ke = static_cast<QKeyEvent *>(event);
+        if(ke->key() == Qt::Key_Space) {
+            std::cout << "das hier wird 'noch' 2x ausgeführt >.<" << std::endl;
+            ui->btnSpace->animateClick(100);
+            return true;
+        } else if(ke->key() == Qt::Key_Return) {
+            std::cout << "das hier wird 'noch' 2x ausgeführt >.<" << std::endl;
+            ui->btnEnter->animateClick(100);
+            return true;
+        }
+    }
+    event->ignore();
+    return false;
+}
+
 void Typewindow::keyPressEvent(QKeyEvent *e) {
-    if(e->key() == Qt::Key_A) {
+    if(e->key() == Qt::Key_A) {        
         ui->btnA->animateClick(100);
     } else if (e->key() == Qt::Key_B) {
         ui->btnB->animateClick(100);
@@ -70,9 +89,7 @@ void Typewindow::keyPressEvent(QKeyEvent *e) {
         ui->btnOe->animateClick(100);
     } else if (e->key() == 220) {
         ui->btnUe->animateClick(100);
+    } else if(e->key() == Qt::Key_Space) {
+        ui->btnSpace->animateClick(100);
     }
-}
-
-void Typewindow::showInput() {
-
 }

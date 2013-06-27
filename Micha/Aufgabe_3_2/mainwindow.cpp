@@ -13,11 +13,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->startLessonButton, SIGNAL(clicked()), this, SLOT(startLessonClicked()));
 }
 
-
 MainWindow::~MainWindow() {
     delete ui;
 }
-
 
 QString getEasyString() {
     QString s[] = { "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö", "Ä" };
@@ -30,7 +28,6 @@ QString getEasyString() {
     return st;
 }
 
-
 QString getMediumString() {
     QString s[] = { "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö", "Ä", "Q", "W", "E", "R", "T", "Z", "U", "I", "O", "P", "Ü"};
     QString st = "";
@@ -41,7 +38,6 @@ QString getMediumString() {
 
     return st;
 }
-
 
 QString getHardString() {
     QString s[] = { "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö", "Ä", "Q", "W", "E", "R", "T", "Z", "U", "I", "O", "P", "Ü", "Y", "X", "C", "V", "B", "N", "M", "1", "2", "3", "5", "6", "7", "8", "9", "0"};
@@ -54,14 +50,14 @@ QString getHardString() {
     return st;
 }
 
-
 void MainWindow::startLessonClicked() {
     Typewindow* t = new Typewindow(this);
+    // wichtig zum abfangen von space & enter
+    t->installEventFilter(t);
 
     if (ui->easy->isChecked()) {
         t->ui->lessonText->setText(getEasyString());
         t->show();
-        t->showInput();
     } else if (ui->medium->isChecked()) {
         t->ui->lessonText->setText(getMediumString());
         t->show();

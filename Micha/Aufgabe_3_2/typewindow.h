@@ -15,7 +15,8 @@ public:
     ~Typewindow();
 
     void keyPressEvent(QKeyEvent *e);
-    void showInput();
+    // wichtig zum abfangen von space & enter
+    bool Typewindow::eventFilter(QObject *object, QEvent *event);
     
 public:
     Ui::Typewindow *ui;
