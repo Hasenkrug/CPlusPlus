@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2013-06-22T17:43:16
+# Project created by QtCreator 2013-06-24T16:24:31
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Uebung2
+TARGET = Aufgabe_3_2
 TEMPLATE = app
 
 
@@ -19,7 +19,5 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     typewindow.h
 
-FORMS    += \
-    lesson.ui \
-    mainwindow.ui \
+FORMS    += mainwindow.ui \
     typewindow.ui
