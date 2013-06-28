@@ -14,6 +14,7 @@ Typewindow::~Typewindow() {
 
 // wichtig zum abfangen von space & enter
 bool Typewindow::eventFilter(QObject *object, QEvent *event) {
+    // 51 = QEvent::ShortcutOverride - Key press in child, for overriding shortcut key handling (QKeyEvent)
     if(event->type() == 51 && object == this) {
         const QKeyEvent *ke = static_cast<QKeyEvent *>(event);
         if(ke->key() == Qt::Key_Space) {
@@ -32,7 +33,7 @@ bool Typewindow::eventFilter(QObject *object, QEvent *event) {
 
 void Typewindow::keyPressEvent(QKeyEvent *e) {
     if(e->key() == Qt::Key_A) {        
-        ui->btnA->animateClick(100);
+        ui->btnA->animateClick(100);        
     } else if (e->key() == Qt::Key_B) {
         ui->btnB->animateClick(100);
     } else if (e->key() == Qt::Key_C) {
