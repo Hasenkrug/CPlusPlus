@@ -21,7 +21,8 @@ QString getEasyString() {
     QString s[] = { "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö", "Ä" };
     QString st = "";
 
-    for(int i = 0; i < 40; i++) {
+    // ACHTUNG von 40 auf 10 geändert (zum testen)
+    for(int i = 0; i < 10; i++) {
         st = st + s[rand() % 10];
     }
 
@@ -50,21 +51,23 @@ QString getHardString() {
     return st;
 }
 
-void MainWindow::startLessonClicked() {
-    Typewindow* t = new Typewindow(this);
-    // wichtig zum abfangen von space & enter
-    t->installEventFilter(t);
+void MainWindow::startLessonClicked() {    
 
     if (ui->easy->isChecked()) {
-        t->ui->lessonText->setText(getEasyString());
+        Typewindow* t = new Typewindow(this, getEasyString());
+        // wichtig zum abfangen von space & enter
+        t->installEventFilter(t);
+
+        t->setText();
         t->show();
-    } else if (ui->medium->isChecked()) {
+
+    } /* else if (ui->medium->isChecked()) {
         t->ui->lessonText->setText(getMediumString());
         t->show();
     } else if (ui->hard->isChecked()) {
         t->ui->lessonText->setText(getHardString());
         t->show();
-    } else {
+    } */ else {
         QWidget *dialog = new QWidget();
         dialog->setWindowTitle("Achtung");
         QLabel *label = new QLabel("Bitte wähle erst die Schwierigkeit!");
