@@ -4,6 +4,7 @@
 #include <QDialog>
 
 namespace Ui {
+
 class Typewindow;
 }
 
@@ -11,12 +12,21 @@ class Typewindow : public QDialog {
     Q_OBJECT
     
 public:
-    explicit Typewindow(QWidget *parent = 0);
+
+    QString s;
+    //QStringList list;
+    int position; //wird eig. nicht mehr gebraucht da es nicht mehr hochgezählt wird
+
+    explicit Typewindow(QWidget *parent = 0, QString s = "");
+
     ~Typewindow();
 
     void keyPressEvent(QKeyEvent *e);
     // wichtig zum abfangen von space & enter
-    bool Typewindow::eventFilter(QObject *object, QEvent *event);
+    bool eventFilter(QObject *object, QEvent *event);
+
+    void setText();
+    bool checkInput(QString pressed);
     
 public:
     Ui::Typewindow *ui;
