@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>849</width>
-    <height>499</height>
+    <height>510</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2">
+  <layout class="QGridLayout" name="gridLayout_3">
    <item row="0" column="0">
     <widget class="QWidget" name="widget_2" native="true">
      <property name="minimumSize">
@@ -44,6 +44,9 @@
           <height>38</height>
          </size>
         </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
       <item row="0" column="2">
@@ -71,6 +74,11 @@
    </item>
    <item row="1" column="0">
     <widget class="QWidget" name="widget" native="true">
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
      <layout class="QGridLayout" name="gridLayout_14">
       <item row="0" column="0">
        <spacer name="horizontalSpacer_19">
@@ -89,7 +97,7 @@
        <widget class="QFrame" name="frame_4">
         <property name="minimumSize">
          <size>
-          <width>674</width>
+          <width>690</width>
           <height>265</height>
          </size>
         </property>
@@ -847,8 +855,8 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>48</width>
-              <height>48</height>
+              <width>51</width>
+              <height>51</height>
              </size>
             </property>
             <property name="text">
@@ -882,15 +890,20 @@
            <widget class="QPushButton" name="pushButton_211">
             <property name="minimumSize">
              <size>
-              <width>48</width>
+              <width>58</width>
               <height>48</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>51</width>
+              <width>58</width>
               <height>51</height>
              </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
             </property>
             <property name="text">
              <string>Alt Gr</string>
@@ -1147,19 +1160,19 @@
           <rect>
            <x>620</x>
            <y>60</y>
-           <width>51</width>
+           <width>65</width>
            <height>96</height>
           </rect>
          </property>
          <property name="minimumSize">
           <size>
-           <width>51</width>
+           <width>65</width>
            <height>96</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>51</width>
+           <width>70</width>
            <height>51</height>
           </size>
          </property>
@@ -1186,10 +1199,42 @@
     </widget>
    </item>
    <item row="2" column="0">
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>Abbrechen</string>
-     </property>
+    <widget class="QWidget" name="widget_3" native="true">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>628</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Abbrechen</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>41</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
