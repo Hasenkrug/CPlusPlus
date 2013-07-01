@@ -14,10 +14,11 @@ class Typewindow : public QDialog {
 public:
 
     QString s;
+    QString row;
     QStringList list;
     int errors;
     int hits;
-    int position; //wird eig. nicht mehr gebraucht da es nicht mehr hochgezählt wird
+    int position; //wird eig. nicht mehr gebraucht da es nicht mehr hochgezählt wird    
 
     explicit Typewindow(QWidget *parent = 0, QString s = "");
 
@@ -27,7 +28,8 @@ public:
     // wichtig zum abfangen von space & enter
     bool eventFilter(QObject *object, QEvent *event);
     void lessonControl(QString k);
-    void startLesson();
+    void startLesson(QStringList liste);
+    void nextRow();
     bool checkInput(QString pressed);
 
     

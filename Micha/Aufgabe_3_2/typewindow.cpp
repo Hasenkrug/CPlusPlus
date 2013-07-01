@@ -131,29 +131,34 @@ void Typewindow::keyPressEvent(QKeyEvent *e) {
     } else if(e->key() == Qt::Key_Return) {
         ui->btnEnter->animateClick(100);
         lessonControl("¶");
-    }
+        nextRow();
+    }    
 }
 
-void Typewindow::startLesson() {
-    ui->lessonText->setText(s);
+void Typewindow::nextRow() {
+    row = list.at(position).toLower();
+    position++;
+    ui->lessonText->setText(row);
+    ui->lessonText->setCursorPosition(0);
+}
+
+void Typewindow::startLesson(QStringList liste) {
+    list = liste;
+    nextRow();
+    ui->lessonText->setText(row);
     ui->lessonText->setCursorPosition(0);
 }
 
 void Typewindow::lessonControl(QString pressed) {       
-
-    if( position < s.length() - 1 ) {
-        if(checkInput(pressed)) {
-            s.remove(0,1);
-            ui->lessonText->setText(s);
-            ui->lessonText->setCursorPosition(0);
-        }
-    } else {
-        Typewindow::close();
+    if(checkInput(pressed)) {
+        row.remove(0,1);
+        ui->lessonText->setText(row);
+        ui->lessonText->setCursorPosition(0);
     }
 }
 
 bool Typewindow::checkInput(QString key) {
-    if( key.toLower() != s.at(position) ) {
+    if( key.toLower() != row.at(0) ) {
         ui->label->setStyleSheet("QLabel{ background-color:red }");
         errors++;
         hits++;
