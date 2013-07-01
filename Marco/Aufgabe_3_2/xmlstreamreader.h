@@ -3,21 +3,25 @@
 #include <QTreeWidget>
 #include <QXmlStreamReader>
 #include "person.h"
+#include <QList>
 
 class XmlStreamReader
 {
 public:
-    XmlStreamReader(QTreeWidget *tree);
+    XmlStreamReader(Persons *p);
 
     bool readFile(const QString &fileName);
+    bool writeXml(const QString &fileName, Person *person);
 
 private:
-    void readBookindexElement();
+    void readHighscoreElement();
     void readPersonElement();
     void readTypePointElements(Person *person);
     void skipUnknownElement();
 
-    QTreeWidget *treeWidget;
+    void writeIndexEntry(QXmlStreamWriter *xmlWriter, Person person);
+
+    Persons *persons;
     QXmlStreamReader reader;
 };
 

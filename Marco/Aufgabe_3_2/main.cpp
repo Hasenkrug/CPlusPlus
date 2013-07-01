@@ -13,6 +13,8 @@
 #include <xmllite.h>
 #include <QXmlStreamReader>
 #include <XmlStreamReader.h>
+#include <person.h>
+#include <QList>
 
 int main(int argc, char *argv[])
 {
@@ -20,12 +22,23 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     QStringList args = QApplication::arguments();
 
-    QTreeWidget treeWidget;
+    Persons *persons =  new Persons();
+    XmlStreamReader reader(persons);
 
-    XmlStreamReader reader(&treeWidget);
+    //
+    std::cout << "bool: "  << std::endl;
+
+
 
     reader.readFile("../Aufgabe_3_2/highscore.xml");
 
+    std::cout << "end?" << std::endl;
+
+    for ( int i=0; i < persons->persons.length(); i++){
+        std::cout << "Person: " << persons->persons.at(i).name << std::endl;
+        std::cout << "Fehler: " << persons->persons.at(i).error << std::endl;
+        std::cout << "ScoreTime: " << persons->persons.at(i).scoreTime << std::endl;
+    }
     return app.exec();
 
 

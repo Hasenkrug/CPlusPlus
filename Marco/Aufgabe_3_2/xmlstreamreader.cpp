@@ -3,12 +3,13 @@
 #include <QFile>
 #include "iostream"
 #include "person.h"
+#include <QList>
 
 
 
-XmlStreamReader::XmlStreamReader(QTreeWidget *tree)
+XmlStreamReader::XmlStreamReader(Persons *p)
 {
-    treeWidget = tree;
+    persons = p;
 }
 
 bool XmlStreamReader::readFile(const QString &fileName)
@@ -27,7 +28,9 @@ bool XmlStreamReader::readFile(const QString &fileName)
     while (!reader.atEnd()) {
         if (reader.isStartElement()) {
             if (reader.name() == "highscore") {
-                readBookindexElement();
+
+                std::cout << "1" << std::endl;
+                readHighscoreElement();
             } else {
                 reader.raiseError(QObject::tr("Not a highscore file"));
             }
@@ -52,15 +55,19 @@ bool XmlStreamReader::readFile(const QString &fileName)
     return true;
 }
 
-void XmlStreamReader::readBookindexElement()
+void XmlStreamReader::readHighscoreElement()
 {
+
+    std::cout << "b" << std::endl;
     reader.readNext();
     while (!reader.atEnd()) {
+        std::cout << "c" << std::endl;
         if (reader.isEndElement()) {
             reader.readNext();
             break;
         }
 
+        std::cout << "2" << std::endl;
         if (reader.isStartElement()) {
             if (reader.name() == "person") {
                 readPersonElement();
@@ -76,17 +83,20 @@ void XmlStreamReader::readBookindexElement()
 void XmlStreamReader::readPersonElement()
 {
     Person *person = new Person();
-    person->name = reader.attributes().value("name").toString();
+    person->name = reader.attributes().value("name").toString().toLocal8Bit().constData();
 
     //std::cout<< person->name << std::endl;
     person->scoreTime = reader.attributes().value("scoreTime").toLocal8Bit().toFloat(0);
     person->error = reader.attributes().value("error").toLocal8Bit().toInt(0,10);
     person->date = reader.attributes().value("date").toLocal8Bit().toInt(0,10);
+    std::cout << "w" << std::endl;
+    persons->persons.append(*person);
 
-    QString ste = person->name;
+    std::cout << "raus" << std::endl;
+    /*QString ste = person->name;
     std::string st = ste.toLocal8Bit().constData();
     std::cout << person->error << std::endl;
-
+*/
     reader.readNext();
     while (!reader.atEnd()) {
         if (reader.isEndElement()) {
@@ -116,18 +126,10 @@ void XmlStreamReader::readTypePointElements(Person *person)
     person->typePoints.append(*typePoint);
 
     reader.readElementText();
-    std::cout <<"w"<< typePoint->timeInMilliSeconds << std::endl;
+    //std::cout <<"w"<< typePoint->timeInMilliSeconds << std::endl;
     if (reader.isEndElement())
         reader.readNext();
-    /*
-    QString page = reader.readElementText();
 
-
-    QString allPages = parent->text(1);
-    if (!allPages.isEmpty())
-        allPages += ", ";
-    allPages += page;
-    parent->setText(1, allPages);*/
 }
 
 void XmlStreamReader::skipUnknownElement()
@@ -146,3 +148,48 @@ void XmlStreamReader::skipUnknownElement()
         }
     }
 }
+
+bool writeXml(const QString &fileName, Person *person)
+{
+    /*QFile file(fileName);
+    if (!file.open(QFile::WriteOnly | QFile::Text)) {
+        std::cerr << "Error: Cannot write file "
+                  << qPrintable(fileName) << ": "
+                  << qPrintable(file.errorString()) << std::endl;
+        return false;
+    }
+
+    QXmlStreamWriter xmlWriter(&file);
+    xmlWriter.setAutoFormatting(true);
+    xmlWriter.writeStartDocument();
+    xmlWriter.writeStartElement("highscore");
+    for (int i = 0; i < treeWidget->topLevelItemCount(); ++i)
+        writeIndexEntry(&xmlWriter, treeWidget->topLevelItem(i));
+    xmlWriter.writeEndDocument();
+    file.close();
+    if (file.error()) {
+        std::cerr << "Error: Cannot write file "
+                  << qPrintable(fileName) << ": "
+                  << qPrintable(file.errorString()) << std::endl;
+        return false;
+    }
+    return true;*/
+}
+
+void writeIndexEntry(QXmlStreamWriter *xmlWriter, Person person)
+{
+    /*
+    xmlWriter->writeStartElement("entry");
+    xmlWriter->writeAttribute("term", item->text(0));
+    QString pageString = item->text(1);
+    if (!pageString.isEmpty()) {
+        QStringList pages = pageString.split(", ");
+        foreach (QString page, pages)
+            xmlWriter->writeTextElement("page", page);
+    }
+    for (int i = 0; i < item->childCount(); ++i)
+        writeIndexEntry(xmlWriter, item->child(i));
+    xmlWriter->writeEndElement();
+    */
+}
+

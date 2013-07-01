@@ -2,7 +2,6 @@
 #define PERSON_H
 
 #include "iostream"
-#include <QString>
 #include <QList>
 //#include "mydate.h"
 
@@ -19,12 +18,22 @@ class Person
 {
 public:
     Person(){};
-    QString name;
+    std::string name;
     float scoreTime;
     int error;
     int date;
     QList<TypePoint> typePoints;
 
 };
+
+
+class Persons
+{
+public:
+    Persons(){};
+    QList<Person> persons;
+
+};
+
 
 #endif // PERSON_H
