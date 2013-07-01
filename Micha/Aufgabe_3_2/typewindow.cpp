@@ -3,13 +3,14 @@
 #include "QKeyEvent"
 #include "QChar"
 #include "iostream"
+#include "QLCDNumber"
 
 
 
 Typewindow::Typewindow(QWidget *parent, QString string) :
-    QDialog(parent), s(string), position(0), ui(new Ui::Typewindow) {
+    QDialog(parent), s(string), errors(0), hits(0), position(0), ui(new Ui::Typewindow) {
 
-    ui->setupUi(this);    
+    ui->setupUi(this);        
     //setFocusPolicy(Qt::StrongFocus);
 }
 
@@ -23,11 +24,11 @@ bool Typewindow::eventFilter(QObject *object, QEvent *event) {
     if(event->type() == 51 && object == this) {
         const QKeyEvent *ke = static_cast<QKeyEvent *>(event);
         if(ke->key() == Qt::Key_Space) {
-            std::cout << "typewindow.cpp, line 20: das hier wird 'noch' 2x ausgeführt >.<" << std::endl;
+            // std::cout << "typewindow.cpp, line 20: das hier wird 'noch' 2x ausgeführt >.<" << std::endl;
             ui->btnSpace->animateClick(100);
             return true;
         } else if(ke->key() == Qt::Key_Return) {
-            std::cout << "typewindow.cpp, line 24: das hier wird 'noch' 2x ausgeführt >.<" << std::endl;
+            // std::cout << "typewindow.cpp, line 24: das hier wird 'noch' 2x ausgeführt >.<" << std::endl;
             ui->btnEnter->animateClick(100);
             return true;
         }
@@ -39,122 +40,127 @@ bool Typewindow::eventFilter(QObject *object, QEvent *event) {
 void Typewindow::keyPressEvent(QKeyEvent *e) {
     if(e->key() == Qt::Key_A) {        
         ui->btnA->animateClick(100);
-        checkInput("A");
+        lessonControl("A");
     } else if (e->key() == Qt::Key_B) {
         ui->btnB->animateClick(100);
-        checkInput("B");
+        lessonControl("B");
     } else if (e->key() == Qt::Key_C) {
         ui->btnC->animateClick(100);
-        checkInput("C");
+        lessonControl("C");
     } else if (e->key() == Qt::Key_D) {
         ui->btnD->animateClick(100);        
-        checkInput("D");
+        lessonControl("D");
     } else if (e->key() == Qt::Key_E) {
         ui->btnE->animateClick(100);
-        checkInput("E");
+        lessonControl("E");
     } else if (e->key() == Qt::Key_F) {
         ui->btnF->animateClick(100);        
-        checkInput("F");
+        lessonControl("F");
     } else if (e->key() == Qt::Key_G) {
         ui->btnG->animateClick(100);
-        checkInput("G");
+        lessonControl("G");
     } else if (e->key() == Qt::Key_H) {
         ui->btnH->animateClick(100);
-        checkInput("H");
+        lessonControl("H");
     } else if (e->key() == Qt::Key_I) {
         ui->btnI->animateClick(100);
-        checkInput("I");
+        lessonControl("I");
     } else if (e->key() == Qt::Key_J) {
         ui->btnJ->animateClick(100);
-        checkInput("J");
+        lessonControl("J");
     } else if (e->key() == Qt::Key_K) {
         ui->btnK->animateClick(100);
-        checkInput("K");
+        lessonControl("K");
     } else if (e->key() == Qt::Key_L) {
         ui->btnL->animateClick(100);
-        checkInput("L");
+        lessonControl("L");
     } else if (e->key() == Qt::Key_M) {
         ui->btnM->animateClick(100);
-        checkInput("M");
+        lessonControl("M");
     } else if (e->key() == Qt::Key_N) {
         ui->btnN->animateClick(100);
-        checkInput("N");
+        lessonControl("N");
     } else if (e->key() == Qt::Key_O) {
         ui->btnO->animateClick(100);
-        checkInput("O");
+        lessonControl("O");
     } else if (e->key() == Qt::Key_P) {
         ui->btnP->animateClick(100);
-        checkInput("P");
+        lessonControl("P");
     } else if (e->key() == Qt::Key_Q) {
         ui->btnQ->animateClick(100);
-        checkInput("Q");
+        lessonControl("Q");
     } else if (e->key() == Qt::Key_R) {
         ui->btnR->animateClick(100);
-        checkInput("R");
+        lessonControl("R");
     } else if (e->key() == Qt::Key_S) {
         ui->btnS->animateClick(100);
-        checkInput("S");
+        lessonControl("S");
     } else if (e->key() == Qt::Key_T) {
         ui->btnT->animateClick(100);
-        checkInput("T");
+        lessonControl("T");
     } else if (e->key() == Qt::Key_U) {
         ui->btnU->animateClick(100);
-        checkInput("U");
+        lessonControl("U");
     } else if (e->key() == Qt::Key_V) {
         ui->btnV->animateClick(100);
-        checkInput("V");
+        lessonControl("V");
     } else if (e->key() == Qt::Key_W) {
         ui->btnW->animateClick(100);
-        checkInput("W");
+        lessonControl("W");
     } else if (e->key() == Qt::Key_X) {
         ui->btnX->animateClick(100);
-        checkInput("X");
+        lessonControl("X");
     } else if (e->key() == Qt::Key_Y) {
         ui->btnY->animateClick(100);
-        checkInput("Y");
+        lessonControl("Y");
     } else if (e->key() == Qt::Key_Z) {
         ui->btnZ->animateClick(100);
-        checkInput("Z");
+        lessonControl("Z");
     } else if (e->key() == 196) { // Ä
         ui->btnAe->animateClick(100);
-        checkInput("Ä");
+        lessonControl("Ä");
     } else if (e->key() == 214) { // Ö
         ui->btnOe->animateClick(100);        
-        checkInput("Ö");
+        lessonControl("Ö");
     } else if (e->key() == 220) { // Ü
         ui->btnUe->animateClick(100);
-        checkInput("Ü");
+        lessonControl("Ü");
     } else if(e->key() == Qt::Key_Space) {
         ui->btnSpace->animateClick(100);
-        checkInput(" ");
+        lessonControl(" ");
+    } else if(e->key() == Qt::Key_Return) {
+        ui->btnEnter->animateClick(100);
+        lessonControl("¶");
     }
 }
 
-void Typewindow::setText() {
-
-    //std::cout << s.toStdString() << std::endl;
-
+void Typewindow::startLesson() {
     ui->lessonText->setText(s);
+    ui->lessonText->setCursorPosition(0);
 }
 
-bool Typewindow::checkInput(QString pressed) {
-
-    //std::cout << "gedrück: " << pressed.toStdString() << " erwartet: "  << s.at(position).toLatin1() << std::endl;
+void Typewindow::lessonControl(QString pressed) {       
 
     if( position < s.length() - 1 ) {
-
-        if( pressed != s.at(position) ) {
-            ui->label->setStyleSheet("QLabel{ background-color:red }");
-        } else {
-            ui->label->setStyleSheet("QLabel{ background-color:green }");
+        if(checkInput(pressed)) {
             s.remove(0,1);
-            setText();
+            ui->lessonText->setText(s);
+            ui->lessonText->setCursorPosition(0);
         }
-
     } else {
-
         Typewindow::close();
     }
+}
 
-    return true;
+bool Typewindow::checkInput(QString key) {
+    if( key.toLower() != s.at(position) ) {
+        ui->label->setStyleSheet("QLabel{ background-color:red }");
+        errors++;
+        hits++;
+        return false;
+    } else {
+        ui->label->setStyleSheet("QLabel{ background-color:green }");
+        hits++;
+        return true;
+    }
 }
