@@ -35,9 +35,9 @@ int main() {
     assert(2012 == CONST_YEAR);
 
     // static member function Date::daysInMonth()
-    int days_feb = Date::daysInMonth(2);
+    /*int days_feb = Date::daysInMonth(2);
     cout << "February normally has " << days_feb << " days." << endl;
-    assert(days_feb == 28);
+    assert(days_feb == 28);*/
 
     int days_feb_2400 = Date::daysInMonth(Months(2),Years(2400));
     cout << "In year 2400, February will have " << days_feb_2400 << " days." << endl;
@@ -241,9 +241,6 @@ int main() {
     assert(map3.m_root->m_right->m_pair.second == "Darf nicht in map1 stehen!");
     assert(map1.m_root->m_right->m_pair.second != "Darf nicht in map1 stehen!");
 
-    const MyTemplate::Map<Date,string>& constMap = map3;
-    constMap[date1];
-
     // Templateparameter int/string Test
     MyTemplate::Map<int, string> map4;
     map4[23]= "was";
@@ -298,16 +295,8 @@ int main() {
     m.begin()->second = "neuer Wert";
 
     // hier darf kein wert nachgetragen werden.
+    //m.begin()->first = 2;
 
-    // m.begin()->first = 2;
-    cout <<  ""<< endl;
-    cout << "Mapped_t ist nun ein anderer Paramenter als string: "<< endl;
-
-    MyTemplate::Map<int,float> mm;
-    mm[4] = 4.5f;
-    mm[5] = 2.8923f;
-    MyTemplate::Map<int,float>::Iterator ii = mm.begin();
-    cout << "kleinstes Element: " << ii->first << "/" << ii->second << endl;
 
 
 #if 0

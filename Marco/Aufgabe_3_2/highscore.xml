@@ -1,0 +1,43 @@
+﻿<?xml version="1.0"?>
+<highscore>
+	<person name="marco" scoreTime="234" error="20" date="12.23.4433">
+		<typePoint timeInMilliSeconds="30" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="40" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="30" error="1"></typePoint>
+		<typePoint timeInMilliSeconds="50" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="20" error="1"></typePoint>
+		<typePoint timeInMilliSeconds="60" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="70" error="2"></typePoint>
+		<typePoint timeInMilliSeconds="80" error="1"></typePoint>
+		<typePoint timeInMilliSeconds="90" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="20" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="40" error="2"></typePoint>
+	</person>
+	<person name="nadine" scoreTime="234" error="202" date="12.23.4433">
+		<typePoint timeInMilliSeconds="30" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="40" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="30" error="1"></typePoint>
+		<typePoint timeInMilliSeconds="50" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="20" error="1"></typePoint>
+		<typePoint timeInMilliSeconds="60" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="70" error="2"></typePoint>
+		<typePoint timeInMilliSeconds="80" error="1"></typePoint>
+		<typePoint timeInMilliSeconds="90" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="20" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="40" error="2"></typePoint>
+	</person>
+	<person name="micha" scoreTime="234" error="202" date="12.23.4433">
+		<typePoint timeInMilliSeconds="30" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="40" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="30" error="1"></typePoint>
+		<typePoint timeInMilliSeconds="50" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="20" error="1"></typePoint>
+		<typePoint timeInMilliSeconds="60" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="70" error="2"></typePoint>
+		<typePoint timeInMilliSeconds="80" error="1"></typePoint>
+		<typePoint timeInMilliSeconds="90" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="20" error="0"></typePoint>
+		<typePoint timeInMilliSeconds="40" error="2"></typePoint>
+	</person>
+</highscore>
+	
