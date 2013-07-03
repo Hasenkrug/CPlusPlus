@@ -47,6 +47,15 @@ QStringList getEasyString() {
     QString g("FALLS ÖL FAD DJ FASS JÖLÖ FLAK LÖS KAFKA JA¶");
     QString h("DAS KLÖS AS ÖL KALK FALL SAAL LA SKALA JÖLÖ¶");
 
+//    QString a("ASDF¶");
+//    QString b("AS¶");
+//    QString c("ALS¶");
+//    QString d("KALK¶");
+//    QString e("SKALA¶");
+//    QString f("SALSA¶");
+//    QString g("FALLS¶");
+//    QString h("DAS¶");
+
     QStringList st;
 
     st.append(a);
@@ -57,6 +66,12 @@ QStringList getEasyString() {
     st.append(f);
     st.append(g);
     st.append(h);
+
+    for(int i = 0; i <= 7; i++) {
+
+        std::cout << random << std::endl;
+    }
+
 
     return st;
 }

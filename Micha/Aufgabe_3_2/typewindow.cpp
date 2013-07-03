@@ -8,7 +8,7 @@
 
 
 Typewindow::Typewindow(QWidget *parent, QString string) :
-    QDialog(parent), s(string), errors(0), hits(0), position(0), ui(new Ui::Typewindow) {
+    QDialog(parent), s(string), errors(0), hits(0), rowCount(0), ui(new Ui::Typewindow) {
 
     ui->setupUi(this);        
     //setFocusPolicy(Qt::StrongFocus);
@@ -136,10 +136,24 @@ void Typewindow::keyPressEvent(QKeyEvent *e) {
 }
 
 void Typewindow::nextRow() {
-    row = list.at(position).toLower();
-    position++;
-    ui->lessonText->setText(row);
-    ui->lessonText->setCursorPosition(0);
+    if(timer.elapsed()/3000 < 60) {
+        if(rowCount < list.length()) {
+            row = list.at(rowCount).toLower();
+            rowCount++;
+            ui->lessonText->setText(row);
+            ui->lessonText->setCursorPosition(0);
+        } else {
+            rowCount = 0;
+            mixList();
+            nextRow();
+        }
+    } else {
+        // Lesson ist fertig
+        std::cout << "Anschläge: " << hits << std::endl;
+        std::cout << "Fehler: " << errors << std::endl;
+        std::cout << "APM: " << hits/(timer.elapsed()/60000) << std::endl;
+        Typewindow::close();
+    }
 }
 
 void Typewindow::startLesson(QStringList liste) {
@@ -147,6 +161,7 @@ void Typewindow::startLesson(QStringList liste) {
     nextRow();
     ui->lessonText->setText(row);
     ui->lessonText->setCursorPosition(0);
+    timer.start();
 }
 
 void Typewindow::lessonControl(QString pressed) {       
@@ -167,5 +182,13 @@ bool Typewindow::checkInput(QString key) {
         ui->label->setStyleSheet("QLabel{ background-color:green }");
         hits++;
         return true;
+    }
+}
+
+void Typewindow::mixList() {
+    QStringList temp;
+
+    for(int j = list.length()-1; j >= 0; j--) {
+        temp.append(list[j]);
     }
 }

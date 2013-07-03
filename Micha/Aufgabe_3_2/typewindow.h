@@ -2,6 +2,7 @@
 #define TYPEWINDOW_H
 
 #include <QDialog>
+#include <QTime>
 
 namespace Ui {
 
@@ -18,7 +19,8 @@ public:
     QStringList list;
     int errors;
     int hits;
-    int position; //wird eig. nicht mehr gebraucht da es nicht mehr hochgezählt wird    
+    int rowCount;
+    QTime timer;
 
     explicit Typewindow(QWidget *parent = 0, QString s = "");
 
@@ -31,6 +33,7 @@ public:
     void startLesson(QStringList liste);
     void nextRow();
     bool checkInput(QString pressed);
+    void mixList();
 
     
 public:
