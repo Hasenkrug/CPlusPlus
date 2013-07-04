@@ -3,6 +3,7 @@
 #include "QKeyEvent"
 #include "QChar"
 #include "iostream"
+#include <person.h>
 
 
 
@@ -149,6 +150,14 @@ bool Typewindow::checkInput(QString pressed) {
             ui->label->setStyleSheet("QLabel{ background-color:green }");
             s.remove(0,1);
             setText();
+            /*TypePoint t = new TypePoint();
+            t.error = ;
+            t.timeInMilliSeconds =;
+                    Run r = new Run();
+            r.typePoints.append(t);*/
+            // store timeStamp
+            // store error
+
         }
 
     } else {
