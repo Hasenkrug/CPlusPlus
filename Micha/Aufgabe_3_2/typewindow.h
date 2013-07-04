@@ -2,6 +2,7 @@
 #define TYPEWINDOW_H
 
 #include <QDialog>
+#include <QTime>
 
 namespace Ui {
 
@@ -14,8 +15,12 @@ class Typewindow : public QDialog {
 public:
 
     QString s;
-    //QStringList list;
-    int position; //wird eig. nicht mehr gebraucht da es nicht mehr hochgezählt wird
+    QString row;
+    QStringList list;
+    int errors;
+    int hits;
+    int rowCount;
+    QTime timer;
 
     explicit Typewindow(QWidget *parent = 0, QString s = "");
 
@@ -24,9 +29,12 @@ public:
     void keyPressEvent(QKeyEvent *e);
     // wichtig zum abfangen von space & enter
     bool eventFilter(QObject *object, QEvent *event);
-
-    void setText();
+    void lessonControl(QString k);
+    void startLesson(QStringList liste);
+    void nextRow();
     bool checkInput(QString pressed);
+    void mixList();
+
     
 public:
     Ui::Typewindow *ui;
