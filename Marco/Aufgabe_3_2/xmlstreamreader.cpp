@@ -4,12 +4,12 @@
 #include "iostream"
 #include "person.h"
 #include <QList>
-
+#include <QXmlStreamWriter>
 
 
 XmlStreamReader::XmlStreamReader(Persons *p)
 {
-    persons = p;
+    this->persons = p;
 }
 
 bool XmlStreamReader::readFile(const QString &fileName)
@@ -28,8 +28,6 @@ bool XmlStreamReader::readFile(const QString &fileName)
     while (!reader.atEnd()) {
         if (reader.isStartElement()) {
             if (reader.name() == "highscore") {
-
-                std::cout << "1" << std::endl;
                 readHighscoreElement();
             } else {
                 reader.raiseError(QObject::tr("Not a highscore file"));
@@ -58,18 +56,17 @@ bool XmlStreamReader::readFile(const QString &fileName)
 void XmlStreamReader::readHighscoreElement()
 {
 
-    std::cout << "b" << std::endl;
     reader.readNext();
     while (!reader.atEnd()) {
         std::cout << "c" << std::endl;
         if (reader.isEndElement()) {
+            std::cout << "end" << std::endl;
             reader.readNext();
             break;
         }
-
-        std::cout << "2" << std::endl;
         if (reader.isStartElement()) {
             if (reader.name() == "person") {
+
                 readPersonElement();
             }else{
                 skipUnknownElement();
@@ -85,18 +82,55 @@ void XmlStreamReader::readPersonElement()
     Person *person = new Person();
     person->name = reader.attributes().value("name").toString().toLocal8Bit().constData();
 
-    //std::cout<< person->name << std::endl;
-    person->scoreTime = reader.attributes().value("scoreTime").toLocal8Bit().toFloat(0);
+    person->scoreTime = reader.attributes().value("scoreTime").toLocal8Bit().toInt(0);
     person->error = reader.attributes().value("error").toLocal8Bit().toInt(0,10);
-    person->date = reader.attributes().value("date").toLocal8Bit().toInt(0,10);
-    std::cout << "w" << std::endl;
+    person->memberSince = reader.attributes().value("memberSince").toLocal8Bit().toInt(0,10);
+
+
+    //std::cout<< "run: "<< reader.attributes().value("name").toString().toLocal8Bit().constData() << std::endl;
+
+    reader.readNext();
+    while (!reader.atEnd()) {
+        if (reader.isEndElement()) {
+
+            std::cout <<"end" << std::endl;
+            reader.readNext();
+            break;
+        }
+
+        if (reader.isStartElement()) {
+            if (reader.name() == "run") {
+                readRunElements(person);
+            } else {
+                skipUnknownElement();
+            }
+        } else {
+            reader.readNext();
+        }
+    }
+
     persons->persons.append(*person);
 
-    std::cout << "raus" << std::endl;
-    /*QString ste = person->name;
-    std::string st = ste.toLocal8Bit().constData();
-    std::cout << person->error << std::endl;
+
+}
+
+
+void XmlStreamReader::readRunElements(Person *person)
+{
+    Run *run = new Run();
+    run->runChallenge = this->reader.attributes().value("runChallenge").toLocal8Bit().toInt(0,10);
+    run->runOn = this->reader.attributes().value("runOn").toLocal8Bit().toInt(0,10);
+
+    //std::cout<< "run: "<< this->reader.attributes().value("runChallenge").toLocal8Bit().toInt(0,10) << std::endl;
+
+
+    std::cout<< "run:end "<<std::endl;
+/*
+    reader.readElementText();
+    if (reader.isEndElement())
+        reader.readNext();
 */
+
     reader.readNext();
     while (!reader.atEnd()) {
         if (reader.isEndElement()) {
@@ -108,7 +142,7 @@ void XmlStreamReader::readPersonElement()
 
         if (reader.isStartElement()) {
             if (reader.name() == "typePoint") {
-                readTypePointElements(person);
+                readTypePointElements(run);
             } else {
                 skipUnknownElement();
             }
@@ -116,17 +150,18 @@ void XmlStreamReader::readPersonElement()
             reader.readNext();
         }
     }
+
+    person->runs.append(*run);
 }
 
-void XmlStreamReader::readTypePointElements(Person *person)
+void XmlStreamReader::readTypePointElements(Run *run)
 {
     TypePoint *typePoint = new TypePoint();
     typePoint->error = reader.attributes().value("error").toLocal8Bit().toInt(0,10);
     typePoint->timeInMilliSeconds = reader.attributes().value("timeInMilliSeconds").toLocal8Bit().toInt(0,10);
-    person->typePoints.append(*typePoint);
+    run->typePoints.append(*typePoint);
 
     reader.readElementText();
-    //std::cout <<"w"<< typePoint->timeInMilliSeconds << std::endl;
     if (reader.isEndElement())
         reader.readNext();
 
@@ -149,22 +184,73 @@ void XmlStreamReader::skipUnknownElement()
     }
 }
 
-bool writeXml(const QString &fileName, Person *person)
+
+
+void XmlStreamReader::writeTypePointEntry(QXmlStreamWriter *xmlWriter, TypePoint *typePoint)
 {
-    /*QFile file(fileName);
+    xmlWriter->writeStartElement("typePoint");
+    xmlWriter->writeAttribute("timeInMilliSeconds", QString::fromStdString(""+typePoint->timeInMilliSeconds));
+    xmlWriter->writeAttribute("error", QString::fromStdString(""+typePoint->error));
+    xmlWriter->writeEndElement();
+}
+
+void XmlStreamReader::writeRunEntry(QXmlStreamWriter *xmlWriter, Run *run)
+{
+    xmlWriter->writeStartElement("run");
+    xmlWriter->writeAttribute("runOn", QString::fromStdString(""+run->runOn));
+    xmlWriter->writeAttribute("runChallenge", QString::fromStdString(""+run->runChallenge));
+    for (int i = 0; i < run->typePoints.length(); ++i){
+        TypePoint *typePoint = new TypePoint();
+        typePoint->error = run->typePoints.at(i).error;
+        typePoint->timeInMilliSeconds = run->typePoints.at(i).timeInMilliSeconds;
+        writeTypePointEntry(xmlWriter, typePoint);
+    }
+    xmlWriter->writeEndElement();
+}
+
+void XmlStreamReader::writePersonEntry(QXmlStreamWriter *xmlWriter, Person *person)
+{
+    xmlWriter->writeStartElement("person");
+
+    xmlWriter->writeAttribute("name", QString::fromStdString(person->name));
+    xmlWriter->writeAttribute("error", QString::fromStdString(""+person->error));
+    xmlWriter->writeAttribute("scoreTime", QString::fromStdString(""+person->scoreTime));
+    xmlWriter->writeAttribute("memeberSince", QString::fromStdString(""+person->memberSince));
+    for (int i = 0; i < person->runs.length(); ++i){
+        Run *run = new Run();
+        std::cout << "runCh" << person->runs.at(i).runChallenge<< std::endl;
+        run->runChallenge = person->runs.at(i).runChallenge;
+        run->runOn = person->runs.at(i).runOn;
+        run->typePoints = person->runs.at(i).typePoints;
+        writeRunEntry(xmlWriter, run);
+    }
+    xmlWriter->writeEndElement();
+}
+
+bool XmlStreamReader::writeXml(const QString &fileName)
+{
+
+    std::cout << "1"<< std::endl;
+    QFile file(fileName);
     if (!file.open(QFile::WriteOnly | QFile::Text)) {
         std::cerr << "Error: Cannot write file "
                   << qPrintable(fileName) << ": "
                   << qPrintable(file.errorString()) << std::endl;
         return false;
     }
-
     QXmlStreamWriter xmlWriter(&file);
     xmlWriter.setAutoFormatting(true);
     xmlWriter.writeStartDocument();
     xmlWriter.writeStartElement("highscore");
-    for (int i = 0; i < treeWidget->topLevelItemCount(); ++i)
-        writeIndexEntry(&xmlWriter, treeWidget->topLevelItem(i));
+    for (int i = 0; i < this->persons->persons.length(); ++i){
+        Person *pers = new Person();
+        pers->error = this->persons->persons.at(i).error;
+        pers->memberSince = this->persons->persons.at(i).memberSince;
+        pers->name = this->persons->persons.at(i).name;
+        pers->scoreTime = this->persons->persons.at(i).scoreTime;
+        pers->runs = this->persons->persons.at(i).runs;
+            writePersonEntry(&xmlWriter,pers);
+    }
     xmlWriter.writeEndDocument();
     file.close();
     if (file.error()) {
@@ -173,23 +259,8 @@ bool writeXml(const QString &fileName, Person *person)
                   << qPrintable(file.errorString()) << std::endl;
         return false;
     }
-    return true;*/
+    return true;
 }
 
-void writeIndexEntry(QXmlStreamWriter *xmlWriter, Person person)
-{
-    /*
-    xmlWriter->writeStartElement("entry");
-    xmlWriter->writeAttribute("term", item->text(0));
-    QString pageString = item->text(1);
-    if (!pageString.isEmpty()) {
-        QStringList pages = pageString.split(", ");
-        foreach (QString page, pages)
-            xmlWriter->writeTextElement("page", page);
-    }
-    for (int i = 0; i < item->childCount(); ++i)
-        writeIndexEntry(xmlWriter, item->child(i));
-    xmlWriter->writeEndElement();
-    */
-}
+
 

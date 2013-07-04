@@ -14,15 +14,25 @@ public:
     int error;
 };
 
+class Run
+{
+public:
+    Run(){};
+    int runOn;
+    int runChallenge;
+    QList<TypePoint> typePoints;
+
+};
+
 class Person
 {
 public:
     Person(){};
     std::string name;
-    float scoreTime;
+    int scoreTime;
     int error;
-    int date;
-    QList<TypePoint> typePoints;
+    int memberSince;
+    QList<Run> runs;
 
 };
 

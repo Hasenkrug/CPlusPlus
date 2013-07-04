@@ -22,24 +22,31 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     QStringList args = QApplication::arguments();
 
-    Persons *persons =  new Persons();
+
+
     XmlStreamReader reader(persons);
-
-    //
-    std::cout << "bool: "  << std::endl;
-
 
 
     reader.readFile("../Aufgabe_3_2/highscore.xml");
 
-    std::cout << "end?" << std::endl;
 
+    std::cout << "122"<< std::endl;
     for ( int i=0; i < persons->persons.length(); i++){
+
+        std::cout << "1: " << i<< std::endl;
         std::cout << "Person: " << persons->persons.at(i).name << std::endl;
+        //persons->persons.at(i).runs.at(i).
         std::cout << "Fehler: " << persons->persons.at(i).error << std::endl;
         std::cout << "ScoreTime: " << persons->persons.at(i).scoreTime << std::endl;
+        std::cout << "runCount" << persons->persons.at(i).runs.length()<< std::endl;
+        for( int j = 0; j< persons->persons.at(i).runs.length(); j++){
+            std::cout << "runChallenge: " << persons->persons.at(i).runs.at(j).runChallenge << std::endl;
+        }
     }
-    return app.exec();
+
+    std::cout << "11"<< std::endl;
+    reader.writeXml("../Aufgabe_3_2/newHighscore.xml");
+    return 0;
 
 
 }
