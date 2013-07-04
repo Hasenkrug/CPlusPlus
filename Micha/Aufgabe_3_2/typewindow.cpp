@@ -136,7 +136,7 @@ void Typewindow::keyPressEvent(QKeyEvent *e) {
 }
 
 void Typewindow::nextRow() {
-    if(timer.elapsed()/3000 < 60) {
+    if(timer.elapsed() / 3000 < 60) {
         if(rowCount < list.length()) {
             row = list.at(rowCount).toLower();
             rowCount++;
@@ -151,7 +151,7 @@ void Typewindow::nextRow() {
         // Lesson ist fertig
         std::cout << "Anschläge: " << hits << std::endl;
         std::cout << "Fehler: " << errors << std::endl;
-        std::cout << "APM: " << hits/(timer.elapsed()/60000) << std::endl;
+        std::cout << "APM: " << hits / (timer.elapsed() / 60000) << std::endl;
         Typewindow::close();
     }
 }
