@@ -183,9 +183,9 @@ bool Typewindow::checkInput(QString pressed) {
     if( position < s.length() - 1 ) {
 
         if( pressed != s.at(position) ) {
-            ui->label->setStyleSheet("QLabel{ background-color:red }");
+            ui->colorBox->setStyleSheet("QGroupBox{ background-color:#ff0000 }");
         } else {
-            ui->label->setStyleSheet("QLabel{ background-color:green }");
+            ui->colorBox->setStyleSheet("QGroupBox{ background-color:#00ff00 }");
             s.remove(0,1);
             setText();
             setKeyStyle();
