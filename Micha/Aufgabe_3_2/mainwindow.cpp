@@ -18,43 +18,24 @@ MainWindow::~MainWindow() {
 }
 
 QStringList getEasyString() {
-//    QString s[] = { "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö", "Ä" };
-//    QString st = "";
 
-//    // ACHTUNG von 40 auf 10 geändert (zum testen)
-//    for(int i = 0; i < 10; i++) {
-//        st = st + s[rand() % 10];
-//    }
+    QString a("asdf jklö lass all salsa la da fass ja kalk¶");
+    QString b("as skala saal das kafka öl la asdf jklö da¶");
+    QString c("als ja fall as las saal jölö kafka alf la¶");
+    QString d("kalk da fasd kja falls flak as klös als dj¶");
+    QString e("skala jölö saal da all ja falls das öl fad¶");
+    QString f("salsa dj kafka jölö klös da alf ja das dsl¶");
+    QString g("falls öl fad dj fass jölö flak lös kafka ja¶");
+    QString h("das klös as öl kalk fall saal la skala jölö¶");
 
-//    QString s("ASDF JKLÖ LASS ALL SALSA LA DA FASS JA KALK AS SKALA SAAL DAS KAFKA ÖL LA ASDF JKLÖ DA ALS JA FALL AS LAS SAAL JÖLÖ KAFKA ALF LA KALK DA FASD KJA FALLS FLAK AS KLÖS ALS DJ SKALA JÖLÖ SAAL DA ALL JA FALLS DAS ÖL FAD SALSA DJ KAFKA JÖLÖ KLÖS DA ALF JA DAS DSL FALLS ÖL FAD DJ FASS JÖLÖ FLAK LÖS KAFKA JA DAS KLÖS AS ÖL KALK FLAK LAK SÖGA ASDF JKLÖ");
-//    QString st;
-//    QStringList list = s.toLower().split(" ");
-
-//    for(int i = 0; i < list.length(); i++) {
-//        if(i == list.length()-1) {
-//            st += list[rand() % 80];
-//        } else {
-//            st += list[rand() % 80] + QString(" ");
-//        }
-//    }
-
-    QString a("ASDF JKLÖ LASS ALL SALSA LA DA FASS JA KALK¶");
-    QString b("AS SKALA SAAL DAS KAFKA ÖL LA ASDF JKLÖ DA¶");
-    QString c("ALS JA FALL AS LAS SAAL JÖLÖ KAFKA ALF LA¶");
-    QString d("KALK DA FASD KJA FALLS FLAK AS KLÖS ALS DJ¶");
-    QString e("SKALA JÖLÖ SAAL DA ALL JA FALLS DAS ÖL FAD¶");
-    QString f("SALSA DJ KAFKA JÖLÖ KLÖS DA ALF JA DAS DSL¶");
-    QString g("FALLS ÖL FAD DJ FASS JÖLÖ FLAK LÖS KAFKA JA¶");
-    QString h("DAS KLÖS AS ÖL KALK FALL SAAL LA SKALA JÖLÖ¶");
-
-//    QString a("ASDF¶");
-//    QString b("AS¶");
-//    QString c("ALS¶");
-//    QString d("KALK¶");
-//    QString e("SKALA¶");
-//    QString f("SALSA¶");
-//    QString g("FALLS¶");
-//    QString h("DAS¶");
+//    QString a("asdf¶");
+//    QString b("as¶");
+//    QString c("als¶");
+//    QString d("kalk¶");
+//    QString e("skala¶");
+//    QString f("salsa¶");
+//    QString g("falls¶");
+//    QString h("das¶");
 
     QStringList st;
 
@@ -67,22 +48,42 @@ QStringList getEasyString() {
     st.append(g);
     st.append(h);
 
-    for(int i = 0; i <= 7; i++) {
-
-        std::cout << random << std::endl;
-    }
-
-
     return st;
 }
 
-QString getMediumString() {
-    QString s[] = { "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö", "Ä", "Q", "W", "E", "R", "T", "Z", "U", "I", "O", "P", "Ü"};
-    QString st = "";
+QStringList getMediumString() {
 
-    for(int i = 0; i < 40; i++) {
-        st = st + s[rand() % 21];
-    }
+    QString a("freier fördern friede kreis seiner rief¶");
+    QString b("radikalen frei irren freie leider riefen¶");
+    QString c("er fördern erinnern freier freien rief¶");
+    QString d("riri irir fördern darin kreis drei kinder¶");
+    QString e("riefen kreise kleinere keiner reisen¶");
+    QString f("klarer rinnen fördern nieder kreis nie¶");
+    QString g("kinder allerlei kreise innere keiner¶");
+    QString h("kleiner klarer kleineren fördern freier¶");
+    QString i("kreis leider kinder derer kreis aneinander¶");
+    QString j("keiner anderer klarer allerlei fördern¶");
+    QString k("nie kreis risse kinder riefen kreise¶");
+    QString l("definieren keiner friedens klarer leider¶");
+    QString m("fördern leiser kreis drin kinder einer¶");
+    QString n("kreise rinnen keiner realisieren klarer¶");
+
+    QStringList st;
+
+    st.append(a);
+    st.append(b);
+    st.append(c);
+    st.append(d);
+    st.append(e);
+    st.append(f);
+    st.append(g);
+    st.append(h);
+    st.append(i);
+    st.append(j);
+    st.append(k);
+    st.append(l);
+    st.append(m);
+    st.append(n);
 
     return st;
 }
@@ -99,19 +100,21 @@ QString getHardString() {
 }
 
 void MainWindow::startLessonClicked() {    
+    Typewindow* t = new Typewindow(this);
 
-    if (ui->easy->isChecked()) {
-        Typewindow* t = new Typewindow(this);
+    if (ui->easy->isChecked()) {        
         // wichtig zum abfangen von space & enter
         t->installEventFilter(t);
 
         t->startLesson(getEasyString());
         t->show();
+    } else if (ui->medium->isChecked()) {
+        // wichtig zum abfangen von space & enter
+        t->installEventFilter(t);
 
-    } /* else if (ui->medium->isChecked()) {
-        t->ui->lessonText->setText(getMediumString());
+        t->startLesson(getMediumString());
         t->show();
-    } else if (ui->hard->isChecked()) {
+    } /*else if (ui->hard->isChecked()) {
         t->ui->lessonText->setText(getHardString());
         t->show();
     } */ else {

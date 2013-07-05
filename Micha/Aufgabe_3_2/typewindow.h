@@ -20,6 +20,7 @@ public:
     int errors;
     int hits;
     int rowCount;
+    int doubleEvasion;
     QTime timer;
 
     explicit Typewindow(QWidget *parent = 0, QString s = "");
@@ -34,6 +35,7 @@ public:
     void nextRow();
     bool checkInput(QString pressed);
     void mixList();
+    void setKeyStyle();
 
     
 public:

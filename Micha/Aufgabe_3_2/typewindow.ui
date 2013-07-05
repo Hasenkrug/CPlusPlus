@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>849</width>
-    <height>549</height>
+    <height>551</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -100,6 +100,21 @@
           <width>690</width>
           <height>265</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #eef7fc, stop: 1 #6ebae2);
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 1px;
+    /* Border color is now set */
+    border-color: #595959;
+}</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
