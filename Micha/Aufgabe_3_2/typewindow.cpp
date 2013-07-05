@@ -77,14 +77,14 @@ void Typewindow::startLesson(QStringList liste) {
 
 void Typewindow::lessonControl(QString pressed) {       
     if(checkInput(pressed)) {
-        ui->label->setStyleSheet("QLabel{ background-color:green }");
+        ui->colorBox->setStyleSheet("QGroupBox{ background-color:#00ff00 }");
         hits++;
         row.remove(0,1);
         setKeyStyle();
         ui->lessonText->setText(row);
         ui->lessonText->setCursorPosition(0);
     } else {
-        ui->label->setStyleSheet("QLabel{ background-color:red }");
+        ui->colorBox->setStyleSheet("QGroupBox{ background-color:#ff0000 }");
         hits++;
         errors++;
     }
