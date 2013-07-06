@@ -8,8 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Aufgabe_3_2_Mac
-TEMPLATE = app
+TARGET = Aufgabe_3_2
 
 
 SOURCES += main.cpp\
@@ -19,5 +18,6 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     typewindow.h
 
-FORMS    += mainwindow.ui \
-    typewindow.ui
+FORMS    += mainwindow.ui\
+        typewindow.ui
+
