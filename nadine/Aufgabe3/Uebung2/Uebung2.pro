@@ -20,4 +20,5 @@ HEADERS  += mainwindow.h \
     typewindow.h
 
 FORMS    += mainwindow.ui \
-    typewindow.ui
+    typewindow.ui \
+    highscore.ui
