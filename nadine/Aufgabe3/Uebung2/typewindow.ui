@@ -7,11 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>849</width>
-    <height>499</height>
+    <height>504</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout_4">
    <item row="0" column="0">
@@ -146,7 +149,7 @@
          <string notr="true">QPushButton:focus{
 	 margin: 1px 1px 1px 1px;
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #eef7fc, stop: 1 #6ebae2);
+                                      stop: 0 #c3e3f4, stop: 1 #6ebae2);
     /* We'll round the borders. */
     border-style: outset;
     /* Round radius will be 3px */
