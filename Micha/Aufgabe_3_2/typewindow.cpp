@@ -5,7 +5,7 @@
 #include "iostream"
 #include "QLCDNumber"
 
-
+using namespace std;
 
 Typewindow::Typewindow(QWidget *parent, QString string) :
     QDialog(parent), s(string), errors(0), hits(0), rowCount(0), doubleEvasion(0), ui(new Ui::Typewindow) {
@@ -89,10 +89,10 @@ bool Typewindow::checkInput(QString key) {
             return true;
         }
     } else { // Lesson ist fertig
-        std::cout << "Anschläge: " << hits << std::endl;
-        std::cout << "Fehler: " << errors << std::endl;
-        std::cout << "Fehlerquote: " << (errors * 100) / hits << "%" << std::endl;
-        std::cout << "APM: " << hits / (timer.elapsed() / 60000) << std::endl;
+        cout << "Anschläge: " << hits << endl;
+        cout << "Fehler: " << errors << endl;
+        cout << "Fehlerquote: " << (errors * 100) / hits << "%" << endl;
+        cout << "APM: " << hits / (timer.elapsed() / 60000) << endl;
         Typewindow::close();
     }
     return false;
