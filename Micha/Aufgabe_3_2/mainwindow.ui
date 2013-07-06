@@ -52,6 +52,9 @@
             <property name="text">
              <string>Zeitlimit</string>
             </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
           <item row="0" column="1">
@@ -62,10 +65,39 @@
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+           <widget class="QDoubleSpinBox" name="doubleSpinBox">
+            <property name="suffix">
+             <string> Minute(n)</string>
+            </property>
+            <property name="decimals">
+             <number>0</number>
+            </property>
+            <property name="minimum">
+             <double>1.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>5.000000000000000</double>
+            </property>
+           </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+           <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+            <property name="suffix">
+             <string> Zeichen</string>
+            </property>
+            <property name="decimals">
+             <number>0</number>
+            </property>
+            <property name="minimum">
+             <double>200.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>1000.000000000000000</double>
+            </property>
+            <property name="singleStep">
+             <double>100.000000000000000</double>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -103,6 +135,9 @@
            <widget class="QRadioButton" name="easy">
             <property name="text">
              <string>leicht</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -150,7 +185,6 @@
       <zorder>verticalSpacer</zorder>
       <zorder>verticalSpacer_2</zorder>
       <zorder>label</zorder>
-      <zorder>label</zorder>
       <zorder>label_2</zorder>
       <zorder>verticalSpacer_3</zorder>
      </widget>
@@ -178,6 +212,16 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>startLessonButton</tabstop>
+  <tabstop>radioButton</tabstop>
+  <tabstop>doubleSpinBox</tabstop>
+  <tabstop>radioButton_2</tabstop>
+  <tabstop>doubleSpinBox_2</tabstop>
+  <tabstop>easy</tabstop>
+  <tabstop>medium</tabstop>
+  <tabstop>hard</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
