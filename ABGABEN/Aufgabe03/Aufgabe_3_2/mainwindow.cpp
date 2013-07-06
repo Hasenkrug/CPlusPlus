@@ -101,18 +101,26 @@ QString getHardString() {
 
 void MainWindow::startLessonClicked() {    
     Typewindow* t = new Typewindow(this);
+    bool timelimit = ui->timeLimit->isChecked();
+    int limit;
+
+    if(timelimit) {
+        limit = ui->timeBox->value();
+    } else {
+        limit = ui->hitBox->value();
+    }
 
     if (ui->easy->isChecked()) {        
         // wichtig zum abfangen von space & enter
         t->installEventFilter(t);
 
-        t->startLesson(getEasyString());
+        t->startLesson(getEasyString(), timelimit, limit);
         t->show();
     } else if (ui->medium->isChecked()) {
         // wichtig zum abfangen von space & enter
         t->installEventFilter(t);
 
-        t->startLesson(getMediumString());
+        t->startLesson(getMediumString(), timelimit, limit);
         t->show();
     } /*else if (ui->hard->isChecked()) {
         t->ui->lessonText->setText(getHardString());

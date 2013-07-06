@@ -20,7 +20,9 @@ public:
     int errors;
     int hits;
     int rowCount;
-    int doubleEvasion;
+    bool timelimit;
+    int limit;
+    int doubleEvasion; // wird im eventFilter "benötigt"
     QTime timer;
 
     explicit Typewindow(QWidget *parent = 0, QString s = "");
@@ -31,7 +33,7 @@ public:
     // wichtig zum abfangen von space & enter
     bool eventFilter(QObject *object, QEvent *event);
     void lessonControl(QString k);
-    void startLesson(QStringList liste);
+    void startLesson(QStringList liste, bool tl, int l);
     void nextRow();
     bool checkInput(QString pressed);
     void mixList();
