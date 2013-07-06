@@ -19,7 +19,7 @@ SOURCES += main.cpp\
     xmlstreamreader.cpp \
     person.cpp \
     highscore.cpp\
-    qcustomplot.cpp \
+    qcustomplot.cpp\
     testwidget.cpp
 
 HEADERS  += mainwindow.h \

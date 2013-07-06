@@ -2,7 +2,7 @@
 #define HIGHSCORE_H
 
 #include <QDialog>
-#include "../../qcustomplot.h"
+#include "qcustomplot.h"
 #include "person.h"
 #include "xmlstreamreader.h"
 
