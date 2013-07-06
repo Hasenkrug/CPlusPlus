@@ -58,9 +58,7 @@ void XmlStreamReader::readHighscoreElement()
 
     reader.readNext();
     while (!reader.atEnd()) {
-        std::cout << "c" << std::endl;
         if (reader.isEndElement()) {
-            std::cout << "end" << std::endl;
             reader.readNext();
             break;
         }
@@ -82,7 +80,7 @@ void XmlStreamReader::readPersonElement()
     Person *person = new Person();
     person->name = reader.attributes().value("name").toString().toLocal8Bit().constData();
 
-    person->scoreTime = reader.attributes().value("scoreTime").toLocal8Bit().toInt(0);
+    person->bestScoreTime = reader.attributes().value("bestScoreTime").toLocal8Bit().toInt(0);
     person->error = reader.attributes().value("error").toLocal8Bit().toInt(0,10);
     person->memberSince = reader.attributes().value("memberSince").toLocal8Bit().toInt(0,10);
 
@@ -92,8 +90,6 @@ void XmlStreamReader::readPersonElement()
     reader.readNext();
     while (!reader.atEnd()) {
         if (reader.isEndElement()) {
-
-            std::cout <<"end" << std::endl;
             reader.readNext();
             break;
         }
@@ -120,22 +116,14 @@ void XmlStreamReader::readRunElements(Person *person)
     Run *run = new Run();
     run->runChallenge = this->reader.attributes().value("runChallenge").toLocal8Bit().toInt(0,10);
     run->runOn = this->reader.attributes().value("runOn").toLocal8Bit().toInt(0,10);
+    run->runError = this->reader.attributes().value("runError").toLocal8Bit().toInt(0,10);
+    run->runScoreTime = this->reader.attributes().value("runScoreTime").toLocal8Bit().toInt(0,10);
 
     //std::cout<< "run: "<< this->reader.attributes().value("runChallenge").toLocal8Bit().toInt(0,10) << std::endl;
-
-
-    std::cout<< "run:end "<<std::endl;
-/*
-    reader.readElementText();
-    if (reader.isEndElement())
-        reader.readNext();
-*/
 
     reader.readNext();
     while (!reader.atEnd()) {
         if (reader.isEndElement()) {
-
-            std::cout <<"end" << std::endl;
             reader.readNext();
             break;
         }
@@ -189,16 +177,18 @@ void XmlStreamReader::skipUnknownElement()
 void XmlStreamReader::writeTypePointEntry(QXmlStreamWriter *xmlWriter, TypePoint *typePoint)
 {
     xmlWriter->writeStartElement("typePoint");
-    xmlWriter->writeAttribute("timeInMilliSeconds", QString::fromStdString(""+typePoint->timeInMilliSeconds));
-    xmlWriter->writeAttribute("error", QString::fromStdString(""+typePoint->error));
+    xmlWriter->writeAttribute("timeInMilliSeconds", QString::number(typePoint->timeInMilliSeconds, 10));
+    xmlWriter->writeAttribute("error", QString::number(typePoint->error,10));
     xmlWriter->writeEndElement();
 }
 
 void XmlStreamReader::writeRunEntry(QXmlStreamWriter *xmlWriter, Run *run)
 {
     xmlWriter->writeStartElement("run");
-    xmlWriter->writeAttribute("runOn", QString::fromStdString(""+run->runOn));
-    xmlWriter->writeAttribute("runChallenge", QString::fromStdString(""+run->runChallenge));
+    xmlWriter->writeAttribute("runOn", QString::number(run->runOn));
+    xmlWriter->writeAttribute("runChallenge", QString::number(run->runChallenge));
+    xmlWriter->writeAttribute("runError", QString::number(run->runError));
+    xmlWriter->writeAttribute("runScoreTime", QString::number(run->runScoreTime));
     for (int i = 0; i < run->typePoints.length(); ++i){
         TypePoint *typePoint = new TypePoint();
         typePoint->error = run->typePoints.at(i).error;
@@ -213,14 +203,15 @@ void XmlStreamReader::writePersonEntry(QXmlStreamWriter *xmlWriter, Person *pers
     xmlWriter->writeStartElement("person");
 
     xmlWriter->writeAttribute("name", QString::fromStdString(person->name));
-    xmlWriter->writeAttribute("error", QString::fromStdString(""+person->error));
-    xmlWriter->writeAttribute("scoreTime", QString::fromStdString(""+person->scoreTime));
-    xmlWriter->writeAttribute("memeberSince", QString::fromStdString(""+person->memberSince));
+    xmlWriter->writeAttribute("error", QString::number(person->error,10));
+    xmlWriter->writeAttribute("bestScoreTime", QString::number(person->bestScoreTime,10));
+    xmlWriter->writeAttribute("memeberSince", QString::number(person->memberSince,10));
     for (int i = 0; i < person->runs.length(); ++i){
         Run *run = new Run();
-        std::cout << "runCh" << person->runs.at(i).runChallenge<< std::endl;
         run->runChallenge = person->runs.at(i).runChallenge;
         run->runOn = person->runs.at(i).runOn;
+        run->runError = person->runs.at(i).runError;
+        run->runScoreTime = person->runs.at(i).runScoreTime;
         run->typePoints = person->runs.at(i).typePoints;
         writeRunEntry(xmlWriter, run);
     }
@@ -247,7 +238,7 @@ bool XmlStreamReader::writeXml(const QString &fileName)
         pers->error = this->persons->persons.at(i).error;
         pers->memberSince = this->persons->persons.at(i).memberSince;
         pers->name = this->persons->persons.at(i).name;
-        pers->scoreTime = this->persons->persons.at(i).scoreTime;
+        pers->bestScoreTime = this->persons->persons.at(i).bestScoreTime;
         pers->runs = this->persons->persons.at(i).runs;
             writePersonEntry(&xmlWriter,pers);
     }
@@ -261,6 +252,3 @@ bool XmlStreamReader::writeXml(const QString &fileName)
     }
     return true;
 }
-
-
-
