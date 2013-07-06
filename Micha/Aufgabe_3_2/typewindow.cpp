@@ -8,7 +8,7 @@
 using namespace std;
 
 Typewindow::Typewindow(QWidget *parent, QString string) :
-    QDialog(parent), s(string), errors(0), hits(0), rowCount(0), doubleEvasion(0), ui(new Ui::Typewindow) {
+    QDialog(parent), s(string), errors(0), hits(0), rowCount(0), doubleEvasion(0), limit(0), ui(new Ui::Typewindow) {
 
     ui->setupUi(this);        
     //setFocusPolicy(Qt::StrongFocus);
@@ -57,8 +57,7 @@ void Typewindow::nextRow() {
     }
 }
 
-void Typewindow::startLesson(QStringList liste, bool tl, int l) {
-    timelimit = tl;
+void Typewindow::startLesson(QStringList liste, int l) {
     limit = l;
     list = liste;
     nextRow();
@@ -84,22 +83,19 @@ void Typewindow::lessonControl(QString pressed) {
 }
 
 bool Typewindow::checkInput(QString key) {
-    if(timelimit) {
-        if(timer.elapsed() / 60000 < limit) {
-            if( key != row.at(0) ) {
-                return false;
-            } else {
-                return true;
-            }
-        } else { // Lesson ist fertig
+    if(timer.elapsed() / 60000 < limit) {
+        if( key != row.at(0) ) {
+            return false;
+        } else {
+            return true;
+        }
+    } else { // Lesson ist fertig
             cout << "Anschläge: " << hits << endl;
             cout << "Fehler: " << errors << endl;
             cout << "Fehlerquote: " << (errors * 100) / hits << "%" << endl;
             cout << "APM: " << hits / (timer.elapsed() / 60000) << endl;
             Typewindow::close();
-        }
-    }
-    return false;
+    } return false;
 }
 
 void Typewindow::mixList() {
