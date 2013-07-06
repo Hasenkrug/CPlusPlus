@@ -23,12 +23,12 @@ bool Typewindow::eventFilter(QObject *object, QEvent *event) {
     // 51 = QEvent::ShortcutOverride - Key press in child, for overriding shortcut key handling (QKeyEvent)
     if(event->type() == 51 && object == this) {
         const QKeyEvent *ke = static_cast<QKeyEvent *>(event);
-        doubleEvasion++;
-        if(ke->key() == Qt::Key_Space && doubleEvasion % 2 == 0) {
+        //doubleEvasion++;
+        if(ke->key() == Qt::Key_Space) {
             ui->btnSpace->animateClick(100);
             lessonControl(" ");
             return true;
-        } else if(ke->key() == Qt::Key_Return && doubleEvasion % 2 == 0) {
+        } else if(ke->key() == Qt::Key_Return) {
             ui->btnEnter->animateClick(100);
             lessonControl("¶");
 
@@ -43,6 +43,33 @@ bool Typewindow::eventFilter(QObject *object, QEvent *event) {
     event->ignore();
     return false;
 }
+
+/* MAC VERSION */
+//// wichtig zum abfangen von space & enter
+//bool Typewindow::eventFilter(QObject *object, QEvent *event) {
+//    // 51 = QEvent::ShortcutOverride - Key press in child, for overriding shortcut key handling (QKeyEvent)
+//    if(event->type() == 51 && object == this) {
+//        const QKeyEvent *ke = static_cast<QKeyEvent *>(event);
+//        doubleEvasion++;
+//        if(ke->key() == Qt::Key_Space && doubleEvasion % 2 == 0) {
+//            ui->btnSpace->animateClick(100);
+//            lessonControl(" ");
+//            return true;
+//        } else if(ke->key() == Qt::Key_Return && doubleEvasion % 2 == 0) {
+//            ui->btnEnter->animateClick(100);
+//            lessonControl("¶");
+
+//            if(row.length() == 0) {
+//                nextRow();
+//                setKeyStyle();
+//            }
+
+//            return true;
+//        }
+//    }
+//    event->ignore();
+//    return false;
+//}
 
 void Typewindow::nextRow() {
     if(rowCount < list.length()) {
