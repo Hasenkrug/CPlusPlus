@@ -45,24 +45,15 @@ bool Typewindow::eventFilter(QObject *object, QEvent *event) {
 }
 
 void Typewindow::nextRow() {
-    if(timer.elapsed() / 2000 < 60) {
-        if(rowCount < list.length()) {
-            row = list.at(rowCount).toLower();
-            rowCount++;
-            ui->lessonText->setText(row);
-            ui->lessonText->setCursorPosition(0);
-        } else {
-            rowCount = 0;
-            mixList();
-            nextRow();
-        }
+    if(rowCount < list.length()) {
+        row = list.at(rowCount).toLower();
+        rowCount++;
+        ui->lessonText->setText(row);
+        ui->lessonText->setCursorPosition(0);
     } else {
-        // Lesson ist fertig
-        std::cout << "Anschläge: " << hits << std::endl;
-        std::cout << "Fehler: " << errors << std::endl;
-        std::cout << "Fehlerquote: " << (errors * 100) / hits << "%" << std::endl;
-        std::cout << "APM: " << hits / (timer.elapsed() / 60000) << std::endl;
-        Typewindow::close();
+        rowCount = 0;
+        mixList();
+        nextRow();
     }
 }
 
@@ -91,11 +82,20 @@ void Typewindow::lessonControl(QString pressed) {
 }
 
 bool Typewindow::checkInput(QString key) {
-    if( key != row.at(0) ) {
-        return false;
-    } else {
-        return true;
+    if(timer.elapsed() / 60000 < 1) {
+        if( key != row.at(0) ) {
+            return false;
+        } else {
+            return true;
+        }
+    } else { // Lesson ist fertig
+        std::cout << "Anschläge: " << hits << std::endl;
+        std::cout << "Fehler: " << errors << std::endl;
+        std::cout << "Fehlerquote: " << (errors * 100) / hits << "%" << std::endl;
+        std::cout << "APM: " << hits / (timer.elapsed() / 60000) << std::endl;
+        Typewindow::close();
     }
+    return false;
 }
 
 void Typewindow::mixList() {
