@@ -4,11 +4,15 @@
 #include "QChar"
 #include "iostream"
 #include "QLCDNumber"
+#include "person.h"
+#include "highscore.h"
 
 using namespace std;
 
+
+
 Typewindow::Typewindow(QWidget *parent, QString string) :
-    QDialog(parent), s(string), errors(0), hits(0), rowCount(0), doubleEvasion(0), ui(new Ui::Typewindow) {
+    QDialog(parent), s(string), errors(0), hits(0), rowCount(0), doubleEvasion(0), timeStamp(0), ui(new Ui::Typewindow) {
 
     ui->setupUi(this);        
     //setFocusPolicy(Qt::StrongFocus);
@@ -97,8 +101,14 @@ void Typewindow::startLesson(QStringList liste, bool tl, int l) {
 
 void Typewindow::lessonControl(QString pressed) {       
     if(checkInput(pressed)) {
+        TypePoint *t = new TypePoint();
         ui->colorBox->setStyleSheet("QGroupBox{ background-color:#00ff00 }");
         hits++;
+        t->timeInMilliSeconds = timer.elapsed() - timeStamp;;
+        timeStamp = timer.elapsed();
+        t->error = errors;
+        errors = 0;
+        r->typePoints.append(*t);
         row.remove(0,1);
         setKeyStyle();
         ui->lessonText->setText(row);
@@ -119,6 +129,24 @@ bool Typewindow::checkInput(QString key) {
                 return true;
             }
         } else { // Lesson ist fertig
+
+            std::cout<<r->typePoints.size()<<std::endl;
+            p->runs.append(*r);
+
+            std::cout<<r->typePoints.size()<<std::endl;
+            Highscore* s = new Highscore(this);
+
+            std::cout<<"p->name"<<std::endl;
+            s->initHighScore(p);
+
+            std::cout<<"p->name"<<std::endl;
+            s->installEventFilter(s);
+
+            std::cout<<"p->name"<<std::endl;
+            s->show();
+
+            std::cout<<"p->name"<<std::endl;
+
             cout << "Anschläge: " << hits << endl;
             cout << "Fehler: " << errors << endl;
             cout << "Fehlerquote: " << (errors * 100) / hits << "%" << endl;
@@ -271,4 +299,25 @@ void Typewindow::keyPressEvent(QKeyEvent *e) {
 //        lessonControl("¶");
 //        nextRow();
 //    }
+
+
+
+}
+
+void Typewindow::setUser(std::string u,int c){
+    Persons *persons = new Persons();
+    XmlStreamReader reader(persons);
+    reader.readFile("../highscore.xml");
+    //reader.writeXml("../newHighscore.xml");
+    for(int i = 0; i<persons->persons.size();i++)
+
+        if(u!=persons->persons.at(i).name){
+            p = new Person();
+        }else{
+            //p = persons->persons.at(i);
+        }
+    r = new Run();
+    p->name = u;
+    r->runChallenge = c;
+
 }

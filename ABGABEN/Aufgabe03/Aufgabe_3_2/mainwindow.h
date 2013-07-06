@@ -17,10 +17,16 @@ public:
     ~MainWindow();
     
 private slots:
+
     void startLessonClicked();
 
 private:
+    int c;
+    std::string u;
     Ui::MainWindow *ui;
+    QStringList getEasyString();
+    QStringList getMediumString();
+    QString getHardString();
 };
 
 #endif // MAINWINDOW_H

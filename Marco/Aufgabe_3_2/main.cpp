@@ -32,22 +32,12 @@ int main(int argc, char *argv[])
     TestWidget myWindow;
     w.show();
     Highscore* s = new Highscore();
-    // wichtig zum abfangen von space & enter
     s->installEventFilter(s);
-
     //s->setText();
     s->show();
-
     Persons *persons = new Persons();
-
     XmlStreamReader reader(persons);
-
-
     reader.readFile("../highscore.xml");
-
-
-
-
     reader.writeXml("../newHighscore.xml");
 
     a.exec();

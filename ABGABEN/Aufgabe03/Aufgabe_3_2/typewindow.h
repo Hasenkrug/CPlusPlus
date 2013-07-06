@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QTime>
+#include "person.h"
 
 namespace Ui {
 
@@ -13,7 +14,8 @@ class Typewindow : public QDialog {
     Q_OBJECT
     
 public:
-
+    Person *p;
+    Run *r;
     QString s;
     QString row;
     QStringList list;
@@ -24,6 +26,7 @@ public:
     int limit;
     int doubleEvasion; // wird im eventFilter "benötigt"
     QTime timer;
+    int timeStamp;
 
     explicit Typewindow(QWidget *parent = 0, QString s = "");
 
@@ -38,6 +41,7 @@ public:
     bool checkInput(QString pressed);
     void mixList();
     void setKeyStyle();
+    void setUser(std::string u,int c);
 
     
 public:

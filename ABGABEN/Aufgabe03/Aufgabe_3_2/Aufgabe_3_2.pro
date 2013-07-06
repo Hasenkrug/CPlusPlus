@@ -6,18 +6,27 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 TARGET = Aufgabe_3_2
 
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    typewindow.cpp
+    typewindow.cpp\
+    xmlstreamreader.cpp \
+    person.cpp \
+    highscore.cpp\
+    qcustomplot.cpp
 
 HEADERS  += mainwindow.h \
-    typewindow.h
+    typewindow.h\
+    xmlstreamreader.h \
+    person.h \
+    highscore.h\
+    qcustomplot.h
 
 FORMS    += mainwindow.ui\
-        typewindow.ui
+        typewindow.ui\
+    highscore.ui
 

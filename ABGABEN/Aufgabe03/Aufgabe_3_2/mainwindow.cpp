@@ -7,7 +7,8 @@
 
 using namespace std;
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
+
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), u(""), c(0) {
 
     ui->setupUi(this);
     connect(ui->startLessonButton, SIGNAL(clicked()), this, SLOT(startLessonClicked()));
@@ -17,8 +18,9 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
-QStringList getEasyString() {
-
+QStringList MainWindow::getEasyString() {
+    u = "marco";
+    c = 0;
     QString a("asdf jklö lass all salsa la da fass ja kalk¶");
     QString b("as skala saal das kafka öl la asdf jklö da¶");
     QString c("als ja fall as las saal jölö kafka alf la¶");
@@ -51,8 +53,9 @@ QStringList getEasyString() {
     return st;
 }
 
-QStringList getMediumString() {
-
+QStringList MainWindow::getMediumString() {
+    u= "marco";
+    c = 1;
     QString a("freier fördern friede kreis seiner rief¶");
     QString b("radikalen frei irren freie leider riefen¶");
     QString c("er fördern erinnern freier freien rief¶");
@@ -88,7 +91,9 @@ QStringList getMediumString() {
     return st;
 }
 
-QString getHardString() {
+QString MainWindow::getHardString() {
+    u = "marco";
+    c = 2;
     QString s[] = { "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö", "Ä", "Q", "W", "E", "R", "T", "Z", "U", "I", "O", "P", "Ü", "Y", "X", "C", "V", "B", "N", "M", "1", "2", "3", "5", "6", "7", "8", "9", "0"};
     QString st = "";
 
@@ -101,6 +106,7 @@ QString getHardString() {
 
 void MainWindow::startLessonClicked() {    
     Typewindow* t = new Typewindow(this);
+    t->setUser(u, c);
     bool timelimit = ui->timeLimit->isChecked();
     int limit;
 
