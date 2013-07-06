@@ -57,7 +57,9 @@ void Typewindow::nextRow() {
     }
 }
 
-void Typewindow::startLesson(QStringList liste) {
+void Typewindow::startLesson(QStringList liste, bool tl, int l) {
+    timelimit = tl;
+    limit = l;
     list = liste;
     nextRow();
     ui->lessonText->setText(row);
@@ -82,18 +84,20 @@ void Typewindow::lessonControl(QString pressed) {
 }
 
 bool Typewindow::checkInput(QString key) {
-    if(timer.elapsed() / 60000 < 1) {
-        if( key != row.at(0) ) {
-            return false;
-        } else {
-            return true;
+    if(timelimit) {
+        if(timer.elapsed() / 60000 < limit) {
+            if( key != row.at(0) ) {
+                return false;
+            } else {
+                return true;
+            }
+        } else { // Lesson ist fertig
+            cout << "Anschläge: " << hits << endl;
+            cout << "Fehler: " << errors << endl;
+            cout << "Fehlerquote: " << (errors * 100) / hits << "%" << endl;
+            cout << "APM: " << hits / (timer.elapsed() / 60000) << endl;
+            Typewindow::close();
         }
-    } else { // Lesson ist fertig
-        cout << "Anschläge: " << hits << endl;
-        cout << "Fehler: " << errors << endl;
-        cout << "Fehlerquote: " << (errors * 100) / hits << "%" << endl;
-        cout << "APM: " << hits / (timer.elapsed() / 60000) << endl;
-        Typewindow::close();
     }
     return false;
 }

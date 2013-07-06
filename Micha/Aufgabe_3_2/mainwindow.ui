@@ -48,7 +48,7 @@
         <widget class="QGroupBox" name="myGroupBox_2">
          <layout class="QGridLayout" name="gridLayout">
           <item row="0" column="0">
-           <widget class="QRadioButton" name="radioButton">
+           <widget class="QRadioButton" name="timeLimit">
             <property name="text">
              <string>Zeitlimit</string>
             </property>
@@ -58,14 +58,14 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QRadioButton" name="radioButton_2">
+           <widget class="QRadioButton" name="hitLimit">
             <property name="text">
              <string>Zeichenlimit</string>
             </property>
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox">
+           <widget class="QDoubleSpinBox" name="timeBox">
             <property name="suffix">
              <string> Minute(n)</string>
             </property>
@@ -81,7 +81,7 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+           <widget class="QDoubleSpinBox" name="hitBox">
             <property name="suffix">
              <string> Zeichen</string>
             </property>
@@ -214,10 +214,10 @@
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
   <tabstop>startLessonButton</tabstop>
-  <tabstop>radioButton</tabstop>
-  <tabstop>doubleSpinBox</tabstop>
-  <tabstop>radioButton_2</tabstop>
-  <tabstop>doubleSpinBox_2</tabstop>
+  <tabstop>timeLimit</tabstop>
+  <tabstop>timeBox</tabstop>
+  <tabstop>hitLimit</tabstop>
+  <tabstop>hitBox</tabstop>
   <tabstop>easy</tabstop>
   <tabstop>medium</tabstop>
   <tabstop>hard</tabstop>
