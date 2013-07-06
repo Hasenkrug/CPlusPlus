@@ -31,21 +31,24 @@
         <widget class="QGroupBox" name="myGroupBox_2">
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="0" column="0">
-           <widget class="QRadioButton" name="radioButton">
+           <widget class="QRadioButton" name="timeLimit">
             <property name="text">
              <string>Zeitlimit</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QRadioButton" name="radioButton_2">
+           <widget class="QRadioButton" name="hitLimit">
             <property name="text">
              <string>Zeichenlimit</string>
             </property>
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox">
+           <widget class="QDoubleSpinBox" name="timeBox">
             <property name="inputMethodHints">
              <set>Qt::ImhNone</set>
             </property>
@@ -82,7 +85,7 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+           <widget class="QDoubleSpinBox" name="hitBox">
             <property name="readOnly">
              <bool>false</bool>
             </property>
@@ -129,6 +132,9 @@
            <widget class="QRadioButton" name="easy">
             <property name="text">
              <string>leicht</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
