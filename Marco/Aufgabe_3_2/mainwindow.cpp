@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "typewindow.h"
 #include "ui_typewindow.h"
+#include "highscore.h"
+#include "ui_highscore.h"
 #include "iostream"
 #include "QKeyEvent"
 
@@ -53,6 +55,8 @@ QString getHardString() {
 
 void MainWindow::startLessonClicked() {    
 
+
+
     if (ui->easy->isChecked()) {
         Typewindow* t = new Typewindow(this, getEasyString());
         // wichtig zum abfangen von space & enter
@@ -60,6 +64,8 @@ void MainWindow::startLessonClicked() {
 
         t->setText();
         t->show();
+
+
 
     } /* else if (ui->medium->isChecked()) {
         t->ui->lessonText->setText(getMediumString());

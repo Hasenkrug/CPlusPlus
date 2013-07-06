@@ -20,6 +20,8 @@ public:
     Run(){};
     int runOn;
     int runChallenge;
+    int runError;
+    int runScoreTime;
     QList<TypePoint> typePoints;
 
 };
@@ -29,7 +31,7 @@ class Person
 public:
     Person(){};
     std::string name;
-    int scoreTime;
+    int bestScoreTime;
     int error;
     int memberSince;
     QList<Run> runs;

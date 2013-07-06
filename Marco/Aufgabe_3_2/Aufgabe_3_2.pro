@@ -7,7 +7,7 @@
 QT       += core gui\
              xml
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 TARGET = Aufgabe_3_2
 TEMPLATE = app
@@ -17,15 +17,22 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     typewindow.cpp \
     xmlstreamreader.cpp \
-    person.cpp
+    person.cpp \
+    highscore.cpp\
+    qcustomplot.cpp \
+    testwidget.cpp
 
 HEADERS  += mainwindow.h \
     typewindow.h \
     xmlstreamreader.h \
-    person.h
+    person.h \
+    highscore.h\
+    qcustomplot.h \
+    testwidget.h
 
 FORMS    += mainwindow.ui \
-    typewindow.ui
+    typewindow.ui \
+    highscore.ui
 
 QTPLUGIN += qsqlmysql
 
