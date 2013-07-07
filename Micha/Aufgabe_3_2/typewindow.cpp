@@ -108,34 +108,62 @@ void Typewindow::mixList() {
 void Typewindow::setKeyStyle() {
     if(row.startsWith("a")) {
         ui->btnA->setFocus();
-    } else if(row.startsWith("e")) {
-        ui->btnE->setFocus();
-    } else if(row.startsWith("n")) {
-        ui->btnN->setFocus();
-    } else if(row.startsWith("r")) {
-        ui->btnR->setFocus();
-    } else if(row.startsWith("i")) {
-        ui->btnI->setFocus();
-    } else if(row.startsWith("s")) {
-        ui->btnS->setFocus();
+    } else if(row.startsWith("b")) {
+        ui->btnB->setFocus();
+    } else if(row.startsWith("c")) {
+        ui->btnC->setFocus();
     } else if(row.startsWith("d")) {
         ui->btnD->setFocus();
+    } else if(row.startsWith("e")) {
+        ui->btnE->setFocus();
     } else if(row.startsWith("f")) {
         ui->btnF->setFocus();
     } else if(row.startsWith("g")) {
         ui->btnG->setFocus();
     } else if(row.startsWith("h")) {
         ui->btnH->setFocus();
+    } else if(row.startsWith("i")) {
+        ui->btnI->setFocus();
     } else if(row.startsWith("j")) {
         ui->btnJ->setFocus();
     } else if(row.startsWith("k")) {
         ui->btnK->setFocus();
     } else if(row.startsWith("l")) {
         ui->btnL->setFocus();
+    } else if(row.startsWith("m")) {
+        ui->btnM->setFocus();
+    } else if(row.startsWith("n")) {
+        ui->btnN->setFocus();
+    } else if(row.startsWith("o")) {
+        ui->btnO->setFocus();
+    } else if(row.startsWith("p")) {
+        ui->btnP->setFocus();
+    } else if(row.startsWith("q")) {
+        ui->btnQ->setFocus();
+    } else if(row.startsWith("r")) {
+        ui->btnR->setFocus();
+    } else if(row.startsWith("s")) {
+        ui->btnS->setFocus();
+    } else if(row.startsWith("t")) {
+        ui->btnT->setFocus();
+    } else if(row.startsWith("u")) {
+        ui->btnU->setFocus();
+    } else if(row.startsWith("v")) {
+        ui->btnV->setFocus();
+    } else if(row.startsWith("w")) {
+        ui->btnW->setFocus();
+    } else if(row.startsWith("x")) {
+        ui->btnX->setFocus();
+    } else if(row.startsWith("y")) {
+        ui->btnY->setFocus();
+    } else if(row.startsWith("z")) {
+        ui->btnZ->setFocus();
     } else if(row.startsWith("ö")) {
         ui->btnOe->setFocus();
     } else if(row.startsWith("ä")) {
         ui->btnAe->setFocus();
+    } else if(row.startsWith("ü")) {
+        ui->btnUe->setFocus();
     } else if(row.startsWith(" ")) {
         ui->btnSpace->setFocus();
     } else if(row.startsWith("¶")) {
