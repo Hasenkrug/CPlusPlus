@@ -7,11 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>849</width>
-    <height>504</height>
+    <height>558</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>QTipp</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -96,56 +96,44 @@
      </layout>
     </widget>
    </item>
-   <item row="2" column="0">
-    <widget class="QWidget" name="widget_4" native="true">
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>684</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="1">
-       <widget class="QPushButton" name="cancel">
-        <property name="minimumSize">
-         <size>
-          <width>120</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>120</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Abbrechen</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
    <item row="1" column="0">
     <widget class="QWidget" name="widget" native="true">
      <property name="styleSheet">
       <string notr="true"/>
      </property>
      <layout class="QGridLayout" name="gridLayout_14">
+      <item row="0" column="0">
+       <spacer name="horizontalSpacer_19">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>62</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer_21">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>67</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
       <item row="0" column="1">
-       <widget class="QFrame" name="frame_4">
+       <widget class="QGroupBox" name="groupBox_4">
         <property name="minimumSize">
          <size>
-          <width>674</width>
-          <height>265</height>
+          <width>705</width>
+          <height>286</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -191,17 +179,11 @@ QPushButton:focus{
     border-color: rgb(200, 200, 200);
 }</string>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
         <widget class="QWidget" name="widget_18" native="true">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>50</y>
+           <x>30</x>
+           <y>60</y>
            <width>601</width>
            <height>61</height>
           </rect>
@@ -728,8 +710,8 @@ QPushButton:focus{
         <widget class="QWidget" name="widget_19" native="true">
          <property name="geometry">
           <rect>
-           <x>30</x>
-           <y>100</y>
+           <x>50</x>
+           <y>110</y>
            <width>591</width>
            <height>61</height>
           </rect>
@@ -1268,8 +1250,8 @@ QPushButton:focus{
         <widget class="QWidget" name="widget_20" native="true">
          <property name="geometry">
           <rect>
-           <x>0</x>
-           <y>150</y>
+           <x>20</x>
+           <y>160</y>
            <width>601</width>
            <height>66</height>
           </rect>
@@ -1796,8 +1778,8 @@ QPushButton:focus{
         <widget class="QWidget" name="widget_21" native="true">
          <property name="geometry">
           <rect>
-           <x>-10</x>
-           <y>200</y>
+           <x>10</x>
+           <y>210</y>
            <width>568</width>
            <height>66</height>
           </rect>
@@ -2097,8 +2079,8 @@ QPushButton:focus{
         <widget class="QWidget" name="widget_22" native="true">
          <property name="geometry">
           <rect>
-           <x>-10</x>
-           <y>0</y>
+           <x>10</x>
+           <y>10</y>
            <width>601</width>
            <height>61</height>
           </rect>
@@ -2625,8 +2607,8 @@ QPushButton:focus{
         <widget class="QPushButton" name="btnEnter">
          <property name="geometry">
           <rect>
-           <x>620</x>
-           <y>60</y>
+           <x>640</x>
+           <y>70</y>
            <width>51</width>
            <height>96</height>
           </rect>
@@ -2692,31 +2674,43 @@ QPushButton:focus{
         </widget>
        </widget>
       </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QWidget" name="widget_4" native="true">
+     <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0">
-       <spacer name="horizontalSpacer_19">
+       <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>62</width>
+          <width>684</width>
           <height>20</height>
          </size>
         </property>
        </spacer>
       </item>
-      <item row="0" column="2">
-       <spacer name="horizontalSpacer_21">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
+      <item row="0" column="1">
+       <widget class="QPushButton" name="cancel">
+        <property name="minimumSize">
          <size>
-          <width>67</width>
-          <height>20</height>
+          <width>120</width>
+          <height>0</height>
          </size>
         </property>
-       </spacer>
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Abbrechen</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>

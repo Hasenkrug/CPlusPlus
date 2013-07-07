@@ -19,18 +19,18 @@ Result::~Result()
     delete ui;
 }
 
-void Result::fillLabels(QString hits, QString hitsPerMinute, QString totalErrors, QString errorQuote, QString points){
-   ui->hits->setText(hits);
-   ui->apm->setText(hitsPerMinute);
-   ui->totalErrors->setText(totalErrors);
-   ui->errorQuote->setText(QString(errorQuote) + QString("%"));
-   ui->points->setText(points);
-
-
+void Result::fillLabels(QString hits, QString hitsPerMinute, QString totalErrors, QString errorQuote, QString points) {
+    QString name = QString::fromStdString(person->name);
+    QString headline = QString("Dein Ergebnis ") + name;
+    ui->ueberschrift->setText(headline);
+    ui->hits->setText(hits);
+    ui->apm->setText(hitsPerMinute);
+    ui->totalErrors->setText(totalErrors);
+    ui->errorQuote->setText(QString(errorQuote) + QString("%"));
+    ui->points->setText(points);
 }
 
-void Result::resultButtonClicked()
-{
+void Result::resultButtonClicked() {
     Highscore* s = new Highscore(this);
     s->initHighScore(person);
     s->installEventFilter(s);
