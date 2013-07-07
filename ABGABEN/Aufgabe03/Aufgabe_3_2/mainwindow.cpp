@@ -19,7 +19,7 @@ MainWindow::~MainWindow() {
 }
 
 QStringList MainWindow::getEasyString() {
-    u = "marco";
+    u = ui->nameBox->text().toStdString();
     c = 0;
     QString a("asdf jklö lass all salsa la da fass ja kalk¶");
     QString b("as skala saal das kafka öl la asdf jklö da¶");
@@ -54,7 +54,7 @@ QStringList MainWindow::getEasyString() {
 }
 
 QStringList MainWindow::getMediumString() {
-    u= "marco";
+    u = ui->nameBox->text().toStdString();
     c = 1;
     QString a("freier fördern friede kreis seiner rief¶");
     QString b("radikalen frei irren freie leider riefen¶");
@@ -92,7 +92,7 @@ QStringList MainWindow::getMediumString() {
 }
 
 QStringList MainWindow::getHardString() {
-    u = "marco";
+    u = ui->nameBox->text().toStdString();
     c = 2;
 
     QString a("das ist die letzte lexion¶");

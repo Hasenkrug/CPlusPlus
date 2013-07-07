@@ -47,7 +47,11 @@
            <widget class="QGroupBox" name="myGroupBox_3">
             <layout class="QGridLayout" name="gridLayout_3">
              <item row="0" column="0">
-              <widget class="QLineEdit" name="nameBox"/>
+              <widget class="QLineEdit" name="nameBox">
+               <property name="text">
+                <string>Benutzer</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>

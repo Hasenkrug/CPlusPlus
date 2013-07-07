@@ -148,7 +148,7 @@ bool Typewindow::checkInput(QString key) {
             std::cout<<r->typePoints.size()<<std::endl;
 
             cout << "Zeit: " << timer.elapsed()/60000 << " Minute(n)" << endl;
-            cout << "Anschläge: " << hits << endl;
+            cout << "Anschlaege: " << hits << endl;
             cout << "Fehler: " << totalErrors << endl;
             cout << "Fehlerquote: " << (totalErrors * 100) / hits << "%" << endl;
             cout << "APM: " << hits / (timer.elapsed() / 60000) << endl;
@@ -349,4 +349,8 @@ void Typewindow::setUser(std::string u,int c){
     p->name = u;
     r->runChallenge = c;
 
+}
+
+void Typewindow::on_cancel_clicked() {
+    Typewindow::close();
 }

@@ -45,6 +45,8 @@ public:
     
 public:
     Ui::Typewindow *ui;
+private slots:
+    void on_cancel_clicked();
 };
 
 #endif // TYPEWINDOW_H
