@@ -6,6 +6,7 @@
 #include "QLCDNumber"
 #include "person.h"
 #include "highscore.h"
+#include "result.h"
 
 using namespace std;
 
@@ -129,18 +130,32 @@ bool Typewindow::checkInput(QString key) {
             }
         } else { // Lesson ist fertig
 
-            std::cout<<r->typePoints.size()<<std::endl;
+//            QString apm = QString::number(300);
+//            QString fq = QString::number(300);
+//            QString points = QString::number(300);
+
+            QString apm = QString::number(hits / (timer.elapsed() / 60000));
+            QString fq = QString::number((totalErrors * 100) / hits);
+            QString points = QString::number(100-((totalErrors * 100) / hits) + (hits / (timer.elapsed() / 60000)));
+
             p->runs.append(*r);
 
-            Highscore* s = new Highscore(this);
+            Result* result = new Result(this, p);
+            result->fillLabels(QString::number(hits), apm, QString::number(totalErrors),fq, points);
+            result->show();
 
-            std::cout<<p->name<<std::endl;
-            s->initHighScore(p);
-            s->installEventFilter(s);
-            s->show();
+//            std::cout<<r->typePoints.size()<<std::endl;
 
 
-            cout << "Zeit: " << timer.elapsed()/60000 << " Minute(n)" << endl;
+//            Highscore* s = new Highscore(this);
+
+//            std::cout<<p->name<<std::endl;
+//            s->initHighScore(p);
+//            s->installEventFilter(s);
+//            s->show();
+
+
+            cout << "Zeit: " << timer.elapsed()/10000 << " Minute(n)" << endl;
             cout << "Anschlaege: " << hits << endl;
             cout << "Fehler: " << totalErrors << endl;
             cout << "Fehlerquote: " << (totalErrors * 100) / hits << "%" << endl;
