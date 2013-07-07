@@ -24,11 +24,13 @@ Highscore::Highscore(QWidget *parent) :
 void Highscore::initHighScore(Person *p){
     bool newName = true;
 
-    reader.readFile("../highscore.xml"); // WINDOWS-VERSION
-    //reader.readFile("../../../../highscore.xml"); // MAC-VERSION
+    reader.readFile("../highscore.xml");// WINDOWS-VERSION
+    //reader.readXml("../../../../highscore.xml"); // MAC-VERSION
 
     for (int i= 0;i<persons->persons.size();i++){
-        if(persons->persons.at(i).name.compare(p->name)){
+        if(persons->persons.at(i).name == p->name){
+
+            std::cout<<"name?: "<<persons->persons.at(i).name<<std::endl;
             Run *rr = new Run();
             rr->runChallenge = p->runs.at(0).runChallenge;
             rr->runOn = p->runs.at(0).runOn;
@@ -36,15 +38,20 @@ void Highscore::initHighScore(Person *p){
             rr->runScoreTime = 0;
             rr->typePoints = p->runs.at(0).typePoints;
 
-            for(int j=0; j < rr->typePoints.size();j++){
-                rr->runScoreTime = rr->typePoints.at(j).timeInMilliSeconds + rr->runScoreTime;
-                rr->runError = rr->typePoints.at(j).error + rr->runError;
+
+            for (int i=0;i<rr->typePoints.size();i++){
+                std::cout<<"point?: "<<rr->typePoints.at(i).timeInMilliSeconds<<std::endl;
+            }
+            for(int j=0; j < p->runs.at(0).typePoints.size();j++){
+                rr->runScoreTime = p->runs.at(0).typePoints.at(j).timeInMilliSeconds + rr->runScoreTime;
+                rr->runError = p->runs.at(0).typePoints.at(j).error + rr->runError;
                 rr->runOn = 0;
             }
             persons->persons[i].runs.append(*rr);
             persons->persons[i].bestScoreTime = std::max(persons->persons[i].bestScoreTime,  rr->runScoreTime);
             persons->persons[i].error = std::max(persons->persons[i].error, rr->runError);
             persons->persons[i].memberSince = 0;
+
             newName = false;
             break;
         }
@@ -64,6 +71,7 @@ void Highscore::initHighScore(Person *p){
             rr->typePoints = p->runs.at(0).typePoints;
         }
         Person *pp = new Person();
+        pp->name = p->name;
         pp->memberSince = 0;
         pp->bestScoreTime = rr->runScoreTime;
         pp->error = rr->runError;
@@ -73,13 +81,12 @@ void Highscore::initHighScore(Person *p){
 
     std::cout<<p->runs.at(0).typePoints.size()<<std::endl;
 
-    reader.writeXml("../highscore.xml"); // WINDOWS-VERSION
+    reader.writeXml("../highscore.xml"); // WONDOWS-VERSION
     //reader.writeXml("../../../../highscore.xml"); // MAC-VERSION
 
     std::map<int,int> map;
     int iii;
     for (int i= 0;i<persons->persons.size();i++){
-        std::cout << p->name << std::endl;
         if (persons->persons.at(i).name == p->name){
             addGraphForAllRunsOfOnePerson(ui->plot0, persons->persons.at(i));
             //addGraphForLastRunOfOnePerson(ui->plot1, persons->persons.at(i).runs.at(persons->persons.at(i).runs.size()-1));
@@ -114,10 +121,10 @@ void Highscore::initHighScore(Person *p){
             gg = j;
         }
     }
-    //addGraphBestRunAllPersonsTopTen(ui->plot1, persons->persons.at(iii).runs.at(persons->persons.at(iii).runs.size()-1), persons->persons.at(iii).runs.at(gg));
-    showHighscore(ui->plot0,*persons);
-    std::cout<< "anzahl der runs einer Person: "<< persons->persons.at(0).runs.size()<<std::endl;
 
+    std::cout <<"Ist das Korrekt?"<< p->name << std::endl;
+    //addGraphBestRunAllPersonsTopTen(ui->plot1, p->runs.at(0), persons->persons.at(iii).runs.at(gg));
+    showHighscore(ui->plot0,*persons);
 
 }
 
@@ -133,7 +140,6 @@ void Highscore::showHighscore(QCustomPlot *plot, Persons p){
         for (int j=0;j<p.persons.at(i).runs.size();j++){
             double scorea = persons->persons.at(i).runs.at(j).typePoints.size()/ (persons->persons.at(i).runs.at(j).runScoreTime/60000.0);
             map[scorea] = persons->persons.at(i).name;
-            std::cout<< "runs: "<< std::endl;
         }
     }
 
@@ -144,11 +150,20 @@ void Highscore::showHighscore(QCustomPlot *plot, Persons p){
     int ii = 0;
     while(g!=map.rend() && ii<=10){
         f = *g;
-        ui->tableWidget->setItem(ii, 1, new QTableWidgetItem(QString::fromStdString(f.second)));
-        ui->tableWidget->setItem(ii, 2, new QTableWidgetItem(QString::number(f.first)));
+        ui->tableWidget->setItem(ii, 3, new QTableWidgetItem(QString::number(ii+1)));
+        ui->tableWidget->setItem(ii+1, 1, new QTableWidgetItem(QString::fromStdString(f.second)));
+        ui->tableWidget->setItem(ii+1, 2, new QTableWidgetItem(QString::number(f.first)));
         g++;
         ii++;
     }
+
+
+    //ui->tableWidget->setItem(2, 5, new QTableWidgetItem("Item1"));
+    //- das befüllt ein tableWidget in spalte 2 und zeile 5 mit "item1"
+    /*QAbstractItemModel *m = ui->tableWidget->model();
+    m->setHeaderData(0,Qt::Horizontal, QObject::tr("User"), Qt::DisplayRole);
+    m->setHeaderData(1,Qt::Horizontal, QObject::tr("Score"),Qt::DisplayRole);
+    ui->tableWidget->*/
 }
 void Highscore::addGraphForAllRunsOfOnePerson(QCustomPlot *plot, Person p){
     plot->plotLayout()->insertRow(0);
@@ -433,7 +448,7 @@ void Highscore::addGraphOneBestToOneActual(QCustomPlot *plot, Run rL, Run rB){
 }
 void Highscore::addGraphBestRunAllPersonsTopTen(QCustomPlot *plot, Run rL, Run rB){
     plot->plotLayout()->insertRow(0);
-    plot->plotLayout()->addElement(0, 0, new QCPPlotTitle(plot, "Hier sehen sie den besten Lauf und den letzten Lauf von ihnen"));
+    plot->plotLayout()->addElement(0, 0, new QCPPlotTitle(plot, "Vergleich zwischen den Besten und dem letzten Lauf."));
     plot->legend->setVisible(true);
     plot->legend->setFont(QFont("Helvetica",8));
     plot->setLocale(QLocale(QLocale::English, QLocale::UnitedKingdom));
@@ -495,6 +510,8 @@ void Highscore::addGraphBestRunAllPersonsTopTen(QCustomPlot *plot, Run rL, Run r
         ss = ss+rL.typePoints.at(i).timeInMilliSeconds;
         x3[i] = (ss*100)/rL.runScoreTime;
 
+        std::cout <<"Ist das Korrekt?"<< rL.typePoints.at(i).timeInMilliSeconds << std::endl;
+        std::cout <<"Ist das Korrekt?"<< x3[i] << std::endl;
         yMax = std::max(y3[i],yMax);
         for(double j = 0; j<11;j++){
             y4[11*i+j] =  rL.typePoints.at(i).error;
@@ -558,6 +575,7 @@ void Highscore::addGraphBestRunAllPersonsTopTen(QCustomPlot *plot, Run rL, Run r
     plot->yAxis2->setTickLength(3, 3);
     plot->yAxis2->setSubTickLength(0, 0);
 }
+
 
 
 

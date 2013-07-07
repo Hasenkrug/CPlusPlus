@@ -126,11 +126,13 @@ void MainWindow::startLessonClicked() {
         // wichtig zum abfangen von space & enter
         t->installEventFilter(t);
         t->startLesson(getMediumString(), limit);
+        t->setUser(u, c);
         t->show();
     } else if (ui->hard->isChecked()) {
         // wichtig zum abfangen von space & enter
         t->installEventFilter(t);
         t->startLesson(getHardString(), limit);
+        t->setUser(u, c);
         t->show();
     }
 }

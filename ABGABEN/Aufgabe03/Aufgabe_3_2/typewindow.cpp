@@ -138,12 +138,12 @@ bool Typewindow::checkInput(QString key) {
             // QString fq = QString::number(300);
             // QString points = QString::number(300);
 
+            std::cout<<"31"<<std::endl;
             QString apm = QString::number(hits / (timer.elapsed() / 60000));
             QString fq = QString::number((totalErrors * 100) / hits);
             QString points = QString::number(100-((totalErrors * 100) / hits) + (hits / (timer.elapsed() / 60000)));
 
             p->runs.append(*r);
-
             Result* result = new Result(this, p);
             result->fillLabels(QString::number(hits), apm, QString::number(totalErrors),fq, points);
             result->show();            
@@ -319,22 +319,11 @@ void Typewindow::keyPressEvent(QKeyEvent *e) {
 }
 
 void Typewindow::setUser(std::string u,int c){
-    Persons *persons = new Persons();
-    XmlStreamReader reader(persons);
-    reader.readFile("../highscore.xml"); // WINDOWS-VERSION
-    //reader.readFile("../../../../highscore.xml"); // MAC-VERSION
-    //reader.writeXml("../newHighscore.xml");
-    for(int i = 0; i<persons->persons.size();i++)
-
-        if(u!=persons->persons.at(i).name){
-            p = new Person();
-        }else{
-            //p = persons->persons.at(i);
-        }
+    p = new Person();
     r = new Run();
-    std::cout<<u<<std::endl;
+    std::cout<<"1"<<u<<std::endl;
     p->name = u;
-    std::cout<<p->name<<std::endl;
+    std::cout<<"2"<<p->name<<std::endl;
     r->runChallenge = c;
 }
 

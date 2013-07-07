@@ -1392,6 +1392,371 @@
             <typePoint timeInMilliSeconds="135" error="0"/>
             <typePoint timeInMilliSeconds="162" error="0"/>
         </run>
+        <run runOn="0" runChallenge="0" runError="12" runScoreTime="59788">
+            <typePoint timeInMilliSeconds="2476" error="0"/>
+            <typePoint timeInMilliSeconds="248" error="0"/>
+            <typePoint timeInMilliSeconds="496" error="0"/>
+            <typePoint timeInMilliSeconds="352" error="0"/>
+            <typePoint timeInMilliSeconds="456" error="0"/>
+            <typePoint timeInMilliSeconds="1240" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="1"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="440" error="0"/>
+            <typePoint timeInMilliSeconds="912" error="0"/>
+            <typePoint timeInMilliSeconds="704" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+            <typePoint timeInMilliSeconds="352" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="544" error="0"/>
+            <typePoint timeInMilliSeconds="456" error="0"/>
+            <typePoint timeInMilliSeconds="665" error="0"/>
+            <typePoint timeInMilliSeconds="512" error="0"/>
+            <typePoint timeInMilliSeconds="527" error="0"/>
+            <typePoint timeInMilliSeconds="376" error="0"/>
+            <typePoint timeInMilliSeconds="353" error="0"/>
+            <typePoint timeInMilliSeconds="584" error="0"/>
+            <typePoint timeInMilliSeconds="559" error="0"/>
+            <typePoint timeInMilliSeconds="576" error="0"/>
+            <typePoint timeInMilliSeconds="432" error="0"/>
+            <typePoint timeInMilliSeconds="904" error="0"/>
+            <typePoint timeInMilliSeconds="680" error="0"/>
+            <typePoint timeInMilliSeconds="480" error="0"/>
+            <typePoint timeInMilliSeconds="784" error="0"/>
+            <typePoint timeInMilliSeconds="712" error="0"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+            <typePoint timeInMilliSeconds="896" error="1"/>
+            <typePoint timeInMilliSeconds="816" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="200" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="2096" error="1"/>
+            <typePoint timeInMilliSeconds="1040" error="1"/>
+            <typePoint timeInMilliSeconds="448" error="0"/>
+            <typePoint timeInMilliSeconds="1232" error="1"/>
+            <typePoint timeInMilliSeconds="1128" error="0"/>
+            <typePoint timeInMilliSeconds="1201" error="0"/>
+            <typePoint timeInMilliSeconds="1975" error="0"/>
+            <typePoint timeInMilliSeconds="1393" error="0"/>
+            <typePoint timeInMilliSeconds="823" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="352" error="0"/>
+            <typePoint timeInMilliSeconds="1168" error="0"/>
+            <typePoint timeInMilliSeconds="888" error="0"/>
+            <typePoint timeInMilliSeconds="832" error="0"/>
+            <typePoint timeInMilliSeconds="464" error="0"/>
+            <typePoint timeInMilliSeconds="384" error="0"/>
+            <typePoint timeInMilliSeconds="408" error="0"/>
+            <typePoint timeInMilliSeconds="256" error="0"/>
+            <typePoint timeInMilliSeconds="496" error="1"/>
+            <typePoint timeInMilliSeconds="992" error="2"/>
+            <typePoint timeInMilliSeconds="528" error="0"/>
+            <typePoint timeInMilliSeconds="1208" error="1"/>
+            <typePoint timeInMilliSeconds="504" error="0"/>
+            <typePoint timeInMilliSeconds="544" error="0"/>
+            <typePoint timeInMilliSeconds="424" error="0"/>
+            <typePoint timeInMilliSeconds="1232" error="1"/>
+            <typePoint timeInMilliSeconds="504" error="0"/>
+            <typePoint timeInMilliSeconds="1000" error="0"/>
+            <typePoint timeInMilliSeconds="1040" error="0"/>
+            <typePoint timeInMilliSeconds="721" error="0"/>
+            <typePoint timeInMilliSeconds="479" error="0"/>
+            <typePoint timeInMilliSeconds="416" error="0"/>
+            <typePoint timeInMilliSeconds="512" error="0"/>
+            <typePoint timeInMilliSeconds="689" error="0"/>
+            <typePoint timeInMilliSeconds="439" error="0"/>
+            <typePoint timeInMilliSeconds="569" error="0"/>
+            <typePoint timeInMilliSeconds="551" error="0"/>
+            <typePoint timeInMilliSeconds="656" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="640" error="0"/>
+            <typePoint timeInMilliSeconds="912" error="0"/>
+            <typePoint timeInMilliSeconds="608" error="0"/>
+            <typePoint timeInMilliSeconds="1520" error="0"/>
+            <typePoint timeInMilliSeconds="1064" error="0"/>
+            <typePoint timeInMilliSeconds="680" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+            <typePoint timeInMilliSeconds="456" error="0"/>
+            <typePoint timeInMilliSeconds="1256" error="2"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="1" runScoreTime="5354">
+            <typePoint timeInMilliSeconds="441" error="0"/>
+            <typePoint timeInMilliSeconds="232" error="0"/>
+            <typePoint timeInMilliSeconds="176" error="0"/>
+            <typePoint timeInMilliSeconds="128" error="0"/>
+            <typePoint timeInMilliSeconds="536" error="0"/>
+            <typePoint timeInMilliSeconds="656" error="0"/>
+            <typePoint timeInMilliSeconds="208" error="0"/>
+            <typePoint timeInMilliSeconds="1432" error="1"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+            <typePoint timeInMilliSeconds="456" error="0"/>
+            <typePoint timeInMilliSeconds="697" error="0"/>
+            <typePoint timeInMilliSeconds="441" error="0"/>
+            <typePoint timeInMilliSeconds="232" error="0"/>
+            <typePoint timeInMilliSeconds="176" error="0"/>
+            <typePoint timeInMilliSeconds="128" error="0"/>
+            <typePoint timeInMilliSeconds="536" error="0"/>
+            <typePoint timeInMilliSeconds="656" error="0"/>
+            <typePoint timeInMilliSeconds="208" error="0"/>
+            <typePoint timeInMilliSeconds="1432" error="1"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+            <typePoint timeInMilliSeconds="456" error="0"/>
+            <typePoint timeInMilliSeconds="697" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="3297">
+            <typePoint timeInMilliSeconds="929" error="0"/>
+            <typePoint timeInMilliSeconds="2368" error="0"/>
+            <typePoint timeInMilliSeconds="929" error="0"/>
+            <typePoint timeInMilliSeconds="2368" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="1" runScoreTime="5700">
+            <typePoint timeInMilliSeconds="523" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="488" error="0"/>
+            <typePoint timeInMilliSeconds="1064" error="1"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="512" error="0"/>
+            <typePoint timeInMilliSeconds="297" error="0"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+            <typePoint timeInMilliSeconds="560" error="0"/>
+            <typePoint timeInMilliSeconds="568" error="0"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+            <typePoint timeInMilliSeconds="523" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="488" error="0"/>
+            <typePoint timeInMilliSeconds="1064" error="1"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="512" error="0"/>
+            <typePoint timeInMilliSeconds="297" error="0"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+            <typePoint timeInMilliSeconds="560" error="0"/>
+            <typePoint timeInMilliSeconds="568" error="0"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5602">
+            <typePoint timeInMilliSeconds="795" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="336" error="0"/>
+            <typePoint timeInMilliSeconds="373" error="0"/>
+            <typePoint timeInMilliSeconds="426" error="0"/>
+            <typePoint timeInMilliSeconds="881" error="0"/>
+            <typePoint timeInMilliSeconds="295" error="0"/>
+            <typePoint timeInMilliSeconds="352" error="0"/>
+            <typePoint timeInMilliSeconds="304" error="0"/>
+            <typePoint timeInMilliSeconds="472" error="0"/>
+            <typePoint timeInMilliSeconds="536" error="0"/>
+            <typePoint timeInMilliSeconds="488" error="0"/>
+            <typePoint timeInMilliSeconds="795" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="336" error="0"/>
+            <typePoint timeInMilliSeconds="373" error="0"/>
+            <typePoint timeInMilliSeconds="426" error="0"/>
+            <typePoint timeInMilliSeconds="881" error="0"/>
+            <typePoint timeInMilliSeconds="295" error="0"/>
+            <typePoint timeInMilliSeconds="352" error="0"/>
+            <typePoint timeInMilliSeconds="304" error="0"/>
+            <typePoint timeInMilliSeconds="472" error="0"/>
+            <typePoint timeInMilliSeconds="536" error="0"/>
+            <typePoint timeInMilliSeconds="488" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5853">
+            <typePoint timeInMilliSeconds="661" error="0"/>
+            <typePoint timeInMilliSeconds="337" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="327" error="0"/>
+            <typePoint timeInMilliSeconds="432" error="0"/>
+            <typePoint timeInMilliSeconds="913" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="367" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+            <typePoint timeInMilliSeconds="824" error="0"/>
+            <typePoint timeInMilliSeconds="640" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+            <typePoint timeInMilliSeconds="661" error="0"/>
+            <typePoint timeInMilliSeconds="337" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="327" error="0"/>
+            <typePoint timeInMilliSeconds="432" error="0"/>
+            <typePoint timeInMilliSeconds="913" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="367" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+            <typePoint timeInMilliSeconds="824" error="0"/>
+            <typePoint timeInMilliSeconds="640" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5911">
+            <typePoint timeInMilliSeconds="720" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="544" error="0"/>
+            <typePoint timeInMilliSeconds="888" error="0"/>
+            <typePoint timeInMilliSeconds="256" error="0"/>
+            <typePoint timeInMilliSeconds="416" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="735" error="0"/>
+            <typePoint timeInMilliSeconds="576" error="0"/>
+            <typePoint timeInMilliSeconds="328" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="720" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="544" error="0"/>
+            <typePoint timeInMilliSeconds="888" error="0"/>
+            <typePoint timeInMilliSeconds="256" error="0"/>
+            <typePoint timeInMilliSeconds="416" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="735" error="0"/>
+            <typePoint timeInMilliSeconds="576" error="0"/>
+            <typePoint timeInMilliSeconds="328" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5383">
+            <typePoint timeInMilliSeconds="473" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="294" error="0"/>
+            <typePoint timeInMilliSeconds="313" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="991" error="0"/>
+            <typePoint timeInMilliSeconds="321" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="431" error="0"/>
+            <typePoint timeInMilliSeconds="648" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5633">
+            <typePoint timeInMilliSeconds="786" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="463" error="0"/>
+            <typePoint timeInMilliSeconds="936" error="0"/>
+            <typePoint timeInMilliSeconds="232" error="0"/>
+            <typePoint timeInMilliSeconds="369" error="0"/>
+            <typePoint timeInMilliSeconds="351" error="0"/>
+            <typePoint timeInMilliSeconds="408" error="0"/>
+            <typePoint timeInMilliSeconds="536" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5888">
+            <typePoint timeInMilliSeconds="672" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="512" error="0"/>
+            <typePoint timeInMilliSeconds="984" error="0"/>
+            <typePoint timeInMilliSeconds="224" error="0"/>
+            <typePoint timeInMilliSeconds="368" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="816" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+            <typePoint timeInMilliSeconds="376" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5571">
+            <typePoint timeInMilliSeconds="388" error="0"/>
+            <typePoint timeInMilliSeconds="224" error="0"/>
+            <typePoint timeInMilliSeconds="176" error="0"/>
+            <typePoint timeInMilliSeconds="200" error="0"/>
+            <typePoint timeInMilliSeconds="479" error="0"/>
+            <typePoint timeInMilliSeconds="841" error="0"/>
+            <typePoint timeInMilliSeconds="152" error="0"/>
+            <typePoint timeInMilliSeconds="224" error="0"/>
+            <typePoint timeInMilliSeconds="104" error="0"/>
+            <typePoint timeInMilliSeconds="367" error="0"/>
+            <typePoint timeInMilliSeconds="704" error="0"/>
+            <typePoint timeInMilliSeconds="200" error="0"/>
+            <typePoint timeInMilliSeconds="352" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+            <typePoint timeInMilliSeconds="408" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5558">
+            <typePoint timeInMilliSeconds="894" error="0"/>
+            <typePoint timeInMilliSeconds="378" error="0"/>
+            <typePoint timeInMilliSeconds="374" error="0"/>
+            <typePoint timeInMilliSeconds="624" error="0"/>
+            <typePoint timeInMilliSeconds="1440" error="0"/>
+            <typePoint timeInMilliSeconds="936" error="0"/>
+            <typePoint timeInMilliSeconds="232" error="0"/>
+            <typePoint timeInMilliSeconds="376" error="0"/>
+            <typePoint timeInMilliSeconds="304" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5964">
+            <typePoint timeInMilliSeconds="684" error="0"/>
+            <typePoint timeInMilliSeconds="256" error="0"/>
+            <typePoint timeInMilliSeconds="327" error="0"/>
+            <typePoint timeInMilliSeconds="376" error="0"/>
+            <typePoint timeInMilliSeconds="337" error="0"/>
+            <typePoint timeInMilliSeconds="943" error="0"/>
+            <typePoint timeInMilliSeconds="184" error="0"/>
+            <typePoint timeInMilliSeconds="240" error="0"/>
+            <typePoint timeInMilliSeconds="105" error="0"/>
+            <typePoint timeInMilliSeconds="463" error="0"/>
+            <typePoint timeInMilliSeconds="1257" error="0"/>
+            <typePoint timeInMilliSeconds="536" error="0"/>
+            <typePoint timeInMilliSeconds="256" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="2" runScoreTime="5812">
+            <typePoint timeInMilliSeconds="199" error="0"/>
+            <typePoint timeInMilliSeconds="423" error="0"/>
+            <typePoint timeInMilliSeconds="395" error="0"/>
+            <typePoint timeInMilliSeconds="213" error="0"/>
+            <typePoint timeInMilliSeconds="462" error="0"/>
+            <typePoint timeInMilliSeconds="928" error="0"/>
+            <typePoint timeInMilliSeconds="177" error="0"/>
+            <typePoint timeInMilliSeconds="184" error="0"/>
+            <typePoint timeInMilliSeconds="111" error="0"/>
+            <typePoint timeInMilliSeconds="416" error="0"/>
+            <typePoint timeInMilliSeconds="1136" error="2"/>
+            <typePoint timeInMilliSeconds="656" error="0"/>
+            <typePoint timeInMilliSeconds="304" error="0"/>
+            <typePoint timeInMilliSeconds="208" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5838">
+            <typePoint timeInMilliSeconds="678" error="0"/>
+            <typePoint timeInMilliSeconds="280" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="336" error="0"/>
+            <typePoint timeInMilliSeconds="424" error="0"/>
+            <typePoint timeInMilliSeconds="880" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="336" error="0"/>
+            <typePoint timeInMilliSeconds="249" error="0"/>
+            <typePoint timeInMilliSeconds="311" error="0"/>
+            <typePoint timeInMilliSeconds="664" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="232" error="0"/>
+            <typePoint timeInMilliSeconds="280" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="3766">
+            <typePoint timeInMilliSeconds="702" error="0"/>
+            <typePoint timeInMilliSeconds="592" error="0"/>
+            <typePoint timeInMilliSeconds="416" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="584" error="0"/>
+            <typePoint timeInMilliSeconds="808" error="0"/>
+            <typePoint timeInMilliSeconds="304" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5521">
+            <typePoint timeInMilliSeconds="681" error="0"/>
+            <typePoint timeInMilliSeconds="432" error="0"/>
+            <typePoint timeInMilliSeconds="472" error="0"/>
+            <typePoint timeInMilliSeconds="498" error="0"/>
+            <typePoint timeInMilliSeconds="693" error="0"/>
+            <typePoint timeInMilliSeconds="1281" error="0"/>
+            <typePoint timeInMilliSeconds="752" error="0"/>
+            <typePoint timeInMilliSeconds="712" error="0"/>
+        </run>
     </person>
     <person name="nadine" error="202" bestScoreTime="58805" memeberSince="0">
         <run runOn="0" runChallenge="2" runError="6" runScoreTime="234">
@@ -1598,6 +1963,336 @@
             <typePoint timeInMilliSeconds="720" error="0"/>
             <typePoint timeInMilliSeconds="1768" error="0"/>
         </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5747">
+            <typePoint timeInMilliSeconds="836" error="0"/>
+            <typePoint timeInMilliSeconds="248" error="0"/>
+            <typePoint timeInMilliSeconds="286" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="352" error="0"/>
+            <typePoint timeInMilliSeconds="584" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="240" error="0"/>
+            <typePoint timeInMilliSeconds="416" error="0"/>
+            <typePoint timeInMilliSeconds="736" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+            <typePoint timeInMilliSeconds="377" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="4198">
+            <typePoint timeInMilliSeconds="790" error="0"/>
+            <typePoint timeInMilliSeconds="248" error="0"/>
+            <typePoint timeInMilliSeconds="232" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="488" error="0"/>
+            <typePoint timeInMilliSeconds="840" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="281" error="0"/>
+            <typePoint timeInMilliSeconds="319" error="0"/>
+            <typePoint timeInMilliSeconds="472" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="1" runScoreTime="5594">
+            <typePoint timeInMilliSeconds="778" error="0"/>
+            <typePoint timeInMilliSeconds="233" error="0"/>
+            <typePoint timeInMilliSeconds="271" error="0"/>
+            <typePoint timeInMilliSeconds="169" error="0"/>
+            <typePoint timeInMilliSeconds="711" error="0"/>
+            <typePoint timeInMilliSeconds="440" error="0"/>
+            <typePoint timeInMilliSeconds="185" error="0"/>
+            <typePoint timeInMilliSeconds="216" error="1"/>
+            <typePoint timeInMilliSeconds="63" error="0"/>
+            <typePoint timeInMilliSeconds="520" error="0"/>
+            <typePoint timeInMilliSeconds="808" error="0"/>
+            <typePoint timeInMilliSeconds="464" error="0"/>
+            <typePoint timeInMilliSeconds="424" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5907">
+            <typePoint timeInMilliSeconds="757" error="0"/>
+            <typePoint timeInMilliSeconds="287" error="0"/>
+            <typePoint timeInMilliSeconds="327" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="560" error="0"/>
+            <typePoint timeInMilliSeconds="920" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="760" error="0"/>
+            <typePoint timeInMilliSeconds="600" error="0"/>
+            <typePoint timeInMilliSeconds="376" error="0"/>
+            <typePoint timeInMilliSeconds="757" error="0"/>
+            <typePoint timeInMilliSeconds="287" error="0"/>
+            <typePoint timeInMilliSeconds="327" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="560" error="0"/>
+            <typePoint timeInMilliSeconds="920" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="760" error="0"/>
+            <typePoint timeInMilliSeconds="600" error="0"/>
+            <typePoint timeInMilliSeconds="376" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="1" runScoreTime="5058">
+            <typePoint timeInMilliSeconds="203" error="0"/>
+            <typePoint timeInMilliSeconds="214" error="0"/>
+            <typePoint timeInMilliSeconds="208" error="0"/>
+            <typePoint timeInMilliSeconds="152" error="0"/>
+            <typePoint timeInMilliSeconds="528" error="0"/>
+            <typePoint timeInMilliSeconds="824" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="257" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="680" error="0"/>
+            <typePoint timeInMilliSeconds="808" error="1"/>
+            <typePoint timeInMilliSeconds="336" error="0"/>
+            <typePoint timeInMilliSeconds="203" error="0"/>
+            <typePoint timeInMilliSeconds="214" error="0"/>
+            <typePoint timeInMilliSeconds="208" error="0"/>
+            <typePoint timeInMilliSeconds="152" error="0"/>
+            <typePoint timeInMilliSeconds="528" error="0"/>
+            <typePoint timeInMilliSeconds="824" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="257" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="680" error="0"/>
+            <typePoint timeInMilliSeconds="808" error="1"/>
+            <typePoint timeInMilliSeconds="336" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5787">
+            <typePoint timeInMilliSeconds="810" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="464" error="0"/>
+            <typePoint timeInMilliSeconds="824" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="361" error="0"/>
+            <typePoint timeInMilliSeconds="504" error="0"/>
+            <typePoint timeInMilliSeconds="584" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+            <typePoint timeInMilliSeconds="810" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="464" error="0"/>
+            <typePoint timeInMilliSeconds="824" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="361" error="0"/>
+            <typePoint timeInMilliSeconds="504" error="0"/>
+            <typePoint timeInMilliSeconds="584" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="4005">
+            <typePoint timeInMilliSeconds="909" error="0"/>
+            <typePoint timeInMilliSeconds="560" error="0"/>
+            <typePoint timeInMilliSeconds="1272" error="0"/>
+            <typePoint timeInMilliSeconds="1264" error="0"/>
+            <typePoint timeInMilliSeconds="909" error="0"/>
+            <typePoint timeInMilliSeconds="560" error="0"/>
+            <typePoint timeInMilliSeconds="1272" error="0"/>
+            <typePoint timeInMilliSeconds="1264" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="1318">
+            <typePoint timeInMilliSeconds="655" error="0"/>
+            <typePoint timeInMilliSeconds="327" error="0"/>
+            <typePoint timeInMilliSeconds="336" error="0"/>
+            <typePoint timeInMilliSeconds="655" error="0"/>
+            <typePoint timeInMilliSeconds="327" error="0"/>
+            <typePoint timeInMilliSeconds="336" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="2970">
+            <typePoint timeInMilliSeconds="306" error="0"/>
+            <typePoint timeInMilliSeconds="1256" error="0"/>
+            <typePoint timeInMilliSeconds="728" error="0"/>
+            <typePoint timeInMilliSeconds="680" error="0"/>
+            <typePoint timeInMilliSeconds="306" error="0"/>
+            <typePoint timeInMilliSeconds="1256" error="0"/>
+            <typePoint timeInMilliSeconds="728" error="0"/>
+            <typePoint timeInMilliSeconds="680" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5297">
+            <typePoint timeInMilliSeconds="817" error="0"/>
+            <typePoint timeInMilliSeconds="592" error="0"/>
+            <typePoint timeInMilliSeconds="488" error="0"/>
+            <typePoint timeInMilliSeconds="424" error="0"/>
+            <typePoint timeInMilliSeconds="975" error="0"/>
+            <typePoint timeInMilliSeconds="689" error="0"/>
+            <typePoint timeInMilliSeconds="568" error="0"/>
+            <typePoint timeInMilliSeconds="744" error="0"/>
+            <typePoint timeInMilliSeconds="817" error="0"/>
+            <typePoint timeInMilliSeconds="592" error="0"/>
+            <typePoint timeInMilliSeconds="488" error="0"/>
+            <typePoint timeInMilliSeconds="424" error="0"/>
+            <typePoint timeInMilliSeconds="975" error="0"/>
+            <typePoint timeInMilliSeconds="689" error="0"/>
+            <typePoint timeInMilliSeconds="568" error="0"/>
+            <typePoint timeInMilliSeconds="744" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5584">
+            <typePoint timeInMilliSeconds="793" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="672" error="0"/>
+            <typePoint timeInMilliSeconds="1040" error="0"/>
+            <typePoint timeInMilliSeconds="352" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="383" error="0"/>
+            <typePoint timeInMilliSeconds="720" error="0"/>
+            <typePoint timeInMilliSeconds="793" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="672" error="0"/>
+            <typePoint timeInMilliSeconds="1040" error="0"/>
+            <typePoint timeInMilliSeconds="352" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="383" error="0"/>
+            <typePoint timeInMilliSeconds="720" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5001">
+            <typePoint timeInMilliSeconds="793" error="0"/>
+            <typePoint timeInMilliSeconds="560" error="0"/>
+            <typePoint timeInMilliSeconds="368" error="0"/>
+            <typePoint timeInMilliSeconds="352" error="0"/>
+            <typePoint timeInMilliSeconds="768" error="0"/>
+            <typePoint timeInMilliSeconds="760" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="456" error="0"/>
+            <typePoint timeInMilliSeconds="793" error="0"/>
+            <typePoint timeInMilliSeconds="560" error="0"/>
+            <typePoint timeInMilliSeconds="368" error="0"/>
+            <typePoint timeInMilliSeconds="352" error="0"/>
+            <typePoint timeInMilliSeconds="768" error="0"/>
+            <typePoint timeInMilliSeconds="760" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="288" error="0"/>
+            <typePoint timeInMilliSeconds="456" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5589">
+            <typePoint timeInMilliSeconds="742" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="256" error="0"/>
+            <typePoint timeInMilliSeconds="304" error="0"/>
+            <typePoint timeInMilliSeconds="440" error="0"/>
+            <typePoint timeInMilliSeconds="914" error="0"/>
+            <typePoint timeInMilliSeconds="230" error="0"/>
+            <typePoint timeInMilliSeconds="304" error="0"/>
+            <typePoint timeInMilliSeconds="408" error="0"/>
+            <typePoint timeInMilliSeconds="527" error="0"/>
+            <typePoint timeInMilliSeconds="512" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+            <typePoint timeInMilliSeconds="742" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="256" error="0"/>
+            <typePoint timeInMilliSeconds="304" error="0"/>
+            <typePoint timeInMilliSeconds="440" error="0"/>
+            <typePoint timeInMilliSeconds="914" error="0"/>
+            <typePoint timeInMilliSeconds="230" error="0"/>
+            <typePoint timeInMilliSeconds="304" error="0"/>
+            <typePoint timeInMilliSeconds="408" error="0"/>
+            <typePoint timeInMilliSeconds="527" error="0"/>
+            <typePoint timeInMilliSeconds="512" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="392" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5180">
+            <typePoint timeInMilliSeconds="1171" error="0"/>
+            <typePoint timeInMilliSeconds="295" error="0"/>
+            <typePoint timeInMilliSeconds="282" error="0"/>
+            <typePoint timeInMilliSeconds="248" error="0"/>
+            <typePoint timeInMilliSeconds="816" error="0"/>
+            <typePoint timeInMilliSeconds="984" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+            <typePoint timeInMilliSeconds="416" error="0"/>
+            <typePoint timeInMilliSeconds="1171" error="0"/>
+            <typePoint timeInMilliSeconds="295" error="0"/>
+            <typePoint timeInMilliSeconds="282" error="0"/>
+            <typePoint timeInMilliSeconds="248" error="0"/>
+            <typePoint timeInMilliSeconds="816" error="0"/>
+            <typePoint timeInMilliSeconds="984" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+            <typePoint timeInMilliSeconds="416" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5406">
+            <typePoint timeInMilliSeconds="1125" error="0"/>
+            <typePoint timeInMilliSeconds="472" error="0"/>
+            <typePoint timeInMilliSeconds="833" error="0"/>
+            <typePoint timeInMilliSeconds="248" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="1032" error="0"/>
+            <typePoint timeInMilliSeconds="240" error="0"/>
+            <typePoint timeInMilliSeconds="384" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+            <typePoint timeInMilliSeconds="1125" error="0"/>
+            <typePoint timeInMilliSeconds="472" error="0"/>
+            <typePoint timeInMilliSeconds="833" error="0"/>
+            <typePoint timeInMilliSeconds="248" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="1032" error="0"/>
+            <typePoint timeInMilliSeconds="240" error="0"/>
+            <typePoint timeInMilliSeconds="384" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5915">
+            <typePoint timeInMilliSeconds="667" error="0"/>
+            <typePoint timeInMilliSeconds="280" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+            <typePoint timeInMilliSeconds="664" error="0"/>
+            <typePoint timeInMilliSeconds="880" error="0"/>
+            <typePoint timeInMilliSeconds="280" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="423" error="0"/>
+            <typePoint timeInMilliSeconds="513" error="0"/>
+            <typePoint timeInMilliSeconds="415" error="0"/>
+            <typePoint timeInMilliSeconds="409" error="0"/>
+            <typePoint timeInMilliSeconds="667" error="0"/>
+            <typePoint timeInMilliSeconds="280" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="400" error="0"/>
+            <typePoint timeInMilliSeconds="664" error="0"/>
+            <typePoint timeInMilliSeconds="880" error="0"/>
+            <typePoint timeInMilliSeconds="280" error="0"/>
+            <typePoint timeInMilliSeconds="344" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="423" error="0"/>
+            <typePoint timeInMilliSeconds="513" error="0"/>
+            <typePoint timeInMilliSeconds="415" error="0"/>
+            <typePoint timeInMilliSeconds="409" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5619">
+            <typePoint timeInMilliSeconds="954" error="0"/>
+            <typePoint timeInMilliSeconds="488" error="0"/>
+            <typePoint timeInMilliSeconds="416" error="0"/>
+            <typePoint timeInMilliSeconds="368" error="0"/>
+            <typePoint timeInMilliSeconds="680" error="0"/>
+            <typePoint timeInMilliSeconds="1008" error="0"/>
+            <typePoint timeInMilliSeconds="336" error="0"/>
+            <typePoint timeInMilliSeconds="464" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="545" error="0"/>
+        </run>
     </person>
     <person name="micha" error="202" bestScoreTime="234" memeberSince="0">
         <run runOn="0" runChallenge="2" runError="6" runScoreTime="21134">
@@ -1629,6 +2324,300 @@
             <typePoint timeInMilliSeconds="90" error="0"/>
             <typePoint timeInMilliSeconds="20" error="0"/>
             <typePoint timeInMilliSeconds="40" error="2"/>
+        </run>
+    </person>
+    <person name="" error="0" bestScoreTime="8772" memeberSince="0">
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="8772">
+            <typePoint timeInMilliSeconds="731" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="304" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="559" error="0"/>
+            <typePoint timeInMilliSeconds="961" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="335" error="0"/>
+            <typePoint timeInMilliSeconds="353" error="0"/>
+            <typePoint timeInMilliSeconds="543" error="0"/>
+            <typePoint timeInMilliSeconds="584" error="0"/>
+            <typePoint timeInMilliSeconds="352" error="0"/>
+        </run>
+    </person>
+    <person name="test" error="12" bestScoreTime="59755" memeberSince="0">
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="3490">
+            <typePoint timeInMilliSeconds="698" error="0"/>
+            <typePoint timeInMilliSeconds="328" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="304" error="0"/>
+            <typePoint timeInMilliSeconds="3576" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5218">
+            <typePoint timeInMilliSeconds="698" error="0"/>
+            <typePoint timeInMilliSeconds="328" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="304" error="0"/>
+            <typePoint timeInMilliSeconds="3576" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5997">
+            <typePoint timeInMilliSeconds="709" error="0"/>
+            <typePoint timeInMilliSeconds="361" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="591" error="0"/>
+            <typePoint timeInMilliSeconds="696" error="0"/>
+            <typePoint timeInMilliSeconds="1136" error="0"/>
+            <typePoint timeInMilliSeconds="216" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="480" error="0"/>
+            <typePoint timeInMilliSeconds="1232" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="5717">
+            <typePoint timeInMilliSeconds="677" error="0"/>
+            <typePoint timeInMilliSeconds="432" error="0"/>
+            <typePoint timeInMilliSeconds="336" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="1312" error="0"/>
+            <typePoint timeInMilliSeconds="456" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="328" error="0"/>
+            <typePoint timeInMilliSeconds="312" error="0"/>
+            <typePoint timeInMilliSeconds="680" error="0"/>
+            <typePoint timeInMilliSeconds="560" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="12" runScoreTime="59755">
+            <typePoint timeInMilliSeconds="1220" error="0"/>
+            <typePoint timeInMilliSeconds="328" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="280" error="0"/>
+            <typePoint timeInMilliSeconds="431" error="0"/>
+            <typePoint timeInMilliSeconds="1065" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="368" error="0"/>
+            <typePoint timeInMilliSeconds="376" error="0"/>
+            <typePoint timeInMilliSeconds="896" error="0"/>
+            <typePoint timeInMilliSeconds="728" error="0"/>
+            <typePoint timeInMilliSeconds="399" error="0"/>
+            <typePoint timeInMilliSeconds="336" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="504" error="0"/>
+            <typePoint timeInMilliSeconds="424" error="0"/>
+            <typePoint timeInMilliSeconds="656" error="0"/>
+            <typePoint timeInMilliSeconds="961" error="1"/>
+            <typePoint timeInMilliSeconds="561" error="0"/>
+            <typePoint timeInMilliSeconds="599" error="1"/>
+            <typePoint timeInMilliSeconds="720" error="0"/>
+            <typePoint timeInMilliSeconds="904" error="1"/>
+            <typePoint timeInMilliSeconds="880" error="1"/>
+            <typePoint timeInMilliSeconds="552" error="0"/>
+            <typePoint timeInMilliSeconds="472" error="0"/>
+            <typePoint timeInMilliSeconds="464" error="0"/>
+            <typePoint timeInMilliSeconds="456" error="0"/>
+            <typePoint timeInMilliSeconds="520" error="0"/>
+            <typePoint timeInMilliSeconds="1088" error="1"/>
+            <typePoint timeInMilliSeconds="536" error="0"/>
+            <typePoint timeInMilliSeconds="552" error="0"/>
+            <typePoint timeInMilliSeconds="791" error="0"/>
+            <typePoint timeInMilliSeconds="633" error="0"/>
+            <typePoint timeInMilliSeconds="639" error="0"/>
+            <typePoint timeInMilliSeconds="528" error="0"/>
+            <typePoint timeInMilliSeconds="545" error="0"/>
+            <typePoint timeInMilliSeconds="1719" error="0"/>
+            <typePoint timeInMilliSeconds="1136" error="0"/>
+            <typePoint timeInMilliSeconds="952" error="0"/>
+            <typePoint timeInMilliSeconds="1528" error="1"/>
+            <typePoint timeInMilliSeconds="641" error="0"/>
+            <typePoint timeInMilliSeconds="1880" error="1"/>
+            <typePoint timeInMilliSeconds="2272" error="0"/>
+            <typePoint timeInMilliSeconds="1280" error="0"/>
+            <typePoint timeInMilliSeconds="1040" error="0"/>
+            <typePoint timeInMilliSeconds="528" error="0"/>
+            <typePoint timeInMilliSeconds="960" error="0"/>
+            <typePoint timeInMilliSeconds="616" error="0"/>
+            <typePoint timeInMilliSeconds="1655" error="2"/>
+            <typePoint timeInMilliSeconds="545" error="0"/>
+            <typePoint timeInMilliSeconds="1103" error="1"/>
+            <typePoint timeInMilliSeconds="825" error="0"/>
+            <typePoint timeInMilliSeconds="583" error="0"/>
+            <typePoint timeInMilliSeconds="688" error="0"/>
+            <typePoint timeInMilliSeconds="688" error="0"/>
+            <typePoint timeInMilliSeconds="616" error="0"/>
+            <typePoint timeInMilliSeconds="1304" error="0"/>
+            <typePoint timeInMilliSeconds="616" error="0"/>
+            <typePoint timeInMilliSeconds="713" error="0"/>
+            <typePoint timeInMilliSeconds="632" error="0"/>
+            <typePoint timeInMilliSeconds="480" error="0"/>
+            <typePoint timeInMilliSeconds="544" error="0"/>
+            <typePoint timeInMilliSeconds="1336" error="1"/>
+            <typePoint timeInMilliSeconds="712" error="0"/>
+            <typePoint timeInMilliSeconds="832" error="0"/>
+            <typePoint timeInMilliSeconds="944" error="0"/>
+            <typePoint timeInMilliSeconds="600" error="0"/>
+            <typePoint timeInMilliSeconds="880" error="0"/>
+            <typePoint timeInMilliSeconds="928" error="0"/>
+            <typePoint timeInMilliSeconds="1695" error="1"/>
+            <typePoint timeInMilliSeconds="880" error="0"/>
+            <typePoint timeInMilliSeconds="1120" error="0"/>
+            <typePoint timeInMilliSeconds="496" error="0"/>
+            <typePoint timeInMilliSeconds="488" error="0"/>
+            <typePoint timeInMilliSeconds="496" error="0"/>
+            <typePoint timeInMilliSeconds="656" error="0"/>
+            <typePoint timeInMilliSeconds="744" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="12" runScoreTime="59755">
+            <typePoint timeInMilliSeconds="1220" error="0"/>
+            <typePoint timeInMilliSeconds="328" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="280" error="0"/>
+            <typePoint timeInMilliSeconds="431" error="0"/>
+            <typePoint timeInMilliSeconds="1065" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="368" error="0"/>
+            <typePoint timeInMilliSeconds="376" error="0"/>
+            <typePoint timeInMilliSeconds="896" error="0"/>
+            <typePoint timeInMilliSeconds="728" error="0"/>
+            <typePoint timeInMilliSeconds="399" error="0"/>
+            <typePoint timeInMilliSeconds="336" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="504" error="0"/>
+            <typePoint timeInMilliSeconds="424" error="0"/>
+            <typePoint timeInMilliSeconds="656" error="0"/>
+            <typePoint timeInMilliSeconds="961" error="1"/>
+            <typePoint timeInMilliSeconds="561" error="0"/>
+            <typePoint timeInMilliSeconds="599" error="1"/>
+            <typePoint timeInMilliSeconds="720" error="0"/>
+            <typePoint timeInMilliSeconds="904" error="1"/>
+            <typePoint timeInMilliSeconds="880" error="1"/>
+            <typePoint timeInMilliSeconds="552" error="0"/>
+            <typePoint timeInMilliSeconds="472" error="0"/>
+            <typePoint timeInMilliSeconds="464" error="0"/>
+            <typePoint timeInMilliSeconds="456" error="0"/>
+            <typePoint timeInMilliSeconds="520" error="0"/>
+            <typePoint timeInMilliSeconds="1088" error="1"/>
+            <typePoint timeInMilliSeconds="536" error="0"/>
+            <typePoint timeInMilliSeconds="552" error="0"/>
+            <typePoint timeInMilliSeconds="791" error="0"/>
+            <typePoint timeInMilliSeconds="633" error="0"/>
+            <typePoint timeInMilliSeconds="639" error="0"/>
+            <typePoint timeInMilliSeconds="528" error="0"/>
+            <typePoint timeInMilliSeconds="545" error="0"/>
+            <typePoint timeInMilliSeconds="1719" error="0"/>
+            <typePoint timeInMilliSeconds="1136" error="0"/>
+            <typePoint timeInMilliSeconds="952" error="0"/>
+            <typePoint timeInMilliSeconds="1528" error="1"/>
+            <typePoint timeInMilliSeconds="641" error="0"/>
+            <typePoint timeInMilliSeconds="1880" error="1"/>
+            <typePoint timeInMilliSeconds="2272" error="0"/>
+            <typePoint timeInMilliSeconds="1280" error="0"/>
+            <typePoint timeInMilliSeconds="1040" error="0"/>
+            <typePoint timeInMilliSeconds="528" error="0"/>
+            <typePoint timeInMilliSeconds="960" error="0"/>
+            <typePoint timeInMilliSeconds="616" error="0"/>
+            <typePoint timeInMilliSeconds="1655" error="2"/>
+            <typePoint timeInMilliSeconds="545" error="0"/>
+            <typePoint timeInMilliSeconds="1103" error="1"/>
+            <typePoint timeInMilliSeconds="825" error="0"/>
+            <typePoint timeInMilliSeconds="583" error="0"/>
+            <typePoint timeInMilliSeconds="688" error="0"/>
+            <typePoint timeInMilliSeconds="688" error="0"/>
+            <typePoint timeInMilliSeconds="616" error="0"/>
+            <typePoint timeInMilliSeconds="1304" error="0"/>
+            <typePoint timeInMilliSeconds="616" error="0"/>
+            <typePoint timeInMilliSeconds="713" error="0"/>
+            <typePoint timeInMilliSeconds="632" error="0"/>
+            <typePoint timeInMilliSeconds="480" error="0"/>
+            <typePoint timeInMilliSeconds="544" error="0"/>
+            <typePoint timeInMilliSeconds="1336" error="1"/>
+            <typePoint timeInMilliSeconds="712" error="0"/>
+            <typePoint timeInMilliSeconds="832" error="0"/>
+            <typePoint timeInMilliSeconds="944" error="0"/>
+            <typePoint timeInMilliSeconds="600" error="0"/>
+            <typePoint timeInMilliSeconds="880" error="0"/>
+            <typePoint timeInMilliSeconds="928" error="0"/>
+            <typePoint timeInMilliSeconds="1695" error="1"/>
+            <typePoint timeInMilliSeconds="880" error="0"/>
+            <typePoint timeInMilliSeconds="1120" error="0"/>
+            <typePoint timeInMilliSeconds="496" error="0"/>
+            <typePoint timeInMilliSeconds="488" error="0"/>
+            <typePoint timeInMilliSeconds="496" error="0"/>
+            <typePoint timeInMilliSeconds="656" error="0"/>
+            <typePoint timeInMilliSeconds="744" error="0"/>
+        </run>
+        <run runOn="0" runChallenge="0" runError="12" runScoreTime="59755">
+            <typePoint timeInMilliSeconds="1220" error="0"/>
+            <typePoint timeInMilliSeconds="328" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="280" error="0"/>
+            <typePoint timeInMilliSeconds="431" error="0"/>
+            <typePoint timeInMilliSeconds="1065" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="368" error="0"/>
+            <typePoint timeInMilliSeconds="376" error="0"/>
+            <typePoint timeInMilliSeconds="896" error="0"/>
+            <typePoint timeInMilliSeconds="728" error="0"/>
+            <typePoint timeInMilliSeconds="399" error="0"/>
+            <typePoint timeInMilliSeconds="336" error="0"/>
+            <typePoint timeInMilliSeconds="360" error="0"/>
+            <typePoint timeInMilliSeconds="504" error="0"/>
+            <typePoint timeInMilliSeconds="424" error="0"/>
+            <typePoint timeInMilliSeconds="656" error="0"/>
+            <typePoint timeInMilliSeconds="961" error="1"/>
+            <typePoint timeInMilliSeconds="561" error="0"/>
+            <typePoint timeInMilliSeconds="599" error="1"/>
+            <typePoint timeInMilliSeconds="720" error="0"/>
+            <typePoint timeInMilliSeconds="904" error="1"/>
+            <typePoint timeInMilliSeconds="880" error="1"/>
+            <typePoint timeInMilliSeconds="552" error="0"/>
+            <typePoint timeInMilliSeconds="472" error="0"/>
+            <typePoint timeInMilliSeconds="464" error="0"/>
+            <typePoint timeInMilliSeconds="456" error="0"/>
+            <typePoint timeInMilliSeconds="520" error="0"/>
+            <typePoint timeInMilliSeconds="1088" error="1"/>
+            <typePoint timeInMilliSeconds="536" error="0"/>
+            <typePoint timeInMilliSeconds="552" error="0"/>
+            <typePoint timeInMilliSeconds="791" error="0"/>
+            <typePoint timeInMilliSeconds="633" error="0"/>
+            <typePoint timeInMilliSeconds="639" error="0"/>
+            <typePoint timeInMilliSeconds="528" error="0"/>
+            <typePoint timeInMilliSeconds="545" error="0"/>
+            <typePoint timeInMilliSeconds="1719" error="0"/>
+            <typePoint timeInMilliSeconds="1136" error="0"/>
+            <typePoint timeInMilliSeconds="952" error="0"/>
+            <typePoint timeInMilliSeconds="1528" error="1"/>
+            <typePoint timeInMilliSeconds="641" error="0"/>
+            <typePoint timeInMilliSeconds="1880" error="1"/>
+            <typePoint timeInMilliSeconds="2272" error="0"/>
+            <typePoint timeInMilliSeconds="1280" error="0"/>
+            <typePoint timeInMilliSeconds="1040" error="0"/>
+            <typePoint timeInMilliSeconds="528" error="0"/>
+            <typePoint timeInMilliSeconds="960" error="0"/>
+            <typePoint timeInMilliSeconds="616" error="0"/>
+            <typePoint timeInMilliSeconds="1655" error="2"/>
+            <typePoint timeInMilliSeconds="545" error="0"/>
+            <typePoint timeInMilliSeconds="1103" error="1"/>
+            <typePoint timeInMilliSeconds="825" error="0"/>
+            <typePoint timeInMilliSeconds="583" error="0"/>
+            <typePoint timeInMilliSeconds="688" error="0"/>
+            <typePoint timeInMilliSeconds="688" error="0"/>
+            <typePoint timeInMilliSeconds="616" error="0"/>
+            <typePoint timeInMilliSeconds="1304" error="0"/>
+            <typePoint timeInMilliSeconds="616" error="0"/>
+            <typePoint timeInMilliSeconds="713" error="0"/>
+            <typePoint timeInMilliSeconds="632" error="0"/>
+            <typePoint timeInMilliSeconds="480" error="0"/>
+            <typePoint timeInMilliSeconds="544" error="0"/>
+            <typePoint timeInMilliSeconds="1336" error="1"/>
+            <typePoint timeInMilliSeconds="712" error="0"/>
+            <typePoint timeInMilliSeconds="832" error="0"/>
+            <typePoint timeInMilliSeconds="944" error="0"/>
+            <typePoint timeInMilliSeconds="600" error="0"/>
+            <typePoint timeInMilliSeconds="880" error="0"/>
+            <typePoint timeInMilliSeconds="928" error="0"/>
+            <typePoint timeInMilliSeconds="1695" error="1"/>
+            <typePoint timeInMilliSeconds="880" error="0"/>
+            <typePoint timeInMilliSeconds="1120" error="0"/>
+            <typePoint timeInMilliSeconds="496" error="0"/>
+            <typePoint timeInMilliSeconds="488" error="0"/>
+            <typePoint timeInMilliSeconds="496" error="0"/>
+            <typePoint timeInMilliSeconds="656" error="0"/>
+            <typePoint timeInMilliSeconds="744" error="0"/>
         </run>
     </person>
 </highscore>
