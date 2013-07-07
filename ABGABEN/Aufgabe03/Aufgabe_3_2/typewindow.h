@@ -6,7 +6,6 @@
 #include "person.h"
 
 namespace Ui {
-
 class Typewindow;
 }
 

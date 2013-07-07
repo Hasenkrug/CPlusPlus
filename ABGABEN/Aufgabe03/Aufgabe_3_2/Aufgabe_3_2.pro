@@ -22,7 +22,7 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     typewindow.h\
     xmlstreamreader.h \
-    person.h \
+    person.h\
     highscore.h\
     qcustomplot.h
 

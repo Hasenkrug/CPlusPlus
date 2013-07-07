@@ -3,7 +3,7 @@
 #include "qcustomplot.h"
 #include "QStandardItemModel"
 
-Highscore::Highscore(QWidget *parent) :
+Highscore::Highscore(QDialog *parent) :
     QDialog(parent),
     ui(new Ui::Highscore)
 {
