@@ -24,8 +24,8 @@ Highscore::Highscore(QWidget *parent) :
 void Highscore::initHighScore(Person *p){
     bool newName = true;
 
-    //reader.readFile("../highscore.xml");
-    reader.readFile("../../../../highscore.xml"); // MAC-VERSION
+    reader.readFile("../highscore.xml");
+    //reader.readFile("../../../../highscore.xml"); // MAC-VERSION
 
     for (int i= 0;i<persons->persons.size();i++){
         if(persons->persons.at(i).name.compare(p->name)){
@@ -73,8 +73,8 @@ void Highscore::initHighScore(Person *p){
 
     std::cout<<p->runs.at(0).typePoints.size()<<std::endl;
 
-    //reader.writeXml("../highscore.xml");
-    reader.writeXml("../../../../highscore.xml"); // MAC-VERSION
+    reader.writeXml("../highscore.xml");
+    //reader.writeXml("../../../../highscore.xml"); // MAC-VERSION
 
     std::map<int,int> map;
     int iii;
