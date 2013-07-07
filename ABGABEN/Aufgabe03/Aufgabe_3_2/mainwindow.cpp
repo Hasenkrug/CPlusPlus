@@ -19,7 +19,7 @@ MainWindow::~MainWindow() {
 }
 
 QStringList MainWindow::getEasyString() {
-    u = "marco";
+    u = ui->nameBox->text().toStdString();
     c = 0;
     QString a("asdf jklö lass all salsa la da fass ja kalk¶");
     QString b("as skala saal das kafka öl la asdf jklö da¶");
@@ -54,7 +54,7 @@ QStringList MainWindow::getEasyString() {
 }
 
 QStringList MainWindow::getMediumString() {
-    u= "marco";
+    u = ui->nameBox->text().toStdString();
     c = 1;
     QString a("freier fördern friede kreis seiner rief¶");
     QString b("radikalen frei irren freie leider riefen¶");
@@ -91,15 +91,33 @@ QStringList MainWindow::getMediumString() {
     return st;
 }
 
-QString MainWindow::getHardString() {
-    u = "marco";
+QStringList MainWindow::getHardString() {
+    u = ui->nameBox->text().toStdString();
     c = 2;
-    QString s[] = { "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö", "Ä", "Q", "W", "E", "R", "T", "Z", "U", "I", "O", "P", "Ü", "Y", "X", "C", "V", "B", "N", "M", "1", "2", "3", "5", "6", "7", "8", "9", "0"};
-    QString st = "";
 
-    for(int i = 0; i < 40; i++) {
-        st = st + s[rand() % 37];
-    }
+    QString a("das ist die letzte lexion¶");
+    QString b("du hast es also fast geschafft¶");
+    QString c("qt ist ganz schön tricky¶");
+    QString d("als ich klein war wollte ich immer ein yps heft abo¶");
+    QString e("xylophonisten sind die überflieger von heute¶");
+    QString f("gestern nacht habe ich in spandau ein opussum gesehen¶");
+    QString g("überraschungsangriffe sind die überraschendsten angriffe¶");
+    QString h("katholizismus bezeichnet die gesamtheit der erscheinungsformen¶");
+    QString i("die handlungsweisen von autoritäten stinken¶");
+    QString j("zombie ipsum reversus ab viral inferno nam rick grimes malum cerebro¶");
+
+    QStringList st;
+
+    st.append(a);
+    st.append(b);
+    st.append(c);
+    st.append(d);
+    st.append(e);
+    st.append(f);
+    st.append(g);
+    st.append(h);
+    st.append(i);
+    st.append(j);
 
     return st;
 }
@@ -107,43 +125,22 @@ QString MainWindow::getHardString() {
 void MainWindow::startLessonClicked() {    
     Typewindow* t = new Typewindow(this);
     t->setUser(u, c);
-    bool timelimit = ui->timeLimit->isChecked();
-    int limit;
-
-    if(timelimit) {
-        limit = ui->timeBox->value();
-    } else {
-        limit = ui->hitBox->value();
-    }
+    int limit = ui->timeBox->value();
 
     if (ui->easy->isChecked()) {        
         // wichtig zum abfangen von space & enter
         t->installEventFilter(t);
-
-        t->startLesson(getEasyString(), timelimit, limit);
+        t->startLesson(getEasyString(), limit);
         t->show();
     } else if (ui->medium->isChecked()) {
         // wichtig zum abfangen von space & enter
         t->installEventFilter(t);
-
-        t->startLesson(getMediumString(), timelimit, limit);
+        t->startLesson(getMediumString(), limit);
         t->show();
-    } /*else if (ui->hard->isChecked()) {
-        t->ui->lessonText->setText(getHardString());
+    } else if (ui->hard->isChecked()) {
+        // wichtig zum abfangen von space & enter
+        t->installEventFilter(t);
+        t->startLesson(getHardString(), limit);
         t->show();
-    } */ else {
-        QWidget *dialog = new QWidget();
-        dialog->setWindowTitle("Achtung");
-        QLabel *label = new QLabel("Bitte wähle erst die Schwierigkeit!");
-
-        QPushButton *ok = new QPushButton("OK");
-        QObject::connect(ok, SIGNAL(clicked()), dialog, SLOT(close()));
-
-        QHBoxLayout *layout = new QHBoxLayout;
-        layout->addWidget(label);
-        layout->addWidget(ok);
-
-        dialog->setLayout(layout);
-        dialog->show();
     }
 }

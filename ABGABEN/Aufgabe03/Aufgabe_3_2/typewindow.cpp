@@ -12,7 +12,7 @@ using namespace std;
 
 
 Typewindow::Typewindow(QWidget *parent, QString string) :
-    QDialog(parent), s(string), errors(0), hits(0), rowCount(0), doubleEvasion(0), timeStamp(0), ui(new Ui::Typewindow) {
+    QDialog(parent), s(string), errors(0), totalErrors(0), hits(0), rowCount(0), doubleEvasion(0), timeStamp(0), ui(new Ui::Typewindow) {
 
     ui->setupUi(this);        
     //setFocusPolicy(Qt::StrongFocus);
@@ -88,8 +88,7 @@ void Typewindow::nextRow() {
     }
 }
 
-void Typewindow::startLesson(QStringList liste, bool tl, int l) {
-    timelimit = tl;
+void Typewindow::startLesson(QStringList liste, int l) {
     limit = l;
     list = liste;
     nextRow();
@@ -117,12 +116,12 @@ void Typewindow::lessonControl(QString pressed) {
         ui->colorBox->setStyleSheet("QGroupBox{ background-color:#ff0000 }");
         hits++;
         errors++;
+        totalErrors++;
     }
 }
 
 bool Typewindow::checkInput(QString key) {
-    if(timelimit) {
-        if(timer.elapsed() / 10000 < limit) {
+        if(timer.elapsed() / 60000 < limit) {
             if( key != row.at(0) ) {
                 return false;
             } else {
@@ -148,14 +147,13 @@ bool Typewindow::checkInput(QString key) {
 
             std::cout<<r->typePoints.size()<<std::endl;
 
-
-            cout << "Anschläge: " << hits << endl;
-            cout << "Fehler: " << errors << endl;
-            cout << "Fehlerquote: " << (errors * 100) / hits << "%" << endl;
-            //cout << "APM: " << hits / (timer.elapsed() / 60000) << endl;
+            cout << "Zeit: " << timer.elapsed()/60000 << " Minute(n)" << endl;
+            cout << "Anschlaege: " << hits << endl;
+            cout << "Fehler: " << totalErrors << endl;
+            cout << "Fehlerquote: " << (totalErrors * 100) / hits << "%" << endl;
             Typewindow::close();
         }
-    }
+
     return false;
 }
 
@@ -169,34 +167,62 @@ void Typewindow::mixList() {
 void Typewindow::setKeyStyle() {
     if(row.startsWith("a")) {
         ui->btnA->setFocus();
-    } else if(row.startsWith("e")) {
-        ui->btnE->setFocus();
-    } else if(row.startsWith("n")) {
-        ui->btnN->setFocus();
-    } else if(row.startsWith("r")) {
-        ui->btnR->setFocus();
-    } else if(row.startsWith("i")) {
-        ui->btnI->setFocus();
-    } else if(row.startsWith("s")) {
-        ui->btnS->setFocus();
+    } else if(row.startsWith("b")) {
+        ui->btnB->setFocus();
+    } else if(row.startsWith("c")) {
+        ui->btnC->setFocus();
     } else if(row.startsWith("d")) {
         ui->btnD->setFocus();
+    } else if(row.startsWith("e")) {
+        ui->btnE->setFocus();
     } else if(row.startsWith("f")) {
         ui->btnF->setFocus();
     } else if(row.startsWith("g")) {
         ui->btnG->setFocus();
     } else if(row.startsWith("h")) {
         ui->btnH->setFocus();
+    } else if(row.startsWith("i")) {
+        ui->btnI->setFocus();
     } else if(row.startsWith("j")) {
         ui->btnJ->setFocus();
     } else if(row.startsWith("k")) {
         ui->btnK->setFocus();
     } else if(row.startsWith("l")) {
         ui->btnL->setFocus();
+    } else if(row.startsWith("m")) {
+        ui->btnM->setFocus();
+    } else if(row.startsWith("n")) {
+        ui->btnN->setFocus();
+    } else if(row.startsWith("o")) {
+        ui->btnO->setFocus();
+    } else if(row.startsWith("p")) {
+        ui->btnP->setFocus();
+    } else if(row.startsWith("q")) {
+        ui->btnQ->setFocus();
+    } else if(row.startsWith("r")) {
+        ui->btnR->setFocus();
+    } else if(row.startsWith("s")) {
+        ui->btnS->setFocus();
+    } else if(row.startsWith("t")) {
+        ui->btnT->setFocus();
+    } else if(row.startsWith("u")) {
+        ui->btnU->setFocus();
+    } else if(row.startsWith("v")) {
+        ui->btnV->setFocus();
+    } else if(row.startsWith("w")) {
+        ui->btnW->setFocus();
+    } else if(row.startsWith("x")) {
+        ui->btnX->setFocus();
+    } else if(row.startsWith("y")) {
+        ui->btnY->setFocus();
+    } else if(row.startsWith("z")) {
+        ui->btnZ->setFocus();
     } else if(row.startsWith("ö")) {
         ui->btnOe->setFocus();
     } else if(row.startsWith("ä")) {
         ui->btnAe->setFocus();
+    } else if(row.startsWith("ü")) {
+        ui->btnUe->setFocus();
     } else if(row.startsWith(" ")) {
         ui->btnSpace->setFocus();
     } else if(row.startsWith("¶")) {
@@ -322,4 +348,8 @@ void Typewindow::setUser(std::string u,int c){
     p->name = u;
     r->runChallenge = c;
 
+}
+
+void Typewindow::on_cancel_clicked() {
+    Typewindow::close();
 }

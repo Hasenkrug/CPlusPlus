@@ -136,6 +136,9 @@
    </item>
    <item row="1" column="0">
     <widget class="QWidget" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <layout class="QGridLayout" name="gridLayout_14">
       <item row="0" column="1">
        <widget class="QFrame" name="frame_4">
@@ -146,18 +149,46 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton:focus{
+         <string notr="true">QPushButton{
 	 margin: 1px 1px 1px 1px;
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #c3e3f4, stop: 1 #6ebae2);
+                                      stop: 0 rgb(235, 247, 151), stop: 1 rgb(218, 226, 99));
     /* We'll round the borders. */
     border-style: outset;
     /* Round radius will be 3px */
     border-radius: 3px;
     /* Border is only one pixel */
-    border-width: 1px;
+    border-width: 2px;
     /* Border color is now set */
-    border-color: #595959;
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
 }</string>
         </property>
         <property name="frameShape">
@@ -196,6 +227,49 @@
               <height>51</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
+            </property>
             <property name="text">
              <string>Q</string>
             </property>
@@ -216,7 +290,47 @@
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(174, 234, 234), stop: 1 rgb(160, 211, 208));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>W</string>
@@ -236,6 +350,49 @@
               <width>51</width>
               <height>51</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(173, 247, 124), stop: 1 rgb(159, 226, 113));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>E</string>
@@ -332,6 +489,49 @@
               <height>51</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(173, 247, 124), stop: 1 rgb(159, 226, 113));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
+            </property>
             <property name="text">
              <string>I</string>
             </property>
@@ -350,6 +550,49 @@
               <width>51</width>
               <height>51</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(174, 234, 234), stop: 1 rgb(160, 211, 208));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>O</string>
@@ -370,6 +613,49 @@
               <height>51</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
+            </property>
             <property name="text">
              <string>P</string>
             </property>
@@ -388,6 +674,49 @@
               <width>51</width>
               <height>51</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>Ü</string>
@@ -427,7 +756,47 @@
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>A</string>
@@ -449,7 +818,47 @@
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(174, 234, 234), stop: 1 rgb(160, 211, 208));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>S</string>
@@ -471,7 +880,47 @@
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(173, 247, 124), stop: 1 rgb(159, 226, 113));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>D</string>
@@ -581,7 +1030,47 @@
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(173, 247, 124), stop: 1 rgb(159, 226, 113));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>K</string>
@@ -603,7 +1092,47 @@
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(174, 234, 234), stop: 1 rgb(160, 211, 208));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>L</string>
@@ -625,7 +1154,47 @@
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>Ö</string>
@@ -647,7 +1216,47 @@
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>Ä</string>
@@ -659,9 +1268,9 @@
         <widget class="QWidget" name="widget_20" native="true">
          <property name="geometry">
           <rect>
-           <x>10</x>
+           <x>0</x>
            <y>150</y>
-           <width>639</width>
+           <width>601</width>
            <height>66</height>
           </rect>
          </property>
@@ -686,6 +1295,49 @@
               <height>51</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
+            </property>
             <property name="text">
              <string>&gt;</string>
             </property>
@@ -704,6 +1356,49 @@
               <width>51</width>
               <height>51</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>Y</string>
@@ -724,6 +1419,49 @@
               <height>51</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(174, 234, 234), stop: 1 rgb(160, 211, 208));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
+            </property>
             <property name="text">
              <string>X</string>
             </property>
@@ -742,6 +1480,49 @@
               <width>51</width>
               <height>51</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(173, 247, 124), stop: 1 rgb(159, 226, 113));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>C</string>
@@ -838,6 +1619,49 @@
               <height>51</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(173, 247, 124), stop: 1 rgb(159, 226, 113));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
+            </property>
             <property name="text">
              <string>,</string>
             </property>
@@ -857,6 +1681,49 @@
               <height>51</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(174, 234, 234), stop: 1 rgb(160, 211, 208));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
+            </property>
             <property name="text">
              <string>.</string>
             </property>
@@ -875,6 +1742,49 @@
               <width>51</width>
               <height>51</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>-</string>
@@ -913,6 +1823,49 @@
               <height>51</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
+            </property>
             <property name="text">
              <string>Strg</string>
             </property>
@@ -932,6 +1885,49 @@
               <height>51</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -950,6 +1946,49 @@
               <width>48</width>
               <height>48</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>Alt</string>
@@ -991,6 +2030,49 @@
               <width>51</width>
               <height>51</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>Alt Gr</string>
@@ -1042,6 +2124,49 @@
               <height>51</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
+            </property>
             <property name="text">
              <string>1</string>
             </property>
@@ -1062,7 +2187,47 @@
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>2</string>
@@ -1083,6 +2248,49 @@
               <height>51</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(174, 234, 234), stop: 1 rgb(160, 211, 208));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
+            </property>
             <property name="text">
              <string>3</string>
             </property>
@@ -1101,6 +2309,49 @@
               <width>51</width>
               <height>51</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(173, 247, 124), stop: 1 rgb(159, 226, 113));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>4</string>
@@ -1197,6 +2448,49 @@
               <height>51</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(173, 247, 124), stop: 1 rgb(159, 226, 113));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
+            </property>
             <property name="text">
              <string>9</string>
             </property>
@@ -1216,6 +2510,49 @@
               <height>51</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(174, 234, 234), stop: 1 rgb(160, 211, 208));
+    /* We'll round the borders. */
+    border-style: outset;
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
+            </property>
             <property name="text">
              <string>0</string>
             </property>
@@ -1234,6 +2571,49 @@
               <width>51</width>
               <height>51</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
             </property>
             <property name="text">
              <string>ß</string>
@@ -1264,7 +2644,47 @@
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">QPushButton{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CEABAB, stop: 1 #c29696);
+    /* We'll round the borders. */
+    border-style: outset;    
+	/* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:pressed{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(245, 245, 245), stop: 1 rgb(220, 220, 220));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}
+
+QPushButton:focus{
+	 margin: 1px 1px 1px 1px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 rgb(250, 250, 250), stop: 1 rgb(235, 235, 235));
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 2px;
+    /* Border color is now set */
+    border-color: rgb(200, 200, 200);
+}</string>
          </property>
          <property name="text">
           <string>Enter</string>
