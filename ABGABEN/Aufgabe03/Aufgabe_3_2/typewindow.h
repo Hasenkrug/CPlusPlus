@@ -19,9 +19,9 @@ public:
     QString row;
     QStringList list;
     int errors;
+    int totalErrors;
     int hits;
     int rowCount;
-    bool timelimit;
     int limit;
     int doubleEvasion; // wird im eventFilter "benötigt"
     QTime timer;

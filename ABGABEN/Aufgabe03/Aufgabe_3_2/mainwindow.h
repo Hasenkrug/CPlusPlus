@@ -26,7 +26,7 @@ private:
     Ui::MainWindow *ui;
     QStringList getEasyString();
     QStringList getMediumString();
-    QString getHardString();
+    QStringList getHardString();
 };
 
 #endif // MAINWINDOW_H
