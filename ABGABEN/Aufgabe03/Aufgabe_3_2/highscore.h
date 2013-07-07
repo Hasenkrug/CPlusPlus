@@ -28,7 +28,7 @@ private:
     void addGraphForAllRunsOfOnePerson(QCustomPlot *plot, Person p);//Gesamtzeit/Runs
     void addGraphForLastRunOfOnePerson(QCustomPlot *plot, Run r);//zeit pro Anschlag/Anschlag
     void addGraphOneBestToOneActual(QCustomPlot *plot, Run rL, Run rB);
-    void addGraphBestRunAllPersonsTopTen(QCustomPlot *plot, Persons p);
+    void addGraphBestRunAllPersonsTopTen(QCustomPlot *plot, Run rL, Run rB);
 
 };
 

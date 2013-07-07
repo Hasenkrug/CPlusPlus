@@ -40,6 +40,25 @@
             <typePoint timeInMilliSeconds="20" error="0"/>
             <typePoint timeInMilliSeconds="40" error="2"/>
         </run>
+		<run runOn="0" runChallenge="0" runError="0" runScoreTime="9887">
+            <typePoint timeInMilliSeconds="1167" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="209" error="0"/>
+            <typePoint timeInMilliSeconds="1311" error="0"/>
+            <typePoint timeInMilliSeconds="264" error="0"/>
+            <typePoint timeInMilliSeconds="960" error="0"/>
+            <typePoint timeInMilliSeconds="208" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="440" error="0"/>
+            <typePoint timeInMilliSeconds="488" error="0"/>
+            <typePoint timeInMilliSeconds="568" error="0"/>
+            <typePoint timeInMilliSeconds="696" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="920" error="0"/>
+            <typePoint timeInMilliSeconds="560" error="0"/>
+            <typePoint timeInMilliSeconds="552" error="0"/>
+            <typePoint timeInMilliSeconds="656" error="0"/>
+        </run>
         <run runOn="0" runChallenge="2" runError="9" runScoreTime="15000">
             <typePoint timeInMilliSeconds="30" error="0"/>
             <typePoint timeInMilliSeconds="40" error="0"/>
