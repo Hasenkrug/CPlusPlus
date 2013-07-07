@@ -17,16 +17,19 @@ SOURCES += main.cpp\
     xmlstreamreader.cpp \
     person.cpp \
     highscore.cpp\
-    qcustomplot.cpp
+    qcustomplot.cpp\
+    result.cpp
 
 HEADERS  += mainwindow.h \
     typewindow.h\
     xmlstreamreader.h \
     person.h\
     highscore.h\
-    qcustomplot.h
+    qcustomplot.h\
+    result.h
 
 FORMS    += mainwindow.ui\
         typewindow.ui\
-    highscore.ui
+    highscore.ui\
+    result.ui
 
