@@ -51,31 +51,33 @@ bool Typewindow::eventFilter(QObject *object, QEvent *event) {
 }
 
 /* MAC-VERSION */
-//// wichtig zum abfangen von space & enter
-//bool Typewindow::eventFilter(QObject *object, QEvent *event) {
-//    // 51 = QEvent::ShortcutOverride - Key press in child, for overriding shortcut key handling (QKeyEvent)
-//    if(event->type() == 51 && object == this) {
-//        const QKeyEvent *ke = static_cast<QKeyEvent *>(event);
-//        doubleEvasion++;
-//        if(ke->key() == Qt::Key_Space && doubleEvasion % 2 == 0) {
-//            ui->btnSpace->animateClick(100);
-//            lessonControl(" ");
-//            return true;
-//        } else if(ke->key() == Qt::Key_Return && doubleEvasion % 2 == 0) {
-//            ui->btnEnter->animateClick(100);
-//            lessonControl("¶");
+// wichtig zum abfangen von space & enter
+/*
+bool Typewindow::eventFilter(QObject *object, QEvent *event) {
+    // 51 = QEvent::ShortcutOverride - Key press in child, for overriding shortcut key handling (QKeyEvent)
+    if(event->type() == 51 && object == this) {
+        const QKeyEvent *ke = static_cast<QKeyEvent *>(event);
+        doubleEvasion++;
+        if(ke->key() == Qt::Key_Space && doubleEvasion % 2 == 0) {
+            ui->btnSpace->animateClick(100);
+            lessonControl(" ");
+            return true;
+        } else if(ke->key() == Qt::Key_Return && doubleEvasion % 2 == 0) {
+            ui->btnEnter->animateClick(100);
+            lessonControl("¶");
 
-//            if(row.length() == 0) {
-//                nextRow();
-//                setKeyStyle();
-//            }
+            if(row.length() == 0) {
+                nextRow();
+                setKeyStyle();
+            }
 
-//            return true;
-//        }
-//    }
-//    event->ignore();
-//    return false;
-//}
+            return true;
+        }
+    }
+    event->ignore();
+    return false;
+}
+*/
 
 void Typewindow::nextRow() {
     if(rowCount < list.length()) {
@@ -131,9 +133,10 @@ bool Typewindow::checkInput(QString key) {
             }
         } else { // Lesson ist fertig
 
-//            QString apm = QString::number(300);
-//            QString fq = QString::number(300);
-//            QString points = QString::number(300);
+            /* FÜR TESTFÄLLE wenn die Zeit auf unter eine Minute gestellt wird*/
+            // QString apm = QString::number(300);
+            // QString fq = QString::number(300);
+            // QString points = QString::number(300);
 
             QString apm = QString::number(hits / (timer.elapsed() / 60000));
             QString fq = QString::number((totalErrors * 100) / hits);
@@ -143,22 +146,8 @@ bool Typewindow::checkInput(QString key) {
 
             Result* result = new Result(this, p);
             result->fillLabels(QString::number(hits), apm, QString::number(totalErrors),fq, points);
-            result->show();
+            result->show();            
 
-//            std::cout<<r->typePoints.size()<<std::endl;
-
-
-//            Highscore* s = new Highscore(this);
-
-//            std::cout<<p->name<<std::endl;
-//            s->initHighScore(p);
-//            s->installEventFilter(s);
-//            s->show();
-
-            cout << "Zeit: " << timer.elapsed()/60000 << " Minute(n)" << endl;
-            cout << "Anschlaege: " << hits << endl;
-            cout << "Fehler: " << totalErrors << endl;
-            cout << "Fehlerquote: " << (totalErrors * 100) / hits << "%" << endl;
             Typewindow::close();
         }
 
@@ -327,23 +316,12 @@ void Typewindow::keyPressEvent(QKeyEvent *e) {
         ui->btnUe->animateClick(100);
         lessonControl("ü");
     }
-//    else if(e->key() == Qt::Key_Space) {
-//        ui->btnSpace->animateClick(100);
-//        lessonControl(" ");
-//    } else if(e->key() == Qt::Key_Return) {
-//        ui->btnEnter->animateClick(100);
-//        lessonControl("¶");
-//        nextRow();
-//    }
-
-
-
 }
 
 void Typewindow::setUser(std::string u,int c){
     Persons *persons = new Persons();
     XmlStreamReader reader(persons);
-    reader.readFile("../highscore.xml");
+    reader.readFile("../highscore.xml"); // WINDOWS-VERSION
     //reader.readFile("../../../../highscore.xml"); // MAC-VERSION
     //reader.writeXml("../newHighscore.xml");
     for(int i = 0; i<persons->persons.size();i++)
@@ -358,7 +336,6 @@ void Typewindow::setUser(std::string u,int c){
     p->name = u;
     std::cout<<p->name<<std::endl;
     r->runChallenge = c;
-
 }
 
 void Typewindow::on_cancel_clicked() {

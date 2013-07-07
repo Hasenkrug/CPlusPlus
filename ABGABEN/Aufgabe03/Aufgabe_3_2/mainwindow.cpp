@@ -30,15 +30,6 @@ QStringList MainWindow::getEasyString() {
     QString g("falls öl fad dj fass jölö flak lös kafka ja¶");
     QString h("das klös as öl kalk fall saal la skala jölö¶");
 
-//    QString a("asdf¶");
-//    QString b("as¶");
-//    QString c("als¶");
-//    QString d("kalk¶");
-//    QString e("skala¶");
-//    QString f("salsa¶");
-//    QString g("falls¶");
-//    QString h("das¶");
-
     QStringList st;
 
     st.append(a);
@@ -93,9 +84,7 @@ QStringList MainWindow::getMediumString() {
 
 QStringList MainWindow::getHardString() {
     u = ui->nameBox->text().toStdString();
-
     c = 2;
-
     QString a("das ist die letzte lexion¶");
     QString b("du hast es also fast geschafft¶");
     QString c("qt ist ganz schön tricky¶");
