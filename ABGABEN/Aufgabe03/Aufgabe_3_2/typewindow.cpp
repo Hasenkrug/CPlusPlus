@@ -88,8 +88,7 @@ void Typewindow::nextRow() {
     }
 }
 
-void Typewindow::startLesson(QStringList liste, bool tl, int l) {
-    timelimit = tl;
+void Typewindow::startLesson(QStringList liste, int l) {
     limit = l;
     list = liste;
     nextRow();
@@ -121,7 +120,6 @@ void Typewindow::lessonControl(QString pressed) {
 }
 
 bool Typewindow::checkInput(QString key) {
-    if(timelimit) {
         if(timer.elapsed() / 10000 < limit) {
             if( key != row.at(0) ) {
                 return false;
@@ -155,7 +153,7 @@ bool Typewindow::checkInput(QString key) {
             //cout << "APM: " << hits / (timer.elapsed() / 60000) << endl;
             Typewindow::close();
         }
-    }
+
     return false;
 }
 

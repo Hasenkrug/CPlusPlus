@@ -35,7 +35,7 @@ public:
     // wichtig zum abfangen von space & enter
     bool eventFilter(QObject *object, QEvent *event);
     void lessonControl(QString k);
-    void startLesson(QStringList liste, bool tl, int l);
+    void startLesson(QStringList liste, int l);
     void nextRow();
     bool checkInput(QString pressed);
     void mixList();
