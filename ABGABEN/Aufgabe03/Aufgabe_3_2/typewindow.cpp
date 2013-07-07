@@ -48,7 +48,7 @@ bool Typewindow::eventFilter(QObject *object, QEvent *event) {
     return false;
 }
 
-/* MAC VERSION */
+/* MAC-VERSION */
 //// wichtig zum abfangen von space & enter
 //bool Typewindow::eventFilter(QObject *object, QEvent *event) {
 //    // 51 = QEvent::ShortcutOverride - Key press in child, for overriding shortcut key handling (QKeyEvent)
@@ -138,7 +138,6 @@ bool Typewindow::checkInput(QString key) {
             s->initHighScore(p);
             s->installEventFilter(s);
             s->show();
-
 
             cout << "Zeit: " << timer.elapsed()/60000 << " Minute(n)" << endl;
             cout << "Anschlaege: " << hits << endl;
@@ -329,6 +328,7 @@ void Typewindow::setUser(std::string u,int c){
     Persons *persons = new Persons();
     XmlStreamReader reader(persons);
     reader.readFile("../highscore.xml");
+    // reader.readFile("../../../../highscore.xml"); // MAC-VERSION
     //reader.writeXml("../newHighscore.xml");
     for(int i = 0; i<persons->persons.size();i++)
 
