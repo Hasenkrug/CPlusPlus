@@ -99,28 +99,19 @@ QString getHardString() {
     return st;
 }
 
-void MainWindow::startLessonClicked() {    
-    Typewindow* t = new Typewindow(this);
-    bool timelimit = ui->timeLimit->isChecked();
-    int limit;
-
-    if(timelimit) {
-        limit = ui->timeBox->value();
-    } else {
-        limit = ui->hitBox->value();
-    }
+void MainWindow::startLessonClicked() {
+    int limit = ui->timeBox->value();
+    Typewindow* t = new Typewindow(this);    
 
     if (ui->easy->isChecked()) {        
         // wichtig zum abfangen von space & enter
         t->installEventFilter(t);
-
-        t->startLesson(getEasyString(), timelimit, limit);
+        t->startLesson(getEasyString(), limit);
         t->show();
     } else if (ui->medium->isChecked()) {
         // wichtig zum abfangen von space & enter
         t->installEventFilter(t);
-
-        t->startLesson(getMediumString(), timelimit, limit);
+        t->startLesson(getMediumString(), limit);
         t->show();
     } /*else if (ui->hard->isChecked()) {
         t->ui->lessonText->setText(getHardString());

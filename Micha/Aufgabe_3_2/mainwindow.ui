@@ -37,33 +37,9 @@
          </property>
         </spacer>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Dauer der Lektion:</string>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="0">
         <widget class="QGroupBox" name="myGroupBox_2">
          <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
-           <widget class="QRadioButton" name="timeLimit">
-            <property name="text">
-             <string>Zeitlimit</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QRadioButton" name="hitLimit">
-            <property name="text">
-             <string>Zeichenlimit</string>
-            </property>
-           </widget>
-          </item>
           <item row="1" column="0">
            <widget class="QDoubleSpinBox" name="timeBox">
             <property name="suffix">
@@ -80,22 +56,10 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
-           <widget class="QDoubleSpinBox" name="hitBox">
-            <property name="suffix">
-             <string> Zeichen</string>
-            </property>
-            <property name="decimals">
-             <number>0</number>
-            </property>
-            <property name="minimum">
-             <double>200.000000000000000</double>
-            </property>
-            <property name="maximum">
-             <double>1000.000000000000000</double>
-            </property>
-            <property name="singleStep">
-             <double>100.000000000000000</double>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Dauer der Lektion:</string>
             </property>
            </widget>
           </item>
@@ -185,7 +149,6 @@
       <zorder>verticalSpacer</zorder>
       <zorder>verticalSpacer_2</zorder>
       <zorder>label</zorder>
-      <zorder>label_2</zorder>
       <zorder>verticalSpacer_3</zorder>
      </widget>
     </item>
@@ -214,10 +177,7 @@
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
   <tabstop>startLessonButton</tabstop>
-  <tabstop>timeLimit</tabstop>
   <tabstop>timeBox</tabstop>
-  <tabstop>hitLimit</tabstop>
-  <tabstop>hitBox</tabstop>
   <tabstop>easy</tabstop>
   <tabstop>medium</tabstop>
   <tabstop>hard</tabstop>
