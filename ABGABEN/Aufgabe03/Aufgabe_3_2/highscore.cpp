@@ -4,18 +4,23 @@
 #include "QStandardItemModel"
 #include "xmlstreamreader.h"
 
-Highscore::Highscore(QDialog *parent) :
+Highscore::Highscore(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Highscore)
 {
     srand(QDateTime::currentDateTime().toTime_t());
     ui->setupUi(this);
 
+
     persons  = new Persons();
+
+    std::cout<<"32"<<std::endl;
     reader.setPerson(persons);
 
+    std::cout<<"33"<<std::endl;
     reader.readFile("../highscore.xml");
 
+    std::cout<<"34"<<std::endl;
     ui->plot0->setInteractions(QCP::iRangeDrag  |QCP::iRangeZoom);
     ui->plot1->setInteractions(QCP::iRangeDrag  |QCP::iRangeZoom);
     ui->plot2->setInteractions(QCP::iRangeDrag  |QCP::iRangeZoom);
@@ -23,50 +28,91 @@ Highscore::Highscore(QDialog *parent) :
 }
 
 void Highscore::initHighScore(Person *p){
-    bool goodOldName = true;
+    bool newName = true;
 
-    std::cout<<p->name<<std::endl;
+    std::cout<<"h:0"<<std::endl;
 
     for (int i= 0;i<persons->persons.size();i++){
         if(persons->persons.at(i).name.compare(p->name)){
             Run *rr = new Run();
             rr->runChallenge = p->runs.at(0).runChallenge;
             rr->runOn = p->runs.at(0).runOn;
-            rr->runError = p->runs.at(0).runError;
-            rr->runScoreTime = p->runs.at(0).runScoreTime;
+            rr->runError = 0;
+            rr->runScoreTime = 0;
             rr->typePoints = p->runs.at(0).typePoints;
+
+            for(int j=0; j < rr->typePoints.size();j++){
+                rr->runScoreTime = rr->typePoints.at(j).timeInMilliSeconds + rr->runScoreTime;
+                rr->runError = rr->typePoints.at(j).error + rr->runError;
+                rr->runOn = 0;
+            }
             persons->persons[i].runs.append(*rr);
-            goodOldName = false;
+            persons->persons[i].bestScoreTime = std::max(persons->persons[i].bestScoreTime,  rr->runScoreTime);
+            persons->persons[i].error = std::max(persons->persons[i].error, rr->runError);
+            persons->persons[i].memberSince = 0;
+            newName = false;
             break;
         }
     }
 
     std::cout<<p->runs.size()<<std::endl;
 
-    if(goodOldName){
-        persons->persons.append(*p);
+    if(newName){
+        Run *rr = new Run();
+        rr->runScoreTime = 0;
+        rr->runError = 0;
+        for(int j=0; j < p->runs.at(0).typePoints.size();j++){
+            rr->runScoreTime = p->runs.at(0).typePoints.at(0).timeInMilliSeconds + rr->runScoreTime;
+            rr->runError = p->runs.at(0).typePoints.at(j).error + rr->runError;
+            rr->runOn = 0;
+            rr->runChallenge = p->runs.at(0).runChallenge;
+            rr->typePoints = p->runs.at(0).typePoints;
+        }
+        Person *pp = new Person();
+        pp->memberSince = 0;
+        pp->bestScoreTime = rr->runScoreTime;
+        pp->error = rr->runError;
+        pp->runs.append(*rr);
+        persons->persons.append(*pp);
     }
 
     std::cout<<p->runs.at(0).typePoints.size()<<std::endl;
 
     reader.writeXml("../hhighscore.xml");
-
+    std::cout<<"h:1"<<std::endl;
     for (int i= 0;i<persons->persons.size();i++){
         if (persons->persons.at(i).name == "marco"){
-          addGraphForAllRunsOfOnePerson(ui->plot0, persons->persons.at(i));
-          addGraphForLastRunOfOnePerson(ui->plot1, persons->persons.at(i).runs.at(0));
+
+            std::cout<<"h:2"<<std::endl;
+            addGraphForAllRunsOfOnePerson(ui->plot0, persons->persons.at(i));
+            addGraphForLastRunOfOnePerson(ui->plot1, persons->persons.at(i).runs.at(persons->persons.at(i).runs.size()-1));
+
+            std::cout<<"h:3"<<std::endl;
             std::map<int,int> map;
             for(int j=0; j<persons->persons.at(i).runs.size(); j++){
                 map[persons->persons.at(i).runs.at(j).runScoreTime] = j;
             }
+
+            std::cout<<"h:4"<<std::endl;
             std::map<int,int>::iterator g  = map.begin();
             std::pair<int,int> f;
             while(g!=map.end()){
                 f = *g;
                 g++;
             }
-            addGraphOneBestToOneActual(ui->plot2, persons->persons.at(i).runs.at(1), persons->persons.at(i).runs.at(f.second));
+            addGraphOneBestToOneActual(ui->plot2, persons->persons.at(i).runs.at(persons->persons.at(i).runs.size()-1), persons->persons.at(i).runs.at(f.second));
         }
+        std::map<int,int> map;
+        for(int j=0; j<persons->persons.size(); j++){
+            map[persons->persons.at(j).bestScoreTime] = j;
+        }
+        std::map<int,int>::iterator g  = map.begin();
+        std::pair<int,int> f;
+        while(g!=map.end()){
+            f = *g;
+            g++;
+        }
+        //addGraphOneBestToOneActual(ui->plot2, persons->persons.at(i).runs.at(persons->persons.at(i).runs.size()-1), persons->persons.at(i).runs.at(f.second));
     }
 }
 
@@ -238,25 +284,28 @@ void Highscore::addGraphOneBestToOneActual(QCustomPlot *plot, Run rL, Run rB){
 
     int typePointsCount = rB.typePoints.size();
     int xMin = -1;
-    int xMax = typePointsCount+1;
+    int xMax = 101;
     int yMin = 0;
     double yMax = 0;
     int yMaxErr = 0;
 
+    int s = 0;
     QVector<double> x(typePointsCount), y(typePointsCount), y2(typePointsCount*11), x2(typePointsCount*11);
     for(int i = 0;i<typePointsCount;i++){
         y[i] = 1/ (rB.typePoints.at(i).timeInMilliSeconds/60000.0);
-        x[i] = i;
+        s = s+rB.typePoints.at(i).timeInMilliSeconds;
+        x[i] = (s*100)/rB.runScoreTime;
         yMax = std::max(y[i],yMax);
         for(double j = 0; j<11;j++){
             y2[11*i+j] =  rB.typePoints.at(i).error;
-            x2[11*i+j] =  (i-0.02)+(0.004*j)+0.04;
+            x2[11*i+j] =  (x[i]-0.02)+(0.004*j)+0.04;
         }
         yMaxErr = std::max(rB.typePoints.at(i).error,yMaxErr);
 
     }
     plot->addGraph(plot->xAxis, plot->yAxis);
-    plot->graph(0)->setName("Anschläge / Minute");
+    double d = rB.typePoints.size()/(rB.runScoreTime/60000.0);
+    plot->graph(0)->setName("APM ");
     plot->graph(0)->setData(x,y);
     plot->graph(0)->setLineStyle((QCPGraph::LineStyle)(1));
     plot->graph(0)->setScatterStyle(QCPScatterStyle((QCPScatterStyle::ScatterShape)(1)));
@@ -279,17 +328,18 @@ void Highscore::addGraphOneBestToOneActual(QCustomPlot *plot, Run rL, Run rB){
     //plot->graph(0)->setBrush(QBrush(QColor(255,200,20,70)));
 
     typePointsCount = rL.typePoints.size();
-    xMin = -1;
-    xMax = typePointsCount+1;
 
+    s = 0;
     QVector<double> x3(typePointsCount), y3(typePointsCount), y4(typePointsCount*11), x4(typePointsCount*11);
     for(int i = 0;i<typePointsCount;i++){
         y3[i] = 1/ (rL.typePoints.at(i).timeInMilliSeconds/60000.0);
-        x3[i] = i;
+        s = s+rL.typePoints.at(i).timeInMilliSeconds;
+        x3[i] = (s*100)/rL.runScoreTime;
+
         yMax = std::max(y3[i],yMax);
         for(double j = 0; j<11;j++){
             y4[11*i+j] =  rL.typePoints.at(i).error;
-            x4[11*i+j] =  (i-0.02)+(0.004*j)-0.04;
+            x4[11*i+j] =  (x3[i]-0.02)+(0.004*j)-0.04;
         }
         yMaxErr = std::max(rL.typePoints.at(i).error,yMaxErr);
 
@@ -319,18 +369,18 @@ void Highscore::addGraphOneBestToOneActual(QCustomPlot *plot, Run rL, Run rB){
     plot->xAxis2->setVisible(true);
     plot->xAxis->setVisible(true);
 
-    plot->xAxis->setLabel("Durchlauf");
+    plot->xAxis->setLabel("Zeit in %");
     plot->yAxis->setLabel("Anschläge pro Minute");
     plot->yAxis2->setLabel("Fehler");
 
     plot->xAxis->setRange(xMin, xMax);
     plot->yAxis->setRange(yMin, yMax+1);
     plot->yAxis2->setRange(yMin,yMaxErr*1.5 );
-    plot->xAxis2->setRange(xMin, xMax);
+    plot->xAxis2->setRange(xMin, xMax*1.2);
 
     plot->xAxis->setAutoTickStep(false);
-    plot->xAxis->setTickStep(1);
-    plot->xAxis->setSubTickCount(1);
+    plot->xAxis->setTickStep(10);
+    plot->xAxis->setSubTickCount(10);
 
 
     plot->xAxis2->setTickLength(0, 0);

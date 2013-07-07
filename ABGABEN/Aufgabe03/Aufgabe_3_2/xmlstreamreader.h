@@ -14,9 +14,7 @@ public:
 
     bool readFile(const QString &fileName);
     bool writeXml(const QString &fileName);
-    void setPerson(Persons *p)
-    {
-        persons = p;}
+    void setPerson(Persons *p){persons = p;}
 
 private:
     void readHighscoreElement();

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <highscore>
-    <person name="marco" error="20" bestScoreTime="234" memeberSince="0">
+    <person name="marco" error="20" bestScoreTime="9887" memeberSince="0">
         <run runOn="0" runChallenge="2" runError="4" runScoreTime="20000">
             <typePoint timeInMilliSeconds="1200" error="3"/>
             <typePoint timeInMilliSeconds="1100" error="6"/>
@@ -66,50 +66,24 @@
             <typePoint timeInMilliSeconds="20" error="0"/>
             <typePoint timeInMilliSeconds="40" error="2"/>
         </run>
-        <run runOn="7209010" runChallenge="0" runError="7077996" runScoreTime="5439593">
-            <typePoint timeInMilliSeconds="1183" error="0"/>
-            <typePoint timeInMilliSeconds="184" error="0"/>
-            <typePoint timeInMilliSeconds="224" error="0"/>
-            <typePoint timeInMilliSeconds="904" error="0"/>
-            <typePoint timeInMilliSeconds="1056" error="0"/>
-            <typePoint timeInMilliSeconds="1472" error="0"/>
-            <typePoint timeInMilliSeconds="168" error="0"/>
-            <typePoint timeInMilliSeconds="144" error="0"/>
-            <typePoint timeInMilliSeconds="872" error="1"/>
-            <typePoint timeInMilliSeconds="639" error="0"/>
-            <typePoint timeInMilliSeconds="889" error="0"/>
-            <typePoint timeInMilliSeconds="168" error="0"/>
-            <typePoint timeInMilliSeconds="144" error="0"/>
-            <typePoint timeInMilliSeconds="216" error="0"/>
-            <typePoint timeInMilliSeconds="552" error="0"/>
-            <typePoint timeInMilliSeconds="296" error="0"/>
-            <typePoint timeInMilliSeconds="856" error="0"/>
-            <typePoint timeInMilliSeconds="177" error="0"/>
-            <typePoint timeInMilliSeconds="855" error="0"/>
-            <typePoint timeInMilliSeconds="800" error="0"/>
-            <typePoint timeInMilliSeconds="208" error="0"/>
-            <typePoint timeInMilliSeconds="552" error="0"/>
-            <typePoint timeInMilliSeconds="200" error="0"/>
-            <typePoint timeInMilliSeconds="192" error="0"/>
-            <typePoint timeInMilliSeconds="504" error="0"/>
-            <typePoint timeInMilliSeconds="768" error="0"/>
-            <typePoint timeInMilliSeconds="112" error="0"/>
-            <typePoint timeInMilliSeconds="720" error="0"/>
-            <typePoint timeInMilliSeconds="448" error="0"/>
-            <typePoint timeInMilliSeconds="168" error="0"/>
+        <run runOn="0" runChallenge="0" runError="0" runScoreTime="9887">
+            <typePoint timeInMilliSeconds="1167" error="0"/>
+            <typePoint timeInMilliSeconds="320" error="0"/>
+            <typePoint timeInMilliSeconds="209" error="0"/>
+            <typePoint timeInMilliSeconds="1311" error="0"/>
             <typePoint timeInMilliSeconds="264" error="0"/>
-            <typePoint timeInMilliSeconds="1040" error="0"/>
-            <typePoint timeInMilliSeconds="328" error="0"/>
-            <typePoint timeInMilliSeconds="280" error="0"/>
-            <typePoint timeInMilliSeconds="464" error="0"/>
-            <typePoint timeInMilliSeconds="544" error="0"/>
-            <typePoint timeInMilliSeconds="544" error="0"/>
-            <typePoint timeInMilliSeconds="152" error="0"/>
-            <typePoint timeInMilliSeconds="336" error="0"/>
-            <typePoint timeInMilliSeconds="912" error="0"/>
-            <typePoint timeInMilliSeconds="104" error="0"/>
-            <typePoint timeInMilliSeconds="176" error="0"/>
-            <typePoint timeInMilliSeconds="192" error="0"/>
+            <typePoint timeInMilliSeconds="960" error="0"/>
+            <typePoint timeInMilliSeconds="208" error="0"/>
+            <typePoint timeInMilliSeconds="272" error="0"/>
+            <typePoint timeInMilliSeconds="440" error="0"/>
+            <typePoint timeInMilliSeconds="488" error="0"/>
+            <typePoint timeInMilliSeconds="568" error="0"/>
+            <typePoint timeInMilliSeconds="696" error="0"/>
+            <typePoint timeInMilliSeconds="296" error="0"/>
+            <typePoint timeInMilliSeconds="920" error="0"/>
+            <typePoint timeInMilliSeconds="560" error="0"/>
+            <typePoint timeInMilliSeconds="552" error="0"/>
+            <typePoint timeInMilliSeconds="656" error="0"/>
         </run>
     </person>
     <person name="nadine" error="202" bestScoreTime="234" memeberSince="0">

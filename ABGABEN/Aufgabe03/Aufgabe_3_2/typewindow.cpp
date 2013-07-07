@@ -122,7 +122,7 @@ void Typewindow::lessonControl(QString pressed) {
 
 bool Typewindow::checkInput(QString key) {
     if(timelimit) {
-        if(timer.elapsed() / 60000 < limit) {
+        if(timer.elapsed() / 10000 < limit) {
             if( key != row.at(0) ) {
                 return false;
             } else {
@@ -133,7 +133,6 @@ bool Typewindow::checkInput(QString key) {
             std::cout<<r->typePoints.size()<<std::endl;
             p->runs.append(*r);
 
-            std::cout<<r->typePoints.size()<<std::endl;
             Highscore* s = new Highscore(this);
 
             std::cout<<"p->name"<<std::endl;
@@ -147,10 +146,13 @@ bool Typewindow::checkInput(QString key) {
 
             std::cout<<"p->name"<<std::endl;
 
+            std::cout<<r->typePoints.size()<<std::endl;
+
+
             cout << "Anschläge: " << hits << endl;
             cout << "Fehler: " << errors << endl;
             cout << "Fehlerquote: " << (errors * 100) / hits << "%" << endl;
-            cout << "APM: " << hits / (timer.elapsed() / 60000) << endl;
+            //cout << "APM: " << hits / (timer.elapsed() / 60000) << endl;
             Typewindow::close();
         }
     }

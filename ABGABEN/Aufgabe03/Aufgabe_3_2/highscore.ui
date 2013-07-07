@@ -74,9 +74,6 @@
       </widget>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout"/>
-     </item>
-     <item>
       <widget class="QTabWidget" name="tabWidget">
        <property name="enabled">
         <bool>true</bool>
@@ -183,7 +180,7 @@
   <customwidget>
    <class>QCustomPlot</class>
    <extends>QWidget</extends>
-   <header>../../qcustomplot.h</header>
+   <header>qcustomplot.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
