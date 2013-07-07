@@ -142,19 +142,5 @@ void MainWindow::startLessonClicked() {
         t->installEventFilter(t);
         t->startLesson(getHardString(), limit);
         t->show();
-    } else {
-        QWidget *dialog = new QWidget();
-        dialog->setWindowTitle("Achtung");
-        QLabel *label = new QLabel("Bitte wähle erst die Schwierigkeit!");
-
-        QPushButton *ok = new QPushButton("OK");
-        QObject::connect(ok, SIGNAL(clicked()), dialog, SLOT(close()));
-
-        QHBoxLayout *layout = new QHBoxLayout;
-        layout->addWidget(label);
-        layout->addWidget(ok);
-
-        dialog->setLayout(layout);
-        dialog->show();
     }
 }
