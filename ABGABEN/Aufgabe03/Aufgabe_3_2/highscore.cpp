@@ -13,16 +13,11 @@ Highscore::Highscore(QWidget *parent) :
 
 
     persons  = new Persons();
-
-    std::cout<<"32"<<std::endl;
     reader.setPerson(persons);
 
-    std::cout<<"33"<<std::endl;
-
-    std::cout<<"34"<<std::endl;
     ui->plot0->setInteractions(QCP::iRangeDrag  |QCP::iRangeZoom);
-    ui->plot1->setInteractions(QCP::iRangeDrag  |QCP::iRangeZoom);
-    ui->plot2->setInteractions(QCP::iRangeDrag  |QCP::iRangeZoom);
+    //ui->plot1->setInteractions(QCP::iRangeDrag  |QCP::iRangeZoom);
+    //ui->plot2->setInteractions(QCP::iRangeDrag  |QCP::iRangeZoom);
 
 }
 
@@ -30,7 +25,6 @@ void Highscore::initHighScore(Person *p){
     bool newName = true;
 
     reader.readFile("../highscore.xml");
-    std::cout<<"h:0"<<std::endl;
 
     for (int i= 0;i<persons->persons.size();i++){
         if(persons->persons.at(i).name.compare(p->name)){
@@ -78,12 +72,13 @@ void Highscore::initHighScore(Person *p){
 
     std::cout<<p->runs.at(0).typePoints.size()<<std::endl;
 
-    reader.writeXml("../hhighscore.xml");
+    reader.writeXml("../highscore.xml");
 
     std::map<int,int> map;
     int iii;
     for (int i= 0;i<persons->persons.size();i++){
-        if (persons->persons.at(i).name == "marco"){
+        std::cout << p->name << std::endl;
+        if (persons->persons.at(i).name == p->name){
             addGraphForAllRunsOfOnePerson(ui->plot0, persons->persons.at(i));
             //addGraphForLastRunOfOnePerson(ui->plot1, persons->persons.at(i).runs.at(persons->persons.at(i).runs.size()-1));
 
@@ -97,7 +92,7 @@ void Highscore::initHighScore(Person *p){
                 }
             }
             iii = i;
-            addGraphOneBestToOneActual(ui->plot2, persons->persons.at(i).runs.at(persons->persons.at(i).runs.size()-1), persons->persons.at(i).runs.at(g));
+            //addGraphOneBestToOneActual(ui->plot2, persons->persons.at(i).runs.at(persons->persons.at(i).runs.size()-1), persons->persons.at(i).runs.at(g));
         }
         map[persons->persons.at(i).bestScoreTime] = i;
     }
@@ -117,8 +112,8 @@ void Highscore::initHighScore(Person *p){
             gg = j;
         }
     }
-    addGraphBestRunAllPersonsTopTen(ui->plot1, persons->persons.at(iii).runs.at(persons->persons.at(iii).runs.size()-1), persons->persons.at(iii).runs.at(gg));
-    showHighscore(ui->plot1,*persons);
+    //addGraphBestRunAllPersonsTopTen(ui->plot1, persons->persons.at(iii).runs.at(persons->persons.at(iii).runs.size()-1), persons->persons.at(iii).runs.at(gg));
+    showHighscore(ui->plot0,*persons);
     std::cout<< "anzahl der runs einer Person: "<< persons->persons.at(0).runs.size()<<std::endl;
 
 
@@ -152,14 +147,6 @@ void Highscore::showHighscore(QCustomPlot *plot, Persons p){
         g++;
         ii++;
     }
-
-
-    //ui->tableWidget->setItem(2, 5, new QTableWidgetItem("Item1"));
-    //- das befüllt ein tableWidget in spalte 2 und zeile 5 mit "item1"
-    /*QAbstractItemModel *m = ui->tableWidget->model();
-    m->setHeaderData(0,Qt::Horizontal, QObject::tr("User"), Qt::DisplayRole);
-    m->setHeaderData(1,Qt::Horizontal, QObject::tr("Score"),Qt::DisplayRole);
-    ui->tableWidget->*/
 }
 void Highscore::addGraphForAllRunsOfOnePerson(QCustomPlot *plot, Person p){
     plot->plotLayout()->insertRow(0);

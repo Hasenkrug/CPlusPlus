@@ -134,18 +134,11 @@ bool Typewindow::checkInput(QString key) {
 
             Highscore* s = new Highscore(this);
 
-            std::cout<<"p->name"<<std::endl;
+            std::cout<<p->name<<std::endl;
             s->initHighScore(p);
-
-            std::cout<<"p->name"<<std::endl;
             s->installEventFilter(s);
-
-            std::cout<<"p->name"<<std::endl;
             s->show();
 
-            std::cout<<"p->name"<<std::endl;
-
-            std::cout<<r->typePoints.size()<<std::endl;
 
             cout << "Zeit: " << timer.elapsed()/60000 << " Minute(n)" << endl;
             cout << "Anschlaege: " << hits << endl;
@@ -345,7 +338,9 @@ void Typewindow::setUser(std::string u,int c){
             //p = persons->persons.at(i);
         }
     r = new Run();
+    std::cout<<u<<std::endl;
     p->name = u;
+    std::cout<<p->name<<std::endl;
     r->runChallenge = c;
 
 }

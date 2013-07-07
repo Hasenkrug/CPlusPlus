@@ -93,6 +93,7 @@ QStringList MainWindow::getMediumString() {
 
 QStringList MainWindow::getHardString() {
     u = ui->nameBox->text().toStdString();
+
     c = 2;
 
     QString a("das ist die letzte lexion¶");
@@ -124,13 +125,13 @@ QStringList MainWindow::getHardString() {
 
 void MainWindow::startLessonClicked() {    
     Typewindow* t = new Typewindow(this);
-    t->setUser(u, c);
     int limit = ui->timeBox->value();
 
     if (ui->easy->isChecked()) {        
         // wichtig zum abfangen von space & enter
         t->installEventFilter(t);
         t->startLesson(getEasyString(), limit);
+        t->setUser(u, c);
         t->show();
     } else if (ui->medium->isChecked()) {
         // wichtig zum abfangen von space & enter
