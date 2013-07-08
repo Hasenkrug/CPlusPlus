@@ -223,7 +223,7 @@ void XmlStreamReader::writePersonEntry(QXmlStreamWriter *xmlWriter, Person *pers
 bool XmlStreamReader::writeXml(const QString &fileName)
 {
 
-    std::cout << "1"<< std::endl;
+    //std::cout << "1"<< std::endl;
     QFile file(fileName);
     if (!file.open(QFile::WriteOnly | QFile::Text)) {
         std::cerr << "Error: Cannot write file "

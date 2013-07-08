@@ -25,6 +25,7 @@ Typewindow::~Typewindow() {
 
 /* WINDOWS-VERSION */
 // wichtig zum abfangen von space & enter
+
 bool Typewindow::eventFilter(QObject *object, QEvent *event) {
     // 51 = QEvent::ShortcutOverride - Key press in child, for overriding shortcut key handling (QKeyEvent)
     if(event->type() == 51 && object == this) {
@@ -49,6 +50,7 @@ bool Typewindow::eventFilter(QObject *object, QEvent *event) {
     event->ignore();
     return false;
 }
+
 
 /* MAC-VERSION */
 // wichtig zum abfangen von space & enter
@@ -138,10 +140,12 @@ bool Typewindow::checkInput(QString key) {
             // QString fq = QString::number(300);
             // QString points = QString::number(300);
 
-            std::cout<<"31"<<std::endl;
+            //std::cout<<"31"<<std::endl;
             QString apm = QString::number(hits / (timer.elapsed() / 60000));
             QString fq = QString::number((totalErrors * 100) / hits);
-            QString points = QString::number(100-((totalErrors * 100) / hits) + (hits / (timer.elapsed() / 60000)));
+            // alte Punktzahlberechnung
+            // QString points = QString::number(100-((totalErrors * 100) / hits) + (hits / (timer.elapsed() / 60000)));
+            QString points = QString::number(hits-totalErrors);
 
             p->runs.append(*r);
             Result* result = new Result(this, p);
@@ -321,9 +325,9 @@ void Typewindow::keyPressEvent(QKeyEvent *e) {
 void Typewindow::setUser(std::string u,int c){
     p = new Person();
     r = new Run();
-    std::cout<<"1"<<u<<std::endl;
+    //std::cout<<"1"<<u<<std::endl;
     p->name = u;
-    std::cout<<"2"<<p->name<<std::endl;
+    //std::cout<<"2"<<p->name<<std::endl;
     r->runChallenge = c;
 }
 

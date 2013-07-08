@@ -25,12 +25,12 @@ void Highscore::initHighScore(Person *p){
     bool newName = true;
 
     reader.readFile("../highscore.xml");// WINDOWS-VERSION
-    //reader.readXml("../../../../highscore.xml"); // MAC-VERSION
+    //reader.readFile("../../../../highscore.xml"); // MAC-VERSION
 
     for (int i= 0;i<persons->persons.size();i++){
         if(persons->persons.at(i).name == p->name){
 
-            std::cout<<"name?: "<<persons->persons.at(i).name<<std::endl;
+            //std::cout<<"name?: "<<persons->persons.at(i).name<<std::endl;
             Run *rr = new Run();
             rr->runChallenge = p->runs.at(0).runChallenge;
             rr->runOn = p->runs.at(0).runOn;
@@ -40,7 +40,7 @@ void Highscore::initHighScore(Person *p){
 
 
             for (int i=0;i<rr->typePoints.size();i++){
-                std::cout<<"point?: "<<rr->typePoints.at(i).timeInMilliSeconds<<std::endl;
+                //std::cout<<"point?: "<<rr->typePoints.at(i).timeInMilliSeconds<<std::endl;
             }
             for(int j=0; j < p->runs.at(0).typePoints.size();j++){
                 rr->runScoreTime = p->runs.at(0).typePoints.at(j).timeInMilliSeconds + rr->runScoreTime;
@@ -57,7 +57,7 @@ void Highscore::initHighScore(Person *p){
         }
     }
 
-    std::cout<<p->runs.size()<<std::endl;
+    //std::cout<<p->runs.size()<<std::endl;
 
     if(newName){
         Run *rr = new Run();
@@ -79,7 +79,7 @@ void Highscore::initHighScore(Person *p){
         persons->persons.append(*pp);
     }
 
-    std::cout<<p->runs.at(0).typePoints.size()<<std::endl;
+    //std::cout<<p->runs.at(0).typePoints.size()<<std::endl;
 
     reader.writeXml("../highscore.xml"); // WONDOWS-VERSION
     //reader.writeXml("../../../../highscore.xml"); // MAC-VERSION
@@ -122,7 +122,7 @@ void Highscore::initHighScore(Person *p){
         }
     }
 
-    std::cout <<"Ist das Korrekt?"<< p->name << std::endl;
+    //std::cout <<"Ist das Korrekt?"<< p->name << std::endl;
     //addGraphBestRunAllPersonsTopTen(ui->plot1, p->runs.at(0), persons->persons.at(iii).runs.at(gg));
     showHighscore(ui->plot0,*persons);
 
@@ -143,7 +143,7 @@ void Highscore::showHighscore(QCustomPlot *plot, Persons p){
         }
     }
 
-    std::cout<< map.size() << std::endl;
+    //std::cout<< map.size() << std::endl;
 
     std::map<double,std::string>::reverse_iterator g  = map.rbegin();
     std::pair<double,std::string> f;
@@ -510,8 +510,8 @@ void Highscore::addGraphBestRunAllPersonsTopTen(QCustomPlot *plot, Run rL, Run r
         ss = ss+rL.typePoints.at(i).timeInMilliSeconds;
         x3[i] = (ss*100)/rL.runScoreTime;
 
-        std::cout <<"Ist das Korrekt?"<< rL.typePoints.at(i).timeInMilliSeconds << std::endl;
-        std::cout <<"Ist das Korrekt?"<< x3[i] << std::endl;
+        //std::cout <<"Ist das Korrekt?"<< rL.typePoints.at(i).timeInMilliSeconds << std::endl;
+        //std::cout <<"Ist das Korrekt?"<< x3[i] << std::endl;
         yMax = std::max(y3[i],yMax);
         for(double j = 0; j<11;j++){
             y4[11*i+j] =  rL.typePoints.at(i).error;
