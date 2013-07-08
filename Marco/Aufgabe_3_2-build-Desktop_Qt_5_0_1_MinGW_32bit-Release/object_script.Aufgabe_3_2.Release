@@ -1,0 +1,16 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\typewindow.o
+./release\xmlstreamreader.o
+./release\person.o
+./release\highscore.o
+./release\qcustomplot.o
+./release\testwidget.o
+./release\qrc_testPfad.o
+./release\moc_mainwindow.o
+./release\moc_typewindow.o
+./release\moc_highscore.o
+./release\moc_qcustomplot.o
+./release\moc_testwidget.o
+);
