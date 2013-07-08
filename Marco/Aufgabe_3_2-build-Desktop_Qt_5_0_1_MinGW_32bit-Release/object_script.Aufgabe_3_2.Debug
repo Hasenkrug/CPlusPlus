@@ -1,0 +1,16 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\typewindow.o
+./debug\xmlstreamreader.o
+./debug\person.o
+./debug\highscore.o
+./debug\qcustomplot.o
+./debug\testwidget.o
+./debug\qrc_testPfad.o
+./debug\moc_mainwindow.o
+./debug\moc_typewindow.o
+./debug\moc_highscore.o
+./debug\moc_qcustomplot.o
+./debug\moc_testwidget.o
+);
